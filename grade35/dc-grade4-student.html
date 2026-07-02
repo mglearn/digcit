@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>The Permanent Record — Digital Citizenship Breakouts</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--c1:#0a2e63;--c2:#2f6fe0;--c3:#1a7a8c;--c4:#f5b800;--c5:#0d47a1;--bg-a:rgba(245,184,0,.12);--bg-b:rgba(10,46,99,.10)}</style>
+<link rel="stylesheet" href="../assets/breakout.css">
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div class="wrap">
+  <div class="langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+  <div class="crumb"><a href="dc-grade4.html" data-i18n="crumb.teacher">‹ Teacher launch</a> · <a href="index.html" data-i18n="crumb.suite">Digital Citizenship Breakouts</a></div>
+
+  <header class="top">
+    <div class="eyebrow" data-i18n="header.eyebrow">Digital Citizenship Breakout · Grade 4</div>
+    <h1 data-i18n="header.h1">The Permanent Record</h1>
+    <p class="sub" data-i18n="header.sub">A student thought old posts would just disappear. They didn't. Crack four locks to learn why the internet remembers.</p>
+  </header>
+
+  <div class="progress-wrap">
+    <span class="pcount" id="pcount">0 of 4 locks open</span>
+    <div class="lockdots" id="lockdots"></div>
+    <button class="resetbtn" id="resetBtn" data-i18n="ui.reset">↺ Reset</button>
+  </div>
+
+  <div class="brief">
+    <span class="tag" data-i18n="brief.label">Your Mission</span>
+    <h2 data-i18n="brief.h">Be a Records Detective</h2>
+    <p data-i18n="brief.p">Months ago, a student posted photos, sent messages, and used a picture that was not theirs. Today they found all of it still online. Read the clues, then open all four locks. Each lock has a reason that shows why the answer is right.</p>
+  </div>
+
+  <div class="section-title" data-i18n="sect.clues">🔍 The Clues</div>
+  <p class="hint" data-i18n="sect.cluesHint">Tap each clue to read it. You can open them again anytime.</p>
+  <div class="clue-grid" id="clueGrid"></div>
+
+  <div class="section-title" data-i18n="sect.locks">🔒 The Locks</div>
+  <p class="hint" data-i18n="sect.locksHint">Use the clues to open each lock.</p>
+  <div class="locks" id="locks"></div>
+
+  <footer>
+    <span data-i18n="footer.text">Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.</span> · <a href="policy.html" data-i18n="footer.privacy">Privacy &amp; compliance</a><br>
+    <span style="opacity:.7" data-i18n="footer.disclaimer">Translations are AI-seeded and pending native-speaker review.</span>
+  </footer>
+</div>
+
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div>
+<div class="win" id="win"><div class="win-card">
+  <div class="stamp" data-i18n="win.stamp">CASE CLOSED</div>
+  <h2 data-i18n="win.h">You cracked all four locks!</h2>
+  <p data-i18n="win.p">You learned that your online record can last a long time, how to use good manners in messages, how to give a creator credit, and how to be an upstander who stops cyberbullying. Great detective work!</p>
+  <button id="winReplay" data-i18n="ui.playagain">Play Again</button>
+</div></div>
+
+<script src="locales/dc-grade4.js"></script>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/breakout.js"></script>
+</body>
+</html>

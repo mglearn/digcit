@@ -1,0 +1,124 @@
+{
+  "id": "dc-grade4",
+  "grade": 4,
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 4",
+      "es": "Breakout de ciudadanía digital · Grado 4",
+      "vi": "Breakout công dân số · Lớp 4",
+      "ar": "تحدّي المواطنة الرقمية · الصف 4",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 4",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 4",
+      "zh": "数字公民破解 · 4 年级"
+    },
+    "h1": "The Permanent Record",
+    "sub": "A student thought old posts would just disappear. They didn't. Crack four locks to learn why the internet remembers.",
+    "briefLabel": "Your Mission",
+    "briefH": "Be a Records Detective",
+    "briefP": "Months ago, a student posted photos, sent messages, and used a picture that was not theirs. Today they found all of it still online. Read the clues, then open all four locks. Each lock has a reason that shows why the answer is right.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "CASE CLOSED",
+    "winH": "You cracked all four locks!",
+    "winP": "You learned that your online record can last a long time, how to use good manners in messages, how to give a creator credit, and how to be an upstander who stops cyberbullying. Great detective work!"
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "🗂️",
+      "nm": "The Record",
+      "title": "Why is it still there?",
+      "body": "When you post online, a copy can stay for a long time. Even if you delete it, others may have saved or shared it. This lasting trail is called your permanent record. So think before you post."
+    },
+    {
+      "id": "c2",
+      "ico": "💌",
+      "nm": "Kind Words",
+      "title": "Manners in messages",
+      "body": "Good manners online are called etiquette. In a text, email, or chat, you use kind words, no yelling in ALL CAPS, and no mean names. You also wait your turn and read before you reply. Be polite, just like in person."
+    },
+    {
+      "id": "c3",
+      "ico": "🎨",
+      "nm": "Give Credit",
+      "title": "Whose picture is it?",
+      "body": "The student used a drawing that another artist made. A creator owns what they make. This rule is called copyright. To be fair, you must give the creator credit by naming who made it."
+    },
+    {
+      "id": "c4",
+      "ico": "🛡️",
+      "nm": "The Upstander",
+      "title": "Standing up online",
+      "body": "A classmate was being teased online. An upstander does not join in and does not stay silent. The smart steps are: first REFUSE to share the mean post, then REPORT it on the app, then SUPPORT the person who was hurt with a kind message."
+    },
+    {
+      "id": "c5",
+      "ico": "🍪",
+      "nm": "The Pop-Up",
+      "title": "A box that watches",
+      "body": "A pop-up said a site uses cookies. Cookies are small files that help a site remember you and collect data about what you do. A pop-up is not a mean message and it is not bad manners. It is just the site asking to track you."
+    },
+    {
+      "id": "c6",
+      "ico": "🐢",
+      "nm": "Class Turtle",
+      "title": "The classroom pet",
+      "body": "The class turtle is named Pixel. Pixel is 12 years old and loves eating leafy greens. This is a fun fact — but it will not help you open any lock.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "mc",
+      "color": "#0a2e63",
+      "title": "The Permanent Record",
+      "q": "Why can a post you made months ago still be found today?",
+      "options": [
+        "Because deleting a post always erases every copy right away",
+        "Because a copy can stay online, and others may have saved or shared it",
+        "Because the internet forgets everything after one week"
+      ],
+      "answerIndex": 1,
+      "reason": "A post can leave a permanent record because copies last a long time and other people may have saved or shared them, even after you delete your own."
+    },
+    {
+      "id": "L2",
+      "type": "multi",
+      "color": "#2f6fe0",
+      "title": "Good Online Manners",
+      "q": "Check EVERY choice that shows good etiquette in a text, email, or chat.",
+      "items": [
+        { "t": "Using kind, polite words", "strong": true },
+        { "t": "Reading the message before you reply", "strong": true },
+        { "t": "Writing in ALL CAPS to sound louder", "strong": false },
+        { "t": "Calling someone a mean name", "strong": false },
+        { "t": "Closing a cookie pop-up so a site cannot track you", "strong": false }
+      ],
+      "reason": "Etiquette means kind words and reading before you reply; yelling in caps and mean names are rude, and a cookie pop-up is about data, not manners."
+    },
+    {
+      "id": "L3",
+      "type": "word",
+      "color": "#1a7a8c",
+      "title": "Fair to the Creator",
+      "q": "When you use a picture an artist made, the rule that protects the creator is called ______.",
+      "answer": ["copyright", "copy right", "copyrights"],
+      "reason": "Copyright is the rule that says a creator owns what they make, so you must give them credit when you use their work."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "Be an Upstander",
+      "q": "A classmate is teased online. Tap the steps in the RIGHT order.",
+      "pads": [
+        { "k": "support", "e": "💙 Support the person", "c": "#0a2e63" },
+        { "k": "refuse", "e": "🚫 Refuse to share it", "c": "#2f6fe0" },
+        { "k": "report", "e": "🚩 Report the post", "c": "#1a7a8c" }
+      ],
+      "answer": ["refuse", "report", "support"],
+      "reason": "First REFUSE to spread the mean post, then REPORT it on the app, then SUPPORT the classmate who was hurt. Refuse, Report, Support."
+    }
+  ]
+}

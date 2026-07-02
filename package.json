@@ -1,0 +1,12 @@
+{
+  "name": "digcit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Digital Citizenship Critical Thinking Online Breakouts (CTOBs) — TX TEKS Technology Applications, grades 3-8",
+  "scripts": {
+    "test": "node solve-test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}

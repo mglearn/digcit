@@ -1,0 +1,353 @@
+window.BREAKOUT = {
+ "id": "dc-grade8",
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "UI": {
+  "en": {
+   "sect.clues": "🔍 The Clues",
+   "sect.cluesHint": "Tap each clue to read it. You can open them again anytime.",
+   "sect.locks": "🔒 The Locks",
+   "sect.locksHint": "Use the clues to open each lock.",
+   "crumb.teacher": "‹ Teacher launch",
+   "crumb.suite": "Digital Citizenship Breakouts",
+   "ui.reset": "↺ Reset",
+   "ui.check": "Check",
+   "ui.gotit": "Got it",
+   "ui.playagain": "Play Again",
+   "ui.solved": "🔓 Solved!",
+   "ui.pcount": "{n} of {total} locks open",
+   "ui.wordph": "Type your answer",
+   "ui.clear": "clear",
+   "fb.digit": "That number doesn't match the clues. Check again.",
+   "fb.word": "Check the clues for the word that fits.",
+   "fb.mc": "That one isn't supported by the clues. Look again.",
+   "fb.multiExtra": "One pick isn't strong evidence. Strong means facts the clues really show.",
+   "fb.multiMissing": "You're missing a piece of strong evidence. Find them all.",
+   "fb.seq": "That order doesn't match the clues. Try again.",
+   "footer.privacy": "Privacy & compliance",
+   "footer.disclaimer": "Translations are AI-seeded and pending native-speaker review.",
+   "header.eyebrow": "Digital Citizenship Breakout · Grade 8",
+   "header.h1": "Evaluate the Source",
+   "header.sub": "A trending article is spreading fast, but something about it doesn't add up. Analyze the evidence, crack four locks, and decide whether the source can be trusted.",
+   "brief.label": "Your Mission",
+   "brief.h": "Become a Source Analyst",
+   "brief.p": "Anyone can post anything online, so a sharp digital citizen investigates before they believe or share. Work through the case files, weigh the evidence, and open all four locks. Each lock carries a reason that shows exactly why the answer holds up.",
+   "footer.text": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+   "win.stamp": "CASE CLOSED",
+   "win.h": "You cracked every lock, Analyst.",
+   "win.p": "You can now judge a website's reliability, protect your own and others' creative rights, respond calmly to a security breach, and spot the warning signs that a peer is being targeted. That is exactly what a thoughtful digital citizen does."
+  },
+  "es": {
+   "sect.clues": "🔍 Las pistas",
+   "sect.cluesHint": "Toca cada pista para leerla. (Puedes volver a abrirlas cuando quieras.)",
+   "sect.locks": "🔒 Los candados",
+   "sect.locksHint": "Resuelve cada candado usando las pistas de arriba.",
+   "crumb.teacher": "‹ Guía del docente",
+   "ui.reset": "↺ Reiniciar",
+   "ui.check": "Comprobar",
+   "ui.gotit": "Entendido",
+   "ui.playagain": "Jugar de nuevo",
+   "ui.solved": "🔓 ¡Resuelto!",
+   "ui.pcount": "{n} de {total} candados abiertos",
+   "ui.wordph": "Escribe tu respuesta",
+   "ui.clear": "limpiar",
+   "fb.digit": "Ese número no coincide con las pistas. Revisa de nuevo.",
+   "fb.word": "Busca en las pistas la palabra que encaja.",
+   "fb.mc": "Esa opción no está respaldada por las pistas. Mira otra vez.",
+   "fb.multiExtra": "Una de tus elecciones no es evidencia sólida. Sólida significa hechos que las pistas realmente prueban.",
+   "fb.multiMissing": "Te falta una prueba sólida. Encuéntralas todas.",
+   "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
+   "footer.privacy": "Privacidad y cumplimiento",
+   "footer.disclaimer": "Las traducciones son generadas por IA y están pendientes de revisión por hablantes nativos.",
+   "header.eyebrow": "Breakout de ciudadanía digital · Grado 8"
+  },
+  "vi": {
+   "sect.clues": "🔍 Các manh mối",
+   "sect.cluesHint": "Chạm vào mỗi manh mối để đọc. (Bạn có thể mở lại bất cứ lúc nào.)",
+   "sect.locks": "🔒 Các ổ khóa",
+   "sect.locksHint": "Giải mỗi ổ khóa bằng các manh mối ở trên.",
+   "crumb.teacher": "‹ Trang giáo viên",
+   "ui.reset": "↺ Đặt lại",
+   "ui.check": "Kiểm tra",
+   "ui.gotit": "Đã hiểu",
+   "ui.playagain": "Chơi lại",
+   "ui.solved": "🔓 Đã giải!",
+   "ui.pcount": "Đã mở {n}/{total} ổ khóa",
+   "ui.wordph": "Nhập câu trả lời của bạn",
+   "ui.clear": "xóa",
+   "fb.digit": "Con số đó không khớp với manh mối. Hãy kiểm tra lại.",
+   "fb.word": "Hãy tìm trong manh mối từ phù hợp.",
+   "fb.mc": "Lựa chọn đó không được manh mối chứng minh. Hãy xem lại.",
+   "fb.multiExtra": "Một lựa chọn không phải bằng chứng vững chắc. Vững chắc nghĩa là sự thật mà manh mối thực sự chứng minh.",
+   "fb.multiMissing": "Bạn còn thiếu một bằng chứng vững chắc. Hãy tìm hết.",
+   "fb.seq": "Thứ tự đó không khớp với manh mối. Hãy thử lại.",
+   "footer.privacy": "Quyền riêng tư & tuân thủ",
+   "footer.disclaimer": "Bản dịch do AI khởi tạo và đang chờ người bản ngữ rà soát.",
+   "header.eyebrow": "Breakout công dân số · Lớp 8"
+  },
+  "ar": {
+   "sect.clues": "🔍 الأدلّة",
+   "sect.cluesHint": "انقر كل دليل لقراءته. (يمكنك فتحه مجددًا في أي وقت.)",
+   "sect.locks": "🔒 الأقفال",
+   "sect.locksHint": "حلّ كل قفل مستعينًا بالأدلّة أعلاه.",
+   "crumb.teacher": "‹ صفحة المعلّم",
+   "ui.reset": "↺ إعادة",
+   "ui.check": "تحقّق",
+   "ui.gotit": "حسنًا",
+   "ui.playagain": "العب مجددًا",
+   "ui.solved": "🔓 تم الحل!",
+   "ui.pcount": "{n} من {total} أقفال مفتوحة",
+   "ui.wordph": "اكتب إجابتك",
+   "ui.clear": "مسح",
+   "fb.digit": "هذا الرقم لا يطابق الأدلّة. تحقّق مرة أخرى.",
+   "fb.word": "ابحث في الأدلّة عن الكلمة المناسبة.",
+   "fb.mc": "هذا الخيار لا تدعمه الأدلّة. انظر مرة أخرى.",
+   "fb.multiExtra": "أحد اختياراتك ليس دليلاً قويًا. القويّ يعني حقائق تثبتها الأدلّة فعلاً.",
+   "fb.multiMissing": "ينقصك دليل قويّ. اعثر عليها كلّها.",
+   "fb.seq": "هذا الترتيب لا يطابق الأدلّة. حاول مرة أخرى.",
+   "footer.privacy": "الخصوصية والامتثال",
+   "footer.disclaimer": "التّرجمات مُولّدة بالذكاء الاصطناعي وبانتظار مراجعة متحدّث أصلي.",
+   "header.eyebrow": "تحدّي المواطنة الرقمية · الصف 8"
+  },
+  "hi": {
+   "sect.clues": "🔍 सुराग",
+   "sect.cluesHint": "हर सुराग पढ़ने के लिए उस पर टैप करो। (इन्हें कभी भी दोबारा खोल सकते हो।)",
+   "sect.locks": "🔒 ताले",
+   "sect.locksHint": "ऊपर के सुरागों की मदद से हर ताला हल करो।",
+   "crumb.teacher": "‹ शिक्षक पृष्ठ",
+   "ui.reset": "↺ रीसेट",
+   "ui.check": "जाँचें",
+   "ui.gotit": "समझ गया",
+   "ui.playagain": "फिर से खेलें",
+   "ui.solved": "🔓 हल हो गया!",
+   "ui.pcount": "{total} में से {n} ताले खुले",
+   "ui.wordph": "अपना उत्तर लिखें",
+   "ui.clear": "साफ़",
+   "fb.digit": "यह संख्या सुरागों से मेल नहीं खाती। फिर से जाँचें।",
+   "fb.word": "सही शब्द के लिए सुरागों को देखें।",
+   "fb.mc": "यह विकल्प सुरागों से समर्थित नहीं है। फिर से देखें।",
+   "fb.multiExtra": "आपका एक चुनाव मज़बूत प्रमाण नहीं है। मज़बूत यानी वे तथ्य जो सुराग सचमुच साबित करते हैं।",
+   "fb.multiMissing": "आपसे एक मज़बूत प्रमाण छूट रहा है। सभी को खोजें।",
+   "fb.seq": "यह क्रम सुरागों से मेल नहीं खाता। फिर से कोशिश करें।",
+   "footer.privacy": "गोपनीयता और अनुपालन",
+   "footer.disclaimer": "अनुवाद AI द्वारा तैयार हैं और मातृभाषी समीक्षा की प्रतीक्षा में हैं।",
+   "header.eyebrow": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 8"
+  },
+  "ur": {
+   "sect.clues": "🔍 سراغ",
+   "sect.cluesHint": "ہر سراغ پڑھنے کے لیے اس پر ٹیپ کریں۔ (انہیں کبھی بھی دوبارہ کھول سکتے ہیں۔)",
+   "sect.locks": "🔒 تالے",
+   "sect.locksHint": "اوپر دیے گئے سراغوں کی مدد سے ہر تالا حل کریں۔",
+   "crumb.teacher": "‹ استاد کا صفحہ",
+   "ui.reset": "↺ دوبارہ",
+   "ui.check": "جانچیں",
+   "ui.gotit": "ٹھیک ہے",
+   "ui.playagain": "دوبارہ کھیلیں",
+   "ui.solved": "🔓 حل ہو گیا!",
+   "ui.pcount": "{total} میں سے {n} تالے کھلے",
+   "ui.wordph": "اپنا جواب لکھیں",
+   "ui.clear": "صاف",
+   "fb.digit": "یہ عدد سراغوں سے میل نہیں کھاتا۔ دوبارہ جانچیں۔",
+   "fb.word": "صحیح لفظ کے لیے سراغ دیکھیں۔",
+   "fb.mc": "یہ انتخاب سراغوں سے ثابت نہیں ہوتا۔ دوبارہ دیکھیں۔",
+   "fb.multiExtra": "آپ کا ایک انتخاب مضبوط ثبوت نہیں ہے۔ مضبوط یعنی وہ حقائق جو سراغ واقعی ثابت کرتے ہیں۔",
+   "fb.multiMissing": "آپ سے ایک مضبوط ثبوت رہ گیا ہے۔ سب تلاش کریں۔",
+   "fb.seq": "یہ ترتیب سراغوں سے میل نہیں کھاتی۔ دوبارہ کوشش کریں۔",
+   "footer.privacy": "رازداری اور تعمیل",
+   "footer.disclaimer": "تراجم AI سے تیار کیے گئے ہیں اور مقامی بولنے والے کی نظرِ ثانی کے منتظر ہیں۔",
+   "header.eyebrow": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 8"
+  },
+  "zh": {
+   "sect.clues": "🔍 线索",
+   "sect.cluesHint": "点按每条线索来阅读。（你可以随时重新打开。）",
+   "sect.locks": "🔒 锁",
+   "sect.locksHint": "用上面的线索解开每一把锁。",
+   "crumb.teacher": "‹ 教师页面",
+   "ui.reset": "↺ 重置",
+   "ui.check": "检查",
+   "ui.gotit": "知道了",
+   "ui.playagain": "再玩一次",
+   "ui.solved": "🔓 已解开！",
+   "ui.pcount": "已打开 {n}/{total} 把锁",
+   "ui.wordph": "输入你的答案",
+   "ui.clear": "清除",
+   "fb.digit": "这个数字与线索不符。请再检查。",
+   "fb.word": "在线索中找出合适的词。",
+   "fb.mc": "这个选项没有线索支持。请再看看。",
+   "fb.multiExtra": "你的一个选择不是有力证据。有力是指线索真正证明的事实。",
+   "fb.multiMissing": "你还缺一个有力证据。把它们都找齐。",
+   "fb.seq": "这个顺序与线索不符。请再试一次。",
+   "footer.privacy": "隐私与合规",
+   "footer.disclaimer": "译文由 AI 生成，尚待母语者审校。",
+   "header.eyebrow": "数字公民破解 · 8 年级"
+  }
+ },
+ "CONTENT": {
+  "en": {
+   "clues": [
+    {
+     "id": "c1",
+     "ico": "🕵️",
+     "nm": "The Byline",
+     "title": "Who wrote it, and why?",
+     "body": "A reliable source names a real author with relevant expertise, links to evidence you can check, and states its purpose openly. A page with no author, no cited evidence, and a hidden goal to sell you something should raise doubt. Ask who benefits from you believing it."
+    },
+    {
+     "id": "c2",
+     "ico": "⚖️",
+     "nm": "The Tilt",
+     "title": "Reading the slant",
+     "body": "When a source presents only one side, uses loaded emotional language, and leaves out facts that disagree with it, that one-sided slant is called bias. Bias doesn't always mean a source is lying, but it does mean you should cross-check the claim with another independent source before trusting it."
+    },
+    {
+     "id": "c3",
+     "ico": "©️",
+     "nm": "The Remix",
+     "title": "Using and protecting creative work",
+     "body": "When you build a project, you may only reuse someone else's images or writing if you have permission or a license that allows it, and you must attribute the original creator. You can also protect your own work by attaching a license that tells others exactly how they may use it."
+    },
+    {
+     "id": "c4",
+     "ico": "🔐",
+     "nm": "The Breach",
+     "title": "A login you didn't make",
+     "body": "You get an alert that your account was signed into from a device you don't recognize. The safe response is to change to a new strong password right away, turn on two-step verification, and report the breach. Strong authentication and quick reporting limit the damage."
+    },
+    {
+     "id": "c5",
+     "ico": "🚩",
+     "nm": "The Quiet Friend",
+     "title": "When a peer needs help",
+     "body": "Someone being targeted online often goes suddenly quiet, deletes their accounts, dreads their phone, or pulls away from friends. These changes are warning signs, not proof of anything by themselves, but noticing them and telling a trusted adult can get a targeted person the help they need."
+    },
+    {
+     "id": "c6",
+     "ico": "📶",
+     "nm": "The Router",
+     "title": "Naming the network",
+     "body": "The classroom Wi-Fi router was set up last spring and its network name is a mix of letters and numbers printed on a sticker. Knowing the router's name is a genuine fact about the room, but it will not help you open any of the locks in this case.",
+     "decoy": true
+    }
+   ],
+   "locks": [
+    {
+     "id": "L1",
+     "type": "multi",
+     "color": "#0a2e63",
+     "title": "Signs of a Reliable Source",
+     "q": "Check EVERY sign that a website is a reliable source you can trust.",
+     "items": [
+      {
+       "t": "A named author with relevant expertise",
+       "strong": true
+      },
+      {
+       "t": "Evidence you can check, linked to other sources",
+       "strong": true
+      },
+      {
+       "t": "Information that is recent and kept up to date",
+       "strong": true
+      },
+      {
+       "t": "A colorful, professional-looking design",
+       "strong": false
+      },
+      {
+       "t": "A hidden purpose to get you to buy something",
+       "strong": false
+      }
+     ],
+     "reason": "Reliability comes from a named expert author, checkable evidence, and current information. A slick design or a hidden sales pitch says nothing about whether the facts are true."
+    },
+    {
+     "id": "L2",
+     "type": "word",
+     "color": "#2f6fe0",
+     "title": "Name the Slant",
+     "q": "When a source shows only one side and uses loaded language, that slant is called ______.",
+     "answer": [
+      "bias",
+      "biased",
+      "biases"
+     ],
+     "reason": "A one-sided slant that leaves out disagreeing facts is bias, which is your signal to cross-check the claim with an independent source."
+    },
+    {
+     "id": "L3",
+     "type": "mc",
+     "color": "#1a7a8c",
+     "title": "The Creator's Rights",
+     "q": "You want to use a photo from a health blog in your own project. What does the law expect you to do?",
+     "options": [
+      "Use it freely, since anything posted online is public and free",
+      "Get permission or a license that allows it, and attribute the creator",
+      "Change a few colors so it counts as a brand-new original work"
+     ],
+     "answerIndex": 1,
+     "reason": "Posting something online does not surrender the creator's rights, so you need permission or a proper license and you must credit the original creator."
+    },
+    {
+     "id": "L4",
+     "type": "seq",
+     "color": "#0d47a1",
+     "title": "Respond to the Breach",
+     "q": "An alert says your account was accessed from an unknown device. Tap the steps in the RIGHT order.",
+     "pads": [
+      {
+       "k": "report",
+       "e": "📣 Report the breach",
+       "c": "#0a2e63"
+      },
+      {
+       "k": "password",
+       "e": "🔑 Set a new strong password",
+       "c": "#2f6fe0"
+      },
+      {
+       "k": "twostep",
+       "e": "📱 Turn on two-step verification",
+       "c": "#1a7a8c"
+      }
+     ],
+     "answer": [
+      "password",
+      "twostep",
+      "report"
+     ],
+     "reason": "First lock intruders out with a new strong password, then add two-step verification so a stolen password alone is not enough, then report the breach so it can be tracked and stopped."
+    }
+   ]
+  },
+  "es": {
+   "clues": [],
+   "locks": []
+  },
+  "vi": {
+   "clues": [],
+   "locks": []
+  },
+  "ar": {
+   "clues": [],
+   "locks": []
+  },
+  "hi": {
+   "clues": [],
+   "locks": []
+  },
+  "ur": {
+   "clues": [],
+   "locks": []
+  },
+  "zh": {
+   "clues": [],
+   "locks": []
+  }
+ }
+};

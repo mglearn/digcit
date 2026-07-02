@@ -1,0 +1,124 @@
+{
+  "id": "dc-grade8",
+  "grade": 8,
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 8",
+      "es": "Breakout de ciudadanía digital · Grado 8",
+      "vi": "Breakout công dân số · Lớp 8",
+      "ar": "تحدّي المواطنة الرقمية · الصف 8",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 8",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 8",
+      "zh": "数字公民破解 · 8 年级"
+    },
+    "h1": "Evaluate the Source",
+    "sub": "A trending article is spreading fast, but something about it doesn't add up. Analyze the evidence, crack four locks, and decide whether the source can be trusted.",
+    "briefLabel": "Your Mission",
+    "briefH": "Become a Source Analyst",
+    "briefP": "Anyone can post anything online, so a sharp digital citizen investigates before they believe or share. Work through the case files, weigh the evidence, and open all four locks. Each lock carries a reason that shows exactly why the answer holds up.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "CASE CLOSED",
+    "winH": "You cracked every lock, Analyst.",
+    "winP": "You can now judge a website's reliability, protect your own and others' creative rights, respond calmly to a security breach, and spot the warning signs that a peer is being targeted. That is exactly what a thoughtful digital citizen does."
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "🕵️",
+      "nm": "The Byline",
+      "title": "Who wrote it, and why?",
+      "body": "A reliable source names a real author with relevant expertise, links to evidence you can check, and states its purpose openly. A page with no author, no cited evidence, and a hidden goal to sell you something should raise doubt. Ask who benefits from you believing it."
+    },
+    {
+      "id": "c2",
+      "ico": "⚖️",
+      "nm": "The Tilt",
+      "title": "Reading the slant",
+      "body": "When a source presents only one side, uses loaded emotional language, and leaves out facts that disagree with it, that one-sided slant is called bias. Bias doesn't always mean a source is lying, but it does mean you should cross-check the claim with another independent source before trusting it."
+    },
+    {
+      "id": "c3",
+      "ico": "©️",
+      "nm": "The Remix",
+      "title": "Using and protecting creative work",
+      "body": "When you build a project, you may only reuse someone else's images or writing if you have permission or a license that allows it, and you must attribute the original creator. You can also protect your own work by attaching a license that tells others exactly how they may use it."
+    },
+    {
+      "id": "c4",
+      "ico": "🔐",
+      "nm": "The Breach",
+      "title": "A login you didn't make",
+      "body": "You get an alert that your account was signed into from a device you don't recognize. The safe response is to change to a new strong password right away, turn on two-step verification, and report the breach. Strong authentication and quick reporting limit the damage."
+    },
+    {
+      "id": "c5",
+      "ico": "🚩",
+      "nm": "The Quiet Friend",
+      "title": "When a peer needs help",
+      "body": "Someone being targeted online often goes suddenly quiet, deletes their accounts, dreads their phone, or pulls away from friends. These changes are warning signs, not proof of anything by themselves, but noticing them and telling a trusted adult can get a targeted person the help they need."
+    },
+    {
+      "id": "c6",
+      "ico": "📶",
+      "nm": "The Router",
+      "title": "Naming the network",
+      "body": "The classroom Wi-Fi router was set up last spring and its network name is a mix of letters and numbers printed on a sticker. Knowing the router's name is a genuine fact about the room, but it will not help you open any of the locks in this case.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "multi",
+      "color": "#0a2e63",
+      "title": "Signs of a Reliable Source",
+      "q": "Check EVERY sign that a website is a reliable source you can trust.",
+      "items": [
+        { "t": "A named author with relevant expertise", "strong": true },
+        { "t": "Evidence you can check, linked to other sources", "strong": true },
+        { "t": "Information that is recent and kept up to date", "strong": true },
+        { "t": "A colorful, professional-looking design", "strong": false },
+        { "t": "A hidden purpose to get you to buy something", "strong": false }
+      ],
+      "reason": "Reliability comes from a named expert author, checkable evidence, and current information. A slick design or a hidden sales pitch says nothing about whether the facts are true."
+    },
+    {
+      "id": "L2",
+      "type": "word",
+      "color": "#2f6fe0",
+      "title": "Name the Slant",
+      "q": "When a source shows only one side and uses loaded language, that slant is called ______.",
+      "answer": ["bias", "biased", "biases"],
+      "reason": "A one-sided slant that leaves out disagreeing facts is bias, which is your signal to cross-check the claim with an independent source."
+    },
+    {
+      "id": "L3",
+      "type": "mc",
+      "color": "#1a7a8c",
+      "title": "The Creator's Rights",
+      "q": "You want to use a photo from a health blog in your own project. What does the law expect you to do?",
+      "options": [
+        "Use it freely, since anything posted online is public and free",
+        "Get permission or a license that allows it, and attribute the creator",
+        "Change a few colors so it counts as a brand-new original work"
+      ],
+      "answerIndex": 1,
+      "reason": "Posting something online does not surrender the creator's rights, so you need permission or a proper license and you must credit the original creator."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "Respond to the Breach",
+      "q": "An alert says your account was accessed from an unknown device. Tap the steps in the RIGHT order.",
+      "pads": [
+        { "k": "report", "e": "📣 Report the breach", "c": "#0a2e63" },
+        { "k": "password", "e": "🔑 Set a new strong password", "c": "#2f6fe0" },
+        { "k": "twostep", "e": "📱 Turn on two-step verification", "c": "#1a7a8c" }
+      ],
+      "answer": ["password", "twostep", "report"],
+      "reason": "First lock intruders out with a new strong password, then add two-step verification so a stolen password alone is not enough, then report the breach so it can be tracked and stopped."
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "dc-grade5",
+  "grade": 5,
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 5",
+      "es": "Breakout de ciudadanía digital · Grado 5",
+      "vi": "Breakout công dân số · Lớp 5",
+      "ar": "تحدّي المواطنة الرقمية · الصف 5",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 5",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 5",
+      "zh": "数字公民破解 · 5 年级"
+    },
+    "h1": "Track the Trackers",
+    "sub": "Someone has been following a student across the internet — quietly, from site to site. Read the clues, solve four locks, and expose how the tracking works.",
+    "briefLabel": "Your Mission",
+    "briefH": "Follow the Cookie Trail",
+    "briefP": "Websites can leave tiny files called cookies that follow you as you move from page to page. Your job is to learn how a digital footprint forms and how data trails you online. Crack all four locks, and each one will show the reason its answer is correct.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "CASE CLOSED",
+    "winH": "You tracked down the trackers!",
+    "winP": "You now know what builds a digital footprint, how to match your writing to your audience, what happens when you copy work without permission, and how to spot a secured connection. Sharp detective work!"
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "🍪",
+      "nm": "The Cookie Trail",
+      "title": "How does data follow you?",
+      "body": "As you visit websites, some of them save small files called cookies on your device. These cookies can remember you and follow your navigation from one site to the next. That is how trackers learn where you have been."
+    },
+    {
+      "id": "c2",
+      "ico": "👣",
+      "nm": "Footprint Parts",
+      "title": "What builds a footprint?",
+      "body": "A digital footprint is made from what you do online. The games you play, the videos you watch, and the posts you share all become part of it. Things you do offline, like reading a paper book, do not."
+    },
+    {
+      "id": "c3",
+      "ico": "✍️",
+      "nm": "Know Your Reader",
+      "title": "Who are you writing to?",
+      "body": "Good online etiquette means matching your words to your audience. A message to your teacher should be polite and use full, careful sentences. A quick note to a close friend can be more casual and relaxed."
+    },
+    {
+      "id": "c4",
+      "ico": "©️",
+      "nm": "Borrowed Work",
+      "title": "Using someone's creation",
+      "body": "If you use another person's photo, song, or writing without permission or credit, there are real consequences. The creator can ask you to take it down, and you could get in trouble. The honest path is to ask first and give credit."
+    },
+    {
+      "id": "c5",
+      "ico": "🔒",
+      "nm": "The Padlock",
+      "title": "Is this connection safe?",
+      "body": "A secured website shows a small padlock symbol near its address, and the address starts with the letters h-t-t-p-s. The 's' stands for secure. Count the letters in 'https' and remember that number — it proves the connection is protected."
+    },
+    {
+      "id": "c6",
+      "ico": "🐹",
+      "nm": "Library Hamster",
+      "title": "The reading room pet",
+      "body": "The school library has a pet hamster named Pixel who lives near the computers. Pixel naps all morning and runs on his wheel at night. This is a fun fact, but it will not help you open any lock.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "multi",
+      "color": "#0a2e63",
+      "title": "Parts of the Footprint",
+      "q": "Check EVERY thing that becomes part of a digital footprint.",
+      "items": [
+        { "t": "A video you watched on a streaming app", "strong": true },
+        { "t": "A level you beat on an online game", "strong": true },
+        { "t": "A photo you posted on a social page", "strong": true },
+        { "t": "A paper book you read quietly at home", "strong": false },
+        { "t": "A walk you took outside with no phone", "strong": false }
+      ],
+      "reason": "A digital footprint is built from what you do online — watching, playing, and posting all leave a trail, while reading a paper book or walking outside happens offline."
+    },
+    {
+      "id": "L2",
+      "type": "mc",
+      "color": "#2f6fe0",
+      "title": "Match Your Audience",
+      "q": "You are writing a message to your TEACHER. Which one fits the audience best?",
+      "options": [
+        "yo!!! did we hav hw?? lol just tell me quick",
+        "Hello Ms. Lopez, could you please tell me if we have homework tonight? Thank you.",
+        "u forgot to say the homework fix that pls"
+      ],
+      "answerIndex": 1,
+      "reason": "Good etiquette means matching your words to your reader, and a message to a teacher should be polite and written in full, careful sentences."
+    },
+    {
+      "id": "L3",
+      "type": "digit",
+      "color": "#1a7a8c",
+      "title": "The Secure Code",
+      "q": "A safe website's address starts with 'https'. How many letters are in the word 'https'?",
+      "len": 1,
+      "answer": ["5"],
+      "reason": "The word 'https' has five letters, and that 's' at the end stands for secure — the sign of a protected connection."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "The Fair Way to Borrow",
+      "q": "You want to use someone else's photo. Tap the steps in the RIGHT order.",
+      "pads": [
+        { "k": "credit", "e": "🏷️ Give them credit", "c": "#0a2e63" },
+        { "k": "ask", "e": "🙋 Ask for permission", "c": "#2f6fe0" },
+        { "k": "use", "e": "✅ Then use it", "c": "#1a7a8c" }
+      ],
+      "answer": ["ask", "credit", "use"],
+      "reason": "First ASK the creator for permission, then plan to give them CREDIT, and only then USE the work — that avoids the consequences of copying without permission."
+    }
+  ]
+}

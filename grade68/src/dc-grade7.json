@@ -1,0 +1,172 @@
+{
+  "id": "dc-grade7",
+  "grade": 7,
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 7",
+      "es": "Breakout de ciudadanía digital · Grado 7",
+      "vi": "Breakout công dân số · Lớp 7",
+      "ar": "تحدّي المواطنة الرقمية · الصف 7",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 7",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 7",
+      "zh": "数字公民破解 · 7 年级"
+    },
+    "h1": "Spot the Spin",
+    "sub": "A post is racing across the internet, and thousands are sharing it without checking. Your job is to slow down, read past the spin, and unlock the truth.",
+    "briefLabel": "Your Mission",
+    "briefH": "Become a Media Analyst",
+    "briefP": "Media is designed to grab your attention, and sometimes it stretches, twists, or hides the facts to do it. Work through the clues to open all four locks: each one hides a reason that proves why the smart answer is the right one. Think like an analyst, not a bystander.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "CASE CLOSED",
+    "winH": "You saw through the spin!",
+    "winP": "You now know the real consequences of breaking copyright law, how media exaggerates and misrepresents facts, how to defend against cyberattacks, and how deeply cyberbullying can hurt. That is what a sharp digital citizen looks like."
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "⚖️",
+      "nm": "The Fine Print",
+      "title": "What breaking copyright can cost",
+      "body": "Copyright is a law, not just a rule. If you copy, post, or sell someone's work without permission, the creator can send a takedown notice, demand payment, or even take you to court. Real consequences can include your content being removed, your account being closed, and paying money in damages."
+    },
+    {
+      "id": "c2",
+      "ico": "🎣",
+      "nm": "The Hook",
+      "title": "How a headline baits you",
+      "body": "A viral post screamed: 'SHOCKING! Everyone is quitting this app — you won't believe why!' The article underneath had no numbers, no named source, and one anonymous quote. Clickbait uses huge emotional words and vague claims to earn clicks, then delivers almost nothing. The louder the promise, the harder you should check it."
+    },
+    {
+      "id": "c3",
+      "ico": "📊",
+      "nm": "The Cherry-Pick",
+      "title": "When stats mislead",
+      "body": "A news-style site posted, '9 out of 10 students prefer our app!' — but the survey only asked ten people, all friends of the company. Cherry-picking means showing only the numbers that help your side and hiding the rest. A real analyst asks who was counted, how many, and who paid for the study."
+    },
+    {
+      "id": "c4",
+      "ico": "🛡️",
+      "nm": "The Defense",
+      "title": "Guarding your accounts",
+      "body": "A cyberattack tries to trick or force its way into your accounts. Strong defenses include a long, unique passphrase, turning on two-step verification, and never clicking a login link inside a surprise message. Reusing one password everywhere or handing over a code from a text you didn't expect throws your door wide open."
+    },
+    {
+      "id": "c5",
+      "ico": "💔",
+      "nm": "The Ripple",
+      "title": "What cyberbullying really does",
+      "body": "A cruel post about a classmate got shared again and again. Cyberbullying can follow a person home, spread to a huge audience, and stay online long after it starts, so the harm can feel constant. The smart response is to stop and not pile on, save proof by taking a screenshot, support the target, and report it to a trusted adult."
+    },
+    {
+      "id": "c6",
+      "ico": "🕰️",
+      "nm": "The Old Server",
+      "title": "A retired computer",
+      "body": "The school's old server was replaced last spring and now sits unplugged in a storage closet. It once hosted the morning-announcement videos. Interesting history — but this fact will not help you open any lock.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "mc",
+      "color": "#0a2e63",
+      "title": "The Real Consequence",
+      "q": "Someone re-posts a creator's paid video as their own to earn money. Under copyright law, what can actually happen to them?",
+      "options": [
+        "Nothing, because anything posted online is free to reuse",
+        "The video can be taken down, the account closed, and they may owe money in damages",
+        "They only have to say sorry in the comments"
+      ],
+      "answerIndex": 1,
+      "reason": "Copyright is a law, so infringement can lead to takedowns, closed accounts, and paying real money in damages, as the Fine Print clue explains."
+    },
+    {
+      "id": "L2",
+      "type": "multi",
+      "color": "#2f6fe0",
+      "title": "Red Flags of Spin",
+      "q": "Check EVERY sign that a post may be exaggerating or misrepresenting the facts.",
+      "items": [
+        {
+          "t": "A headline packed with huge emotional words like 'SHOCKING' and 'you won't believe'",
+          "strong": true
+        },
+        {
+          "t": "A stat like '9 out of 10' with no sample size and no named source",
+          "strong": true
+        },
+        {
+          "t": "A survey paid for by the same company the results make look good",
+          "strong": true
+        },
+        {
+          "t": "A calm report that names its sources and shows how the data was collected",
+          "strong": false
+        },
+        {
+          "t": "An article that links to the original study so you can check it yourself",
+          "strong": false
+        }
+      ],
+      "reason": "Spin shows up as emotional clickbait, vague or cherry-picked stats, and studies with a hidden money motive, while honest reporting names sources and lets you check the data."
+    },
+    {
+      "id": "L3",
+      "type": "multi",
+      "color": "#1a7a8c",
+      "title": "Model the Defense",
+      "q": "Check EVERY practice that actually defends you against a cyberattack.",
+      "items": [
+        {
+          "t": "Using a long, unique passphrase for each important account",
+          "strong": true
+        },
+        {
+          "t": "Turning on two-step verification",
+          "strong": true
+        },
+        {
+          "t": "Ignoring a surprise message that pushes you to click a login link",
+          "strong": true
+        },
+        {
+          "t": "Reusing the same easy password on every site",
+          "strong": false
+        },
+        {
+          "t": "Sharing a verification code from a text you didn't expect",
+          "strong": false
+        }
+      ],
+      "reason": "Real defense means unique passphrases, two-step verification, and refusing surprise login links, while reused passwords and shared codes hand attackers the key."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "Answer the Harm",
+      "q": "A cruel post about a classmate is spreading fast. Tap the smart response in the RIGHT order.",
+      "pads": [
+        {
+          "k": "report",
+          "e": "🙋 Report to a trusted adult",
+          "c": "#0a2e63"
+        },
+        {
+          "k": "stop",
+          "e": "✋ Stop, don't pile on",
+          "c": "#2f6fe0"
+        },
+        {
+          "k": "save",
+          "e": "📸 Save proof",
+          "c": "#1a7a8c"
+        }
+      ],
+      "answer": ["stop", "save", "report"],
+      "reason": "First STOP so you don't spread the harm, then SAVE proof with a screenshot, then REPORT to a trusted adult who can help the target."
+    }
+  ]
+}

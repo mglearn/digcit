@@ -1,0 +1,124 @@
+{
+  "id": "dc-grade6",
+  "grade": 6,
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 6",
+      "es": "Breakout de ciudadanía digital · Grado 6",
+      "vi": "Breakout công dân số · Lớp 6",
+      "ar": "تحدّي المواطنة الرقمية · الصف 6",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 6",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 6",
+      "zh": "数字公民破解 · 6 年级"
+    },
+    "h1": "Fair Use Detective",
+    "sub": "A student creator wants to remix a photo, a song clip, and a quote into a class project — but is it legal? Follow the evidence and crack four locks to close the case.",
+    "briefLabel": "Your Mission",
+    "briefH": "Open the Case File",
+    "briefP": "A creator named Rivka is building a video and does not know which pieces she is actually allowed to reuse. Read the clues, weigh the evidence, and open all four locks. Each lock ends with a reason that proves why the answer is correct.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "CASE CLOSED",
+    "winH": "You cracked all four locks, Detective!",
+    "winP": "You can now tell copyright from public domain, cite a source and catch exaggerated claims, spot a phishing message that hides malware or identity theft, and name the ways cyberbullying happens. That is real critical thinking online."
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "©️",
+      "nm": "The IP Terms",
+      "title": "Words every creator should know",
+      "body": "Copyright means the maker automatically owns their work and controls how it is used. Public domain means the copyright has ended or was given up, so anyone may reuse the work freely. A Creative Commons license is the creator's written permission to reuse the work under certain rules, and open source works the same way for computer code."
+    },
+    {
+      "id": "c2",
+      "ico": "⚖️",
+      "nm": "Fair Use",
+      "title": "The limited exception",
+      "body": "Fair use is a narrow exception that sometimes lets you reuse a small part of a protected work for purposes like teaching, news, or commentary — without asking first. It is not a free pass to copy anything you want. When you are unsure, the safest move is to ask the creator for permission."
+    },
+    {
+      "id": "c3",
+      "ico": "📝",
+      "nm": "Citing Sources",
+      "title": "Giving proper credit",
+      "body": "Citing a source means naming who made the work and where you found it, even when reuse is allowed. A complete citation includes the creator's name, the title, and the link or place you found it. Leaving off credit is called plagiarism, and it is dishonest even when the work is free to use."
+    },
+    {
+      "id": "c4",
+      "ico": "📢",
+      "nm": "The Loud Claim",
+      "title": "Exaggerated online",
+      "body": "A post shouted: 'SHOCKING! Scientists PROVE this one trick makes you a genius overnight!' Words like shocking, proven, and overnight with no named source are signs a claim is exaggerated or misrepresented. Reliable information names its evidence and does not promise impossible results."
+    },
+    {
+      "id": "c5",
+      "ico": "🎣",
+      "nm": "The Bait Email",
+      "title": "A message hiding a trap",
+      "body": "An email said: 'Your account is locked! Click here in 10 minutes or lose it forever.' Phishing messages use fear and urgency to trick you into clicking. The link may install malware that damages your device, or a fake login page may steal your password for identity theft. Never click; go to the real site yourself and tell an adult."
+    },
+    {
+      "id": "c6",
+      "ico": "🎮",
+      "nm": "Recess Tournament",
+      "title": "The class game night",
+      "body": "The sixth grade is planning a board-game tournament after school on Friday, and the winner gets to pick next month's read-aloud book. It sounds like a great time. This is a real note from the class, but it will not help you open any lock.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "word",
+      "color": "#0a2e63",
+      "title": "Free For Anyone",
+      "q": "Work whose copyright has ended, so anyone may reuse it freely, is in the ______ ______.",
+      "answer": ["public domain", "public-domain", "publicdomain", "the public domain"],
+      "reason": "The clues explain that public domain means the copyright has ended or was given up, so the work belongs to everyone and may be reused freely."
+    },
+    {
+      "id": "L2",
+      "type": "mc",
+      "color": "#2f6fe0",
+      "title": "Spot The Spin",
+      "q": "Which post is most likely exaggerated or misrepresented and should NOT be trusted as-is?",
+      "options": [
+        "A report that names the study, the scientists, and the date of the research",
+        "SHOCKING! This one trick PROVES you can become a genius overnight!",
+        "An article that links to its evidence and lists both benefits and limits"
+      ],
+      "answerIndex": 1,
+      "reason": "The clues warn that words like shocking, proven, and overnight with no named source are signs of an exaggerated claim, while trustworthy posts name their evidence."
+    },
+    {
+      "id": "L3",
+      "type": "multi",
+      "color": "#1a7a8c",
+      "title": "Read The Bait",
+      "q": "Check EVERY sign that an email is a phishing message trying to plant malware or steal an identity.",
+      "items": [
+        { "t": "It creates panic and a countdown, like 'act in 10 minutes or lose your account'", "strong": true },
+        { "t": "It pushes you to click a link to 'unlock' or 'verify' your account", "strong": true },
+        { "t": "It asks for your password or login on a page you did not go to yourself", "strong": true },
+        { "t": "It is a class newsletter, sent by your teacher, about Friday's tournament", "strong": false },
+        { "t": "It is a calendar reminder you set for your own homework", "strong": false }
+      ],
+      "reason": "The clues show that phishing uses fear, urgency, and click-here links to install malware or steal a password for identity theft, while a real newsletter or your own reminder does none of that."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "Reuse It Right",
+      "q": "Rivka wants to reuse an artist's photo the honest, legal way. Tap the steps in the RIGHT order.",
+      "pads": [
+        { "k": "credit", "e": "📝 Cite the creator", "c": "#0a2e63" },
+        { "k": "check", "e": "©️ Check the license", "c": "#2f6fe0" },
+        { "k": "ask", "e": "🙋 Ask permission if unsure", "c": "#1a7a8c" }
+      ],
+      "answer": ["check", "ask", "credit"],
+      "reason": "First CHECK the license to see if reuse is allowed, then ASK the creator for permission when you are unsure, and always CITE the creator so you give credit and avoid plagiarism."
+    }
+  ]
+}

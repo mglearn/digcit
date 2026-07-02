@@ -1,5 +1,5 @@
 window.BREAKOUT = {
- "id": "dc-grade3",
+ "id": "dc-grade6",
  "confetti": [
   "#0a2e63",
   "#f5b800",
@@ -32,16 +32,16 @@ window.BREAKOUT = {
    "fb.seq": "That order doesn't match the clues. Try again.",
    "footer.privacy": "Privacy & compliance",
    "footer.disclaimer": "Translations are AI-seeded and pending native-speaker review.",
-   "header.eyebrow": "Digital Citizenship Breakout · Grade 3",
-   "header.h1": "Your First Digital Footprint",
-   "header.sub": "A new student left tracks all over the internet. Use the clues to solve four locks and clean up the trail.",
+   "header.eyebrow": "Digital Citizenship Breakout · Grade 6",
+   "header.h1": "Fair Use Detective",
+   "header.sub": "A student creator wants to remix a photo, a song clip, and a quote into a class project — but is it legal? Follow the evidence and crack four locks to close the case.",
    "brief.label": "Your Mission",
-   "brief.h": "Be a Footprint Detective",
-   "brief.p": "Every time you go online, you leave marks. We call these marks a digital footprint. Read the clues, then open all four locks. Each lock has a reason that shows why the answer is right.",
+   "brief.h": "Open the Case File",
+   "brief.p": "A creator named Rivka is building a video and does not know which pieces she is actually allowed to reuse. Read the clues, weigh the evidence, and open all four locks. Each lock ends with a reason that proves why the answer is correct.",
    "footer.text": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
    "win.stamp": "CASE CLOSED",
-   "win.h": "You cracked all four locks!",
-   "win.p": "You know what a digital footprint is, how to stay safe, how to give credit, and how to be kind online. Great detective work!"
+   "win.h": "You cracked all four locks, Detective!",
+   "win.p": "You can now tell copyright from public domain, cite a source and catch exaggerated claims, spot a phishing message that hides malware or identity theft, and name the ways cyberbullying happens. That is real critical thinking online."
   },
   "es": {
    "sect.clues": "🔍 Las pistas",
@@ -65,7 +65,7 @@ window.BREAKOUT = {
    "fb.seq": "Ese orden no coincide con las pistas. Inténtalo de nuevo.",
    "footer.privacy": "Privacidad y cumplimiento",
    "footer.disclaimer": "Las traducciones son generadas por IA y están pendientes de revisión por hablantes nativos.",
-   "header.eyebrow": "Breakout de ciudadanía digital · Grado 3"
+   "header.eyebrow": "Breakout de ciudadanía digital · Grado 6"
   },
   "vi": {
    "sect.clues": "🔍 Các manh mối",
@@ -89,7 +89,7 @@ window.BREAKOUT = {
    "fb.seq": "Thứ tự đó không khớp với manh mối. Hãy thử lại.",
    "footer.privacy": "Quyền riêng tư & tuân thủ",
    "footer.disclaimer": "Bản dịch do AI khởi tạo và đang chờ người bản ngữ rà soát.",
-   "header.eyebrow": "Breakout công dân số · Lớp 3"
+   "header.eyebrow": "Breakout công dân số · Lớp 6"
   },
   "ar": {
    "sect.clues": "🔍 الأدلّة",
@@ -113,7 +113,7 @@ window.BREAKOUT = {
    "fb.seq": "هذا الترتيب لا يطابق الأدلّة. حاول مرة أخرى.",
    "footer.privacy": "الخصوصية والامتثال",
    "footer.disclaimer": "التّرجمات مُولّدة بالذكاء الاصطناعي وبانتظار مراجعة متحدّث أصلي.",
-   "header.eyebrow": "تحدّي المواطنة الرقمية · الصف 3"
+   "header.eyebrow": "تحدّي المواطنة الرقمية · الصف 6"
   },
   "hi": {
    "sect.clues": "🔍 सुराग",
@@ -137,7 +137,7 @@ window.BREAKOUT = {
    "fb.seq": "यह क्रम सुरागों से मेल नहीं खाता। फिर से कोशिश करें।",
    "footer.privacy": "गोपनीयता और अनुपालन",
    "footer.disclaimer": "अनुवाद AI द्वारा तैयार हैं और मातृभाषी समीक्षा की प्रतीक्षा में हैं।",
-   "header.eyebrow": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 3"
+   "header.eyebrow": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 6"
   },
   "ur": {
    "sect.clues": "🔍 سراغ",
@@ -161,7 +161,7 @@ window.BREAKOUT = {
    "fb.seq": "یہ ترتیب سراغوں سے میل نہیں کھاتی۔ دوبارہ کوشش کریں۔",
    "footer.privacy": "رازداری اور تعمیل",
    "footer.disclaimer": "تراجم AI سے تیار کیے گئے ہیں اور مقامی بولنے والے کی نظرِ ثانی کے منتظر ہیں۔",
-   "header.eyebrow": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 3"
+   "header.eyebrow": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 6"
   },
   "zh": {
    "sect.clues": "🔍 线索",
@@ -185,7 +185,7 @@ window.BREAKOUT = {
    "fb.seq": "这个顺序与线索不符。请再试一次。",
    "footer.privacy": "隐私与合规",
    "footer.disclaimer": "译文由 AI 生成，尚待母语者审校。",
-   "header.eyebrow": "数字公民破解 · 3 年级"
+   "header.eyebrow": "数字公民破解 · 6 年级"
   }
  },
  "CONTENT": {
@@ -193,137 +193,136 @@ window.BREAKOUT = {
    "clues": [
     {
      "id": "c1",
-     "ico": "👣",
-     "nm": "Footprint",
-     "title": "What is a digital footprint?",
-     "body": "A digital footprint is the trail you leave online. Photos you post, games you play, and messages you send all become part of it. It can stay online for a long time."
+     "ico": "©️",
+     "nm": "The IP Terms",
+     "title": "Words every creator should know",
+     "body": "Copyright means the maker automatically owns their work and controls how it is used. Public domain means the copyright has ended or was given up, so anyone may reuse the work freely. A Creative Commons license is the creator's written permission to reuse the work under certain rules, and open source works the same way for computer code."
     },
     {
      "id": "c2",
-     "ico": "🔗",
-     "nm": "The Link",
-     "title": "A message with a link",
-     "body": "A pop-up said: 'You WON a free tablet! Click this link NOW to claim it!' It came from a name nobody knew. Safe links come from people and places you trust. Surprise prizes are a warning sign."
+     "ico": "⚖️",
+     "nm": "Fair Use",
+     "title": "The limited exception",
+     "body": "Fair use is a narrow exception that sometimes lets you reuse a small part of a protected work for purposes like teaching, news, or commentary — without asking first. It is not a free pass to copy anything you want. When you are unsure, the safest move is to ask the creator for permission."
     },
     {
      "id": "c3",
-     "ico": "🖼️",
-     "nm": "The Drawing",
-     "title": "Whose drawing is it?",
-     "body": "Mia used another artist's drawing in her project. To give credit, you name the person who made it. That is called the creator's name. Giving credit is the fair and honest thing to do."
+     "ico": "📝",
+     "nm": "Citing Sources",
+     "title": "Giving proper credit",
+     "body": "Citing a source means naming who made the work and where you found it, even when reuse is allowed. A complete citation includes the creator's name, the title, and the link or place you found it. Leaving off credit is called plagiarism, and it is dishonest even when the work is free to use."
     },
     {
      "id": "c4",
-     "ico": "💬",
-     "nm": "Mean Message",
-     "title": "Something unkind",
-     "body": "Someone sent a mean message to a classmate. The smart steps are: first STOP and do not reply, then SAVE the message so there is proof, then TELL a trusted adult. Do not pass it on."
+     "ico": "📢",
+     "nm": "The Loud Claim",
+     "title": "Exaggerated online",
+     "body": "A post shouted: 'SHOCKING! Scientists PROVE this one trick makes you a genius overnight!' Words like shocking, proven, and overnight with no named source are signs a claim is exaggerated or misrepresented. Reliable information names its evidence and does not promise impossible results."
     },
     {
      "id": "c5",
-     "ico": "🔑",
-     "nm": "The Password",
-     "title": "A strong password",
-     "body": "A strong password is long and hard to guess. Your name or '12345' is easy to guess. Mixing letters, numbers, and symbols makes it strong. Keep it secret."
+     "ico": "🎣",
+     "nm": "The Bait Email",
+     "title": "A message hiding a trap",
+     "body": "An email said: 'Your account is locked! Click here in 10 minutes or lose it forever.' Phishing messages use fear and urgency to trick you into clicking. The link may install malware that damages your device, or a fake login page may steal your password for identity theft. Never click; go to the real site yourself and tell an adult."
     },
     {
      "id": "c6",
-     "ico": "🐶",
-     "nm": "Class Pet",
-     "title": "The classroom pet",
-     "body": "The class pet is a hamster named Nibbles. Nibbles likes carrots and running on his wheel. This is a fun fact — but it will not help you open any lock."
+     "ico": "🎮",
+     "nm": "Recess Tournament",
+     "title": "The class game night",
+     "body": "The sixth grade is planning a board-game tournament after school on Friday, and the winner gets to pick next month's read-aloud book. It sounds like a great time. This is a real note from the class, but it will not help you open any lock.",
+     "decoy": true
     }
    ],
    "locks": [
     {
      "id": "L1",
-     "type": "mc",
+     "type": "word",
      "color": "#0a2e63",
-     "title": "The Safe Choice",
-     "q": "Which link is safe to click?",
-     "options": [
-      "A pop-up saying you won a free tablet from a stranger",
-      "A page your teacher shared for today's lesson",
-      "A link that says 'Click NOW to claim your prize!'"
+     "title": "Free For Anyone",
+     "q": "Work whose copyright has ended, so anyone may reuse it freely, is in the ______ ______.",
+     "answer": [
+      "public domain",
+      "public-domain",
+      "publicdomain",
+      "the public domain"
      ],
-     "answerIndex": 1,
-     "reason": "Safe links come from people and places you trust, like your teacher. Surprise prizes from strangers are a warning sign, so those links are not safe."
+     "reason": "The clues explain that public domain means the copyright has ended or was given up, so the work belongs to everyone and may be reused freely."
     },
     {
      "id": "L2",
-     "type": "multi",
+     "type": "mc",
      "color": "#2f6fe0",
-     "title": "Part of the Footprint",
-     "q": "Check EVERY thing that is part of a digital footprint.",
-     "items": [
-      {
-       "t": "A photo you posted online",
-       "strong": true
-      },
-      {
-       "t": "A game you played on a website",
-       "strong": true
-      },
-      {
-       "t": "A message you sent to a friend",
-       "strong": true
-      },
-      {
-       "t": "A book you read quietly at home with no computer",
-       "strong": false
-      },
-      {
-       "t": "The carrots the class hamster eats",
-       "strong": false
-      }
+     "title": "Spot The Spin",
+     "q": "Which post is most likely exaggerated or misrepresented and should NOT be trusted as-is?",
+     "options": [
+      "A report that names the study, the scientists, and the date of the research",
+      "SHOCKING! This one trick PROVES you can become a genius overnight!",
+      "An article that links to its evidence and lists both benefits and limits"
      ],
-     "reason": "A digital footprint is made of what you do ONLINE — posts, games, and messages. Reading a paper book or feeding a hamster happens offline, so those are not part of it."
+     "answerIndex": 1,
+     "reason": "The clues warn that words like shocking, proven, and overnight with no named source are signs of an exaggerated claim, while trustworthy posts name their evidence."
     },
     {
      "id": "L3",
-     "type": "word",
+     "type": "multi",
      "color": "#1a7a8c",
-     "title": "Give Credit",
-     "q": "When you use someone's drawing, you should give credit by writing their ______.",
-     "answer": [
-      "name",
-      "creator's name",
-      "creators name",
-      "artist's name",
-      "artists name",
-      "artist"
+     "title": "Read The Bait",
+     "q": "Check EVERY sign that an email is a phishing message trying to plant malware or steal an identity.",
+     "items": [
+      {
+       "t": "It creates panic and a countdown, like 'act in 10 minutes or lose your account'",
+       "strong": true
+      },
+      {
+       "t": "It pushes you to click a link to 'unlock' or 'verify' your account",
+       "strong": true
+      },
+      {
+       "t": "It asks for your password or login on a page you did not go to yourself",
+       "strong": true
+      },
+      {
+       "t": "It is a class newsletter, sent by your teacher, about Friday's tournament",
+       "strong": false
+      },
+      {
+       "t": "It is a calendar reminder you set for your own homework",
+       "strong": false
+      }
      ],
-     "reason": "Giving credit means naming the person who created the work. That is the honest, fair thing to do when you use someone else's drawing or writing."
+     "reason": "The clues show that phishing uses fear, urgency, and click-here links to install malware or steal a password for identity theft, while a real newsletter or your own reminder does none of that."
     },
     {
      "id": "L4",
      "type": "seq",
      "color": "#0d47a1",
-     "title": "The Right Steps",
-     "q": "A mean message arrives. Tap the steps in the RIGHT order.",
+     "title": "Reuse It Right",
+     "q": "Rivka wants to reuse an artist's photo the honest, legal way. Tap the steps in the RIGHT order.",
      "pads": [
       {
-       "k": "tell",
-       "e": "🙋 Tell an adult",
+       "k": "credit",
+       "e": "📝 Cite the creator",
        "c": "#0a2e63"
       },
       {
-       "k": "stop",
-       "e": "✋ Stop, don't reply",
+       "k": "check",
+       "e": "©️ Check the license",
        "c": "#2f6fe0"
       },
       {
-       "k": "save",
-       "e": "💾 Save it",
+       "k": "ask",
+       "e": "🙋 Ask permission if unsure",
        "c": "#1a7a8c"
       }
      ],
      "answer": [
-      "stop",
-      "save",
-      "tell"
+      "check",
+      "ask",
+      "credit"
      ],
-     "reason": "First STOP so you don't make it worse. Then SAVE the message as proof. Then TELL a trusted adult who can help. Stop, Save, Tell."
+     "reason": "First CHECK the license to see if reuse is allowed, then ASK the creator for permission when you are unsure, and always CITE the creator so you give credit and avoid plagiarism."
     }
    ]
   },
