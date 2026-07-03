@@ -76,7 +76,7 @@ ${body}
 function footer(depth, policyHref) {
   return `<footer>
   Digital Citizenship Breakouts · Aligned to Texas TEKS Technology Applications (adopted 2022, required K–8). Paraphrased alignment — not legal advice.<br>
-  <a href="${depth ? '../' : ''}index.html">Suite home</a> · <a href="${depth ? '../' : ''}correlation.html">Standards correlation</a> · <a href="${depth ? '../' : ''}guide.html">Teacher guide</a>${policyHref ? ` · <a href="${policyHref}">Privacy &amp; compliance</a>` : ''}
+  <a href="${depth ? '../' : ''}index.html">Suite home</a> · <a href="${depth ? '../' : ''}library.html">Library</a> · <a href="${depth ? '../' : ''}correlation.html">Standards correlation</a> · <a href="${depth ? '../' : ''}guide.html">Teacher guide</a>${policyHref ? ` · <a href="${policyHref}">Privacy &amp; compliance</a>` : ''}
 </footer>`;
 }
 
@@ -107,6 +107,7 @@ function suiteLanding() {
     <div class="btnrow">
       <a class="btn" href="grade35/index.html">Grades 3–5 (free)</a>
       <a class="btn ghost" href="grade68/index.html">Grades 6–8</a>
+      <a class="btn ghost" href="library.html">🔎 Browse library</a>
       <a class="btn ghost" href="guide.html">Teacher guide</a>
     </div>
   </div>
@@ -373,8 +374,132 @@ ${footer(1, null)}`;
   fs.writeFileSync(path.join(ROOT, band, 'policy.html'), shell({ depth: 1, title: 'Privacy & Compliance — Digital Citizenship Breakouts', body }));
 }
 
+// ---- SEARCHABLE LIBRARY --------------------------------------------------
+// Curated, leak-safe search keywords per grade (no answers / no paid content).
+const KEYWORDS = {
+  3: ['footprint', 'online safety', 'safe links', 'passwords', 'kindness', 'giving credit', 'copyright', 'cyberbullying'],
+  4: ['footprint', 'permanence', 'etiquette', 'email', 'chat', 'texting', 'copyright', 'creator credit', 'cookies', 'cyberbullying', 'upstander'],
+  5: ['footprint', 'tracking', 'cookies', 'trackers', 'etiquette', 'audience', 'https', 'secure connection', 'copyright', 'permission', 'privacy'],
+  6: ['intellectual property', 'copyright', 'fair use', 'creative commons', 'public domain', 'open source', 'citing sources', 'misinformation', 'phishing', 'malware', 'identity theft', 'cyberbullying'],
+  7: ['intellectual property', 'copyright', 'media literacy', 'misinformation', 'clickbait', 'bias', 'spin', 'cyberattack', 'security', 'cyberbullying'],
+  8: ['source evaluation', 'bias', 'reliability', 'credibility', 'misinformation', 'intellectual property', 'copyright', 'attribution', 'cybersecurity', 'breach', 'authentication', 'cyberbullying'],
+};
+function buildCatalog() {
+  return Object.keys(META).map(g => {
+    const a = ACT[g], U = a.B.UI.en, focus = FOCUS[g];
+    const subs = [...new Set(focus.map(f => f[1]))].sort();
+    const clueNames = a.B.CONTENT.en.clues.map(c => c.nm);
+    const lockTitles = a.B.CONTENT.en.locks.map(l => l.title);
+    const hay = [U['header.h1'], U['header.sub'], a.teks, ...focus.map(f => f[0]), ...lockTitles, ...clueNames,
+      ...(KEYWORDS[g] || []), ...subs.map(s => SUBSTRANDS[s])].join(' ').toLowerCase();
+    return {
+      grade: +g, band: a.band === 'grade35' ? '3-5' : '6-8', teks: a.teks, tier: a.tier, icon: a.icon,
+      title: U['header.h1'], sub: U['header.sub'], focus: focus.map(f => f[0]), subs,
+      href: (a.band === 'grade35' ? 'grade35/' : 'grade68/') + (a.tier === 'paid' ? `dc-grade${g}.html` : `dc-grade${g}-student.html`),
+      hay,
+    };
+  });
+}
+function library() {
+  const catalog = buildCatalog();
+  const subLegend = Object.entries(SUBSTRANDS).map(([k, v]) => `<button class="chip" data-sub="${k}">${k} ${v}</button>`).join('');
+  const body = `  <div class="crumb"><a href="index.html">‹ Suite home</a></div>
+  <div class="hero">
+    <div class="eyebrow">Activity library</div>
+    <h1>Find an activity</h1>
+    <p class="lede">Search all ${catalog.length} breakouts by title, skill, standard, or keyword — then filter by grade band, tier, and Digital Citizenship substrand.</p>
+  </div>
+
+  <div class="panel">
+    <input id="q" class="search" type="search" placeholder="Search: footprint, copyright, phishing, bias, §126.17 …" aria-label="Search activities" autocomplete="off">
+    <div class="filters">
+      <span class="fgroup"><span class="flabel">Band</span>
+        <button class="chip" data-band="3-5">Grades 3–5</button>
+        <button class="chip" data-band="6-8">Grades 6–8</button></span>
+      <span class="fgroup"><span class="flabel">Tier</span>
+        <button class="chip" data-tier="free">Free</button>
+        <button class="chip" data-tier="paid">Licensed</button></span>
+      <span class="fgroup"><span class="flabel">Substrand</span>${subLegend}</span>
+      <button id="clear" class="chip clear">Clear</button>
+    </div>
+  </div>
+
+  <p id="count" class="section-note"></p>
+  <div id="grid" class="cards"></div>
+  <p id="empty" class="section-note" style="display:none">No activities match. <a href="#" id="reset">Clear filters</a>.</p>
+${footer(0)}`;
+
+  const extraHead = `
+<style>
+  .search{width:100%;border:2px solid var(--line);border-radius:12px;padding:13px 16px;font-size:1.05rem;font-family:inherit;font-weight:700;color:var(--navy)}
+  .search:focus{outline:none;border-color:var(--c3)}
+  .filters{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:14px}
+  .fgroup{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .flabel{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;margin-right:2px}
+  .chip{background:#fff;border:2px solid var(--line);border-radius:100px;padding:6px 13px;font-family:inherit;font-weight:700;
+    font-size:.82rem;color:var(--navy);cursor:pointer;transition:.14s}
+  .chip:hover{border-color:var(--c3)}
+  .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .chip.clear{color:var(--ink-soft);border-style:dashed}
+  mark{background:var(--gold);color:var(--navy-d);padding:0 2px;border-radius:3px}
+</style>`;
+
+  const script = `
+<script id="catalog" type="application/json">${JSON.stringify(catalog)}</script>
+<script>
+(function(){
+  'use strict';
+  var CAT = JSON.parse(document.getElementById('catalog').textContent);
+  var grid = document.getElementById('grid'), count = document.getElementById('count'), empty = document.getElementById('empty');
+  var state = { q:'', band:new Set(), tier:new Set(), sub:new Set() };
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function hi(text, q){ if(!q) return esc(text); try{ return esc(text).replace(new RegExp('('+q.replace(/[.*+?^\${}()|[\\]\\\\]/g,'\\\\$&')+')','ig'),'<mark>$1</mark>'); }catch(e){ return esc(text); } }
+  function matches(a){
+    if(state.band.size && !state.band.has(a.band)) return false;
+    if(state.tier.size && !state.tier.has(a.tier)) return false;
+    if(state.sub.size && ![...state.sub].every(s=>a.subs.indexOf(s)>=0)) return false;
+    if(state.q){ var toks=state.q.toLowerCase().split(/\\s+/).filter(Boolean); if(!toks.every(t=>a.hay.indexOf(t)>=0)) return false; }
+    return true;
+  }
+  function render(){
+    var list = CAT.filter(matches);
+    grid.innerHTML = list.map(function(a){
+      var locked = a.tier==='paid';
+      return '<a class="card'+(locked?' locked':'')+'" href="'+a.href+'">'
+        + '<span class="badge">Grade '+a.grade+' · '+esc(a.teks)+'</span>'
+        + '<div class="ico">'+a.icon+'</div>'
+        + '<div class="ctitle">'+hi(a.title,state.q)+'</div>'
+        + '<div class="cdesc">'+hi(a.sub,state.q)+'</div>'
+        + '<div class="small" style="margin-top:8px">'+a.focus.map(f=>'<span class="pill">'+hi(f,state.q)+'</span>').join('')+'</div>'
+        + '<span class="tier">'+(locked?'🔒':'<span class="freeflag">FREE</span>')+'</span>'
+        + '<span class="cgo">'+(locked?'Licensed districts →':'Start the breakout →')+'</span></a>';
+    }).join('');
+    count.textContent = list.length + ' of ' + CAT.length + ' activities';
+    empty.style.display = list.length ? 'none' : 'block';
+  }
+  document.getElementById('q').addEventListener('input', function(e){ state.q = e.target.value.trim(); render(); });
+  function toggleChip(btn){
+    var dim = btn.dataset.band!=null?'band':btn.dataset.tier!=null?'tier':btn.dataset.sub!=null?'sub':null;
+    if(!dim) return; var val = btn.dataset[dim];
+    if(state[dim].has(val)){ state[dim].delete(val); btn.classList.remove('on'); }
+    else { state[dim].add(val); btn.classList.add('on'); }
+    render();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.chip[data-band],.chip[data-tier],.chip[data-sub]'), function(b){ b.addEventListener('click', function(){ toggleChip(b); }); });
+  function clearAll(){ state={q:'',band:new Set(),tier:new Set(),sub:new Set()}; document.getElementById('q').value='';
+    Array.prototype.forEach.call(document.querySelectorAll('.chip.on'), function(c){c.classList.remove('on');}); render(); }
+  document.getElementById('clear').addEventListener('click', clearAll);
+  document.getElementById('reset').addEventListener('click', function(e){ e.preventDefault(); clearAll(); });
+  render();
+})();
+</script>`;
+
+  fs.writeFileSync(path.join(ROOT, 'library.html'), shell({ depth: 0, title: 'Activity Library — Digital Citizenship Breakouts', extraHead, body: body + script }));
+}
+
 // ---- run -----------------------------------------------------------------
 suiteLanding();
+library();
 bandHub('grade35', [3, 4, 5], { paid: false, label: 'Grades 3–5 · Free', title: 'Grades 3–5', lede: 'The free tier. Digital footprints, kindness, credit, and staying safe — one breakout per grade, ready to share.' });
 bandHub('grade68', [6, 7, 8], { paid: true, label: 'Grades 6–8 · Licensed', title: 'Grades 6–8', lede: 'The middle-school band: intellectual property, media literacy, cybersecurity, and source evaluation. Included with a district license.' });
 correlation();

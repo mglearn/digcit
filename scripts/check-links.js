@@ -4,7 +4,7 @@ const ROOT=__dirname+'/..';
 function walk(d){let o=[];for(const f of fs.readdirSync(d)){const p=path.join(d,f);if(f==='.git'||f==='node_modules')continue;const s=fs.statSync(p);if(s.isDirectory())o=o.concat(walk(p));else if(f.endsWith('.html'))o.push(p);}return o;}
 let missing=0,checked=0;
 for(const file of walk(ROOT)){
-  const html=fs.readFileSync(file,'utf8');
+  const html=fs.readFileSync(file,'utf8').replace(/<script[\s\S]*?<\/script>/gi,'');
   const re=/(?:href|src)="([^"]+)"/g;let m;
   while((m=re.exec(html))){
     let u=m[1];

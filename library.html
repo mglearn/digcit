@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Activity Library — Digital Citizenship Breakouts</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--c1:#0a2e63;--c2:#2f6fe0;--c3:#1a7a8c;--c4:#f5b800;--c5:#0d47a1;--bg-a:rgba(245,184,0,.12);--bg-b:rgba(10,46,99,.10)}</style>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .search{width:100%;border:2px solid var(--line);border-radius:12px;padding:13px 16px;font-size:1.05rem;font-family:inherit;font-weight:700;color:var(--navy)}
+  .search:focus{outline:none;border-color:var(--c3)}
+  .filters{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:14px}
+  .fgroup{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .flabel{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;margin-right:2px}
+  .chip{background:#fff;border:2px solid var(--line);border-radius:100px;padding:6px 13px;font-family:inherit;font-weight:700;
+    font-size:.82rem;color:var(--navy);cursor:pointer;transition:.14s}
+  .chip:hover{border-color:var(--c3)}
+  .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .chip.clear{color:var(--ink-soft);border-style:dashed}
+  mark{background:var(--gold);color:var(--navy-d);padding:0 2px;border-radius:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">‹ Suite home</a></div>
+  <div class="hero">
+    <div class="eyebrow">Activity library</div>
+    <h1>Find an activity</h1>
+    <p class="lede">Search all 6 breakouts by title, skill, standard, or keyword — then filter by grade band, tier, and Digital Citizenship substrand.</p>
+  </div>
+
+  <div class="panel">
+    <input id="q" class="search" type="search" placeholder="Search: footprint, copyright, phishing, bias, §126.17 …" aria-label="Search activities" autocomplete="off">
+    <div class="filters">
+      <span class="fgroup"><span class="flabel">Band</span>
+        <button class="chip" data-band="3-5">Grades 3–5</button>
+        <button class="chip" data-band="6-8">Grades 6–8</button></span>
+      <span class="fgroup"><span class="flabel">Tier</span>
+        <button class="chip" data-tier="free">Free</button>
+        <button class="chip" data-tier="paid">Licensed</button></span>
+      <span class="fgroup"><span class="flabel">Substrand</span><button class="chip" data-sub="(c)(8)">(c)(8) Social interactions</button><button class="chip" data-sub="(c)(9)">(c)(9) Ethics & laws</button><button class="chip" data-sub="(c)(10)">(c)(10) Privacy, safety & security</button></span>
+      <button id="clear" class="chip clear">Clear</button>
+    </div>
+  </div>
+
+  <p id="count" class="section-note"></p>
+  <div id="grid" class="cards"></div>
+  <p id="empty" class="section-note" style="display:none">No activities match. <a href="#" id="reset">Clear filters</a>.</p>
+<footer>
+  Digital Citizenship Breakouts · Aligned to Texas TEKS Technology Applications (adopted 2022, required K–8). Paraphrased alignment — not legal advice.<br>
+  <a href="index.html">Suite home</a> · <a href="library.html">Library</a> · <a href="correlation.html">Standards correlation</a> · <a href="guide.html">Teacher guide</a>
+</footer>
+<script id="catalog" type="application/json">[{"grade":3,"band":"3-5","teks":"§126.8","tier":"free","icon":"👣","title":"Your First Digital Footprint","sub":"A new student left tracks all over the internet. Use the clues to solve four locks and clean up the trail.","focus":["Choosing safe links","Recognizing a digital footprint","Giving credit for creative work","Responding to an unkind message"],"subs":["(c)(10)","(c)(8)","(c)(9)"],"href":"grade35/dc-grade3-student.html","hay":"your first digital footprint a new student left tracks all over the internet. use the clues to solve four locks and clean up the trail. §126.8 choosing safe links recognizing a digital footprint giving credit for creative work responding to an unkind message the safe choice part of the footprint give credit the right steps footprint the link the drawing mean message the password class pet footprint online safety safe links passwords kindness giving credit copyright cyberbullying privacy, safety & security social interactions ethics & laws"},{"grade":4,"band":"3-5","teks":"§126.9","tier":"free","icon":"🗂️","title":"The Permanent Record","sub":"A student thought old posts would just disappear. They didn't. Crack four locks to learn why the internet remembers.","focus":["Digital footprint permanence","Etiquette across text, email & chat","Creator rights & giving credit","Being an upstander to cyberbullying"],"subs":["(c)(10)","(c)(8)","(c)(9)"],"href":"grade35/dc-grade4-student.html","hay":"the permanent record a student thought old posts would just disappear. they didn't. crack four locks to learn why the internet remembers. §126.9 digital footprint permanence etiquette across text, email & chat creator rights & giving credit being an upstander to cyberbullying the permanent record good online manners fair to the creator be an upstander the record kind words give credit the upstander the pop-up class turtle footprint permanence etiquette email chat texting copyright creator credit cookies cyberbullying upstander privacy, safety & security social interactions ethics & laws"},{"grade":5,"band":"3-5","teks":"§126.10","tier":"free","icon":"🍪","title":"Track the Trackers","sub":"Someone has been following a student across the internet — quietly, from site to site. Read the clues, solve four locks, and expose how the tracking works.","focus":["Components of a digital footprint","Audience-appropriate etiquette","Secured connections (HTTPS)","Copyright consequences & permission"],"subs":["(c)(10)","(c)(8)","(c)(9)"],"href":"grade35/dc-grade5-student.html","hay":"track the trackers someone has been following a student across the internet — quietly, from site to site. read the clues, solve four locks, and expose how the tracking works. §126.10 components of a digital footprint audience-appropriate etiquette secured connections (https) copyright consequences & permission parts of the footprint match your audience the secure code the fair way to borrow the cookie trail footprint parts know your reader borrowed work the padlock library hamster footprint tracking cookies trackers etiquette audience https secure connection copyright permission privacy privacy, safety & security social interactions ethics & laws"},{"grade":6,"band":"6-8","teks":"§126.17","tier":"paid","icon":"⚖️","title":"Fair Use Detective","sub":"A student creator wants to remix a photo, a song clip, and a quote into a class project — but is it legal? Follow the evidence and crack four locks to close the case.","focus":["IP terms: public domain & fair use","Spotting exaggerated claims; citing sources","Phishing, malware & identity theft","Legally reusing & citing a work"],"subs":["(c)(10)","(c)(9)"],"href":"grade68/dc-grade6.html","hay":"fair use detective a student creator wants to remix a photo, a song clip, and a quote into a class project — but is it legal? follow the evidence and crack four locks to close the case. §126.17 ip terms: public domain & fair use spotting exaggerated claims; citing sources phishing, malware & identity theft legally reusing & citing a work free for anyone spot the spin read the bait reuse it right the ip terms fair use citing sources the loud claim the bait email recess tournament intellectual property copyright fair use creative commons public domain open source citing sources misinformation phishing malware identity theft cyberbullying privacy, safety & security ethics & laws"},{"grade":7,"band":"6-8","teks":"§126.18","tier":"paid","icon":"🌀","title":"Spot the Spin","sub":"A post is racing across the internet, and thousands are sharing it without checking. Your job is to slow down, read past the spin, and unlock the truth.","focus":["Consequences of IP law","Evaluating media spin & misrepresentation","Defending against cyberattacks","Impact of & response to cyberbullying"],"subs":["(c)(10)","(c)(8)","(c)(9)"],"href":"grade68/dc-grade7.html","hay":"spot the spin a post is racing across the internet, and thousands are sharing it without checking. your job is to slow down, read past the spin, and unlock the truth. §126.18 consequences of ip law evaluating media spin & misrepresentation defending against cyberattacks impact of & response to cyberbullying the real consequence red flags of spin model the defense answer the harm the fine print the hook the cherry-pick the defense the ripple the old server intellectual property copyright media literacy misinformation clickbait bias spin cyberattack security cyberbullying privacy, safety & security social interactions ethics & laws"},{"grade":8,"band":"6-8","teks":"§126.19","tier":"paid","icon":"🔎","title":"Evaluate the Source","sub":"A trending article is spreading fast, but something about it doesn't add up. Analyze the evidence, crack four locks, and decide whether the source can be trusted.","focus":["Evaluating source bias & reliability","Naming bias in a digital source","IP law when creating & publishing","Cybersecurity breach response"],"subs":["(c)(10)","(c)(9)"],"href":"grade68/dc-grade8.html","hay":"evaluate the source a trending article is spreading fast, but something about it doesn't add up. analyze the evidence, crack four locks, and decide whether the source can be trusted. §126.19 evaluating source bias & reliability naming bias in a digital source ip law when creating & publishing cybersecurity breach response signs of a reliable source name the slant the creator's rights respond to the breach the byline the tilt the remix the breach the quiet friend the router source evaluation bias reliability credibility misinformation intellectual property copyright attribution cybersecurity breach authentication cyberbullying privacy, safety & security ethics & laws"}]</script>
+<script>
+(function(){
+  'use strict';
+  var CAT = JSON.parse(document.getElementById('catalog').textContent);
+  var grid = document.getElementById('grid'), count = document.getElementById('count'), empty = document.getElementById('empty');
+  var state = { q:'', band:new Set(), tier:new Set(), sub:new Set() };
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function hi(text, q){ if(!q) return esc(text); try{ return esc(text).replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>'); }catch(e){ return esc(text); } }
+  function matches(a){
+    if(state.band.size && !state.band.has(a.band)) return false;
+    if(state.tier.size && !state.tier.has(a.tier)) return false;
+    if(state.sub.size && ![...state.sub].every(s=>a.subs.indexOf(s)>=0)) return false;
+    if(state.q){ var toks=state.q.toLowerCase().split(/\s+/).filter(Boolean); if(!toks.every(t=>a.hay.indexOf(t)>=0)) return false; }
+    return true;
+  }
+  function render(){
+    var list = CAT.filter(matches);
+    grid.innerHTML = list.map(function(a){
+      var locked = a.tier==='paid';
+      return '<a class="card'+(locked?' locked':'')+'" href="'+a.href+'">'
+        + '<span class="badge">Grade '+a.grade+' · '+esc(a.teks)+'</span>'
+        + '<div class="ico">'+a.icon+'</div>'
+        + '<div class="ctitle">'+hi(a.title,state.q)+'</div>'
+        + '<div class="cdesc">'+hi(a.sub,state.q)+'</div>'
+        + '<div class="small" style="margin-top:8px">'+a.focus.map(f=>'<span class="pill">'+hi(f,state.q)+'</span>').join('')+'</div>'
+        + '<span class="tier">'+(locked?'🔒':'<span class="freeflag">FREE</span>')+'</span>'
+        + '<span class="cgo">'+(locked?'Licensed districts →':'Start the breakout →')+'</span></a>';
+    }).join('');
+    count.textContent = list.length + ' of ' + CAT.length + ' activities';
+    empty.style.display = list.length ? 'none' : 'block';
+  }
+  document.getElementById('q').addEventListener('input', function(e){ state.q = e.target.value.trim(); render(); });
+  function toggleChip(btn){
+    var dim = btn.dataset.band!=null?'band':btn.dataset.tier!=null?'tier':btn.dataset.sub!=null?'sub':null;
+    if(!dim) return; var val = btn.dataset[dim];
+    if(state[dim].has(val)){ state[dim].delete(val); btn.classList.remove('on'); }
+    else { state[dim].add(val); btn.classList.add('on'); }
+    render();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.chip[data-band],.chip[data-tier],.chip[data-sub]'), function(b){ b.addEventListener('click', function(){ toggleChip(b); }); });
+  function clearAll(){ state={q:'',band:new Set(),tier:new Set(),sub:new Set()}; document.getElementById('q').value='';
+    Array.prototype.forEach.call(document.querySelectorAll('.chip.on'), function(c){c.classList.remove('on');}); render(); }
+  document.getElementById('clear').addEventListener('click', clearAll);
+  document.getElementById('reset').addEventListener('click', function(e){ e.preventDefault(); clearAll(); });
+  render();
+})();
+</script>
+</div>
+</body>
+</html>
