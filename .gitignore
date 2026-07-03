@@ -12,3 +12,6 @@ npm-debug.log*
 # Env / secrets
 .env
 .env.local
+
+# GitHub Pages build output
+_site/
