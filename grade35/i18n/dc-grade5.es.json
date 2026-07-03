@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Rastrea a los rastreadores",
+    "sub": "Alguien ha estado siguiendo a un estudiante por todo el internet, en silencio, de sitio en sitio. Lee las pistas, resuelve cuatro candados y descubre cómo funciona el rastreo.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sigue el rastro de las cookies",
+    "briefP": "Los sitios web pueden dejar archivos pequeños llamados cookies que te siguen mientras pasas de página en página. Tu trabajo es aprender cómo se forma una huella digital y cómo los datos te siguen en línea. Abre los cuatro candados, y cada uno mostrará la razón por la que su respuesta es correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Rastreaste a los rastreadores!",
+    "winP": "Ahora sabes qué forma una huella digital, cómo adaptar tu escritura a tu público, qué pasa cuando copias un trabajo sin permiso y cómo reconocer una conexión segura. ¡Trabajo de detective muy agudo!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "El rastro de cookies",
+      "title": "¿Cómo te siguen los datos?",
+      "body": "Cuando visitas sitios web, algunos guardan archivos pequeños llamados cookies en tu dispositivo. Estas cookies pueden recordarte y seguir tu navegación de un sitio al siguiente. Así es como los rastreadores saben dónde has estado."
+    },
+    {
+      "nm": "Partes de la huella",
+      "title": "¿Qué forma una huella?",
+      "body": "Una huella digital está hecha de lo que haces en línea. Los juegos que juegas, los videos que ves y las publicaciones que compartes se vuelven parte de ella. Lo que haces fuera de línea, como leer un libro de papel, no."
+    },
+    {
+      "nm": "Conoce a tu lector",
+      "title": "¿A quién le escribes?",
+      "body": "Una buena etiqueta en línea significa adaptar tus palabras a tu público. Un mensaje a tu maestra debe ser cortés y usar oraciones completas y cuidadosas. Una nota rápida a un amigo cercano puede ser más casual y relajada."
+    },
+    {
+      "nm": "Trabajo prestado",
+      "title": "Usar la creación de alguien",
+      "body": "Si usas la foto, canción o texto de otra persona sin permiso ni crédito, hay consecuencias reales. El creador puede pedirte que lo quites, y podrías meterte en problemas. El camino honesto es pedir permiso primero y dar crédito."
+    },
+    {
+      "nm": "El candado",
+      "title": "¿Es segura esta conexión?",
+      "body": "Un sitio web seguro muestra un pequeño símbolo de candado cerca de su dirección, y la dirección empieza con las letras h-t-t-p-s. La 's' significa seguro. Cuenta las letras de 'https' y recuerda ese número: prueba que la conexión está protegida."
+    },
+    {
+      "nm": "Hámster de la biblioteca",
+      "title": "La mascota de la sala de lectura",
+      "body": "La biblioteca de la escuela tiene un hámster llamado Pixel que vive cerca de las computadoras. Pixel duerme toda la mañana y corre en su rueda por la noche. Este es un dato divertido, pero no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Partes de la huella",
+      "q": "Marca CADA cosa que se vuelve parte de una huella digital.",
+      "items": [
+        "Un video que viste en una aplicación de streaming",
+        "Un nivel que superaste en un juego en línea",
+        "Una foto que subiste a una página social",
+        "Un libro de papel que leíste en silencio en casa",
+        "Una caminata que diste afuera sin teléfono"
+      ],
+      "reason": "Una huella digital se forma con lo que haces en línea: ver, jugar y publicar dejan un rastro, mientras que leer un libro de papel o caminar afuera pasa fuera de línea."
+    },
+    {
+      "title": "Adapta a tu público",
+      "q": "Le estás escribiendo un mensaje a tu MAESTRA. ¿Cuál se ajusta mejor al público?",
+      "options": [
+        "oye!!! hay tarea?? jaja solo dime rápido",
+        "Hola, profesora López, ¿podría decirme si tenemos tarea esta noche? Gracias.",
+        "se te olvidó decir la tarea arréglalo porfa"
+      ],
+      "reason": "Una buena etiqueta significa adaptar tus palabras a tu lector, y un mensaje a una maestra debe ser cortés y estar escrito con oraciones completas y cuidadosas."
+    },
+    {
+      "title": "El código seguro",
+      "q": "La dirección de un sitio web seguro empieza con 'https'. ¿Cuántas letras tiene la palabra 'https'?",
+      "reason": "La palabra 'https' tiene cinco letras, y esa 's' del final significa seguro: la señal de una conexión protegida."
+    },
+    {
+      "title": "La forma justa de tomar prestado",
+      "q": "Quieres usar la foto de otra persona. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "🏷️ Dales crédito",
+        "🙋 Pide permiso",
+        "✅ Luego úsala"
+      ],
+      "reason": "Primero PIDE permiso al creador, luego planea darle CRÉDITO, y solo entonces USA el trabajo: eso evita las consecuencias de copiar sin permiso."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+ "chrome": {
+  "h1": "Thám tử Sử dụng Hợp lý",
+  "sub": "Một bạn sáng tạo học sinh muốn phối trộn một tấm ảnh, một đoạn nhạc và một câu trích dẫn vào bài tập của lớp — nhưng làm vậy có hợp pháp không? Hãy lần theo bằng chứng và giải bốn ổ khóa để khép lại vụ án.",
+  "briefLabel": "Nhiệm vụ của bạn",
+  "briefH": "Mở hồ sơ vụ án",
+  "briefP": "Một bạn sáng tạo tên Rivka đang làm một video và không biết những phần nào bạn ấy thực sự được phép tái sử dụng. Hãy đọc manh mối, cân nhắc bằng chứng, và mở cả bốn ổ khóa. Mỗi ổ khóa kết thúc bằng một lý do chứng minh vì sao câu trả lời đúng.",
+  "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+  "winStamp": "ĐÃ KHÉP LẠI VỤ ÁN",
+  "winH": "Bạn đã giải cả bốn ổ khóa, Thám tử!",
+  "winP": "Giờ bạn có thể phân biệt bản quyền với phạm vi công cộng, trích dẫn nguồn và phát hiện những tuyên bố phóng đại, nhận ra một tin nhắn lừa đảo ẩn giấu mã độc hoặc đánh cắp danh tính, và nêu tên các cách bắt nạt trên mạng diễn ra. Đó là tư duy phản biện thực thụ trên mạng.",
+  "crumbSuite": "Breakout Công dân số"
+ },
+ "clues": [
+  {
+   "nm": "Thuật ngữ sở hữu trí tuệ",
+   "title": "Những từ mọi người sáng tạo nên biết",
+   "body": "Bản quyền nghĩa là người tạo ra tự động sở hữu tác phẩm của mình và kiểm soát cách nó được sử dụng. Phạm vi công cộng nghĩa là bản quyền đã hết hạn hoặc đã được từ bỏ, nên bất kỳ ai cũng có thể tái sử dụng tác phẩm một cách tự do. Giấy phép Creative Commons là sự cho phép bằng văn bản của người sáng tạo để tái sử dụng tác phẩm theo những quy tắc nhất định, và nguồn mở cũng hoạt động tương tự đối với mã máy tính."
+  },
+  {
+   "nm": "Sử dụng hợp lý",
+   "title": "Ngoại lệ có giới hạn",
+   "body": "Sử dụng hợp lý là một ngoại lệ hẹp đôi khi cho phép bạn tái sử dụng một phần nhỏ của tác phẩm được bảo vệ cho những mục đích như giảng dạy, tin tức hay bình luận — mà không cần xin phép trước. Đó không phải là tấm vé tự do để sao chép bất cứ thứ gì bạn muốn. Khi bạn không chắc chắn, cách an toàn nhất là xin phép người sáng tạo."
+  },
+  {
+   "nm": "Trích dẫn nguồn",
+   "title": "Ghi công đúng cách",
+   "body": "Trích dẫn nguồn nghĩa là nêu tên ai đã tạo ra tác phẩm và bạn tìm thấy nó ở đâu, ngay cả khi việc tái sử dụng được cho phép. Một trích dẫn đầy đủ gồm tên người sáng tạo, tiêu đề, và đường liên kết hoặc nơi bạn tìm thấy nó. Bỏ qua việc ghi công gọi là đạo văn, và đó là điều không trung thực ngay cả khi tác phẩm được dùng miễn phí."
+  },
+  {
+   "nm": "Tuyên bố ầm ĩ",
+   "title": "Phóng đại trên mạng",
+   "body": "Một bài đăng hét lên: 'GÂY SỐC! Các nhà khoa học CHỨNG MINH mẹo này khiến bạn thành thiên tài chỉ sau một đêm!' Những từ như gây sốc, đã chứng minh, và sau một đêm mà không có nguồn nêu tên là dấu hiệu một tuyên bố bị phóng đại hoặc xuyên tạc. Thông tin đáng tin cậy nêu rõ bằng chứng và không hứa hẹn những kết quả bất khả thi."
+  },
+  {
+   "nm": "Email nhử mồi",
+   "title": "Một tin nhắn giấu bẫy",
+   "body": "Một email nói: 'Tài khoản của bạn đã bị khóa! Bấm vào đây trong 10 phút nếu không mất vĩnh viễn.' Tin nhắn lừa đảo dùng nỗi sợ và sự cấp bách để lừa bạn bấm vào. Đường liên kết có thể cài mã độc làm hỏng thiết bị của bạn, hoặc một trang đăng nhập giả có thể đánh cắp mật khẩu để đánh cắp danh tính. Đừng bao giờ bấm; hãy tự vào trang web thật và báo cho người lớn."
+  },
+  {
+   "nm": "Giải đấu giờ ra chơi",
+   "title": "Đêm chơi game của lớp",
+   "body": "Khối lớp sáu đang lên kế hoạch một giải đấu trò chơi bàn cờ sau giờ học vào thứ Sáu, và người thắng được chọn cuốn sách đọc to của tháng sau. Nghe có vẻ rất vui. Đây là một lời nhắn thật từ lớp, nhưng nó sẽ không giúp bạn mở ổ khóa nào."
+  }
+ ],
+ "locks": [
+  {
+   "title": "Miễn phí cho mọi người",
+   "q": "Tác phẩm có bản quyền đã hết hạn, nên bất kỳ ai cũng có thể tái sử dụng tự do, thì nằm trong ______ ______.",
+   "answer": [
+    "phạm vi công cộng",
+    "miền công cộng",
+    "tài sản công cộng"
+   ],
+   "reason": "Các manh mối giải thích rằng phạm vi công cộng nghĩa là bản quyền đã hết hạn hoặc đã được từ bỏ, nên tác phẩm thuộc về mọi người và có thể tái sử dụng tự do."
+  },
+  {
+   "title": "Phát hiện sự bóp méo",
+   "q": "Bài đăng nào có khả năng bị phóng đại hoặc xuyên tạc nhất và KHÔNG nên tin ngay như vậy?",
+   "options": [
+    "Một bản tin nêu tên nghiên cứu, các nhà khoa học, và ngày thực hiện nghiên cứu",
+    "GÂY SỐC! Mẹo này CHỨNG MINH bạn có thể thành thiên tài chỉ sau một đêm!",
+    "Một bài viết liên kết tới bằng chứng và liệt kê cả lợi ích lẫn giới hạn"
+   ],
+   "reason": "Các manh mối cảnh báo rằng những từ như gây sốc, đã chứng minh, và sau một đêm mà không có nguồn nêu tên là dấu hiệu của một tuyên bố phóng đại, trong khi các bài đăng đáng tin cậy nêu rõ bằng chứng."
+  },
+  {
+   "title": "Đọc kỹ mồi nhử",
+   "q": "Hãy đánh dấu MỌI dấu hiệu cho thấy một email là tin nhắn lừa đảo nhằm cài mã độc hoặc đánh cắp danh tính.",
+   "items": [
+    "Nó tạo hoảng loạn và đếm ngược, kiểu 'hành động trong 10 phút nếu không mất tài khoản'",
+    "Nó thúc bạn bấm vào đường liên kết để 'mở khóa' hoặc 'xác minh' tài khoản",
+    "Nó hỏi mật khẩu hoặc đăng nhập của bạn trên một trang bạn không tự vào",
+    "Nó là bản tin của lớp, do cô giáo gửi, về giải đấu thứ Sáu",
+    "Nó là lời nhắc lịch bạn tự đặt cho bài tập của mình"
+   ],
+   "reason": "Các manh mối cho thấy lừa đảo dùng nỗi sợ, sự cấp bách và các đường liên kết bấm-vào-đây để cài mã độc hoặc đánh cắp mật khẩu nhằm đánh cắp danh tính, trong khi một bản tin thật hay lời nhắc của chính bạn thì không làm vậy."
+  },
+  {
+   "title": "Tái sử dụng đúng cách",
+   "q": "Rivka muốn tái sử dụng ảnh của một họa sĩ theo cách trung thực, hợp pháp. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+   "pads": [
+    "📝 Trích dẫn người sáng tạo",
+    "©️ Kiểm tra giấy phép",
+    "🙋 Xin phép nếu không chắc"
+   ],
+   "reason": "Đầu tiên KIỂM TRA giấy phép để xem việc tái sử dụng có được cho phép không, rồi XIN người sáng tạo cho phép khi bạn không chắc, và luôn TRÍCH DẪN người sáng tạo để ghi công và tránh đạo văn."
+  }
+ ]
+}

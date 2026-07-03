@@ -1,0 +1,89 @@
+{
+ "chrome": {
+  "h1": "Hồ sơ lưu mãi mãi",
+  "sub": "Một bạn học sinh nghĩ rằng các bài đăng cũ sẽ biến mất. Nhưng không. Hãy giải bốn ổ khóa để hiểu vì sao internet ghi nhớ.",
+  "briefLabel": "Nhiệm vụ của bạn",
+  "briefH": "Làm Thám tử Hồ sơ",
+  "briefP": "Mấy tháng trước, một bạn học sinh đã đăng ảnh, gửi tin nhắn và dùng một tấm hình không phải của mình. Hôm nay bạn ấy thấy tất cả vẫn còn trên mạng. Hãy đọc manh mối, rồi mở cả bốn ổ khóa. Mỗi ổ khóa có một lý do cho thấy vì sao câu trả lời đúng.",
+  "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+  "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+  "winH": "Bạn đã mở cả bốn ổ khóa!",
+  "winP": "Bạn đã học được rằng hồ sơ trên mạng của bạn có thể tồn tại rất lâu, cách cư xử lịch sự trong tin nhắn, cách ghi công người sáng tạo, và cách trở thành người bênh vực để ngăn bắt nạt trên mạng. Thám tử giỏi lắm!",
+  "crumbSuite": "Breakout Công dân số"
+ },
+ "clues": [
+  {
+   "nm": "Hồ sơ",
+   "title": "Vì sao nó vẫn còn đó?",
+   "body": "Khi bạn đăng lên mạng, một bản sao có thể ở lại rất lâu. Ngay cả khi bạn xóa, người khác có thể đã lưu hoặc chia sẻ nó. Dấu vết bền lâu này gọi là hồ sơ lưu mãi mãi của bạn. Vậy nên hãy suy nghĩ trước khi đăng."
+  },
+  {
+   "nm": "Lời tử tế",
+   "title": "Cách cư xử trong tin nhắn",
+   "body": "Cách cư xử lịch sự trên mạng gọi là phép lịch sự. Trong tin nhắn, email hay trò chuyện, bạn dùng lời tử tế, không viết HOA để hét, và không gọi tên xấu. Bạn cũng chờ đến lượt mình và đọc trước khi trả lời. Hãy lịch sự, giống như khi gặp mặt."
+  },
+  {
+   "nm": "Ghi công",
+   "title": "Bức hình này của ai?",
+   "body": "Bạn học sinh đã dùng một bức vẽ mà một họa sĩ khác tạo ra. Người sáng tạo sở hữu những gì họ làm ra. Quy tắc này gọi là bản quyền. Để công bằng, bạn phải ghi công người sáng tạo bằng cách nêu tên ai đã tạo ra nó."
+  },
+  {
+   "nm": "Người bênh vực",
+   "title": "Đứng lên trên mạng",
+   "body": "Một bạn cùng lớp bị trêu chọc trên mạng. Người bênh vực không hùa theo và không im lặng. Các bước thông minh là: đầu tiên TỪ CHỐI chia sẻ bài đăng xấu, rồi BÁO CÁO nó trên ứng dụng, rồi ỦNG HỘ người bị tổn thương bằng một tin nhắn tử tế."
+  },
+  {
+   "nm": "Cửa sổ bật lên",
+   "title": "Một hộp đang theo dõi",
+   "body": "Một cửa sổ bật lên nói rằng trang web dùng cookie. Cookie là những tệp nhỏ giúp trang web nhớ bạn và thu thập dữ liệu về những gì bạn làm. Cửa sổ bật lên không phải là tin nhắn xấu và không phải là cư xử kém. Nó chỉ là trang web xin theo dõi bạn."
+  },
+  {
+   "nm": "Rùa của lớp",
+   "title": "Thú cưng của lớp học",
+   "body": "Chú rùa của lớp tên là Pixel. Pixel 12 tuổi và thích ăn rau xanh. Đây là một điều thú vị — nhưng nó sẽ không giúp bạn mở ổ khóa nào."
+  }
+ ],
+ "locks": [
+  {
+   "title": "Hồ sơ lưu mãi mãi",
+   "q": "Vì sao một bài đăng bạn viết mấy tháng trước vẫn có thể tìm thấy hôm nay?",
+   "options": [
+    "Vì xóa một bài đăng luôn xóa hết mọi bản sao ngay lập tức",
+    "Vì một bản sao có thể ở lại trên mạng, và người khác có thể đã lưu hoặc chia sẻ nó",
+    "Vì internet quên hết mọi thứ sau một tuần"
+   ],
+   "reason": "Một bài đăng có thể để lại hồ sơ lưu mãi mãi vì các bản sao tồn tại rất lâu và người khác có thể đã lưu hoặc chia sẻ chúng, ngay cả khi bạn xóa bản của mình."
+  },
+  {
+   "title": "Cách cư xử tốt trên mạng",
+   "q": "Hãy đánh dấu MỌI lựa chọn thể hiện phép lịch sự tốt trong tin nhắn, email hay trò chuyện.",
+   "items": [
+    "Dùng lời tử tế, lịch sự",
+    "Đọc tin nhắn trước khi bạn trả lời",
+    "Viết CHỮ HOA để nghe to hơn",
+    "Gọi ai đó bằng một cái tên xấu",
+    "Đóng cửa sổ cookie để trang web không theo dõi bạn"
+   ],
+   "reason": "Phép lịch sự nghĩa là lời tử tế và đọc trước khi trả lời; hét bằng chữ hoa và gọi tên xấu là thô lỗ, còn cửa sổ cookie là về dữ liệu, không phải về cách cư xử."
+  },
+  {
+   "title": "Công bằng với người sáng tạo",
+   "q": "Khi bạn dùng một bức hình do họa sĩ tạo ra, quy tắc bảo vệ người sáng tạo gọi là ______.",
+   "answer": [
+    "bản quyền",
+    "quyền tác giả"
+   ],
+   "reason": "Bản quyền là quy tắc nói rằng người sáng tạo sở hữu những gì họ làm ra, nên bạn phải ghi công họ khi bạn dùng tác phẩm của họ."
+  },
+  {
+   "title": "Hãy là người bênh vực",
+   "q": "Một bạn cùng lớp bị trêu chọc trên mạng. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+   "pads": [
+    "💙 Ủng hộ người đó",
+    "🚫 Từ chối chia sẻ nó",
+    "🚩 Báo cáo bài đăng"
+   ],
+   "reason": "Đầu tiên TỪ CHỐI lan truyền bài đăng xấu, rồi BÁO CÁO nó trên ứng dụng, rồi ỦNG HỘ bạn cùng lớp bị tổn thương. Từ chối, Báo cáo, Ủng hộ."
+  }
+ ]
+}

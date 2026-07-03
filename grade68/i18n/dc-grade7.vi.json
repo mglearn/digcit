@@ -1,0 +1,92 @@
+{
+ "chrome": {
+  "h1": "Nhận diện sự bóp méo",
+  "sub": "Một bài đăng đang lan nhanh khắp internet, và hàng nghìn người chia sẻ mà không kiểm chứng. Việc của bạn là chậm lại, đọc xuyên qua sự bóp méo, và mở khóa sự thật.",
+  "briefLabel": "Nhiệm vụ của bạn",
+  "briefH": "Trở thành nhà phân tích truyền thông",
+  "briefP": "Truyền thông được thiết kế để thu hút sự chú ý của bạn, và đôi khi nó kéo giãn, bóp méo hoặc che giấu sự thật để làm điều đó. Hãy làm việc qua các manh mối để mở cả bốn ổ khóa: mỗi ổ giấu một lý do chứng minh vì sao câu trả lời khôn ngoan là câu đúng. Hãy suy nghĩ như một nhà phân tích, không phải một người ngoài cuộc.",
+  "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+  "winStamp": "ĐÃ KHÉP LẠI VỤ ÁN",
+  "winH": "Bạn đã nhìn thấu sự bóp méo!",
+  "winP": "Giờ bạn đã biết những hậu quả thật sự của việc vi phạm luật bản quyền, cách truyền thông phóng đại và xuyên tạc sự thật, cách phòng vệ trước các cuộc tấn công mạng, và bắt nạt trên mạng có thể gây tổn thương sâu sắc đến mức nào. Đó chính là một công dân số sắc bén.",
+  "crumbSuite": "Breakout Công dân số"
+ },
+ "clues": [
+  {
+   "nm": "Điều khoản chi tiết",
+   "title": "Vi phạm bản quyền có thể phải trả giá gì",
+   "body": "Bản quyền là một đạo luật, không chỉ là một quy tắc. Nếu bạn sao chép, đăng hoặc bán tác phẩm của ai đó mà không xin phép, người sáng tạo có thể gửi thông báo gỡ bỏ, đòi bồi thường, hoặc thậm chí kiện bạn ra tòa. Hậu quả thật sự có thể bao gồm việc nội dung của bạn bị gỡ, tài khoản của bạn bị đóng, và phải trả tiền bồi thường thiệt hại."
+  },
+  {
+   "nm": "Móc câu",
+   "title": "Cách một tiêu đề nhử bạn",
+   "body": "Một bài đăng lan truyền hét lên: 'GÂY SỐC! Ai cũng đang bỏ ứng dụng này — bạn sẽ không tin nổi vì sao đâu!' Bài viết bên dưới không có con số, không có nguồn nêu tên, và chỉ một câu trích dẫn ẩn danh. Câu nhử (clickbait) dùng những từ cảm xúc mạnh và tuyên bố mơ hồ để kiếm lượt bấm, rồi mang lại gần như chẳng có gì. Lời hứa càng ầm ĩ, bạn càng nên kiểm chứng kỹ."
+  },
+  {
+   "nm": "Chọn lọc thiên vị",
+   "title": "Khi số liệu gây hiểu lầm",
+   "body": "Một trang kiểu tin tức đăng, '9 trên 10 học sinh thích ứng dụng của chúng tôi!' — nhưng khảo sát chỉ hỏi mười người, đều là bạn của công ty. Chọn lọc thiên vị nghĩa là chỉ đưa ra những con số có lợi cho phía mình và giấu phần còn lại. Một nhà phân tích thực thụ hỏi ai được tính, bao nhiêu người, và ai trả tiền cho nghiên cứu."
+  },
+  {
+   "nm": "Phòng thủ",
+   "title": "Bảo vệ tài khoản của bạn",
+   "body": "Một cuộc tấn công mạng cố lừa hoặc ép cách vào tài khoản của bạn. Các cách phòng thủ vững chắc gồm một cụm mật khẩu dài, độc nhất, bật xác minh hai bước, và không bao giờ bấm vào đường liên kết đăng nhập bên trong một tin nhắn bất ngờ. Dùng lại một mật khẩu ở mọi nơi hoặc trao đi mã từ một tin nhắn bạn không ngờ tới sẽ mở toang cửa nhà bạn."
+  },
+  {
+   "nm": "Gợn sóng",
+   "title": "Bắt nạt trên mạng thực sự gây ra điều gì",
+   "body": "Một bài đăng độc ác về một bạn cùng lớp bị chia sẻ hết lần này đến lần khác. Bắt nạt trên mạng có thể theo một người về tận nhà, lan tới một lượng khán giả khổng lồ, và ở lại trên mạng rất lâu sau khi bắt đầu, nên tổn thương có thể cảm thấy như không dứt. Cách phản ứng khôn ngoan là dừng lại và không hùa theo, lưu bằng chứng bằng cách chụp màn hình, ủng hộ người bị nhắm tới, và báo cho một người lớn đáng tin cậy."
+  },
+  {
+   "nm": "Máy chủ cũ",
+   "title": "Một máy tính đã nghỉ hưu",
+   "body": "Máy chủ cũ của trường đã được thay vào mùa xuân năm ngoái và giờ nằm im không cắm điện trong một tủ chứa đồ. Nó từng lưu các video thông báo buổi sáng. Lịch sử thú vị đấy — nhưng sự thật này sẽ không giúp bạn mở ổ khóa nào."
+  }
+ ],
+ "locks": [
+  {
+   "title": "Hậu quả thật sự",
+   "q": "Có người đăng lại video trả phí của một người sáng tạo như của mình để kiếm tiền. Theo luật bản quyền, điều gì thực sự có thể xảy ra với họ?",
+   "options": [
+    "Không có gì, vì bất cứ thứ gì đăng trên mạng đều được tái sử dụng miễn phí",
+    "Video có thể bị gỡ, tài khoản bị đóng, và họ có thể phải trả tiền bồi thường thiệt hại",
+    "Họ chỉ cần nói xin lỗi trong phần bình luận"
+   ],
+   "reason": "Bản quyền là một đạo luật, nên vi phạm có thể dẫn tới việc bị gỡ bỏ, tài khoản bị đóng, và phải trả tiền bồi thường thật sự, như manh mối Điều khoản chi tiết giải thích."
+  },
+  {
+   "title": "Cờ đỏ của sự bóp méo",
+   "q": "Hãy đánh dấu MỌI dấu hiệu cho thấy một bài đăng có thể đang phóng đại hoặc xuyên tạc sự thật.",
+   "items": [
+    "Một tiêu đề đầy những từ cảm xúc mạnh như 'GÂY SỐC' và 'bạn sẽ không tin nổi'",
+    "Một số liệu kiểu '9 trên 10' không có cỡ mẫu và không có nguồn nêu tên",
+    "Một khảo sát do chính công ty được kết quả làm cho đẹp mặt chi trả",
+    "Một bản tin điềm tĩnh nêu tên các nguồn và cho thấy dữ liệu được thu thập thế nào",
+    "Một bài viết liên kết tới nghiên cứu gốc để bạn có thể tự kiểm chứng"
+   ],
+   "reason": "Sự bóp méo xuất hiện dưới dạng câu nhử cảm xúc, số liệu mơ hồ hoặc chọn lọc thiên vị, và các nghiên cứu có động cơ tiền bạc ẩn giấu, trong khi bản tin trung thực nêu tên nguồn và để bạn kiểm chứng dữ liệu."
+  },
+  {
+   "title": "Làm mẫu cách phòng thủ",
+   "q": "Hãy đánh dấu MỌI thói quen thực sự giúp bạn phòng vệ trước một cuộc tấn công mạng.",
+   "items": [
+    "Dùng một cụm mật khẩu dài, độc nhất cho mỗi tài khoản quan trọng",
+    "Bật xác minh hai bước",
+    "Phớt lờ một tin nhắn bất ngờ thúc bạn bấm vào đường liên kết đăng nhập",
+    "Dùng lại cùng một mật khẩu dễ đoán trên mọi trang",
+    "Chia sẻ mã xác minh từ một tin nhắn bạn không ngờ tới"
+   ],
+   "reason": "Phòng thủ thật sự nghĩa là dùng cụm mật khẩu độc nhất, xác minh hai bước, và từ chối các đường liên kết đăng nhập bất ngờ, trong khi mật khẩu dùng lại và mã bị chia sẻ trao chìa khóa cho kẻ tấn công."
+  },
+  {
+   "title": "Ứng phó với tổn hại",
+   "q": "Một bài đăng độc ác về một bạn cùng lớp đang lan nhanh. Hãy chạm vào cách phản ứng khôn ngoan theo ĐÚNG thứ tự.",
+   "pads": [
+    "🙋 Báo cho người lớn đáng tin cậy",
+    "✋ Dừng lại, đừng hùa theo",
+    "📸 Lưu bằng chứng"
+   ],
+   "reason": "Đầu tiên DỪNG LẠI để không lan truyền tổn hại, rồi LƯU bằng chứng bằng ảnh chụp màn hình, rồi BÁO cho một người lớn đáng tin cậy có thể giúp người bị nhắm tới."
+  }
+ ]
+}

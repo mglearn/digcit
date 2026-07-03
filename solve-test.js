@@ -217,7 +217,7 @@ async function renderAndSolve(act, lang) {
   for (const act of acts) {
     const B = loadBreakout(act.locale);
     structural(act, B);
-    for (const lang of ['en', 'zh', 'ar']) await renderAndSolve(act, lang);
+    for (const lang of LANGS) await renderAndSolve(act, lang);
     const bad = problems.length;
     console.log(`${bad ? '…' : '✓'} ${act.id}`);
   }

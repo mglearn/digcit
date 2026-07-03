@@ -1,0 +1,93 @@
+{
+ "chrome": {
+  "h1": "Dấu chân số đầu tiên của bạn",
+  "sub": "Một bạn học sinh mới để lại dấu vết khắp nơi trên internet. Hãy dùng manh mối để giải bốn ổ khóa và dọn sạch dấu vết.",
+  "briefLabel": "Nhiệm vụ của bạn",
+  "briefH": "Làm Thám tử Dấu chân",
+  "briefP": "Mỗi lần bạn lên mạng, bạn để lại dấu vết. Ta gọi những dấu vết này là dấu chân số. Hãy đọc manh mối, rồi mở cả bốn ổ khóa. Mỗi ổ khóa có một lý do cho thấy vì sao câu trả lời đúng.",
+  "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+  "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+  "winH": "Bạn đã mở cả bốn ổ khóa!",
+  "winP": "Bạn đã biết dấu chân số là gì, cách giữ an toàn, cách ghi công, và cách tử tế trên mạng. Thám tử giỏi lắm!",
+  "crumbSuite": "Breakout Công dân số"
+ },
+ "clues": [
+  {
+   "nm": "Dấu chân",
+   "title": "Dấu chân số là gì?",
+   "body": "Dấu chân số là dấu vết bạn để lại trên mạng. Ảnh bạn đăng, trò chơi bạn chơi, và tin nhắn bạn gửi đều trở thành một phần của nó. Nó có thể ở trên mạng rất lâu."
+  },
+  {
+   "nm": "Đường liên kết",
+   "title": "Một tin nhắn có đường liên kết",
+   "body": "Một cửa sổ bật lên nói: 'Bạn đã THẮNG một máy tính bảng miễn phí! Bấm vào đường liên kết này NGAY để nhận!' Nó đến từ một cái tên không ai biết. Đường liên kết an toàn đến từ người và nơi bạn tin tưởng. Phần thưởng bất ngờ là dấu hiệu cảnh báo."
+  },
+  {
+   "nm": "Bức vẽ",
+   "title": "Bức vẽ này của ai?",
+   "body": "Mia đã dùng bức vẽ của một họa sĩ khác trong bài của mình. Để ghi công, bạn nêu tên người đã tạo ra nó. Đó gọi là tên người sáng tạo. Ghi công là điều công bằng và trung thực nên làm."
+  },
+  {
+   "nm": "Tin nhắn xấu",
+   "title": "Điều không tử tế",
+   "body": "Có người gửi một tin nhắn xấu cho bạn cùng lớp. Các bước thông minh là: đầu tiên DỪNG LẠI và đừng trả lời, rồi LƯU tin nhắn lại để có bằng chứng, rồi KỂ cho một người lớn đáng tin cậy. Đừng chuyển tiếp nó."
+  },
+  {
+   "nm": "Mật khẩu",
+   "title": "Một mật khẩu mạnh",
+   "body": "Mật khẩu mạnh thì dài và khó đoán. Tên của bạn hoặc '12345' thì dễ đoán. Trộn chữ, số và ký hiệu làm cho nó mạnh. Hãy giữ bí mật."
+  },
+  {
+   "nm": "Thú cưng của lớp",
+   "title": "Thú cưng của lớp học",
+   "body": "Thú cưng của lớp là một chú chuột hamster tên Nibbles. Nibbles thích cà rốt và chạy trên bánh xe. Đây là một điều thú vị — nhưng nó sẽ không giúp bạn mở ổ khóa nào."
+  }
+ ],
+ "locks": [
+  {
+   "title": "Lựa chọn an toàn",
+   "q": "Đường liên kết nào an toàn để bấm vào?",
+   "options": [
+    "Một cửa sổ bật lên nói bạn thắng máy tính bảng miễn phí từ người lạ",
+    "Một trang mà cô giáo của bạn chia sẻ cho bài học hôm nay",
+    "Một đường liên kết nói 'Bấm NGAY để nhận phần thưởng!'"
+   ],
+   "reason": "Đường liên kết an toàn đến từ người và nơi bạn tin tưởng, như cô giáo của bạn. Phần thưởng bất ngờ từ người lạ là dấu hiệu cảnh báo, nên những đường liên kết đó không an toàn."
+  },
+  {
+   "title": "Một phần của dấu chân",
+   "q": "Hãy đánh dấu MỌI thứ là một phần của dấu chân số.",
+   "items": [
+    "Một tấm ảnh bạn đăng trên mạng",
+    "Một trò chơi bạn chơi trên trang web",
+    "Một tin nhắn bạn gửi cho bạn bè",
+    "Một cuốn sách bạn đọc lặng lẽ ở nhà không có máy tính",
+    "Cà rốt mà chú hamster của lớp ăn"
+   ],
+   "reason": "Dấu chân số được tạo nên từ những gì bạn làm TRÊN MẠNG — bài đăng, trò chơi và tin nhắn. Đọc sách giấy hay cho hamster ăn xảy ra ngoài mạng, nên đó không phải là một phần của nó."
+  },
+  {
+   "title": "Ghi công",
+   "q": "Khi bạn dùng bức vẽ của ai đó, bạn nên ghi công bằng cách viết ______ của họ.",
+   "answer": [
+    "tên",
+    "tên người sáng tạo",
+    "tên tác giả",
+    "tên họa sĩ",
+    "tác giả",
+    "họa sĩ"
+   ],
+   "reason": "Ghi công nghĩa là nêu tên người đã tạo ra tác phẩm. Đó là điều trung thực và công bằng nên làm khi bạn dùng bức vẽ hay bài viết của người khác."
+  },
+  {
+   "title": "Các bước đúng",
+   "q": "Một tin nhắn xấu đến. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+   "pads": [
+    "🙋 Kể cho người lớn",
+    "✋ Dừng lại, đừng trả lời",
+    "💾 Lưu nó lại"
+   ],
+   "reason": "Đầu tiên DỪNG LẠI để không làm mọi việc tệ hơn. Rồi LƯU tin nhắn làm bằng chứng. Rồi KỂ cho một người lớn đáng tin cậy có thể giúp đỡ. Dừng lại, Lưu lại, Kể ra."
+  }
+ ]
+}

@@ -1,0 +1,91 @@
+{
+ "chrome": {
+  "h1": "Đánh giá nguồn",
+  "sub": "Một bài viết đang thịnh hành lan nhanh, nhưng có điều gì đó không hợp lý. Hãy phân tích bằng chứng, giải bốn ổ khóa, và quyết định liệu nguồn này có đáng tin hay không.",
+  "briefLabel": "Nhiệm vụ của bạn",
+  "briefH": "Trở thành nhà phân tích nguồn",
+  "briefP": "Bất kỳ ai cũng có thể đăng bất cứ thứ gì lên mạng, nên một công dân số sắc bén sẽ điều tra trước khi tin hoặc chia sẻ. Hãy làm việc qua các hồ sơ vụ án, cân nhắc bằng chứng, và mở cả bốn ổ khóa. Mỗi ổ khóa mang một lý do cho thấy chính xác vì sao câu trả lời đứng vững.",
+  "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+  "winStamp": "ĐÃ KHÉP LẠI VỤ ÁN",
+  "winH": "Bạn đã giải mọi ổ khóa, Nhà phân tích.",
+  "winP": "Giờ bạn có thể đánh giá độ tin cậy của một trang web, bảo vệ quyền sáng tạo của mình và của người khác, ứng phó điềm tĩnh với một vụ xâm phạm bảo mật, và nhận ra những dấu hiệu cảnh báo rằng một bạn học đang bị nhắm tới. Đó chính xác là điều một công dân số chín chắn làm.",
+  "crumbSuite": "Breakout Công dân số"
+ },
+ "clues": [
+  {
+   "nm": "Dòng tác giả",
+   "title": "Ai viết, và vì sao?",
+   "body": "Một nguồn đáng tin cậy nêu tên một tác giả thật có chuyên môn liên quan, liên kết tới bằng chứng bạn có thể kiểm chứng, và nêu rõ mục đích của mình một cách công khai. Một trang không có tác giả, không có bằng chứng được trích dẫn, và một mục tiêu ẩn giấu nhằm bán cho bạn thứ gì đó thì nên gây nghi ngờ. Hãy hỏi ai được lợi từ việc bạn tin nó."
+  },
+  {
+   "nm": "Độ nghiêng",
+   "title": "Đọc ra sự thiên lệch",
+   "body": "Khi một nguồn chỉ trình bày một phía, dùng ngôn ngữ cảm xúc nặng nề, và bỏ qua những sự thật không đồng tình với nó, độ nghiêng một phía đó gọi là thiên kiến. Thiên kiến không phải lúc nào cũng có nghĩa là nguồn đang nói dối, nhưng nó có nghĩa là bạn nên đối chiếu tuyên bố với một nguồn độc lập khác trước khi tin."
+  },
+  {
+   "nm": "Phối trộn",
+   "title": "Sử dụng và bảo vệ tác phẩm sáng tạo",
+   "body": "Khi bạn xây dựng một bài tập, bạn chỉ được tái sử dụng hình ảnh hoặc bài viết của người khác nếu bạn có sự cho phép hoặc một giấy phép cho phép điều đó, và bạn phải ghi công người sáng tạo gốc. Bạn cũng có thể bảo vệ tác phẩm của chính mình bằng cách gắn một giấy phép cho người khác biết chính xác họ được dùng nó thế nào."
+  },
+  {
+   "nm": "Xâm phạm",
+   "title": "Một lần đăng nhập bạn không thực hiện",
+   "body": "Bạn nhận được cảnh báo rằng tài khoản của bạn đã được đăng nhập từ một thiết bị bạn không nhận ra. Cách phản ứng an toàn là đổi sang một mật khẩu mới mạnh ngay lập tức, bật xác minh hai bước, và báo cáo vụ xâm phạm. Xác thực mạnh và báo cáo nhanh sẽ hạn chế thiệt hại."
+  },
+  {
+   "nm": "Người bạn lặng lẽ",
+   "title": "Khi một bạn học cần giúp đỡ",
+   "body": "Người bị nhắm tới trên mạng thường bỗng trở nên lặng lẽ, xóa tài khoản, sợ hãi điện thoại của mình, hoặc xa lánh bạn bè. Những thay đổi này là dấu hiệu cảnh báo, tự chúng chưa phải bằng chứng của điều gì, nhưng để ý tới chúng và báo cho một người lớn đáng tin cậy có thể giúp người bị nhắm tới nhận được sự trợ giúp họ cần."
+  },
+  {
+   "nm": "Bộ định tuyến",
+   "title": "Đặt tên cho mạng",
+   "body": "Bộ định tuyến Wi-Fi của lớp học được lắp đặt vào mùa xuân năm ngoái và tên mạng của nó là một dãy chữ và số in trên một nhãn dán. Biết tên bộ định tuyến là một sự thật đích thực về căn phòng, nhưng nó sẽ không giúp bạn mở bất kỳ ổ khóa nào trong vụ án này."
+  }
+ ],
+ "locks": [
+  {
+   "title": "Dấu hiệu của một nguồn đáng tin cậy",
+   "q": "Hãy đánh dấu MỌI dấu hiệu cho thấy một trang web là nguồn đáng tin cậy bạn có thể tin tưởng.",
+   "items": [
+    "Một tác giả được nêu tên có chuyên môn liên quan",
+    "Bằng chứng bạn có thể kiểm chứng, liên kết tới các nguồn khác",
+    "Thông tin mới và được cập nhật thường xuyên",
+    "Một thiết kế nhiều màu, trông chuyên nghiệp",
+    "Một mục đích ẩn giấu nhằm khiến bạn mua thứ gì đó"
+   ],
+   "reason": "Độ tin cậy đến từ một tác giả chuyên gia được nêu tên, bằng chứng có thể kiểm chứng, và thông tin cập nhật. Một thiết kế bóng bẩy hay một lời chào hàng ẩn giấu chẳng nói lên điều gì về việc sự thật có đúng hay không."
+  },
+  {
+   "title": "Gọi tên độ nghiêng",
+   "q": "Khi một nguồn chỉ đưa ra một phía và dùng ngôn ngữ nặng nề, độ nghiêng đó gọi là ______.",
+   "answer": [
+    "thiên kiến",
+    "thiên vị",
+    "định kiến",
+    "sự thiên lệch"
+   ],
+   "reason": "Một độ nghiêng một phía bỏ qua những sự thật không đồng tình chính là thiên kiến, đó là tín hiệu để bạn đối chiếu tuyên bố với một nguồn độc lập."
+  },
+  {
+   "title": "Quyền của người sáng tạo",
+   "q": "Bạn muốn dùng một tấm ảnh từ một blog sức khỏe trong bài tập của mình. Luật pháp mong bạn làm gì?",
+   "options": [
+    "Dùng tự do, vì bất cứ thứ gì đăng trên mạng đều là công khai và miễn phí",
+    "Xin phép hoặc có một giấy phép cho phép điều đó, và ghi công người sáng tạo",
+    "Đổi vài màu để nó được tính là một tác phẩm gốc hoàn toàn mới"
+   ],
+   "reason": "Đăng thứ gì đó lên mạng không có nghĩa là từ bỏ quyền của người sáng tạo, nên bạn cần sự cho phép hoặc một giấy phép hợp lệ và bạn phải ghi công người sáng tạo gốc."
+  },
+  {
+   "title": "Ứng phó với vụ xâm phạm",
+   "q": "Một cảnh báo nói tài khoản của bạn đã bị truy cập từ một thiết bị lạ. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+   "pads": [
+    "📣 Báo cáo vụ xâm phạm",
+    "🔑 Đặt một mật khẩu mới mạnh",
+    "📱 Bật xác minh hai bước"
+   ],
+   "reason": "Đầu tiên khóa kẻ xâm nhập ra ngoài bằng một mật khẩu mới mạnh, rồi thêm xác minh hai bước để một mật khẩu bị đánh cắp thôi là chưa đủ, rồi báo cáo vụ xâm phạm để nó có thể được theo dõi và ngăn chặn."
+  }
+ ]
+}

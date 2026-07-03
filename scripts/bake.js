@@ -41,6 +41,35 @@ const CHROME_MAP = {
   footerText: 'footer.text', winStamp: 'win.stamp', winH: 'win.h', winP: 'win.p',
 };
 
+// overlay.chrome.* -> UI[lang] key
+function applyChrome(ui, ch) {
+  const map = { h1: 'header.h1', sub: 'header.sub', briefLabel: 'brief.label', briefH: 'brief.h',
+    briefP: 'brief.p', footerText: 'footer.text', winStamp: 'win.stamp', winH: 'win.h', winP: 'win.p', crumbSuite: 'crumb.suite' };
+  for (const [k, key] of Object.entries(map)) if (ch[k] != null) ui[key] = ch[k];
+}
+
+// Build a localized CONTENT[lang] by cloning the EN structure and swapping ONLY
+// text fields from the overlay. Structure (id, type, color, answerIndex, strong
+// flags, pad keys/order, seq answer order, digit answers) always comes from EN.
+function pick(t, fallback) { return (t == null || t === '') ? fallback : t; }
+function localizeContent(en, ov) {
+  const oc = ov.clues || [], ol = ov.locks || [];
+  const clues = en.clues.map((c, i) => {
+    const t = oc[i] || {};
+    return Object.assign({}, c, { nm: pick(t.nm, c.nm), title: pick(t.title, c.title), body: pick(t.body, c.body) });
+  });
+  const locks = en.locks.map((l, i) => {
+    const t = ol[i] || {};
+    const nl = Object.assign({}, l, { title: pick(t.title, l.title), q: pick(t.q, l.q), reason: pick(t.reason, l.reason) });
+    if (l.type === 'mc' && Array.isArray(t.options)) nl.options = l.options.map((o, j) => pick(t.options[j], o));
+    if (l.type === 'multi' && Array.isArray(t.items)) nl.items = l.items.map((it, j) => Object.assign({}, it, { t: pick(t.items[j], it.t) }));
+    if (l.type === 'seq' && Array.isArray(t.pads)) nl.pads = l.pads.map((p, j) => Object.assign({}, p, { e: pick(t.pads[j], p.e) }));
+    if (l.type === 'word' && Array.isArray(t.answer)) nl.answer = [...new Set([...l.answer, ...t.answer].map(String))];
+    return nl;
+  });
+  return { clues, locks };
+}
+
 function bakeOne(srcPath, template) {
   const S = JSON.parse(fs.readFileSync(srcPath, 'utf8'));
   const T = template;
@@ -56,12 +85,22 @@ function bakeOne(srcPath, template) {
   UI.en['win.stamp'] = c.winStamp;
   UI.en['win.h'] = c.winH;
   UI.en['win.p'] = c.winP;
+  const enContent = { clues: S.clues, locks: S.locks };
+  const CONTENT = { en: enContent };
+  const i18nDir = path.join(path.dirname(path.dirname(srcPath)), 'i18n');
   for (const lg of NONEN) {
     UI[lg] = Object.assign({}, T.UI[lg]);           // 21 COMMON + eyebrow from template
     UI[lg]['header.eyebrow'] = c.eyebrow[lg];        // override eyebrow for this grade
+    // text-only translation overlay, if present — structure always comes from EN
+    const ovPath = path.join(i18nDir, S.id + '.' + lg + '.json');
+    if (fs.existsSync(ovPath)) {
+      const ov = JSON.parse(fs.readFileSync(ovPath, 'utf8'));
+      applyChrome(UI[lg], ov.chrome || {});
+      CONTENT[lg] = localizeContent(enContent, ov);
+    } else {
+      CONTENT[lg] = { clues: [], locks: [] };        // untranslated — engine falls back to EN
+    }
   }
-  const CONTENT = { en: { clues: S.clues, locks: S.locks } };
-  for (const lg of NONEN) CONTENT[lg] = { clues: [], locks: [] };
 
   const B = { id: S.id, confetti: S.confetti, UI, CONTENT };
   const out = 'window.BREAKOUT = ' + JSON.stringify(B, null, 1) + ';\n';

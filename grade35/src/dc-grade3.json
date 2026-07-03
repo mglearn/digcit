@@ -1,0 +1,169 @@
+{
+ "id": "dc-grade3",
+ "grade": 3,
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "chrome": {
+  "eyebrow": {
+   "en": "Digital Citizenship Breakout · Grade 3",
+   "es": "Breakout de ciudadanía digital · Grado 3",
+   "vi": "Breakout công dân số · Lớp 3",
+   "ar": "تحدّي المواطنة الرقمية · الصف 3",
+   "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 3",
+   "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 3",
+   "zh": "数字公民破解 · 3 年级"
+  },
+  "h1": "Your First Digital Footprint",
+  "sub": "A new student left tracks all over the internet. Use the clues to solve four locks and clean up the trail.",
+  "briefLabel": "Your Mission",
+  "briefH": "Be a Footprint Detective",
+  "briefP": "Every time you go online, you leave marks. We call these marks a digital footprint. Read the clues, then open all four locks. Each lock has a reason that shows why the answer is right.",
+  "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+  "winStamp": "CASE CLOSED",
+  "winH": "You cracked all four locks!",
+  "winP": "You know what a digital footprint is, how to stay safe, how to give credit, and how to be kind online. Great detective work!"
+ },
+ "clues": [
+  {
+   "id": "c1",
+   "ico": "👣",
+   "nm": "Footprint",
+   "title": "What is a digital footprint?",
+   "body": "A digital footprint is the trail you leave online. Photos you post, games you play, and messages you send all become part of it. It can stay online for a long time."
+  },
+  {
+   "id": "c2",
+   "ico": "🔗",
+   "nm": "The Link",
+   "title": "A message with a link",
+   "body": "A pop-up said: 'You WON a free tablet! Click this link NOW to claim it!' It came from a name nobody knew. Safe links come from people and places you trust. Surprise prizes are a warning sign."
+  },
+  {
+   "id": "c3",
+   "ico": "🖼️",
+   "nm": "The Drawing",
+   "title": "Whose drawing is it?",
+   "body": "Mia used another artist's drawing in her project. To give credit, you name the person who made it. That is called the creator's name. Giving credit is the fair and honest thing to do."
+  },
+  {
+   "id": "c4",
+   "ico": "💬",
+   "nm": "Mean Message",
+   "title": "Something unkind",
+   "body": "Someone sent a mean message to a classmate. The smart steps are: first STOP and do not reply, then SAVE the message so there is proof, then TELL a trusted adult. Do not pass it on."
+  },
+  {
+   "id": "c5",
+   "ico": "🔑",
+   "nm": "The Password",
+   "title": "A strong password",
+   "body": "A strong password is long and hard to guess. Your name or '12345' is easy to guess. Mixing letters, numbers, and symbols makes it strong. Keep it secret."
+  },
+  {
+   "id": "c6",
+   "ico": "🐶",
+   "nm": "Class Pet",
+   "title": "The classroom pet",
+   "body": "The class pet is a hamster named Nibbles. Nibbles likes carrots and running on his wheel. This is a fun fact — but it will not help you open any lock.",
+   "decoy": true
+  }
+ ],
+ "locks": [
+  {
+   "id": "L1",
+   "type": "mc",
+   "color": "#0a2e63",
+   "title": "The Safe Choice",
+   "q": "Which link is safe to click?",
+   "options": [
+    "A pop-up saying you won a free tablet from a stranger",
+    "A page your teacher shared for today's lesson",
+    "A link that says 'Click NOW to claim your prize!'"
+   ],
+   "answerIndex": 1,
+   "reason": "Safe links come from people and places you trust, like your teacher. Surprise prizes from strangers are a warning sign, so those links are not safe."
+  },
+  {
+   "id": "L2",
+   "type": "multi",
+   "color": "#2f6fe0",
+   "title": "Part of the Footprint",
+   "q": "Check EVERY thing that is part of a digital footprint.",
+   "items": [
+    {
+     "t": "A photo you posted online",
+     "strong": true
+    },
+    {
+     "t": "A game you played on a website",
+     "strong": true
+    },
+    {
+     "t": "A message you sent to a friend",
+     "strong": true
+    },
+    {
+     "t": "A book you read quietly at home with no computer",
+     "strong": false
+    },
+    {
+     "t": "The carrots the class hamster eats",
+     "strong": false
+    }
+   ],
+   "reason": "A digital footprint is made of what you do ONLINE — posts, games, and messages. Reading a paper book or feeding a hamster happens offline, so those are not part of it."
+  },
+  {
+   "id": "L3",
+   "type": "word",
+   "color": "#1a7a8c",
+   "title": "Give Credit",
+   "q": "When you use someone's drawing, you should give credit by writing their ______.",
+   "answer": [
+    "name",
+    "creator's name",
+    "creators name",
+    "artist's name",
+    "artists name",
+    "artist"
+   ],
+   "reason": "Giving credit means naming the person who created the work. That is the honest, fair thing to do when you use someone else's drawing or writing."
+  },
+  {
+   "id": "L4",
+   "type": "seq",
+   "color": "#0d47a1",
+   "title": "The Right Steps",
+   "q": "A mean message arrives. Tap the steps in the RIGHT order.",
+   "pads": [
+    {
+     "k": "tell",
+     "e": "🙋 Tell an adult",
+     "c": "#0a2e63"
+    },
+    {
+     "k": "stop",
+     "e": "✋ Stop, don't reply",
+     "c": "#2f6fe0"
+    },
+    {
+     "k": "save",
+     "e": "💾 Save it",
+     "c": "#1a7a8c"
+    }
+   ],
+   "answer": [
+    "stop",
+    "save",
+    "tell"
+   ],
+   "reason": "First STOP so you don't make it worse. Then SAVE the message as proof. Then TELL a trusted adult who can help. Stop, Save, Tell."
+  }
+ ]
+}

@@ -1,0 +1,91 @@
+{
+  "chrome": {
+    "h1": "Evalúa la fuente",
+    "sub": "Un artículo en tendencia se esparce rápido, pero algo en él no cuadra. Analiza la evidencia, abre cuatro candados y decide si se puede confiar en la fuente.",
+    "briefLabel": "Tu misión",
+    "briefH": "Conviértete en analista de fuentes",
+    "briefP": "Cualquiera puede publicar cualquier cosa en línea, así que un ciudadano digital agudo investiga antes de creer o compartir. Trabaja con los expedientes del caso, evalúa la evidencia y abre los cuatro candados. Cada candado lleva una razón que muestra exactamente por qué la respuesta se sostiene.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "Abriste cada candado, analista.",
+    "winP": "Ahora puedes juzgar la confiabilidad de un sitio web, proteger tus derechos creativos y los de otros, responder con calma a una violación de seguridad, y reconocer las señales de alerta de que un compañero está siendo atacado. Eso es exactamente lo que hace un ciudadano digital reflexivo.",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "La firma",
+      "title": "¿Quién lo escribió y por qué?",
+      "body": "Una fuente confiable nombra a un autor real con experiencia relevante, enlaza a evidencia que puedes verificar y declara su propósito abiertamente. Una página sin autor, sin evidencia citada y con un objetivo oculto de venderte algo debería generar dudas. Pregúntate quién se beneficia de que tú lo creas."
+    },
+    {
+      "nm": "La inclinación",
+      "title": "Leer el sesgo",
+      "body": "Cuando una fuente presenta solo un lado, usa lenguaje emocional cargado y deja fuera hechos que no le convienen, esa inclinación de un solo lado se llama sesgo. El sesgo no siempre significa que una fuente esté mintiendo, pero sí significa que debes contrastar la afirmación con otra fuente independiente antes de confiar en ella."
+    },
+    {
+      "nm": "La mezcla",
+      "title": "Usar y proteger el trabajo creativo",
+      "body": "Cuando armas un proyecto, solo puedes reutilizar las imágenes o textos de otra persona si tienes permiso o una licencia que lo permita, y debes atribuir al creador original. También puedes proteger tu propio trabajo agregando una licencia que le diga a otros exactamente cómo pueden usarlo."
+    },
+    {
+      "nm": "La violación de seguridad",
+      "title": "Un inicio de sesión que no hiciste",
+      "body": "Recibes una alerta de que se inició sesión en tu cuenta desde un dispositivo que no reconoces. La respuesta segura es cambiar de inmediato a una nueva contraseña fuerte, activar la verificación en dos pasos y reportar la violación. Una autenticación fuerte y un reporte rápido limitan el daño."
+    },
+    {
+      "nm": "El amigo callado",
+      "title": "Cuando un compañero necesita ayuda",
+      "body": "Alguien que está siendo atacado en línea a menudo se queda callado de repente, borra sus cuentas, teme a su teléfono o se aleja de sus amigos. Estos cambios son señales de alerta, no una prueba de nada por sí solos, pero notarlos y avisarle a un adulto de confianza puede conseguirle a la persona atacada la ayuda que necesita."
+    },
+    {
+      "nm": "El enrutador",
+      "title": "Nombrar la red",
+      "body": "El enrutador de Wi-Fi del salón se instaló la primavera pasada y el nombre de su red es una mezcla de letras y números impresos en una etiqueta. Saber el nombre del enrutador es un dato genuino sobre el salón, pero no te ayudará a abrir ninguno de los candados de este caso."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Señales de una fuente confiable",
+      "q": "Marca CADA señal de que un sitio web es una fuente confiable en la que puedes confiar.",
+      "items": [
+        "Un autor nombrado con experiencia relevante",
+        "Evidencia que puedes verificar, enlazada a otras fuentes",
+        "Información que es reciente y se mantiene actualizada",
+        "Un diseño colorido y de aspecto profesional",
+        "Un propósito oculto de hacerte comprar algo"
+      ],
+      "reason": "La confiabilidad viene de un autor experto nombrado, evidencia verificable e información actual. Un diseño elegante o un discurso de venta oculto no dicen nada sobre si los hechos son verdaderos."
+    },
+    {
+      "title": "Nombra el sesgo",
+      "q": "Cuando una fuente muestra solo un lado y usa lenguaje cargado, esa inclinación se llama ______.",
+      "answer": [
+        "sesgo",
+        "sesgado",
+        "sesgada",
+        "parcialidad"
+      ],
+      "reason": "Una inclinación de un solo lado que deja fuera hechos que no le convienen es sesgo, que es tu señal para contrastar la afirmación con una fuente independiente."
+    },
+    {
+      "title": "Los derechos del creador",
+      "q": "Quieres usar una foto de un blog de salud en tu propio proyecto. ¿Qué espera la ley que hagas?",
+      "options": [
+        "Usarla libremente, ya que todo lo publicado en línea es público y gratuito",
+        "Obtener permiso o una licencia que lo permita, y atribuir al creador",
+        "Cambiar algunos colores para que cuente como un trabajo original nuevo"
+      ],
+      "reason": "Publicar algo en línea no renuncia a los derechos del creador, así que necesitas permiso o una licencia adecuada y debes dar crédito al creador original."
+    },
+    {
+      "title": "Responde a la violación de seguridad",
+      "q": "Una alerta dice que se accedió a tu cuenta desde un dispositivo desconocido. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "📣 Reporta la violación",
+        "🔑 Pon una nueva contraseña fuerte",
+        "📱 Activa la verificación en dos pasos"
+      ],
+      "reason": "Primero deja fuera a los intrusos con una nueva contraseña fuerte, luego agrega la verificación en dos pasos para que una contraseña robada por sí sola no baste, después reporta la violación para que se pueda rastrear y detener."
+    }
+  ]
+}

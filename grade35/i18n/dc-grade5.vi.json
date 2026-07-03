@@ -1,0 +1,85 @@
+{
+ "chrome": {
+  "h1": "Truy tìm kẻ theo dõi",
+  "sub": "Có ai đó đã theo dõi một bạn học sinh khắp internet — lặng lẽ, từ trang này sang trang khác. Hãy đọc manh mối, giải bốn ổ khóa và vạch trần cách theo dõi hoạt động.",
+  "briefLabel": "Nhiệm vụ của bạn",
+  "briefH": "Theo dấu vết cookie",
+  "briefP": "Các trang web có thể để lại những tệp nhỏ gọi là cookie đi theo bạn khi bạn chuyển từ trang này sang trang khác. Việc của bạn là tìm hiểu dấu chân số hình thành thế nào và dữ liệu theo dõi bạn ra sao trên mạng. Hãy giải cả bốn ổ khóa, và mỗi ổ sẽ cho thấy lý do vì sao câu trả lời đúng.",
+  "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+  "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+  "winH": "Bạn đã tìm ra những kẻ theo dõi!",
+  "winP": "Giờ bạn đã biết điều gì tạo nên dấu chân số, cách viết phù hợp với người đọc, điều gì xảy ra khi bạn sao chép tác phẩm mà không xin phép, và cách nhận ra một kết nối được bảo mật. Thám tử sắc bén lắm!",
+  "crumbSuite": "Breakout Công dân số"
+ },
+ "clues": [
+  {
+   "nm": "Dấu vết cookie",
+   "title": "Dữ liệu theo bạn như thế nào?",
+   "body": "Khi bạn truy cập các trang web, một số trang lưu những tệp nhỏ gọi là cookie trên thiết bị của bạn. Những cookie này có thể nhớ bạn và theo dõi bạn khi bạn chuyển từ trang này sang trang khác. Đó là cách những kẻ theo dõi biết bạn đã đi qua đâu."
+  },
+  {
+   "nm": "Các phần của dấu chân",
+   "title": "Điều gì tạo nên dấu chân?",
+   "body": "Dấu chân số được tạo nên từ những gì bạn làm trên mạng. Trò chơi bạn chơi, video bạn xem, và bài đăng bạn chia sẻ đều trở thành một phần của nó. Những việc bạn làm ngoài mạng, như đọc sách giấy, thì không."
+  },
+  {
+   "nm": "Hiểu người đọc",
+   "title": "Bạn đang viết cho ai?",
+   "body": "Phép lịch sự tốt trên mạng nghĩa là viết lời phù hợp với người đọc. Một tin nhắn gửi cho cô giáo nên lịch sự và dùng câu đầy đủ, cẩn thận. Một lời nhắn nhanh cho bạn thân có thể thoải mái và tự nhiên hơn."
+  },
+  {
+   "nm": "Tác phẩm mượn",
+   "title": "Dùng sáng tạo của ai đó",
+   "body": "Nếu bạn dùng ảnh, bài hát hay bài viết của người khác mà không xin phép hoặc ghi công, sẽ có hậu quả thật sự. Người sáng tạo có thể yêu cầu bạn gỡ xuống, và bạn có thể gặp rắc rối. Con đường trung thực là xin phép trước và ghi công."
+  },
+  {
+   "nm": "Ổ khóa nhỏ",
+   "title": "Kết nối này có an toàn không?",
+   "body": "Một trang web được bảo mật hiển thị biểu tượng ổ khóa nhỏ gần địa chỉ của nó, và địa chỉ bắt đầu bằng các chữ cái h-t-t-p-s. Chữ 's' nghĩa là an toàn. Hãy đếm số chữ cái trong 'https' và nhớ con số đó — nó chứng minh kết nối được bảo vệ."
+  },
+  {
+   "nm": "Hamster thư viện",
+   "title": "Thú cưng của phòng đọc",
+   "body": "Thư viện trường có một chú hamster tên Pixel sống gần các máy tính. Pixel ngủ cả buổi sáng và chạy trên bánh xe vào ban đêm. Đây là một điều thú vị, nhưng nó sẽ không giúp bạn mở ổ khóa nào."
+  }
+ ],
+ "locks": [
+  {
+   "title": "Các phần của dấu chân",
+   "q": "Hãy đánh dấu MỌI thứ trở thành một phần của dấu chân số.",
+   "items": [
+    "Một video bạn xem trên ứng dụng phát trực tuyến",
+    "Một màn bạn vượt qua trong trò chơi trên mạng",
+    "Một tấm ảnh bạn đăng trên trang mạng xã hội",
+    "Một cuốn sách giấy bạn đọc lặng lẽ ở nhà",
+    "Một buổi đi dạo bên ngoài không mang điện thoại"
+   ],
+   "reason": "Dấu chân số được tạo nên từ những gì bạn làm trên mạng — xem, chơi và đăng đều để lại dấu vết, còn đọc sách giấy hay đi dạo bên ngoài xảy ra ngoài mạng."
+  },
+  {
+   "title": "Phù hợp với người đọc",
+   "q": "Bạn đang viết một tin nhắn cho CÔ GIÁO của mình. Câu nào phù hợp với người đọc nhất?",
+   "options": [
+    "ê!!! có bài tập ko?? haha nói nhanh giùm",
+    "Chào cô Lopez, cô có thể cho em biết tối nay chúng em có bài tập không ạ? Em cảm ơn cô.",
+    "cô quên nói bài tập rồi sửa đi nha"
+   ],
+   "reason": "Phép lịch sự tốt nghĩa là viết lời phù hợp với người đọc, và một tin nhắn gửi cô giáo nên lịch sự và viết bằng câu đầy đủ, cẩn thận."
+  },
+  {
+   "title": "Mã bảo mật",
+   "q": "Địa chỉ của một trang web an toàn bắt đầu bằng 'https'. Từ 'https' có bao nhiêu chữ cái?",
+   "reason": "Từ 'https' có năm chữ cái, và chữ 's' ở cuối nghĩa là an toàn — dấu hiệu của một kết nối được bảo vệ."
+  },
+  {
+   "title": "Cách mượn công bằng",
+   "q": "Bạn muốn dùng ảnh của người khác. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+   "pads": [
+    "🏷️ Ghi công cho họ",
+    "🙋 Xin phép",
+    "✅ Rồi dùng nó"
+   ],
+   "reason": "Đầu tiên XIN người sáng tạo cho phép, rồi dự định GHI CÔNG họ, và chỉ khi đó mới DÙNG tác phẩm — như vậy tránh được hậu quả của việc sao chép mà không xin phép."
+  }
+ ]
+}

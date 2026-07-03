@@ -1,0 +1,92 @@
+{
+  "chrome": {
+    "h1": "Detecta la manipulación",
+    "sub": "Una publicación se está esparciendo por todo el internet, y miles la comparten sin verificarla. Tu trabajo es frenar, leer más allá de la manipulación y descubrir la verdad.",
+    "briefLabel": "Tu misión",
+    "briefH": "Conviértete en analista de medios",
+    "briefP": "Los medios están diseñados para captar tu atención, y a veces estiran, tuercen u ocultan los hechos para lograrlo. Trabaja con las pistas para abrir los cuatro candados: cada uno esconde una razón que prueba por qué la respuesta inteligente es la correcta. Piensa como analista, no como espectador.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Viste a través de la manipulación!",
+    "winP": "Ahora conoces las consecuencias reales de violar la ley de derechos de autor, cómo los medios exageran y tergiversan los hechos, cómo defenderte de los ciberataques y cuán profundamente puede lastimar el ciberacoso. Así se ve un ciudadano digital agudo.",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "La letra pequeña",
+      "title": "Lo que puede costar violar los derechos de autor",
+      "body": "Los derechos de autor son una ley, no solo una regla. Si copias, publicas o vendes el trabajo de alguien sin permiso, el creador puede enviar un aviso de retiro, exigir un pago o incluso llevarte a los tribunales. Las consecuencias reales pueden incluir que quiten tu contenido, que cierren tu cuenta y que pagues dinero por daños."
+    },
+    {
+      "nm": "El anzuelo",
+      "title": "Cómo un titular te atrae",
+      "body": "Una publicación viral gritaba: '¡IMPACTANTE! Todos están abandonando esta aplicación, ¡no vas a creer por qué!'. El artículo debajo no tenía números, ni una fuente nombrada, y solo una cita anónima. El clickbait usa palabras emocionales enormes y afirmaciones vagas para ganar clics, y luego casi no entrega nada. Mientras más ruidosa la promesa, más debes verificarla."
+    },
+    {
+      "nm": "La selección interesada",
+      "title": "Cuando las estadísticas engañan",
+      "body": "Un sitio con estilo de noticias publicó: '¡9 de cada 10 estudiantes prefieren nuestra aplicación!', pero la encuesta solo preguntó a diez personas, todas amigas de la empresa. Seleccionar de forma interesada significa mostrar solo los números que ayudan a tu lado y ocultar el resto. Un analista de verdad pregunta a quiénes se contó, cuántos fueron y quién pagó el estudio."
+    },
+    {
+      "nm": "La defensa",
+      "title": "Proteger tus cuentas",
+      "body": "Un ciberataque intenta engañar o forzar su entrada a tus cuentas. Las defensas fuertes incluyen una frase de contraseña larga y única, activar la verificación en dos pasos y nunca hacer clic en un enlace de inicio de sesión dentro de un mensaje sorpresa. Reutilizar una contraseña en todos lados o entregar un código de un texto que no esperabas deja tu puerta abierta de par en par."
+    },
+    {
+      "nm": "La onda expansiva",
+      "title": "Lo que realmente hace el ciberacoso",
+      "body": "Una publicación cruel sobre un compañero se compartió una y otra vez. El ciberacoso puede seguir a una persona hasta su casa, esparcirse a un público enorme y quedarse en línea mucho después de empezar, así que el daño puede sentirse constante. La respuesta inteligente es frenar y no sumarse, guardar pruebas tomando una captura de pantalla, apoyar a la persona afectada y reportarlo a un adulto de confianza."
+    },
+    {
+      "nm": "El servidor viejo",
+      "title": "Una computadora retirada",
+      "body": "El servidor viejo de la escuela fue reemplazado la primavera pasada y ahora está desconectado en un armario de almacenamiento. Alguna vez alojó los videos de los anuncios matutinos. Historia interesante, pero este dato no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "La consecuencia real",
+      "q": "Alguien vuelve a publicar el video pagado de un creador como si fuera propio para ganar dinero. Según la ley de derechos de autor, ¿qué le puede pasar realmente?",
+      "options": [
+        "Nada, porque cualquier cosa publicada en línea es de uso libre",
+        "El video puede ser retirado, la cuenta cerrada, y puede que deba pagar dinero por daños",
+        "Solo tiene que pedir perdón en los comentarios"
+      ],
+      "reason": "Los derechos de autor son una ley, así que la infracción puede llevar a retiros de contenido, cuentas cerradas y pagar dinero real por daños, como explica la pista de la letra pequeña."
+    },
+    {
+      "title": "Señales de alerta de la manipulación",
+      "q": "Marca CADA señal de que una publicación puede estar exagerando o tergiversando los hechos.",
+      "items": [
+        "Un titular lleno de palabras emocionales enormes como 'IMPACTANTE' y 'no vas a creer'",
+        "Una estadística como '9 de cada 10' sin tamaño de muestra y sin una fuente nombrada",
+        "Una encuesta pagada por la misma empresa que los resultados hacen ver bien",
+        "Un reporte calmado que nombra sus fuentes y muestra cómo se recolectaron los datos",
+        "Un artículo que enlaza al estudio original para que puedas verificarlo tú mismo"
+      ],
+      "reason": "La manipulación aparece como clickbait emocional, estadísticas vagas o seleccionadas de forma interesada, y estudios con un motivo económico oculto, mientras que el periodismo honesto nombra fuentes y te deja verificar los datos."
+    },
+    {
+      "title": "Practica la defensa",
+      "q": "Marca CADA práctica que realmente te defiende de un ciberataque.",
+      "items": [
+        "Usar una frase de contraseña larga y única para cada cuenta importante",
+        "Activar la verificación en dos pasos",
+        "Ignorar un mensaje sorpresa que te presiona a hacer clic en un enlace de inicio de sesión",
+        "Reutilizar la misma contraseña fácil en cada sitio",
+        "Compartir un código de verificación de un texto que no esperabas"
+      ],
+      "reason": "La defensa real significa frases de contraseña únicas, verificación en dos pasos y rechazar enlaces de inicio de sesión sorpresa, mientras que las contraseñas reutilizadas y los códigos compartidos le entregan la llave a los atacantes."
+    },
+    {
+      "title": "Responde al daño",
+      "q": "Una publicación cruel sobre un compañero se esparce rápido. Toca la respuesta inteligente en el orden CORRECTO.",
+      "pads": [
+        "🙋 Reporta a un adulto de confianza",
+        "✋ Alto, no te sumes",
+        "📸 Guarda pruebas"
+      ],
+      "reason": "Primero ALTO para no esparcir el daño, luego GUARDA pruebas con una captura de pantalla, después REPORTA a un adulto de confianza que pueda ayudar a la persona afectada."
+    }
+  ]
+}

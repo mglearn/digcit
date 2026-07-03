@@ -1,0 +1,90 @@
+{
+  "chrome": {
+    "h1": "El registro permanente",
+    "sub": "Un estudiante pensó que las publicaciones viejas simplemente desaparecerían. No fue así. Abre cuatro candados para aprender por qué el internet recuerda.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un detective de registros",
+    "briefP": "Hace meses, un estudiante subió fotos, envió mensajes y usó una imagen que no era suya. Hoy encontró todo eso todavía en línea. Lee las pistas y luego abre los cuatro candados. Cada candado tiene una razón que muestra por qué la respuesta es correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Aprendiste que tu registro en línea puede durar mucho tiempo, cómo usar buenos modales en los mensajes, cómo dar crédito a un creador y cómo ser un defensor que detiene el ciberacoso. ¡Buen trabajo de detective!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "El registro",
+      "title": "¿Por qué sigue ahí?",
+      "body": "Cuando publicas en línea, una copia puede quedarse por mucho tiempo. Aunque lo borres, otros pueden haberlo guardado o compartido. Este rastro duradero se llama tu registro permanente. Por eso, piensa antes de publicar."
+    },
+    {
+      "nm": "Palabras amables",
+      "title": "Modales en los mensajes",
+      "body": "Los buenos modales en línea se llaman etiqueta. En un texto, correo o chat, usas palabras amables, no gritas en MAYÚSCULAS y no pones apodos malos. También esperas tu turno y lees antes de responder. Sé cortés, igual que en persona."
+    },
+    {
+      "nm": "Da crédito",
+      "title": "¿De quién es la imagen?",
+      "body": "El estudiante usó un dibujo que hizo otro artista. Un creador es dueño de lo que hace. Esta regla se llama derechos de autor. Para ser justo, debes dar crédito al creador nombrando a quien lo hizo."
+    },
+    {
+      "nm": "El defensor",
+      "title": "Dar la cara en línea",
+      "body": "Se estaban burlando de un compañero en línea. Un defensor no se une ni se queda callado. Los pasos inteligentes son: primero NIÉGATE a compartir la publicación mala, luego REPÓRTALA en la aplicación y después APOYA con un mensaje amable a la persona que fue lastimada."
+    },
+    {
+      "nm": "La ventana emergente",
+      "title": "Una caja que observa",
+      "body": "Una ventana emergente decía que un sitio usa cookies. Las cookies son archivos pequeños que ayudan a un sitio a recordarte y a recolectar datos sobre lo que haces. Una ventana emergente no es un mensaje malo ni son malos modales. Solo es el sitio pidiendo rastrearte."
+    },
+    {
+      "nm": "Tortuga de la clase",
+      "title": "La mascota del salón",
+      "body": "La tortuga de la clase se llama Pixel. Pixel tiene 12 años y le encanta comer hojas verdes. Este es un dato divertido, pero no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "El registro permanente",
+      "q": "¿Por qué una publicación que hiciste hace meses todavía se puede encontrar hoy?",
+      "options": [
+        "Porque borrar una publicación siempre borra cada copia de inmediato",
+        "Porque una copia puede quedarse en línea, y otros pueden haberla guardado o compartido",
+        "Porque el internet olvida todo después de una semana"
+      ],
+      "reason": "Una publicación puede dejar un registro permanente porque las copias duran mucho tiempo y otras personas pueden haberlas guardado o compartido, incluso después de que borres la tuya."
+    },
+    {
+      "title": "Buenos modales en línea",
+      "q": "Marca CADA opción que muestre buena etiqueta en un texto, correo o chat.",
+      "items": [
+        "Usar palabras amables y corteses",
+        "Leer el mensaje antes de responder",
+        "Escribir en MAYÚSCULAS para sonar más fuerte",
+        "Ponerle a alguien un apodo malo",
+        "Cerrar una ventana de cookies para que un sitio no pueda rastrearte"
+      ],
+      "reason": "La etiqueta significa palabras amables y leer antes de responder; gritar en mayúsculas y los apodos malos son groseros, y una ventana de cookies es sobre datos, no sobre modales."
+    },
+    {
+      "title": "Justo con el creador",
+      "q": "Cuando usas una imagen que hizo un artista, la regla que protege al creador se llama ______.",
+      "answer": [
+        "derechos de autor",
+        "derecho de autor",
+        "copyright"
+      ],
+      "reason": "Los derechos de autor son la regla que dice que un creador es dueño de lo que hace, así que debes darle crédito cuando usas su trabajo."
+    },
+    {
+      "title": "Sé un defensor",
+      "q": "Se burlan de un compañero en línea. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "💙 Apoya a la persona",
+        "🚫 Niégate a compartirlo",
+        "🚩 Reporta la publicación"
+      ],
+      "reason": "Primero NIÉGATE a difundir la publicación mala, luego REPÓRTALA en la aplicación y después APOYA al compañero que fue lastimado. Niégate, Reporta, Apoya."
+    }
+  ]
+}

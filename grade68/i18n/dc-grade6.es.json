@@ -1,0 +1,90 @@
+{
+  "chrome": {
+    "h1": "Detective de uso justo",
+    "sub": "Una estudiante creadora quiere combinar una foto, un fragmento de canción y una cita en un proyecto de clase, pero ¿es legal? Sigue la evidencia y abre cuatro candados para cerrar el caso.",
+    "briefLabel": "Tu misión",
+    "briefH": "Abre el expediente del caso",
+    "briefP": "Una creadora llamada Rivka está haciendo un video y no sabe cuáles partes realmente tiene permitido reutilizar. Lee las pistas, evalúa la evidencia y abre los cuatro candados. Cada candado termina con una razón que prueba por qué la respuesta es correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados, detective!",
+    "winP": "Ahora puedes distinguir los derechos de autor del dominio público, citar una fuente y detectar afirmaciones exageradas, reconocer un mensaje de phishing que esconde malware o robo de identidad, y nombrar las formas en que ocurre el ciberacoso. Eso es pensamiento crítico real en línea.",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Los términos de PI",
+      "title": "Palabras que todo creador debe conocer",
+      "body": "Los derechos de autor significan que el autor es dueño de su trabajo automáticamente y controla cómo se usa. El dominio público significa que los derechos de autor terminaron o fueron cedidos, así que cualquiera puede reutilizar el trabajo libremente. Una licencia Creative Commons es el permiso por escrito del creador para reutilizar el trabajo bajo ciertas reglas, y el código abierto funciona igual para el código de computadora."
+    },
+    {
+      "nm": "Uso justo",
+      "title": "La excepción limitada",
+      "body": "El uso justo es una excepción estrecha que a veces te permite reutilizar una parte pequeña de un trabajo protegido para fines como la enseñanza, las noticias o el comentario, sin pedir permiso primero. No es un pase libre para copiar lo que quieras. Cuando tengas dudas, lo más seguro es pedirle permiso al creador."
+    },
+    {
+      "nm": "Citar fuentes",
+      "title": "Dar el crédito correcto",
+      "body": "Citar una fuente significa nombrar quién hizo el trabajo y dónde lo encontraste, incluso cuando se permite reutilizarlo. Una cita completa incluye el nombre del creador, el título y el enlace o el lugar donde lo encontraste. Omitir el crédito se llama plagio, y es deshonesto incluso cuando el trabajo es de uso gratuito."
+    },
+    {
+      "nm": "La afirmación escandalosa",
+      "title": "Exagerado en línea",
+      "body": "Una publicación gritaba: '¡IMPACTANTE! ¡Los científicos DEMUESTRAN que este truco te hace un genio de la noche a la mañana!'. Palabras como impactante, demostrado y de la noche a la mañana sin una fuente nombrada son señales de que una afirmación está exagerada o tergiversada. La información confiable nombra su evidencia y no promete resultados imposibles."
+    },
+    {
+      "nm": "El correo trampa",
+      "title": "Un mensaje que esconde una trampa",
+      "body": "Un correo decía: '¡Tu cuenta está bloqueada! Haz clic aquí en 10 minutos o la perderás para siempre'. Los mensajes de phishing usan miedo y urgencia para engañarte y hacerte hacer clic. El enlace puede instalar malware que daña tu dispositivo, o una página de inicio de sesión falsa puede robar tu contraseña para el robo de identidad. Nunca hagas clic; ve tú mismo al sitio real y avísale a un adulto."
+    },
+    {
+      "nm": "Torneo del recreo",
+      "title": "La noche de juegos de la clase",
+      "body": "El sexto grado está planeando un torneo de juegos de mesa después de clases el viernes, y el ganador podrá elegir el libro de lectura en voz alta del próximo mes. Suena muy divertido. Esta es una nota real de la clase, pero no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Libre para cualquiera",
+      "q": "Un trabajo cuyos derechos de autor terminaron, así que cualquiera puede reutilizarlo libremente, está en el ______ ______.",
+      "answer": [
+        "dominio público",
+        "dominio publico",
+        "el dominio público"
+      ],
+      "reason": "Las pistas explican que el dominio público significa que los derechos de autor terminaron o fueron cedidos, así que el trabajo pertenece a todos y puede reutilizarse libremente."
+    },
+    {
+      "title": "Detecta la manipulación",
+      "q": "¿Cuál publicación es más probable que esté exagerada o tergiversada y NO debe creerse tal cual?",
+      "options": [
+        "Un reporte que nombra el estudio, los científicos y la fecha de la investigación",
+        "¡IMPACTANTE! ¡Este truco DEMUESTRA que puedes volverte un genio de la noche a la mañana!",
+        "Un artículo que enlaza su evidencia y menciona tanto los beneficios como los límites"
+      ],
+      "reason": "Las pistas advierten que palabras como impactante, demostrado y de la noche a la mañana sin una fuente nombrada son señales de una afirmación exagerada, mientras que las publicaciones confiables nombran su evidencia."
+    },
+    {
+      "title": "Lee la trampa",
+      "q": "Marca CADA señal de que un correo es un mensaje de phishing que intenta instalar malware o robar una identidad.",
+      "items": [
+        "Crea pánico y una cuenta regresiva, como 'actúa en 10 minutos o pierdes tu cuenta'",
+        "Te presiona a hacer clic en un enlace para 'desbloquear' o 'verificar' tu cuenta",
+        "Te pide tu contraseña o inicio de sesión en una página a la que no fuiste tú mismo",
+        "Es un boletín de la clase, enviado por tu maestra, sobre el torneo del viernes",
+        "Es un recordatorio de calendario que tú pusiste para tu propia tarea"
+      ],
+      "reason": "Las pistas muestran que el phishing usa miedo, urgencia y enlaces de 'haz clic aquí' para instalar malware o robar una contraseña para el robo de identidad, mientras que un boletín real o tu propio recordatorio no hacen nada de eso."
+    },
+    {
+      "title": "Reutilízalo bien",
+      "q": "Rivka quiere reutilizar la foto de un artista de forma honesta y legal. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "📝 Cita al creador",
+        "©️ Revisa la licencia",
+        "🙋 Pide permiso si tienes dudas"
+      ],
+      "reason": "Primero REVISA la licencia para ver si se permite reutilizar, luego PIDE permiso al creador cuando tengas dudas, y siempre CITA al creador para dar crédito y evitar el plagio."
+    }
+  ]
+}

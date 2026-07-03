@@ -1,0 +1,91 @@
+{
+  "chrome": {
+    "h1": "Tu primera huella digital",
+    "sub": "Un estudiante nuevo dejó rastros por todo el internet. Usa las pistas para resolver cuatro candados y borrar el rastro.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un detective de huellas",
+    "briefP": "Cada vez que entras al internet, dejas marcas. A estas marcas las llamamos huella digital. Lee las pistas y luego abre los cuatro candados. Cada candado tiene una razón que muestra por qué la respuesta es correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Ya sabes qué es una huella digital, cómo cuidarte, cómo dar crédito y cómo ser amable en línea. ¡Buen trabajo de detective!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Huella",
+      "title": "¿Qué es una huella digital?",
+      "body": "Una huella digital es el rastro que dejas en línea. Las fotos que subes, los juegos que juegas y los mensajes que envías se vuelven parte de ella. Puede quedarse en línea por mucho tiempo."
+    },
+    {
+      "nm": "El enlace",
+      "title": "Un mensaje con un enlace",
+      "body": "Un aviso decía: '¡GANASTE una tableta gratis! ¡Haz clic en este enlace YA para reclamarla!'. Vino de un nombre que nadie conocía. Los enlaces seguros vienen de personas y lugares en los que confías. Los premios sorpresa son una señal de alerta."
+    },
+    {
+      "nm": "El dibujo",
+      "title": "¿De quién es el dibujo?",
+      "body": "Mía usó el dibujo de otra artista en su proyecto. Para dar crédito, escribes el nombre de la persona que lo hizo. Eso se llama el nombre del creador. Dar crédito es lo justo y lo honesto."
+    },
+    {
+      "nm": "Mensaje malo",
+      "title": "Algo poco amable",
+      "body": "Alguien envió un mensaje malo a un compañero. Los pasos inteligentes son: primero ALTO y no respondas, luego GUARDA el mensaje para tener pruebas, y después DILE a un adulto de confianza. No lo pases a nadie más."
+    },
+    {
+      "nm": "La contraseña",
+      "title": "Una contraseña fuerte",
+      "body": "Una contraseña fuerte es larga y difícil de adivinar. Tu nombre o '12345' es fácil de adivinar. Mezclar letras, números y símbolos la hace fuerte. Mantenla en secreto."
+    },
+    {
+      "nm": "Mascota de la clase",
+      "title": "La mascota del salón",
+      "body": "La mascota de la clase es un hámster llamado Nibbles. A Nibbles le gustan las zanahorias y correr en su rueda. Este es un dato divertido, pero no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "La opción segura",
+      "q": "¿Cuál enlace es seguro para hacer clic?",
+      "options": [
+        "Un aviso de un desconocido que dice que ganaste una tableta gratis",
+        "Una página que tu maestra compartió para la lección de hoy",
+        "Un enlace que dice '¡Haz clic YA para reclamar tu premio!'"
+      ],
+      "reason": "Los enlaces seguros vienen de personas y lugares en los que confías, como tu maestra. Los premios sorpresa de desconocidos son una señal de alerta, así que esos enlaces no son seguros."
+    },
+    {
+      "title": "Parte de la huella",
+      "q": "Marca CADA cosa que es parte de una huella digital.",
+      "items": [
+        "Una foto que subiste en línea",
+        "Un juego que jugaste en un sitio web",
+        "Un mensaje que le enviaste a un amigo",
+        "Un libro que leíste en silencio en casa sin computadora",
+        "Las zanahorias que come el hámster de la clase"
+      ],
+      "reason": "Una huella digital está hecha de lo que haces EN LÍNEA: publicaciones, juegos y mensajes. Leer un libro de papel o darle de comer a un hámster pasa fuera de línea, así que esas cosas no son parte de ella."
+    },
+    {
+      "title": "Da crédito",
+      "q": "Cuando usas el dibujo de alguien, debes dar crédito escribiendo su ______.",
+      "answer": [
+        "nombre",
+        "nombre del creador",
+        "nombre del artista",
+        "artista"
+      ],
+      "reason": "Dar crédito significa nombrar a la persona que creó el trabajo. Eso es lo honesto y justo cuando usas el dibujo o el texto de otra persona."
+    },
+    {
+      "title": "Los pasos correctos",
+      "q": "Llega un mensaje malo. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "🙋 Dile a un adulto",
+        "✋ Alto, no respondas",
+        "💾 Guárdalo"
+      ],
+      "reason": "Primero ALTO para no empeorar las cosas. Luego GUARDA el mensaje como prueba. Después DILE a un adulto de confianza que pueda ayudar. Alto, Guarda, Dile."
+    }
+  ]
+}
