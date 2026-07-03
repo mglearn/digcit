@@ -9,6 +9,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { SITE_URL } = require('./config');
 const ROOT = path.join(__dirname, '..');
 const BANDS = { grade35: [3, 4, 5], grade68: [6, 7, 8] };
 
@@ -36,9 +37,9 @@ function page(id, U) {
 <meta property="og:site_name" content="Digital Citizenship Breakouts">
 <meta property="og:title" content="${t('header.h1')}">
 <meta property="og:description" content="${t('header.sub')}">
-<meta property="og:image" content="https://breakouts.example.org/assets/og.png">
+<meta property="og:image" content="${SITE_URL}/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://breakouts.example.org/assets/og.png">
+<meta name="twitter:image" content="${SITE_URL}/assets/og.png">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--c1:#0a2e63;--c2:#2f6fe0;--c3:#1a7a8c;--c4:#f5b800;--c5:#0d47a1;--bg-a:rgba(245,184,0,.12);--bg-b:rgba(10,46,99,.10)}</style>
 <link rel="stylesheet" href="../assets/breakout.css">
@@ -101,7 +102,6 @@ const only = process.argv[2];
 for (const [band, grades] of Object.entries(BANDS)) {
   for (const g of grades) {
     const id = 'dc-grade' + g;
-    if (id === 'dc-grade3') continue;                 // hand-verified reference — leave alone
     if (only && id !== only) continue;
     const locale = path.join(ROOT, band, 'locales', id + '.js');
     if (!fs.existsSync(locale)) continue;

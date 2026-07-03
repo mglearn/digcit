@@ -52,9 +52,8 @@ const ACT = {};
 for (const g of Object.keys(META)) ACT[g] = { grade: +g, ...META[g], B: loadBreakout(g) };
 
 // ---- shared shell --------------------------------------------------------
-// Absolute origin for social/OG image URLs. Matches the nginx placeholder;
-// find-and-replace with the real domain at deploy time.
-const SITE_URL = 'https://breakouts.example.org';
+// Absolute origin for social/OG image URLs — set via SITE_URL env (see config.js).
+const { SITE_URL } = require('./config');
 const OG_DESC = 'Critical Thinking Online Breakouts for Digital Citizenship — grades 3–8, TEKS-aligned, in 7 languages. Runs in the browser; no logins, no data collected.';
 function assets(depth) { return depth ? '../assets' : 'assets'; }
 function headMeta(depth, title, desc) {

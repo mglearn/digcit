@@ -49,9 +49,20 @@ npm install                                   # jsdom (test harness only)
 node scripts/bake.js                          # src/*.json + i18n/*.json -> locales/*.js
 node scripts/gen-html.js                      # -> *-student.html
 node scripts/gen-site.js                      # -> hubs, landing, teacher, correlation, guide, policy
+python3 scripts/gen-images.py                 # -> favicons, PWA icons, og.png
 ANSWER_KEY_PASSWORD='choose' node scripts/build-answer-key.js   # -> answer-key.html
 node solve-test.js                            # QUALITY GATE — must print ALL PASS
 node scripts/check-links.js                   # internal links resolve
+node scripts/qa-translations.js               # -> docs/translation-qa.md (native-review queue)
+```
+
+**Deploy domain.** Absolute Open Graph / social-image URLs come from one place —
+`scripts/config.js`, overridable with the `SITE_URL` env var (default matches the
+nginx `server_name` placeholder). Set it once when building for your domain:
+
+```bash
+SITE_URL=https://breakouts.yourdistrict.org node scripts/gen-site.js
+SITE_URL=https://breakouts.yourdistrict.org node scripts/gen-html.js
 ```
 
 ### Authoring a new activity
