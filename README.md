@@ -63,6 +63,7 @@ nginx `server_name` placeholder). Set it once when building for your domain:
 ```bash
 SITE_URL=https://breakouts.yourdistrict.org node scripts/gen-site.js
 SITE_URL=https://breakouts.yourdistrict.org node scripts/gen-html.js
+SITE_URL=https://breakouts.yourdistrict.org node scripts/gen-nginx.js   # server_name + cert paths
 ```
 
 ### Authoring a new activity

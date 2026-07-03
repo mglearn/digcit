@@ -42,6 +42,10 @@ node solve-test.js          # must print ALL PASS
 ## 2. Deploy the free tier (nginx)
 
 ```bash
+# render digcit.conf (server_name + cert paths) from your domain — same SITE_URL
+# used for the pages' social images, so the domain lives in ONE place
+SITE_URL=https://breakouts.yourdistrict.org node scripts/gen-nginx.js
+
 # free tree WITHOUT grade68/
 rsync -av --delete \
   --exclude 'grade68/' --exclude 'node_modules/' --exclude 'hosting/' \
@@ -53,8 +57,10 @@ sudo ln -sf /etc/nginx/sites-available/digcit /etc/nginx/sites-enabled/digcit
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-Edit `server_name` (and add TLS) in `digcit.conf` first. Use Certbot for HTTPS
-and redirect port 80 → 443 in production; set `COOKIE_SECURE=1` for the app.
+`digcit.conf` is generated from `digcit.conf.template` by `scripts/gen-nginx.js`
+(edit the template, not the output). Obtain the cert with Certbot for HTTPS
+before enabling the `:443` block; port 80 already redirects to 443. Set
+`COOKIE_SECURE=1` for the app.
 
 ## 3. Deploy the paid tier (gateway)
 
