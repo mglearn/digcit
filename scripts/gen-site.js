@@ -61,6 +61,8 @@ function shell({ depth = 0, title, extraHead = '', body }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <title>${esc(title)}</title>
+<link rel="icon" href="${assets(depth)}/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a2e63">
 ${FONTS}
 <style>${PALETTE}</style>
 <link rel="stylesheet" href="${assets(depth)}/site.css">${extraHead}

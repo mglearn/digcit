@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Digital Citizenship Breakouts">
+  <rect width="32" height="32" rx="7" fill="#0a2e63"/>
+  <path d="M11 15.5V12a5 5 0 0 1 10 0v3.5" fill="none" stroke="#f5b800" stroke-width="2.6" stroke-linecap="round"/>
+  <rect x="8.5" y="15" width="15" height="11.5" rx="2.6" fill="#f5b800"/>
+  <circle cx="16" cy="19.6" r="1.9" fill="#0a2e63"/>
+  <rect x="15.1" y="19.6" width="1.8" height="4.3" rx=".9" fill="#0a2e63"/>
+</svg>
