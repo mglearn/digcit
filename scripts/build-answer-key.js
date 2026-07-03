@@ -79,6 +79,9 @@ const html = `<!DOCTYPE html>
 <meta name="referrer" content="no-referrer">
 <title>Answer Key — Digital Citizenship Breakouts</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
 <meta name="theme-color" content="#0a2e63">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>${PALETTE}</style>

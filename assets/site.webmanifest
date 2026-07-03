@@ -1,0 +1,14 @@
+{
+  "name": "Digital Citizenship Breakouts",
+  "short_name": "DigCit Breakouts",
+  "description": "Critical Thinking Online Breakouts for Digital Citizenship, grades 3-8, TEKS-aligned, in 7 languages.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f8fd",
+  "theme_color": "#0a2e63",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

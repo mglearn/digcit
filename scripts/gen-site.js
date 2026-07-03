@@ -52,7 +52,28 @@ const ACT = {};
 for (const g of Object.keys(META)) ACT[g] = { grade: +g, ...META[g], B: loadBreakout(g) };
 
 // ---- shared shell --------------------------------------------------------
+// Absolute origin for social/OG image URLs. Matches the nginx placeholder;
+// find-and-replace with the real domain at deploy time.
+const SITE_URL = 'https://breakouts.example.org';
+const OG_DESC = 'Critical Thinking Online Breakouts for Digital Citizenship — grades 3–8, TEKS-aligned, in 7 languages. Runs in the browser; no logins, no data collected.';
 function assets(depth) { return depth ? '../assets' : 'assets'; }
+function headMeta(depth, title, desc) {
+  const a = assets(depth);
+  return `<link rel="icon" href="${a}/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="${a}/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="${a}/apple-touch-icon.png">
+<link rel="manifest" href="${a}/site.webmanifest">
+<meta name="theme-color" content="#0a2e63">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Digital Citizenship Breakouts">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:image" content="${SITE_URL}/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(desc)}">
+<meta name="twitter:image" content="${SITE_URL}/assets/og.png">`;
+}
 function shell({ depth = 0, title, extraHead = '', body }) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -61,8 +82,7 @@ function shell({ depth = 0, title, extraHead = '', body }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <title>${esc(title)}</title>
-<link rel="icon" href="${assets(depth)}/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#0a2e63">
+${headMeta(depth, title, OG_DESC)}
 ${FONTS}
 <style>${PALETTE}</style>
 <link rel="stylesheet" href="${assets(depth)}/site.css">${extraHead}
