@@ -127,11 +127,35 @@ function cardDict() {
   for (const lg of SITE_LANGS) { d[lg] = {}; for (const g of [3, 4, 5, 6, 7, 8]) { const U = ACT[g].B.UI[lg] || ACT[g].B.UI.en; d[lg]['card.g' + g + '.title'] = U['header.h1']; d[lg]['card.g' + g + '.sub'] = U['header.sub']; } }
   return d;
 }
+// ---- auto-keyed strings (content-hash keys; no hand-naming) ---------------
+// E()/EH() emit a keyed element and record the English so it can be extracted
+// for translation. Keys are a stable hash of the English, so they survive
+// re-generation and dedupe identical strings across pages.
+const AUTO_EN = {};
+const AUTO_PATH = path.join(__dirname, 'site-i18n-auto.json');
+function K(s) { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0; return 't' + h.toString(36); }
+function E(tag, text, attrs) { const k = K(text); AUTO_EN[k] = text; return `<${tag}${attrs ? ' ' + attrs : ''} data-i18n="${k}">${esc(text)}</${tag}>`; }
+function EH(tag, html, attrs) { const k = K(html); AUTO_EN[k] = html; return `<${tag}${attrs ? ' ' + attrs : ''} data-i18n-html="${k}">${html}</${tag}>`; }
+function S(text) { return E('span', text); }                 // inline plain-text
+function SH(text) { return EH('span', text); }               // inline html
+function loadAuto() { try { return JSON.parse(fs.readFileSync(AUTO_PATH, 'utf8')); } catch (_) { return {}; } }
+// Persist any newly-seen English strings (blank translations preserved).
+function persistAuto() {
+  const cur = loadAuto();
+  for (const k of Object.keys(AUTO_EN)) {
+    if (!cur[k]) cur[k] = { en: AUTO_EN[k], es: '', vi: '', ar: '', hi: '', ur: '', zh: '' };
+    else cur[k].en = AUTO_EN[k];
+  }
+  fs.writeFileSync(AUTO_PATH, JSON.stringify(cur, null, 1) + '\n');
+}
 // Write the shared site-page dictionary once; every i18n page loads (and caches)
 // it, so the picker works site-wide without re-embedding the table per page.
 function writeSiteI18nData() {
-  const base = siDict(), cards = cardDict(), dict = {};
-  for (const lg of SITE_LANGS) dict[lg] = Object.assign({}, base[lg], cards[lg]);
+  const base = siDict(), cards = cardDict(), auto = loadAuto(), dict = {};
+  for (const lg of SITE_LANGS) {
+    dict[lg] = Object.assign({}, base[lg], cards[lg]);
+    for (const k of Object.keys(auto)) { const v = auto[k][lg]; if (v) dict[lg][k] = v; }
+  }
   fs.writeFileSync(path.join(ROOT, 'assets', 'site-i18n-data.js'), 'window.SITE_I18N_DATA = ' + JSON.stringify(dict) + ';\n');
 }
 const SITE_LANG_CSS = `
@@ -213,9 +237,10 @@ ${scripts}</div>
 `;
 }
 function footer(depth, policyHref) {
+  const p = depth ? '../' : '';
   return `<footer>
-  Digital Citizenship Breakouts · Aligned to Texas TEKS Technology Applications (adopted 2022, required K–8). Paraphrased alignment — not legal advice.<br>
-  <a href="${depth ? '../' : ''}index.html">Suite home</a> · <a href="${depth ? '../' : ''}library.html">Library</a> · <a href="${depth ? '../' : ''}guide.html">Teacher guide</a> · <a href="${depth ? '../' : ''}scope.html">Scope &amp; sequence</a> · <a href="${depth ? '../' : ''}lessons.html">Lesson plans</a> · <a href="${depth ? '../' : ''}correlation.html">TEKS correlation</a> · <a href="${depth ? '../' : ''}udl.html">UDL</a> · <a href="${depth ? '../' : ''}elps.html">ELPS</a>${policyHref ? ` · <a href="${policyHref}">Privacy &amp; compliance</a>` : ''}
+  ${E('span', 'Digital Citizenship Breakouts · Aligned to Texas TEKS Technology Applications (adopted 2022, required K–8). Paraphrased alignment — not legal advice.')}<br>
+  ${E('a', 'Suite home', 'href="' + p + 'index.html"')} · ${E('a', 'Library', 'href="' + p + 'library.html"')} · ${E('a', 'Teacher guide', 'href="' + p + 'guide.html"')} · ${E('a', 'Scope & sequence', 'href="' + p + 'scope.html"')} · ${E('a', 'Lesson plans', 'href="' + p + 'lessons.html"')} · ${E('a', 'TEKS correlation', 'href="' + p + 'correlation.html"')} · ${E('a', 'UDL', 'href="' + p + 'udl.html"')} · ${E('a', 'ELPS', 'href="' + p + 'elps.html"')}${policyHref ? ' · ' + E('a', 'Privacy & compliance', 'href="' + policyHref + '"') : ''}
 </footer>`;
 }
 
@@ -279,15 +304,15 @@ ${footer(0)}`;
 // ---- BAND HUB ------------------------------------------------------------
 function bandHub(band, grades, opts) {
   const cards = grades.map(g => card(g, { depthToBand: '' })).join('\n    ');
-  const paidNote = opts.paid ? `<div class="panel tip"><strong>Licensed band.</strong> These activities are served to licensed districts through an authenticated session. Teacher pages (premise + standards) are open to everyone.</div>` : '';
-  const body = `  <div class="crumb"><a href="../index.html">‹ Suite home</a></div>
+  const paidNote = opts.paid ? EH('div', '<strong>Licensed band.</strong> These activities are served to licensed districts through an authenticated session. Teacher pages (premise + standards) are open to everyone.', 'class="panel tip"') : '';
+  const body = `  <div class="crumb">${E('a', '‹ Suite home', 'href="../index.html"')}</div>
   <div class="hero">
-    <div class="eyebrow${opts.paid ? ' gold' : ''}">${opts.label}</div>
-    <h1>${opts.title}</h1>
-    <p class="lede">${opts.lede}</p>
+    ${E('div', opts.label, 'class="eyebrow' + (opts.paid ? ' gold' : '') + '"')}
+    ${E('h1', opts.title)}
+    ${E('p', opts.lede, 'class="lede"')}
     <div class="btnrow">
-      <a class="btn ghost" href="implementation.html">Implementation plan</a>
-      <a class="btn ghost" href="../correlation.html">Standards correlation</a>
+      ${E('a', 'Implementation plan', 'class="btn ghost" href="implementation.html"')}
+      ${E('a', 'Standards correlation', 'class="btn ghost" href="../correlation.html"')}
     </div>
   </div>
   ${paidNote}
@@ -295,67 +320,56 @@ function bandHub(band, grades, opts) {
     ${cards}
   </div>
 ${footer(1, 'policy.html')}`;
-  fs.writeFileSync(path.join(ROOT, band, 'index.html'), shell({ depth: 1, title: opts.title + ' — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, band, 'index.html'), shell({ depth: 1, title: opts.title + ' — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- TEACHER LAUNCH PAGE (no answers) ------------------------------------
 function teacherPage(grade) {
   const a = ACT[grade], U = a.B.UI.en, locks = a.B.CONTENT.en.locks, focus = FOCUS[grade];
-  const rows = locks.map((l, i) => `<tr><td><span class="lk">Lock ${i + 1}</span><br><span class="small">${esc(l.title)}</span></td>
-      <td>${esc(focus[i][0])}</td>
-      <td><span class="pill sub">${focus[i][1]} ${SUBSTRANDS[focus[i][1]]}</span></td></tr>`).join('\n    ');
+  const rows = locks.map((l, i) => `<tr><td><span class="lk">${S('Lock')} ${i + 1}</span><br><span class="small">${S(l.title)}</span></td>
+      <td>${S(focus[i][0])}</td>
+      <td><span class="pill sub">${focus[i][1]} ${S(SUBSTRANDS[focus[i][1]])}</span></td></tr>`).join('\n    ');
   const substrandsUsed = [...new Set(focus.map(f => f[1]))].sort();
   const decoy = (a.B.CONTENT.en.clues.find(c => c.decoy) || {}).nm || 'the decoy clue';
-  const body = `  <div class="crumb"><a href="index.html">‹ ${esc(a.band === 'grade35' ? 'Grades 3–5' : 'Grades 6–8')} hub</a> · <a href="../index.html">Suite home</a></div>
+  const clearNote = 'Every Critical Thinking Online Breakout runs on the <strong>CLEAR</strong> process — Claim, Lens, Evidence, Alternatives, Response (<a href="../guide.html">full framework</a>). Here is where students practice each step in this activity:';
+  const clearUl = '<li><strong>Claim</strong> — for each lock, decide what answer it is really asking for, and make it specific.</li><li><strong>Lens</strong> — notice what you already assume before you choose.</li><li><strong>Evidence</strong> — weigh the six clues; “' + esc(decoy) + '” is true but off-topic, so it is not evidence for any lock.</li><li><strong>Alternatives</strong> — the multiple-choice and multi-select locks force a comparison of competing options.</li><li><strong>Response</strong> — the reason revealed after each lock models the justified answer to act on.</li>';
+  const stdNote = 'Aligned to Texas TEKS Technology Applications, Grade ' + grade + ', <strong>' + a.teks + '</strong>, Digital Citizenship strand — subsections ' + substrandsUsed.join(', ') + '. Skills are paraphrased; read the official standard at <a href="https://tea.texas.gov" target="_blank" rel="noopener">tea.texas.gov</a>. This page shows the reasoning focus of each lock — <strong>not the answers.</strong>';
+  const classroom = '<li><strong>Warm up (5 min).</strong> Ask: “' + esc(U['brief.h']) + '” — what does this mean online? Surface prior experience before the activity.</li><li><strong>Model one clue.</strong> Open a single clue together and think aloud: what does this tell us, and which lock might it help?</li><li><strong>Reason, don’t guess.</strong> Require students to say <em>why</em> before checking a lock. After each solve, read the revealed <em>reason</em> and compare it to their thinking.</li><li><strong>Spot the decoy.</strong> One clue is true but useless. Debrief which one and how they knew — a core evaluation skill.</li><li><strong>Language support.</strong> The 🌐 picker offers 7 languages; pair newcomers to discuss clues in their home language, then answer.</li><li><strong>Extend.</strong> Have students write a new clue, or a real-life example, for the focus skill they found hardest.</li>';
+  const body = `  <div class="crumb">${E('a', '‹ ' + (a.band === 'grade35' ? 'Grades 3–5' : 'Grades 6–8') + ' hub', 'href="index.html"')} · ${E('a', 'Suite home', 'href="../index.html"')}</div>
   <div class="hero">
-    <div class="eyebrow${a.tier === 'paid' ? ' gold' : ''}">Teacher launch · Grade ${grade} · TEKS ${a.teks}</div>
-    <h1>${esc(U['header.h1'])}</h1>
-    <p class="lede">${esc(U['header.sub'])}</p>
+    <div class="eyebrow${a.tier === 'paid' ? ' gold' : ''}">${S('Teacher launch')} · ${S('Grade')} ${grade} · TEKS ${a.teks}</div>
+    ${E('h1', U['header.h1'])}
+    ${E('p', U['header.sub'], 'class="lede"')}
     <div class="btnrow">
-      <a class="btn" href="dc-grade${grade}-student.html">${a.tier === 'paid' ? 'Open activity (licensed)' : 'Launch student activity'}</a>
-      <a class="btn ghost" href="../correlation.html">Correlation</a>
+      ${E('a', a.tier === 'paid' ? 'Open activity (licensed)' : 'Launch student activity', 'class="btn" href="dc-grade' + grade + '-student.html"')}
+      ${E('a', 'Correlation', 'class="btn ghost" href="../correlation.html"')}
     </div>
   </div>
 
   <div class="panel gold">
-    <h3>The premise</h3>
-    <p>${esc(U['brief.p'])}</p>
+    ${E('h3', 'The premise')}
+    ${E('p', U['brief.p'])}
   </div>
 
-  <h2>How this breakout builds CLEAR thinking</h2>
-  <p class="section-note">Every Critical Thinking Online Breakout runs on the <strong>CLEAR</strong> process — Claim, Lens, Evidence, Alternatives, Response (<a href="../guide.html">full framework</a>). Here is where students practice each step in this activity:</p>
-  <div class="panel"><ul>
-    <li><strong>Claim</strong> — for each lock, decide what answer it is really asking for, and make it specific.</li>
-    <li><strong>Lens</strong> — notice what you already assume before you choose.</li>
-    <li><strong>Evidence</strong> — weigh the six clues; “${esc(decoy)}” is true but off-topic, so it is not evidence for any lock.</li>
-    <li><strong>Alternatives</strong> — the multiple-choice and multi-select locks force a comparison of competing options.</li>
-    <li><strong>Response</strong> — the reason revealed after each lock models the justified answer to act on.</li>
-  </ul></div>
+  ${E('h2', 'How this breakout builds CLEAR thinking')}
+  ${EH('p', clearNote, 'class="section-note"')}
+  <div class="panel">${EH('ul', clearUl)}</div>
 
-  <h2>Standards alignment</h2>
-  <p class="section-note">Aligned to Texas TEKS Technology Applications, Grade ${grade}, <strong>${a.teks}</strong>, Digital Citizenship strand — subsections ${substrandsUsed.join(', ')}. Skills are paraphrased; read the official standard at <a href="https://tea.texas.gov" target="_blank" rel="noopener">tea.texas.gov</a>. This page shows the reasoning focus of each lock — <strong>not the answers.</strong></p>
+  ${E('h2', 'Standards alignment')}
+  ${EH('p', stdNote, 'class="section-note"')}
   <div class="tbl-wrap"><table>
-    <caption>What each lock asks students to reason about</caption>
-    <thead><tr><th>Lock</th><th>Reasoning focus</th><th>DigCit substrand</th></tr></thead>
+    ${E('caption', 'What each lock asks students to reason about')}
+    <thead><tr>${E('th', 'Lock')}${E('th', 'Reasoning focus')}${E('th', 'DigCit substrand')}</tr></thead>
     <tbody>
     ${rows}
     </tbody>
   </table></div>
 
-  <h2>In the classroom</h2>
-  <div class="panel">
-    <ul>
-      <li><strong>Warm up (5 min).</strong> Ask: "${esc(U['brief.h'])}" — what does this mean online? Surface prior experience before the activity.</li>
-      <li><strong>Model one clue.</strong> Open a single clue together and think aloud: what does this tell us, and which lock might it help?</li>
-      <li><strong>Reason, don't guess.</strong> Require students to say <em>why</em> before checking a lock. After each solve, read the revealed <em>reason</em> and compare it to their thinking.</li>
-      <li><strong>Spot the decoy.</strong> One clue is true but useless. Debrief which one and how they knew — a core evaluation skill.</li>
-      <li><strong>Language support.</strong> The 🌐 picker offers 7 languages; pair newcomers to discuss clues in their home language, then answer.</li>
-      <li><strong>Extend.</strong> Have students write a new clue, or a real-life example, for the focus skill they found hardest.</li>
-    </ul>
-  </div>
-  <div class="disclaimer">Answers are intentionally not shown here. The full answer key (with the reasoning for every lock) is on the password-gated <a href="../answer-key.html">answer-key page</a>. This alignment is a good-faith paraphrase for lesson planning and is not legal advice.</div>
+  ${E('h2', 'In the classroom')}
+  <div class="panel">${EH('ul', classroom)}</div>
+  ${EH('div', 'Answers are intentionally not shown here. The full answer key (with the reasoning for every lock) is on the password-gated <a href="../answer-key.html">answer-key page</a>. This alignment is a good-faith paraphrase for lesson planning and is not legal advice.', 'class="disclaimer"')}
 ${footer(1, 'policy.html')}`;
-  fs.writeFileSync(path.join(ROOT, a.band, 'dc-grade' + grade + '.html'), shell({ depth: 1, title: U['header.h1'] + ' — Teacher launch (Grade ' + grade + ')', body }));
+  fs.writeFileSync(path.join(ROOT, a.band, 'dc-grade' + grade + '.html'), shell({ depth: 1, title: U['header.h1'] + ' — Teacher launch (Grade ' + grade + ')', body, i18n: true }));
 }
 
 // ---- CORRELATION GUIDE ---------------------------------------------------
@@ -363,80 +377,71 @@ function correlation() {
   function bandTable(label, grades) {
     const rows = grades.map(g => {
       const a = ACT[g], U = a.B.UI.en, locks = a.B.CONTENT.en.locks, focus = FOCUS[g];
-      const lockList = locks.map((l, i) => `<div class="lk">Lock ${i + 1}: <span style="font-weight:600">${esc(l.title)}</span> — ${esc(focus[i][0])} <span class="pill sub">${focus[i][1]}</span></div>`).join('');
+      const lockList = locks.map((l, i) => `<div class="lk">${S('Lock')} ${i + 1}: <span style="font-weight:600">${S(l.title)}</span> — ${S(focus[i][0])} <span class="pill sub">${focus[i][1]}</span></div>`).join('');
       return `<tr>
-        <td><span class="lk">${esc(U['header.h1'])}</span><br><span class="small">Grade ${g}${a.tier === 'paid' ? ' · licensed' : ' · free'}</span></td>
+        <td><span class="lk">${S(U['header.h1'])}</span><br><span class="small">${S('Grade')} ${g} · ${S(a.tier === 'paid' ? 'licensed' : 'free')}</span></td>
         <td>${lockList}</td>
         <td><strong>${a.teks}</strong><br><span class="small">(c)(8)(9)(10)</span></td>
       </tr>`;
     }).join('\n    ');
-    return `<h2>${label}</h2>
+    return `${E('h2', label)}
   <div class="tbl-wrap"><table>
-    <caption>Activity · locks &amp; reasoning focus · TEKS section</caption>
-    <thead><tr><th>Activity</th><th>Locks (reasoning focus · substrand)</th><th>TEKS §</th></tr></thead>
+    ${E('caption', 'Activity · locks & reasoning focus · TEKS section')}
+    <thead><tr>${E('th', 'Activity')}${E('th', 'Locks (reasoning focus · substrand)')}${E('th', 'TEKS §')}</tr></thead>
     <tbody>
     ${rows}
     </tbody>
   </table></div>`;
   }
-  const legend = Object.entries(SUBSTRANDS).map(([k, v]) => `<span class="pill sub">${k}</span> ${v}`).join(' &nbsp; ');
-  const body = `  <div class="crumb"><a href="index.html">‹ Suite home</a></div>
+  const legend = Object.entries(SUBSTRANDS).map(([k, v]) => `<span class="pill sub">${k}</span> ${S(v)}`).join(' &nbsp; ');
+  const body = `  <div class="crumb">${E('a', '‹ Suite home', 'href="index.html"')}</div>
   <div class="hero">
-    <div class="eyebrow">Standards correlation</div>
-    <h1>TEKS Correlation Guide</h1>
-    <p class="lede">How each breakout aligns to the Texas TEKS Technology Applications Digital Citizenship strand (adopted 2022, implemented 2024–25, required K–8).</p>
+    ${E('div', 'Standards correlation', 'class="eyebrow"')}
+    ${E('h1', 'TEKS Correlation Guide')}
+    ${E('p', 'How each breakout aligns to the Texas TEKS Technology Applications Digital Citizenship strand (adopted 2022, implemented 2024–25, required K–8).', 'class="lede"')}
   </div>
-  <div class="panel tip"><strong>Substrands:</strong> ${legend}</div>
+  <div class="panel tip"><strong>${S('Substrands:')}</strong> ${legend}</div>
   ${bandTable('Grades 3–5 (free tier)', [3, 4, 5])}
   ${bandTable('Grades 6–8 (licensed tier)', [6, 7, 8])}
-  <div class="disclaimer">Skills are <strong>paraphrased</strong> to respect TEA's copyright — no official standard text is reproduced. Cite the § number and read the source at <a href="https://tea.texas.gov" target="_blank" rel="noopener">tea.texas.gov</a>. Alignment is a good-faith mapping for planning and is not legal advice.</div>
+  ${EH('div', 'Skills are <strong>paraphrased</strong> to respect TEA’s copyright — no official standard text is reproduced. Cite the § number and read the source at <a href="https://tea.texas.gov" target="_blank" rel="noopener">tea.texas.gov</a>. Alignment is a good-faith mapping for planning and is not legal advice.', 'class="disclaimer"')}
 ${footer(0)}`;
-  fs.writeFileSync(path.join(ROOT, 'correlation.html'), shell({ depth: 0, title: 'TEKS Correlation Guide — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, 'correlation.html'), shell({ depth: 0, title: 'TEKS Correlation Guide — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- CURRICULUM GUIDE ----------------------------------------------------
 function guide() {
-  const body = `  <div class="crumb"><a href="index.html">‹ Suite home</a></div>
+  const deploy = '<li><strong>Any device, any time.</strong> Each activity is one self-contained page — no install, no login, no data collected. Share the URL or embed it in your LMS.</li><li><strong>Whole-class or independent.</strong> Project and solve together for younger grades; assign independently or in pairs for older ones.</li><li><strong>Multilingual.</strong> The 🌐 picker offers English, Spanish, Vietnamese, Arabic, Hindi, Urdu, and Chinese (translations are AI-seeded, pending native review).</li><li><strong>Teacher pages first.</strong> Open the activity’s teacher launch page for the premise, standards, and classroom moves. It never shows answers.</li>';
+  const body = `  <div class="crumb">${E('a', '‹ Suite home', 'href="index.html"')}</div>
   <div class="hero">
-    <div class="eyebrow">Teacher guide</div>
-    <h1>Curriculum Guide</h1>
-    <p class="lede">Purpose, design, and how to run the Digital Citizenship Breakouts across grades 3–8.</p>
+    ${E('div', 'Teacher guide', 'class="eyebrow"')}
+    ${E('h1', 'Curriculum Guide')}
+    ${E('p', 'Purpose, design, and how to run the Digital Citizenship Breakouts across grades 3–8.', 'class="lede"')}
   </div>
 
-  <h2>Purpose</h2>
-  <p>The suite builds <strong>digital citizenship through reasoning</strong>. Every activity aligns to the Texas TEKS Technology Applications Digital Citizenship strand and its three substrands — social interactions; ethics &amp; laws; and privacy, safety &amp; security — but the deeper goal is <em>critical thinking</em>: students weigh evidence, reject a decoy, and justify each answer before they check it.</p>
+  ${E('h2', 'Purpose')}
+  ${EH('p', 'The suite builds <strong>digital citizenship through reasoning</strong>. Every activity aligns to the Texas TEKS Technology Applications Digital Citizenship strand and its three substrands — social interactions; ethics &amp; laws; and privacy, safety &amp; security — but the deeper goal is <em>critical thinking</em>: students weigh evidence, reject a decoy, and justify each answer before they check it.')}
 
-  <h2>The CLEAR thinking process</h2>
-  <p>Each lock is designed so a correct guess is not enough — students should be able to explain the <em>reason</em>, which the activity reveals after every solve. That habit is the <strong>CLEAR thinking process</strong>, a simple critical-thinking checklist students can carry into any claim, message, or source they meet online:</p>
-  ${clearBlock()}
-  <p>Every breakout is CLEAR practice: the six clues are the <strong>Evidence</strong> (some strong, some weak, one a true-but-irrelevant decoy); choosing which clue opens which lock forces students to name their <strong>Claim</strong> and check their <strong>Lens</strong>; the multi-select lock asks them to sort strong evidence from a plausible distractor; and the revealed reason after each lock models the <strong>Response</strong>. Push students to say <em>why</em> before they check — grade the reasoning, not the click.</p>
+  ${E('h2', 'The CLEAR thinking process')}
+  ${EH('p', 'Each lock is designed so a correct guess is not enough — students should be able to explain the <em>reason</em>, which the activity reveals after every solve. That habit is the <strong>CLEAR thinking process</strong>, a simple critical-thinking checklist students can carry into any claim, message, or source they meet online:')}
+  ${clearBlockI18n()}
+  ${EH('p', 'Every breakout is CLEAR practice: the six clues are the <strong>Evidence</strong> (some strong, some weak, one a true-but-irrelevant decoy); choosing which clue opens which lock forces students to name their <strong>Claim</strong> and check their <strong>Lens</strong>; the multi-select lock asks them to sort strong evidence from a plausible distractor; and the revealed reason after each lock models the <strong>Response</strong>. Push students to say <em>why</em> before they check — grade the reasoning, not the click.')}
 
-  <h2>How to deploy</h2>
-  <div class="panel">
-    <ul>
-      <li><strong>Any device, any time.</strong> Each activity is one self-contained page — no install, no login, no data collected. Share the URL or embed it in your LMS.</li>
-      <li><strong>Whole-class or independent.</strong> Project and solve together for younger grades; assign independently or in pairs for older ones.</li>
-      <li><strong>Multilingual.</strong> The 🌐 picker offers English, Spanish, Vietnamese, Arabic, Hindi, Urdu, and Chinese (translations are AI-seeded, pending native review).</li>
-      <li><strong>Teacher pages first.</strong> Open the activity's teacher launch page for the premise, standards, and classroom moves. It never shows answers.</li>
-    </ul>
-  </div>
+  ${E('h2', 'How to deploy')}
+  <div class="panel">${EH('ul', deploy)}</div>
 
-  <h2>Free vs. licensed</h2>
-  <div class="panel gold">
-    <p><strong>Free tier — Grades 3–5.</strong> Fully open and static. Use them with anyone, anywhere.</p>
-    <p><strong>Licensed tier — Grades 6–8</strong> (and future "More" activities). Included with a district license and served through an authenticated session. Teacher pages and this guide remain open so you can evaluate before you buy.</p>
-  </div>
+  ${E('h2', 'Free vs. licensed')}
+  <div class="panel gold">${EH('p', '<strong>Free tier — Grades 3–5.</strong> Fully open and static. Use them with anyone, anywhere.')}${EH('p', '<strong>Licensed tier — Grades 6–8</strong> (and future “More” activities). Included with a district license and served through an authenticated session. Teacher pages and this guide remain open so you can evaluate before you buy.')}</div>
 
-  <h2>Assessment</h2>
-  <p>These are formative by design. Use the revealed reasons as discussion prompts, ask students to write the reasoning for the lock they found hardest, or have them author a new clue. The gated <a href="answer-key.html">answer key</a> lists every answer with its reasoning for your reference.</p>
+  ${E('h2', 'Assessment')}
+  ${EH('p', 'These are formative by design. Use the revealed reasons as discussion prompts, ask students to write the reasoning for the lock they found hardest, or have them author a new clue. The gated <a href="answer-key.html">answer key</a> lists every answer with its reasoning for your reference.')}
 
   <div class="btnrow">
-    <a class="btn" href="grade35/implementation.html">Grades 3–5 plan</a>
-    <a class="btn" href="grade68/implementation.html">Grades 6–8 plan</a>
-    <a class="btn ghost" href="correlation.html">Correlation guide</a>
+    ${E('a', 'Grades 3–5 plan', 'class="btn" href="grade35/implementation.html"')}
+    ${E('a', 'Grades 6–8 plan', 'class="btn" href="grade68/implementation.html"')}
+    ${E('a', 'Correlation guide', 'class="btn ghost" href="correlation.html"')}
   </div>
 ${footer(0)}`;
-  fs.writeFileSync(path.join(ROOT, 'guide.html'), shell({ depth: 0, title: 'Curriculum Guide — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, 'guide.html'), shell({ depth: 0, title: 'Curriculum Guide — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- IMPLEMENTATION PLAN (per band) --------------------------------------
@@ -445,81 +450,54 @@ function implementation(band, grades, opts) {
     const U = ACT[g].B.UI.en;
     return `<li><strong>Grade ${g} — ${esc(U['header.h1'])}.</strong> ${esc(U['header.sub'])} <span class="small">(TEKS ${ACT[g].teks})</span></li>`;
   }).join('\n      ');
-  const body = `  <div class="crumb"><a href="index.html">‹ ${esc(opts.hub)}</a> · <a href="../index.html">Suite home</a></div>
+  const pacing = '<li><strong>One activity ≈ 25–40 minutes</strong>, including debrief. Younger classes may need two sittings.</li><li>Run one per grading period, or cluster them into a two-week digital-citizenship unit.</li><li>Order matches the grade sequence; each grade deepens footprint, etiquette, IP, and safety themes.</li>';
+  const prereq = '<li>A browser and the activity link. No accounts, installs, or logins.</li><li>' + opts.prereq + '</li><li>Teachers: skim the activity’s teacher launch page and the <a href="../correlation.html">correlation guide</a> first.</li>';
+  const ext = '<li><strong>Home-language pairs.</strong> Use the 🌐 picker so newcomers reason in their strongest language, then answer.</li><li><strong>Author-a-clue.</strong> Students write a new clue (or a real-world example) for the skill they found hardest.</li><li><strong>Reason aloud.</strong> Require a spoken/written justification before each lock check; grade the reasoning, not the click.</li><li>' + opts.extend + '</li>';
+  const body = `  <div class="crumb">${E('a', '‹ ' + opts.hub, 'href="index.html"')} · ${E('a', 'Suite home', 'href="../index.html"')}</div>
   <div class="hero">
-    <div class="eyebrow${opts.paid ? ' gold' : ''}">Implementation plan</div>
-    <h1>${opts.title}</h1>
-    <p class="lede">${opts.lede}</p>
+    ${E('div', 'Implementation plan', 'class="eyebrow' + (opts.paid ? ' gold' : '') + '"')}
+    ${E('h1', opts.title)}
+    ${E('p', opts.lede, 'class="lede"')}
   </div>
 
-  <h2>The activities</h2>
-  <div class="panel"><ul>
-      ${list}
-  </ul></div>
+  ${E('h2', 'The activities')}
+  <div class="panel">${EH('ul', list)}</div>
 
-  <h2>Pacing</h2>
-  <div class="panel">
-    <ul>
-      <li><strong>One activity ≈ 25–40 minutes</strong>, including debrief. Younger classes may need two sittings.</li>
-      <li>Run one per grading period, or cluster them into a two-week digital-citizenship unit.</li>
-      <li>Order matches the grade sequence; each grade deepens footprint, etiquette, IP, and safety themes.</li>
-    </ul>
-  </div>
+  ${E('h2', 'Pacing')}
+  <div class="panel">${EH('ul', pacing)}</div>
 
-  <h2>Prerequisites</h2>
-  <div class="panel">
-    <ul>
-      <li>A browser and the activity link. No accounts, installs, or logins.</li>
-      <li>${opts.prereq}</li>
-      <li>Teachers: skim the activity's teacher launch page and the <a href="../correlation.html">correlation guide</a> first.</li>
-    </ul>
-  </div>
+  ${E('h2', 'Prerequisites')}
+  <div class="panel">${EH('ul', prereq)}</div>
 
-  <h2>Extension &amp; differentiation</h2>
-  <div class="panel">
-    <ul>
-      <li><strong>Home-language pairs.</strong> Use the 🌐 picker so newcomers reason in their strongest language, then answer.</li>
-      <li><strong>Author-a-clue.</strong> Students write a new clue (or a real-world example) for the skill they found hardest.</li>
-      <li><strong>Reason aloud.</strong> Require a spoken/written justification before each lock check; grade the reasoning, not the click.</li>
-      <li>${opts.extend}</li>
-    </ul>
-  </div>
+  ${E('h2', 'Extension & differentiation')}
+  <div class="panel">${EH('ul', ext)}</div>
 ${footer(1, 'policy.html')}`;
-  fs.writeFileSync(path.join(ROOT, band, 'implementation.html'), shell({ depth: 1, title: opts.title + ' — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, band, 'implementation.html'), shell({ depth: 1, title: opts.title + ' — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- POLICY --------------------------------------------------------------
 function policy(band, label) {
-  const body = `  <div class="crumb"><a href="index.html">‹ ${esc(label)} hub</a> · <a href="../index.html">Suite home</a></div>
+  const body = `  <div class="crumb">${E('a', '‹ ' + label + ' hub', 'href="index.html"')} · ${E('a', 'Suite home', 'href="../index.html"')}</div>
   <div class="hero">
-    <div class="eyebrow">Privacy &amp; compliance</div>
-    <h1>Privacy &amp; Compliance</h1>
-    <p class="lede">What these activities do — and, more importantly, do not do — with student data.</p>
+    ${E('div', 'Privacy & compliance', 'class="eyebrow"')}
+    ${E('h1', 'Privacy & Compliance')}
+    ${E('p', 'What these activities do — and, more importantly, do not do — with student data.', 'class="lede"')}
   </div>
 
   <div class="panel tip">
-    <h3>The short version</h3>
-    <p>Each breakout runs <strong>entirely in the student's browser</strong>. There are no accounts, no logins, and no analytics. We do not collect, transmit, or store any personal information.</p>
+    ${E('h3', 'The short version')}
+    ${EH('p', 'Each breakout runs <strong>entirely in the student’s browser</strong>. There are no accounts, no logins, and no analytics. We do not collect, transmit, or store any personal information.')}
   </div>
 
-  <h2>What we collect</h2>
-  <div class="panel"><ul>
-    <li><strong>Nothing personal.</strong> No names, no emails, no student records — ever.</li>
-    <li><strong>No tracking.</strong> No cookies for advertising, no third-party analytics, no fingerprinting.</li>
-    <li><strong>Local only.</strong> Your chosen language is remembered in your own browser (localStorage) so the picker stays put. It never leaves the device and you can clear it anytime.</li>
-    <li>Every page sends <span class="pill">referrer: no-referrer</span> so navigation is not leaked to other sites.</li>
-  </ul></div>
+  ${E('h2', 'What we collect')}
+  <div class="panel">${EH('ul', '<li><strong>Nothing personal.</strong> No names, no emails, no student records — ever.</li><li><strong>No tracking.</strong> No cookies for advertising, no third-party analytics, no fingerprinting.</li><li><strong>Local only.</strong> Your chosen language is remembered in your own browser (localStorage) so the picker stays put. It never leaves the device and you can clear it anytime.</li><li>Every page sends <span class="pill">referrer: no-referrer</span> so navigation is not leaked to other sites.</li>')}</div>
 
-  <h2>Compliance posture</h2>
-  <div class="panel"><ul>
-    <li>Because no personal data is collected, the activities are designed to sit comfortably within <strong>COPPA</strong> and <strong>FERPA</strong> expectations and Texas student-data-privacy requirements.</li>
-    <li>Fonts load from Google Fonts; if your district blocks external font CDNs the pages still work (they fall back to system fonts).</li>
-    <li>Content is 100% original / open-licensed. No copyrighted media, no real platform UIs, no photos of children.</li>
-  </ul></div>
+  ${E('h2', 'Compliance posture')}
+  <div class="panel">${EH('ul', '<li>Because no personal data is collected, the activities are designed to sit comfortably within <strong>COPPA</strong> and <strong>FERPA</strong> expectations and Texas student-data-privacy requirements.</li><li>Fonts load from Google Fonts; if your district blocks external font CDNs the pages still work (they fall back to system fonts).</li><li>Content is 100% original / open-licensed. No copyrighted media, no real platform UIs, no photos of children.</li>')}</div>
 
-  <div class="disclaimer">This notice describes the design intent of the activities and is provided for district review; it is not legal advice. Confirm fit with your district's privacy officer.</div>
+  ${EH('div', 'This notice describes the design intent of the activities and is provided for district review; it is not legal advice. Confirm fit with your district’s privacy officer.', 'class="disclaimer"')}
 ${footer(1, null)}`;
-  fs.writeFileSync(path.join(ROOT, band, 'policy.html'), shell({ depth: 1, title: 'Privacy & Compliance — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, band, 'policy.html'), shell({ depth: 1, title: 'Privacy & Compliance — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- SEARCHABLE LIBRARY --------------------------------------------------
@@ -650,40 +628,37 @@ function scope() {
   const rows = [3, 4, 5, 6, 7, 8].map(g => {
     const a = ACT[g], U = a.B.UI.en, L = LESSON[g], subs = [...new Set(FOCUS[g].map(f => f[1]))].sort();
     return `<tr>
-        <td><span class="lk">Grade ${g}</span><br><span class="small">${a.tier === 'paid' ? 'licensed' : 'free'} · ${a.teks}</span></td>
-        <td><strong>${esc(U['header.h1'])}</strong><br><span class="small">${esc(L.big)}</span></td>
-        <td>${esc(L.eq)}</td>
-        <td><span class="small">${esc(L.vocab)}</span></td>
+        <td><span class="lk">${S('Grade')} ${g}</span><br><span class="small">${S(a.tier === 'paid' ? 'licensed' : 'free')} · ${a.teks}</span></td>
+        <td><strong>${S(U['header.h1'])}</strong><br><span class="small">${S(L.big)}</span></td>
+        <td>${S(L.eq)}</td>
+        <td><span class="small">${S(L.vocab)}</span></td>
         <td><span class="small">${subs.join(' ')}</span></td>
       </tr>`;
   }).join('\n    ');
-  const body = `  <div class="crumb"><a href="index.html">‹ Suite home</a></div>
+  const pacing = '<li><strong>One breakout ≈ 25–40 minutes</strong> including debrief; it works best as the <em>engage</em> or <em>collaborative-practice</em> phase of a lesson, not the whole lesson.</li><li>Run one per grading period, or cluster a band into a <strong>1–2 week digital-citizenship unit</strong>.</li><li>Grades 3–5 are free and self-contained; Grades 6–8 are the licensed band and assume the earlier vocabulary.</li>';
+  const body = `  <div class="crumb">${E('a', '‹ Suite home', 'href="index.html"')}</div>
   <div class="hero">
-    <div class="eyebrow">Scope &amp; sequence</div>
-    <h1>Scope &amp; Sequence</h1>
-    <p class="lede">The six breakouts build digital-citizenship judgment across grades 3–8 — from a student’s first footprint to evaluating the bias and reliability of a source. Each grade adds the next layer.</p>
+    ${E('div', 'Scope & sequence', 'class="eyebrow"')}
+    ${E('h1', 'Scope & Sequence')}
+    ${E('p', 'The six breakouts build digital-citizenship judgment across grades 3–8 — from a student’s first footprint to evaluating the bias and reliability of a source. Each grade adds the next layer.', 'class="lede"')}
   </div>
 
-  <div class="panel gold"><strong>The learning arc:</strong> your digital footprint (Gr 3) → why the internet remembers, etiquette &amp; credit (Gr 4) → footprint components, tracking &amp; secure connections (Gr 5) → intellectual property &amp; fair use (Gr 6) → evaluating media spin (Gr 7) → judging a source’s bias &amp; reliability (Gr 8). Themes of footprint, etiquette, IP, and safety deepen every year.</div>
+  ${EH('div', '<strong>The learning arc:</strong> your digital footprint (Gr 3) → why the internet remembers, etiquette &amp; credit (Gr 4) → footprint components, tracking &amp; secure connections (Gr 5) → intellectual property &amp; fair use (Gr 6) → evaluating media spin (Gr 7) → judging a source’s bias &amp; reliability (Gr 8). Themes of footprint, etiquette, IP, and safety deepen every year.', 'class="panel gold"')}
 
   <div class="tbl-wrap"><table>
-    <caption>Grade · activity &amp; big idea · essential question · key vocabulary · TEKS substrands</caption>
-    <thead><tr><th>Grade</th><th>Activity &amp; big idea</th><th>Essential question</th><th>Key vocabulary</th><th>Substrands</th></tr></thead>
+    ${E('caption', 'Grade · activity & big idea · essential question · key vocabulary · TEKS substrands')}
+    <thead><tr>${E('th', 'Grade')}${E('th', 'Activity & big idea')}${E('th', 'Essential question')}${E('th', 'Key vocabulary')}${E('th', 'Substrands')}</tr></thead>
     <tbody>
     ${rows}
     </tbody>
   </table></div>
 
-  <h2>Pacing</h2>
-  <div class="panel"><ul>
-    <li><strong>One breakout ≈ 25–40 minutes</strong> including debrief; it works best as the <em>engage</em> or <em>collaborative-practice</em> phase of a lesson, not the whole lesson.</li>
-    <li>Run one per grading period, or cluster a band into a <strong>1–2 week digital-citizenship unit</strong>.</li>
-    <li>Grades 3–5 are free and self-contained; Grades 6–8 are the licensed band and assume the earlier vocabulary.</li>
-  </ul></div>
+  ${E('h2', 'Pacing')}
+  <div class="panel">${EH('ul', pacing)}</div>
 
-  <div class="disclaimer">Standards alignment is a good-faith paraphrase for planning — see the <a href="correlation.html">TEKS correlation guide</a> and cite the § at <a href="https://tea.texas.gov" target="_blank" rel="noopener">tea.texas.gov</a>. Not legal advice.</div>
+  ${EH('div', 'Standards alignment is a good-faith paraphrase for planning — see the <a href="correlation.html">TEKS correlation guide</a> and cite the § at <a href="https://tea.texas.gov" target="_blank" rel="noopener">tea.texas.gov</a>. Not legal advice.', 'class="disclaimer"')}
 ${footer(0)}`;
-  fs.writeFileSync(path.join(ROOT, 'scope.html'), shell({ depth: 0, title: 'Scope & Sequence — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, 'scope.html'), shell({ depth: 0, title: 'Scope & Sequence — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- LESSON-PLAN GUIDE ---------------------------------------------------
@@ -701,55 +676,56 @@ function lessons() {
     ['10 · Questioning plan', '<ul><li><b>Recall:</b> What does this clue say? Which lock does it match?</li><li><b>Reasoning:</b> Why does this clue open that lock and not another?</li><li><b>Transfer:</b> Where else would this idea be true — somewhere in your own online life?</li><li><b>Misconceptions:</b> Why is the decoy clue true but not helpful here?</li></ul>'],
     ['11 · Teacher reflection', '<ul><li>What worked, and what evidence showed students learned?</li><li>Who needs reteaching, and who is ready for extension?</li><li>Which clue or lock caused the most productive struggle?</li><li>What will you change next time?</li></ul>'],
   ];
-  const secHtml = sections.map(([h, p]) => `<div class="panel"><h3 style="margin-top:0">${h}</h3><p>${p}</p></div>`).join('\n  ');
+  const secHtml = sections.map(([h, p]) => `<div class="panel">${EH('h3', h, 'style="margin-top:0"')}${EH('div', p)}</div>`).join('\n  ');
   const examples = [3, 4, 5, 6, 7, 8].map(g => {
     const a = ACT[g], U = a.B.UI.en, L = LESSON[g];
     return `<div class="akact">
-    <h3>Grade ${g} — ${esc(U['header.h1'])} <span class="small">(${a.teks} · ${a.tier === 'paid' ? 'licensed' : 'free'})</span></h3>
+    ${EH('h3', 'Grade ' + g + ' — ' + esc(U['header.h1']) + ' <span class="small">(' + a.teks + ' · ' + (a.tier === 'paid' ? 'licensed' : 'free') + ')</span>')}
     <div class="tbl-wrap"><table><tbody>
-      <tr><th style="width:170px">Big idea</th><td>${esc(L.big)}</td></tr>
-      <tr><th>Essential question</th><td>${esc(L.eq)}</td></tr>
-      <tr><th>Content objective</th><td>${esc(L.obj)}</td></tr>
-      <tr><th>Language objective</th><td>${esc(L.lang)}</td></tr>
-      <tr><th>Key vocabulary</th><td>${esc(L.vocab)}</td></tr>
-      <tr><th>Success criteria</th><td>${esc(L.success)}</td></tr>
+      <tr>${E('th', 'Big idea', 'style="width:170px"')}<td>${S(L.big)}</td></tr>
+      <tr>${E('th', 'Essential question')}<td>${S(L.eq)}</td></tr>
+      <tr>${E('th', 'Content objective')}<td>${S(L.obj)}</td></tr>
+      <tr>${E('th', 'Language objective')}<td>${S(L.lang)}</td></tr>
+      <tr>${E('th', 'Key vocabulary')}<td>${S(L.vocab)}</td></tr>
+      <tr>${E('th', 'Success criteria')}<td>${S(L.success)}</td></tr>
     </tbody></table></div>
-    <p class="small"><a href="${a.band}/dc-grade${g}.html">Open the Grade ${g} teacher launch page →</a></p>
+    <p class="small">${E('a', 'Open the teacher launch page →', 'href="' + a.band + '/dc-grade' + g + '.html"')}</p>
     </div>`;
   }).join('\n  ');
-  const body = `  <div class="crumb"><a href="index.html">‹ Suite home</a></div>
+  const body = `  <div class="crumb">${E('a', '‹ Suite home', 'href="index.html"')}</div>
   <div class="hero">
-    <div class="eyebrow">Lesson-plan guide</div>
-    <h1>Building a Lesson Around a Breakout</h1>
-    <p class="lede">A ready structure for slotting a Critical Thinking Online Breakout into a full lesson, following a standard Texas lesson-plan format. Use the outline as-is or copy the field list into your campus template. A worked example for every grade appears at the end.</p>
+    ${E('div', 'Lesson-plan guide', 'class="eyebrow"')}
+    ${E('h1', 'Building a Lesson Around a Breakout')}
+    ${E('p', 'A ready structure for slotting a Critical Thinking Online Breakout into a full lesson, following a standard Texas lesson-plan format. Use the outline as-is or copy the field list into your campus template. A worked example for every grade appears at the end.', 'class="lede"')}
   </div>
-  <div class="panel tip">🧑‍🏫 <b>How to use this guide:</b> a breakout works best as the <b>engage</b> or <b>collaborative-practice</b> phase of a lesson — not the whole lesson. The sections below mirror a standard lesson plan; each names what to decide and how the breakout fits. Pair it with the <a href="udl.html">UDL</a> and <a href="elps.html">ELPS</a> supports pages for the differentiation section.</div>
+  ${EH('div', '🧑‍🏫 <b>How to use this guide:</b> a breakout works best as the <b>engage</b> or <b>collaborative-practice</b> phase of a lesson — not the whole lesson. The sections below mirror a standard lesson plan; each names what to decide and how the breakout fits. Pair it with the <a href="udl.html">UDL</a> and <a href="elps.html">ELPS</a> supports pages for the differentiation section.', 'class="panel tip"')}
 
-  <h2>Lesson-plan sections</h2>
+  ${E('h2', 'Lesson-plan sections')}
   ${secHtml}
 
-  <h2>Worked examples — every activity</h2>
-  <p class="section-note">Drop-in big ideas, essential questions, and objectives for each breakout. Full standards alignment is on each activity’s teacher launch page and the <a href="correlation.html">correlation guide</a>.</p>
+  ${E('h2', 'Worked examples — every activity')}
+  ${EH('p', 'Drop-in big ideas, essential questions, and objectives for each breakout. Full standards alignment is on each activity’s teacher launch page and the <a href="correlation.html">correlation guide</a>.', 'class="section-note"')}
   ${examples}
 
-  <div class="disclaimer">This guide is a planning aid, not an official lesson plan. Adapt it to your campus template and confirm standards before adoption.</div>
+  ${EH('div', 'This guide is a planning aid, not an official lesson plan. Adapt it to your campus template and confirm standards before adoption.', 'class="disclaimer"')}
 ${footer(0)}`;
-  fs.writeFileSync(path.join(ROOT, 'lessons.html'), shell({ depth: 0, title: 'Lesson-Plan Guide — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, 'lessons.html'), shell({ depth: 0, title: 'Lesson-Plan Guide — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- UDL SUPPORTS --------------------------------------------------------
 function udl() {
-  const principle = (h, sub, cards, apply) => `<h2>${h}</h2>
-  <p class="section-note">${sub}</p>
-  <div class="cards">${cards.map(c => `<div class="panel"><h3 style="margin-top:0">${c[0]}</h3>${c[1]}</div>`).join('')}</div>
-  <div class="panel gold">${apply}</div>`;
-  const body = `  <div class="crumb"><a href="index.html">‹ Suite home</a> · <a href="guide.html">Teacher guide</a></div>
+  const principle = (h, sub, cards, apply) => `${EH('h2', h)}
+  ${E('p', sub, 'class="section-note"')}
+  <div class="cards">${cards.map(c => `<div class="panel">${EH('h3', c[0], 'style="margin-top:0"')}${EH('div', c[1])}</div>`).join('')}</div>
+  ${EH('div', apply, 'class="panel gold"')}`;
+  const wins = '<li><b>Let students choose the language.</b> Show the 🌐 menu before you begin — it is a support, not an accommodation to request.</li><li><b>Pair, don’t isolate.</b> Two students per device turns each lock into a reasoning conversation.</li><li><b>Normalize “Start over.”</b> Say out loud that retrying is how the game is played.</li><li><b>Debrief the decoy.</b> Ask why the off-topic fact was true but did not help — that is the critical-thinking payoff.</li><li><b>Connect it forward.</b> End by naming one place this idea shows up outside the screen.</li>';
+  const body = `  <div class="crumb">${E('a', '‹ Suite home', 'href="index.html"')} · ${E('a', 'Teacher guide', 'href="guide.html"')}</div>
   <div class="hero">
-    <div class="eyebrow">Universal Design for Learning</div>
-    <h1>UDL Design Suggestions</h1>
-    <p class="lede">Practical ways to open these Critical Thinking Online Breakouts to every learner, organized by the three principles of the CAST Universal Design for Learning Guidelines (version 3.0). Each breakout already builds in many of these supports; the suggestions below help you extend them.</p>
+    ${E('div', 'Universal Design for Learning', 'class="eyebrow"')}
+    ${E('h1', 'UDL Design Suggestions')}
+    ${E('p', 'Practical ways to open these Critical Thinking Online Breakouts to every learner, organized by the three principles of the CAST Universal Design for Learning Guidelines (version 3.0). Each breakout already builds in many of these supports; the suggestions below help you extend them.', 'class="lede"')}
   </div>
-  <div class="panel tip">🎯 <b>The goal of UDL is learner agency</b> — learners who are purposeful &amp; reflective, resourceful &amp; authentic, and strategic &amp; action-oriented. Design for the edges and the whole class benefits.</div>
+  ${EH('div', '🎯 <b>The goal of UDL is learner agency</b> — learners who are purposeful &amp; reflective, resourceful &amp; authentic, and strategic &amp; action-oriented. Design for the edges and the whole class benefits.', 'class="panel tip"')}
 
   ${principle('Multiple Means of Engagement', 'the “why” of learning — recruit interest, sustain effort, and support self-regulation',
     [['Welcoming interests &amp; identities', '<ul><li>Optimize choice and autonomy <b>(7.1)</b></li><li>Optimize relevance, value, and authenticity <b>(7.2)</b></li><li>Nurture joy and play <b>(7.3)</b></li></ul>'],
@@ -769,23 +745,17 @@ function udl() {
      ['Strategy development', '<ul><li>Set meaningful goals <b>(6.1)</b></li><li>Organize information and resources <b>(6.3)</b></li><li>Enhance capacity for monitoring progress <b>(6.4)</b></li></ul>']],
     '<b>In these breakouts:</b> the four lock types ask for the answer in different ways — ordering a sequence, choosing from options, sorting evidence, and typing a word — so students show what they know through more than one channel <b>(5.1, 4.1)</b>. Everything works with mouse, touch, or keyboard and runs in the browser with no login, so it pairs cleanly with a screen reader, zoom, or a district assistive-tech tool <b>(4.2)</b>. The word lock accepts spelling variants, lowering the cost of encoding while students build fluency <b>(5.3)</b>. Have students narrate their strategy — which clue, which lock, why — to make thinking visible and monitor their own progress <b>(6.3, 6.4)</b>.')}
 
-  <h2>Five quick wins</h2>
-  <div class="panel"><ul>
-    <li><b>Let students choose the language.</b> Show the 🌐 menu before you begin — it is a support, not an accommodation to request.</li>
-    <li><b>Pair, don’t isolate.</b> Two students per device turns each lock into a reasoning conversation.</li>
-    <li><b>Normalize “Start over.”</b> Say out loud that retrying is how the game is played.</li>
-    <li><b>Debrief the decoy.</b> Ask why the off-topic fact was true but did not help — that is the critical-thinking payoff.</li>
-    <li><b>Connect it forward.</b> End by naming one place this idea shows up outside the screen.</li>
-  </ul></div>
+  ${E('h2', 'Five quick wins')}
+  <div class="panel">${EH('ul', wins)}</div>
 
-  <div class="disclaimer">The CAST UDL Guidelines are summarized here for planning support and are not endorsed by CAST. Framework: CAST (2024). <i>Universal Design for Learning Guidelines version 3.0</i>. udlguidelines.cast.org. Confirm current guidance before adoption.</div>
+  ${EH('div', 'The CAST UDL Guidelines are summarized here for planning support and are not endorsed by CAST. Framework: CAST (2024). <i>Universal Design for Learning Guidelines version 3.0</i>. udlguidelines.cast.org. Confirm current guidance before adoption.', 'class="disclaimer"')}
 ${footer(0)}`;
-  fs.writeFileSync(path.join(ROOT, 'udl.html'), shell({ depth: 0, title: 'UDL Supports — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, 'udl.html'), shell({ depth: 0, title: 'UDL Supports — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- ELPS SUPPORTS -------------------------------------------------------
 function elps() {
-  const domain = (h, tag, exp, apply) => `<div class="panel"><h3 style="margin-top:0">${h} <span class="pill">${tag}</span></h3>${exp}<p style="margin-bottom:0">${apply}</p></div>`;
+  const domain = (h, tag, exp, apply) => `<div class="panel"><h3 style="margin-top:0">${S(h)} <span class="pill">${S(tag)}</span></h3>${EH('div', exp)}${EH('p', apply, 'style="margin-bottom:0"')}</div>`;
   const levels = [
     ['Pre-production', 'Silent period; responses are mostly non-verbal.', 'Display the home language. Accept pointing and gestures. Pair with a bilingual peer. Let the student show the answer, not say it.'],
     ['Beginning', 'One word or short two-to-three-word phrases; repeats keywords.', 'Provide word banks and sentence stems. Ask yes/no or either/or questions about a clue. Celebrate keyword use.'],
@@ -793,19 +763,19 @@ function elps() {
     ['High intermediate', 'A variety of sentence types; expresses opinions; asks for clarification.', 'Move to English display with the home language as backup. Ask students to justify and predict the next lock. Fade the stems.'],
     ['Advanced', 'Engages with little to no linguistic support; uses content-area vocabulary.', 'Have the student explain their strategy to the group in academic English and mentor a peer. Extend with a transfer question.'],
   ];
-  const lvlRows = levels.map(l => `<tr><td><strong>${l[0]}</strong></td><td>${l[1]}</td><td>${l[2]}</td></tr>`).join('\n    ');
-  const body = `  <div class="crumb"><a href="index.html">‹ Suite home</a> · <a href="guide.html">Teacher guide</a></div>
+  const lvlRows = levels.map(l => `<tr><td><strong>${S(l[0])}</strong></td><td>${S(l[1])}</td><td>${S(l[2])}</td></tr>`).join('\n    ');
+  const body = `  <div class="crumb">${E('a', '‹ Suite home', 'href="index.html"')} · ${E('a', 'Teacher guide', 'href="guide.html"')}</div>
   <div class="hero">
-    <div class="eyebrow">English Language Proficiency Standards</div>
-    <h1>ELPS Supports for Emergent Bilingual Learners</h1>
-    <p class="lede">How to use these Critical Thinking Online Breakouts with emergent bilingual (EB) students, aligned to the Texas English Language Proficiency Standards (ELPS). The ELPS span four language domains — listening, speaking, reading, and writing — and five proficiency levels. These activities are built to be linguistically accommodated across all seven languages.</p>
+    ${E('div', 'English Language Proficiency Standards', 'class="eyebrow"')}
+    ${E('h1', 'ELPS Supports for Emergent Bilingual Learners')}
+    ${E('p', 'How to use these Critical Thinking Online Breakouts with emergent bilingual (EB) students, aligned to the Texas English Language Proficiency Standards (ELPS). The ELPS span four language domains — listening, speaking, reading, and writing — and five proficiency levels. These activities are built to be linguistically accommodated across all seven languages.', 'class="lede"')}
   </div>
-  <div class="panel tip">🌱 <b>Start from assets.</b> The ELPS take an asset-based approach: leverage the funds of knowledge, home language, and cultural heritage every student already brings. Cognates and the home-language display build bridges between languages and grow confidence as English develops.</div>
+  ${EH('div', '🌱 <b>Start from assets.</b> The ELPS take an asset-based approach: leverage the funds of knowledge, home language, and cultural heritage every student already brings. Cognates and the home-language display build bridges between languages and grow confidence as English develops.', 'class="panel tip"')}
 
-  <h2>Linguistic accommodation, built in</h2>
-  <div class="panel"><p>The ELPS require instruction that is <b>communicated, sequenced, and scaffolded</b> to each student’s proficiency level. These breakouts do much of that for you: the 🌐 menu displays every clue and lock in the student’s home language beside English; clue cards chunk information into short pieces students can reopen; the word lock accepts spelling variants; and nothing is graded, so students take risks with new language safely. Turn on the home language during a first pass, then invite an English pass for the same puzzle.</p></div>
+  ${E('h2', 'Linguistic accommodation, built in')}
+  <div class="panel">${EH('p', 'The ELPS require instruction that is <b>communicated, sequenced, and scaffolded</b> to each student’s proficiency level. These breakouts do much of that for you: the 🌐 menu displays every clue and lock in the student’s home language beside English; clue cards chunk information into short pieces students can reopen; the word lock accepts spelling variants; and nothing is graded, so students take risks with new language safely. Turn on the home language during a first pass, then invite an English pass for the same puzzle.')}</div>
 
-  <h2>The four language domains</h2>
+  ${E('h2', 'The four language domains')}
   <div class="cards">
   ${domain('Listening', 'receptive', '<p class="small">EB students distinguish sounds and intonation, understand content-area vocabulary, follow oral directions, and show comprehension by responding or asking for clarification.</p>', '<b>Try this:</b> read a clue aloud while the home-language text is displayed, then ask students to point to the lock it helps. Accept gestures or pointing as a valid response on a first pass.')}
   ${domain('Speaking', 'expressive', '<p class="small">EB students pronounce new vocabulary, speak using content-area terms, use appropriate register, and narrate, describe, or explain with increasing detail.</p>', '<b>Try this:</b> give sentence stems — “This clue tells me… so the lock is…” Have each pair explain aloud which clue cracked a lock before moving on. Model the target academic word once, then ask students to use it.')}
@@ -813,22 +783,21 @@ function elps() {
   ${domain('Writing', 'expressive', '<p class="small">EB students spell using conventional patterns, write with high-frequency and content-area vocabulary, and write to narrate, describe, explain, or respond.</p>', '<b>Try this:</b> the word lock is low-stakes writing — it accepts spelling variants, so students focus on the idea. Afterward, have students write one or two sentences explaining how they solved a lock, using the target vocabulary and a sentence stem.')}
   </div>
 
-  <h2>Supporting each proficiency level</h2>
-  <p class="section-note">EB students may be at different levels across the four domains. Match the support to the level; every student can do the cognitively demanding thinking with the right language scaffold.</p>
+  ${E('h2', 'Supporting each proficiency level')}
+  ${E('p', 'EB students may be at different levels across the four domains. Match the support to the level; every student can do the cognitively demanding thinking with the right language scaffold.', 'class="section-note"')}
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Proficiency level</th><th>What you may see</th><th>How to scaffold the breakout</th></tr></thead>
+    <thead><tr>${E('th', 'Proficiency level')}${E('th', 'What you may see')}${E('th', 'How to scaffold the breakout')}</tr></thead>
     <tbody>
     ${lvlRows}
     </tbody>
   </table></div>
 
-  <div class="disclaimer">ELPS content is summarized and paraphrased for planning support; it is not a substitute for the official standards (Texas Education Agency, <i>English Language Proficiency Standards</i>, 19 TAC Chapter 74). Confirm current TEA guidance before adoption.</div>
+  ${EH('div', 'ELPS content is summarized and paraphrased for planning support; it is not a substitute for the official standards (Texas Education Agency, <i>English Language Proficiency Standards</i>, 19 TAC Chapter 74). Confirm current TEA guidance before adoption.', 'class="disclaimer"')}
 ${footer(0)}`;
-  fs.writeFileSync(path.join(ROOT, 'elps.html'), shell({ depth: 0, title: 'ELPS Supports — Digital Citizenship Breakouts', body }));
+  fs.writeFileSync(path.join(ROOT, 'elps.html'), shell({ depth: 0, title: 'ELPS Supports — Digital Citizenship Breakouts', body, i18n: true }));
 }
 
 // ---- run -----------------------------------------------------------------
-writeSiteI18nData();
 suiteLanding();
 library();
 bandHub('grade35', [3, 4, 5], { paid: false, label: 'Grades 3–5 · Free', title: 'Grades 3–5', lede: 'The free tier. Digital footprints, kindness, credit, and staying safe — one breakout per grade, ready to share.' });
@@ -845,4 +814,6 @@ policy('grade35', 'Grades 3–5');
 policy('grade68', 'Grades 6–8');
 for (const g of Object.keys(META)) teacherPage(+g);
 
-console.log('Generated: index.html, correlation.html, guide.html, scope.html, lessons.html, udl.html, elps.html, band hubs, implementation plans, policy pages, and 6 teacher launch pages.');
+persistAuto();          // record any new English strings for the translation pass
+writeSiteI18nData();    // compile the shared dictionary (with translations)
+console.log('Generated: index.html, correlation.html, guide.html, scope.html, lessons.html, udl.html, elps.html, band hubs, implementation plans, policy pages, and 6 teacher launch pages. Auto-i18n keys: ' + Object.keys(AUTO_EN).length);
