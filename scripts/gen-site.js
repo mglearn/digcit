@@ -168,6 +168,24 @@ const SITE_LANG_CSS = `
   .site-langbar select{font-family:'Nunito',sans-serif;font-weight:700;font-size:.82rem;color:var(--navy);background:#fff;border:2px solid var(--line);border-radius:100px;padding:6px 12px;cursor:pointer}
   .site-langbar select:focus{outline:none;border-color:var(--navy)}
   @media(max-width:680px){.site-langbar{position:static;margin:0 0 10px}}`;
+const STAT_CSS = `
+  .statstrip{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 6px}
+  .stat{flex:1 1 110px;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center}
+  .stat.hl{background:var(--bg-b);border-color:var(--navy)}
+  .statn{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.9rem;color:var(--navy);line-height:1}
+  .statl{font-size:.74rem;font-weight:800;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin-top:6px}`;
+// A small stats dashboard for the landing (counts computed from the activity set).
+function dashboard() {
+  const licensed = Object.keys(ACT).length, free = FREE.length, total = licensed + free;
+  const stat = (n, label, hl) => `<div class="stat${hl ? ' hl' : ''}"><div class="statn">${n}</div><div class="statl">${S(label)}</div></div>`;
+  return `<div class="statstrip">
+    ${stat(total, 'Activities')}
+    ${stat(free, 'Free featured', true)}
+    ${stat(licensed, 'Licensed')}
+    ${stat('3–8', 'Grades')}
+    ${stat(7, 'Languages')}
+  </div>`;
+}
 // CLEAR grid with i18n keys (for pages that carry the language picker)
 function clearBlockI18n() {
   const rows = CLEAR.map(s => `<div class="clear-row">
@@ -251,7 +269,7 @@ ${headMeta(depth, title, OG_DESC)}
 ${FONTS}
 <style>${PALETTE}</style>
 <link rel="stylesheet" href="${assets(depth)}/site.css">
-<style>${TEACHER_CSS}${CLEAR_CSS}${SITE_LANG_CSS}</style>${extraHead}
+<style>${TEACHER_CSS}${CLEAR_CSS}${SITE_LANG_CSS}${STAT_CSS}</style>${extraHead}
 </head>
 <body>
 <div class="wrap">
@@ -316,6 +334,8 @@ function suiteLanding() {
       <a class="btn ghost" href="guide.html" data-i18n="btn.guide">${esc(si('btn.guide'))}</a>
     </div>
   </div>
+
+  ${dashboard()}
 
   ${E('h2', 'Featured lessons — free')}
   ${E('p', 'One free featured breakout per grade — fully playable, no login, nothing collected. Share the link and go.', 'class="section-note"')}

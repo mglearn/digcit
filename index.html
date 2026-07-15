@@ -46,7 +46,12 @@
   .site-langbar .globe{font-size:1.1rem}
   .site-langbar select{font-family:'Nunito',sans-serif;font-weight:700;font-size:.82rem;color:var(--navy);background:#fff;border:2px solid var(--line);border-radius:100px;padding:6px 12px;cursor:pointer}
   .site-langbar select:focus{outline:none;border-color:var(--navy)}
-  @media(max-width:680px){.site-langbar{position:static;margin:0 0 10px}}</style>
+  @media(max-width:680px){.site-langbar{position:static;margin:0 0 10px}}
+  .statstrip{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 6px}
+  .stat{flex:1 1 110px;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center}
+  .stat.hl{background:var(--bg-b);border-color:var(--navy)}
+  .statn{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.9rem;color:var(--navy);line-height:1}
+  .statl{font-size:.74rem;font-weight:800;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin-top:6px}</style>
 </head>
 <body>
 <div class="wrap">
@@ -74,6 +79,14 @@
       <a class="btn ghost" href="library.html" data-i18n="btn.library">🔎 Browse library</a>
       <a class="btn ghost" href="guide.html" data-i18n="btn.guide">Teacher guide</a>
     </div>
+  </div>
+
+  <div class="statstrip">
+    <div class="stat"><div class="statn">12</div><div class="statl"><span data-i18n="tdj2qlq">Activities</span></div></div>
+    <div class="stat hl"><div class="statn">6</div><div class="statl"><span data-i18n="tlueq5d">Free featured</span></div></div>
+    <div class="stat"><div class="statn">6</div><div class="statl"><span data-i18n="t11d1wmy">Licensed</span></div></div>
+    <div class="stat"><div class="statn">3–8</div><div class="statl"><span data-i18n="t16jqcw3">Grades</span></div></div>
+    <div class="stat"><div class="statn">7</div><div class="statl"><span data-i18n="t1hg7vfo">Languages</span></div></div>
   </div>
 
   <h2 data-i18n="tgyv3i">Featured lessons — free</h2>
