@@ -37,7 +37,7 @@ fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
 
 // top-level public pages
-for (const f of ['index.html', 'library.html', 'correlation.html', 'guide.html', 'answer-key.html']) {
+for (const f of ['index.html', 'library.html', 'correlation.html', 'guide.html', 'scope.html', 'lessons.html', 'udl.html', 'elps.html', 'answer-key.html']) {
   fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
 }
 // shared assets (engine, styles, icons, og, manifest)

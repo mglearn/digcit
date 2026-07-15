@@ -22,9 +22,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--c1:#0a2e63;--c2:#2f6fe0;--c3:#1a7a8c;--c4:#f5b800;--c5:#0d47a1;--bg-a:rgba(245,184,0,.12);--bg-b:rgba(10,46,99,.10)}</style>
 <link rel="stylesheet" href="assets/site.css">
+<style>
+  .wrap{position:relative}
+  .teacher-menu{position:absolute;top:14px;right:16px;z-index:60;font-family:'Nunito',sans-serif}
+  .teacher-menu>summary{list-style:none;cursor:pointer;background:var(--navy);color:#fff;font-weight:800;font-size:.85rem;padding:8px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(10,46,99,.28)}
+  .teacher-menu>summary::-webkit-details-marker{display:none}
+  .teacher-menu[open]>summary{background:var(--navy-d)}
+  .teacher-menu .tm-panel{position:absolute;right:0;margin-top:8px;background:#fff;border:2px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(10,20,60,.18);padding:8px;min-width:236px;display:flex;flex-direction:column;gap:2px}
+  .teacher-menu .tm-h{font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;padding:6px 12px 3px}
+  .teacher-menu .tm-panel a{display:flex;justify-content:space-between;gap:12px;padding:9px 12px;border-radius:9px;color:var(--ink);font-weight:700;font-size:.9rem;text-decoration:none}
+  .teacher-menu .tm-panel a:hover{background:var(--bg-b);color:var(--navy)}
+  @media(max-width:680px){.teacher-menu{position:static;margin:0 0 12px;text-align:right}.teacher-menu .tm-panel{left:auto}}
+  .clear-grid{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+  .clear-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px}
+  .clear-badge{flex:0 0 auto;width:46px;height:46px;border-radius:12px;color:#fff;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.6rem;display:flex;align-items:center;justify-content:center}
+  .clear-body h4{margin:.1rem 0 .3rem;font-size:1.05rem;color:var(--navy)}
+  .clear-body .clear-q{font-weight:600;color:var(--ink-soft);font-size:.9rem}
+  .clear-body ul{margin:.2rem 0 0;padding-left:1.1rem}
+  .clear-body li{font-size:.9rem;color:var(--ink);margin:.1rem 0}</style>
 </head>
 <body>
 <div class="wrap">
+<details class="teacher-menu">
+  <summary>👩‍🏫 Teachers ▾</summary>
+  <div class="tm-panel">
+    <div class="tm-h">Teacher resources</div>
+    <a href="guide.html">Curriculum Guide<span aria-hidden="true">📘</span></a>
+    <a href="scope.html">Scope &amp; Sequence<span aria-hidden="true">🗺️</span></a>
+    <a href="lessons.html">Lesson-Plan Guide<span aria-hidden="true">📝</span></a>
+    <a href="correlation.html">TEKS Correlation<span aria-hidden="true">📊</span></a>
+    <a href="udl.html">UDL Supports<span aria-hidden="true">♿</span></a>
+    <a href="elps.html">ELPS Supports<span aria-hidden="true">🌎</span></a>
+    <a href="answer-key.html">Answer Key<span aria-hidden="true">🔐</span></a>
+  </div>
+</details>
   <div class="hero">
     <div class="eyebrow">Digital Citizenship · TEKS Technology Applications</div>
     <h1>Digital Citizenship Breakouts</h1>
@@ -95,13 +126,45 @@
   </a>
   </div>
 
+  <h2>Why Critical Thinking Online Breakouts (CTOBs)?</h2>
   <div class="panel gold">
-    <h3>Why "breakouts"?</h3>
-    <p>Each activity is a mini escape-room: six clues (one is a decoy), four locks, and a short <em>reason</em> revealed after every lock that names <em>why</em> the answer follows from the evidence. The reasoning is the point.</p>
+    <p>A <strong>Critical Thinking Online Breakout (CTOB)</strong> is a browser-based digital escape room built for <em>reasoning, not recall</em>. Students read six short clues — one a deliberate <strong>decoy</strong> — and use them to open four locks. Each lock reveals a one-sentence <em>reason</em> that names <em>why</em> the answer follows from the evidence. There are no logins, nothing is graded, and <strong>Start over</strong> is always one tap away, so the cost of thinking out loud and being wrong is zero.</p>
+    <p>CTOBs run on the <strong>CLEAR thinking process</strong> — a simple critical-thinking checklist students can carry into any claim, message, or source they meet online. Every lock is a small CLEAR rep: the decoy trains students to weigh <em>Evidence</em> and reject a true-but-irrelevant fact; the “strong evidence” lock makes the strong / weak / missing distinction explicit; and the revealed reason models the <em>Response</em>. Digital citizenship is judgment — and CLEAR is how students practice it.</p>
   </div>
+  <h3>The CLEAR thinking process</h3>
+  <p class="section-note">A simple critical-thinking checklist. Students walk it on every breakout and can carry it into any claim, message, or source they meet online.</p>
+  <div class="clear-grid">
+    <div class="clear-row">
+      <div class="clear-badge" style="background:#7c3aed">C</div>
+      <div class="clear-body"><h4>Claim <span class="clear-q">What exactly is being said?</span></h4>
+      <ul><li>Make the claim specific.</li><li>Make it testable.</li></ul></div>
+    </div>
+    <div class="clear-row">
+      <div class="clear-badge" style="background:#0891b2">L</div>
+      <div class="clear-body"><h4>Lens <span class="clear-q">What assumptions am I bringing?</span></h4>
+      <ul><li>What do I already believe?</li><li>Am I reacting to evidence or past experience?</li></ul></div>
+    </div>
+    <div class="clear-row">
+      <div class="clear-badge" style="background:#2f9e44">E</div>
+      <div class="clear-body"><h4>Evidence <span class="clear-q">What supports the claim?</span></h4>
+      <ul><li>Strong: facts, data, direct observations</li><li>Weak: rumors, impressions</li><li>Missing: what do I still need to know?</li></ul></div>
+    </div>
+    <div class="clear-row">
+      <div class="clear-badge" style="background:#f59e0b">A</div>
+      <div class="clear-body"><h4>Alternatives <span class="clear-q">What else could explain this?</span></h4>
+      <ul><li>Consider other causes.</li><li>Consider other viewpoints.</li><li>Avoid oversimplifying.</li></ul></div>
+    </div>
+    <div class="clear-row">
+      <div class="clear-badge" style="background:#2563eb">R</div>
+      <div class="clear-body"><h4>Response <span class="clear-q">What should I do now?</span></h4>
+      <ul><li>Ask a question · gather more information · challenge the claim</li><li>Document the issue · speak up · wait</li></ul></div>
+    </div>
+  </div>
+  <div class="panel tip" style="margin-top:14px"><strong>Quick reminder:</strong> What do I think? Why do I think it? What might I be missing? What should I do next?</div>
+  <p class="section-note">Full teacher materials: <a href="guide.html">curriculum guide</a> · <a href="scope.html">scope &amp; sequence</a> · <a href="lessons.html">lesson-plan guide</a> · <a href="correlation.html">TEKS correlation</a> · <a href="udl.html">UDL</a> &amp; <a href="elps.html">ELPS</a> supports.</p>
 <footer>
   Digital Citizenship Breakouts · Aligned to Texas TEKS Technology Applications (adopted 2022, required K–8). Paraphrased alignment — not legal advice.<br>
-  <a href="index.html">Suite home</a> · <a href="library.html">Library</a> · <a href="correlation.html">Standards correlation</a> · <a href="guide.html">Teacher guide</a>
+  <a href="index.html">Suite home</a> · <a href="library.html">Library</a> · <a href="guide.html">Teacher guide</a> · <a href="scope.html">Scope &amp; sequence</a> · <a href="lessons.html">Lesson plans</a> · <a href="correlation.html">TEKS correlation</a> · <a href="udl.html">UDL</a> · <a href="elps.html">ELPS</a>
 </footer>
 </div>
 </body>
