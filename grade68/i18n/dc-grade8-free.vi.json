@@ -1,0 +1,91 @@
+{
+  "chrome": {
+    "h1": "Khóa Chặt Nó Lại",
+    "sub": "Tài khoản của bạn nắm giữ toàn bộ cuộc sống số của bạn, và có người vừa thử đột nhập. Hãy học cách những cụm mật khẩu mạnh, những ổ khóa thứ hai, và một kế hoạch bình tĩnh giữ kẻ xâm nhập ở ngoài. Giải bốn ổ khóa và bảo mật tài khoản vĩnh viễn.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Trở Thành Người Bảo Vệ Tài Khoản",
+    "briefP": "Chỉ một mật khẩu yếu hoặc dùng lại có thể trao cho kẻ trộm chìa khóa vào mọi thứ bạn sở hữu trên mạng. Một công dân số thông minh xây những ổ khóa mạnh trước khi rắc rối ập đến và biết chính xác phải làm gì khi chuông báo động vang lên. Hãy làm việc với các hồ sơ vụ án, cân nhắc mỗi lựa chọn, và mở cả bốn ổ khóa. Mỗi ổ khóa mang theo một lý do cho thấy chính xác vì sao câu trả lời giữ bạn an toàn.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ BẢO MẬT",
+    "winH": "Mọi ổ khóa đã hạ xuống, Người Bảo Vệ.",
+    "winP": "Bây giờ bạn có thể tạo một cụm mật khẩu dễ nhớ mà khó bị bẻ khóa, thêm xác thực hai yếu tố như một ổ khóa thứ hai, giữ mỗi tài khoản một mật khẩu riêng biệt, và phản ứng với một vụ rò rỉ theo đúng thứ tự. Lối tư duy vững vàng, có chuẩn bị đó chính là điều bảo vệ một công dân số và mọi người mà họ kết nối."
+  },
+  "clues": [
+    {
+      "nm": "Chìa khóa dài",
+      "title": "Độ dài thắng mánh khóe",
+      "body": "Một mật khẩu ngắn đầy ký hiệu dễ bị bẻ khóa hơn một cụm mật khẩu dài được ghép từ vài từ ngẫu nhiên. Một người bảo vệ ghép bốn từ không liên quan thành một thứ như một cụm ngắn, đơn giản để nhớ nhưng quá dài để máy đoán nhanh. Độ dài là điều quan trọng nhất khiến một mật khẩu mạnh."
+    },
+    {
+      "nm": "Bản sao",
+      "title": "Một mật khẩu, ở mọi nơi",
+      "body": "Dùng lại cùng một mật khẩu trên nhiều tài khoản có vẻ tiện lợi, nhưng nó có nghĩa là nếu một trang bị đột nhập, kẻ trộm có thể đi thẳng vào tất cả những trang khác. Một người bảo vệ cho mỗi tài khoản một mật khẩu riêng biệt để một vụ rò rỉ đơn lẻ bị kẹt lại một chỗ thay vì lan ra."
+    },
+    {
+      "nm": "Ổ khóa thứ hai",
+      "title": "Hai ổ khóa tốt hơn một",
+      "body": "Xác thực hai yếu tố thêm một ổ khóa thứ hai sau mật khẩu của bạn, thường là một mã dùng một lần từ một ứng dụng hoặc tin nhắn hoặc một cú chạm trên điện thoại của bạn. Ngay cả khi ai đó đánh cắp mật khẩu của bạn, họ vẫn không thể vào được nếu không có yếu tố thứ hai đó, thứ gần như luôn nằm trong túi bạn."
+    },
+    {
+      "nm": "Chuông báo động",
+      "title": "Khi chuông báo động vang lên",
+      "body": "Bạn nhận được một cảnh báo rằng tài khoản của bạn đã được đăng nhập từ một thiết bị bạn không nhận ra. Phản ứng bình tĩnh có một trình tự: đầu tiên đổi sang một mật khẩu mạnh mới, rồi bật xác thực hai yếu tố, rồi kiểm tra các tài khoản khác của bạn phòng khi cùng mật khẩu đó đã bị dùng lại. Hành động theo trình tự đó giới hạn thiệt hại nhanh chóng."
+    },
+    {
+      "nm": "Mồi nhử",
+      "title": "Tin nhắn muốn lấy mã của bạn",
+      "body": "Một tin nhắn cảnh báo rằng tài khoản của bạn sẽ bị khóa và yêu cầu bạn trả lời bằng mật khẩu hoặc mã hai yếu tố của bạn để khắc phục. Các công ty thật không bao giờ yêu cầu điều đó. Giao ra một mã dùng một lần cho phép kẻ tấn công lách qua ổ khóa thứ hai của bạn, nên một người bảo vệ chậm lại và không bao giờ chia sẻ mã với bất kỳ ai."
+    },
+    {
+      "nm": "Pin",
+      "title": "Sạc máy tính bảng",
+      "body": "Máy tính bảng của lớp mất khoảng hai giờ để sạc từ cạn đến đầy, và một đèn nhỏ sáng màu cam trong khi sạc và màu xanh khi xong. Biết thời gian sạc là một sự thật đích thực về thiết bị, nhưng nó sẽ không giúp bạn mở ổ khóa nào trong vụ án này."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Tạo một cụm mật khẩu mạnh",
+      "q": "Hãy đánh dấu MỌI dấu hiệu của một mật khẩu mạnh, khó bị bẻ khóa.",
+      "items": [
+        "Bốn từ ngẫu nhiên không liên quan được ghép lại với nhau",
+        "Đủ dài để một cái máy không thể đoán nó nhanh",
+        "Khác với mật khẩu trên các tài khoản khác của bạn",
+        "Tên thú cưng và năm bạn sinh ra",
+        "Một từ ngắn với vài ký hiệu được thay vào"
+      ],
+      "reason": "Sức mạnh chủ yếu đến từ độ dài và tính ngẫu nhiên, nên một cụm mật khẩu dài gồm những từ không liên quan và riêng biệt cho một tài khoản sẽ thắng. Những sự thật cá nhân và những từ ngắn thay ký hiệu thì dễ đoán hoặc bẻ khóa."
+    },
+    {
+      "title": "Gọi tên ổ khóa thứ hai",
+      "q": "Bước bổ sung yêu cầu một mã dùng một lần sau mật khẩu của bạn được gọi là xác thực ______.",
+      "answer": [
+        "hai yếu tố",
+        "2fa",
+        "xác thực hai yếu tố",
+        "hai lớp",
+        "hai bước"
+      ],
+      "reason": "Một mã dùng một lần hoặc một cú chạm điện thoại được thêm vào sau mật khẩu của bạn là xác thực hai yếu tố, một ổ khóa thứ hai giữ kẻ trộm ở ngoài ngay cả khi họ đã có mật khẩu của bạn."
+    },
+    {
+      "title": "Đừng dùng lại mật khẩu",
+      "q": "Bạn dùng đúng cùng một mật khẩu trên tài khoản trò chơi, email, và một trang mua sắm. Một trong những trang đó bị đột nhập. Nguy hiểm thực sự là gì?",
+      "options": [
+        "Không có gì, vì một vụ đột nhập ở một trang không bao giờ có thể ảnh hưởng đến các trang khác",
+        "Một kẻ trộm giờ đây có thể thử mật khẩu bị đánh cắp đó để mở các tài khoản khác của bạn",
+        "Mật khẩu của bạn tự động trở nên mạnh hơn sau bất kỳ vụ đột nhập nào"
+      ],
+      "reason": "Khi bạn dùng lại một mật khẩu ở mọi nơi, một vụ đột nhập đơn lẻ trao cho kẻ trộm một chìa khóa mà họ có thể thử trên tất cả các tài khoản khác của bạn, đó là lý do vì sao mỗi tài khoản cần mật khẩu riêng biệt của nó."
+    },
+    {
+      "title": "Phản ứng với vụ rò rỉ",
+      "q": "Một cảnh báo nói tài khoản của bạn bị truy cập từ một thiết bị không xác định. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "🔎 Kiểm tra các tài khoản khác của bạn",
+        "🔑 Đổi sang một mật khẩu mạnh mới",
+        "📱 Bật xác thực hai yếu tố"
+      ],
+      "reason": "Đầu tiên đổi mật khẩu để khóa kẻ xâm nhập ở ngoài, rồi bật xác thực hai yếu tố để một mật khẩu bị đánh cắp thôi là không đủ, rồi kiểm tra các tài khoản khác của bạn phòng khi cùng mật khẩu đó đã bị dùng lại."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "chrome": {
+    "h1": "Nhóm Chat",
+    "sub": "Một học sinh được thêm vào nhóm chat đông đúc của lớp. Có tin nhắn tử tế. Có tin nhắn thì không. Hãy giải bốn ổ khóa để học cách làm một người bạn tốt trong nhóm chat.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Làm Người Trợ Giúp trong Nhóm Chat",
+    "briefP": "Bạn vừa tham gia một nhóm chat với cả lớp. Mọi người đang spam, chuyển tiếp tin nhắn riêng tư, và cùng nhau công kích một người bạn. Hãy đọc manh mối, rồi mở cả bốn ổ khóa. Mỗi ổ khóa có một lý do cho thấy vì sao câu trả lời đúng.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ ĐÓNG CHAT",
+    "winH": "Bạn đã mở cả bốn ổ khóa!",
+    "winP": "Bạn đã học cách chào hỏi khi tham gia một cuộc trò chuyện, vì sao chuyển tiếp một tin nhắn riêng tư là sai, cách ngăn chặn việc công kích tập thể, cách bất đồng ý kiến một cách tử tế, và sự khác biệt giữa tắt thông báo và chặn. Làm tốt lắm, người trợ giúp nhóm chat!"
+  },
+  "clues": [
+    {
+      "nm": "Bạn được thêm vào",
+      "title": "Có người thêm bạn vào",
+      "body": "Khi bạn được thêm vào một nhóm chat, hãy nói một lời chào ngắn gọn, thân thiện. Bạn không cần gửi thật nhiều tin nhắn cùng lúc. Gửi hết tin nhắn này đến tin nhắn khác gọi là spam. Hãy đăng một lần, rồi chờ và đọc xem người khác nói gì."
+    },
+    {
+      "nm": "Lời riêng tư",
+      "title": "Nó chỉ dành cho bạn",
+      "body": "Một người bạn gửi cho bạn một tin nhắn riêng tư chỉ dành cho bạn. Đừng chuyển tiếp nó vào nhóm chat. Tin nhắn đó không phải của bạn để chia sẻ. Chia sẻ lời riêng tư làm mất lòng tin. Hãy giữ tin nhắn riêng tư ở mức riêng tư."
+    },
+    {
+      "nm": "Công kích tập thể",
+      "title": "Đừng hùa theo công kích",
+      "body": "Một người mắc một lỗi nhỏ. Rồi rất nhiều người bắt đầu trêu chọc họ cùng một lúc. Đó gọi là công kích tập thể. Đừng hùa theo. Đừng công kích tập thể. Thay vào đó, bạn có thể gửi một tin nhắn tử tế hoặc kể cho một người lớn đáng tin cậy."
+    },
+    {
+      "nm": "Bất đồng tử tế",
+      "title": "Nói theo cách tử tế",
+      "body": "Bạn có thể bất đồng ý kiến trong cuộc trò chuyện mà vẫn tử tế. Hãy dùng lời bình tĩnh, không dùng tên gọi cay nghiệt. Hãy thử 'Mình thấy nó theo cách khác' thay vì 'Bạn sai rồi.' Bạn có thể nói về ý tưởng mà không làm tổn thương người khác."
+    },
+    {
+      "nm": "Tắt thông báo hay Chặn",
+      "title": "Hai nút im lặng",
+      "body": "Khi cuộc trò chuyện quá ồn ào, bạn có thể tắt thông báo. Tắt thông báo ẩn tiếng báo một thời gian, nhưng bạn vẫn ở trong cuộc trò chuyện. Chặn thì mạnh hơn. Chặn khiến một người hoàn toàn không thể nhắn tin cho bạn. Tắt thông báo khi ồn ào, chặn khi ai đó không an toàn."
+    },
+    {
+      "nm": "Sự thật vũ trụ",
+      "title": "Một sự thật từ nơi xa",
+      "body": "Sự thật thú vị: một ngày trên hành tinh Sao Kim còn dài hơn cả một năm của nó. Ngầu nhỉ? Nhưng đây chỉ là một sự thật về vũ trụ — nó sẽ không giúp bạn mở ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Bạn được thêm vào",
+      "q": "Bạn vừa được thêm vào nhóm chat của lớp. Điều tử tế nên làm là gì?",
+      "options": [
+        "Gửi liền mười tin nhắn nhanh để mọi người chú ý đến bạn",
+        "Nói một lời chào ngắn gọn, thân thiện, rồi đọc xem người khác đăng gì",
+        "Chuyển tiếp một tin nhắn riêng tư mà một người bạn gửi chỉ dành cho bạn"
+      ],
+      "reason": "Một lời chào ngắn gọn, thân thiện là lịch sự. Gửi hết tin nhắn này đến tin nhắn khác là spam, và chuyển tiếp một tin nhắn riêng tư làm mất lòng tin của một người bạn."
+    },
+    {
+      "title": "Làm một người bạn tốt trong nhóm chat",
+      "q": "Hãy đánh dấu MỌI lựa chọn thể hiện phép lịch sự trong nhóm chat.",
+      "items": [
+        "Bất đồng ý kiến bằng lời bình tĩnh, tử tế",
+        "Gửi một tin nhắn tử tế cho người đang bị trêu chọc",
+        "Hùa theo công kích khi một người mắc một lỗi nhỏ",
+        "Chuyển tiếp một tin nhắn riêng tư cho cả nhóm",
+        "Spam cuộc trò chuyện bằng hết tin nhắn này đến tin nhắn khác"
+      ],
+      "reason": "Người bạn tốt trong nhóm chat bất đồng ý kiến một cách tử tế và giúp đỡ người đang bị trêu chọc. Công kích tập thể, chuyển tiếp lời riêng tư, và spam đều làm tổn hại cả nhóm."
+    },
+    {
+      "title": "Quá ồn ào",
+      "q": "Cuộc trò chuyện quá ồn ào, nhưng không ai gặp nguy hiểm. Để ẩn tiếng báo mà vẫn ở lại cuộc trò chuyện, bạn có thể ______ nó.",
+      "answer": [
+        "tắt thông báo",
+        "tắt thông báo cho",
+        "làm im lặng"
+      ],
+      "reason": "Tắt thông báo ẩn tiếng ồn trong khi bạn vẫn ở trong cuộc trò chuyện. Chặn thì mạnh hơn và dùng để ngăn một người không an toàn, không phải để giảm tiếng ồn."
+    },
+    {
+      "title": "Ngăn công kích tập thể",
+      "q": "Một người bạn đang bị công kích tập thể trong cuộc trò chuyện. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "💙 Ủng hộ người bạn",
+        "🚫 Từ chối hùa theo công kích",
+        "🧑‍🏫 Kể cho một người lớn đáng tin cậy"
+      ],
+      "reason": "Đầu tiên TỪ CHỐI hùa theo công kích tập thể, rồi ỦNG HỘ người bạn bằng một tin nhắn tử tế, rồi KỂ cho một người lớn đáng tin cậy. Từ chối, Ủng hộ, Kể ra."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "chrome": {
+    "h1": "Hãy Tử Tế Trên Mạng",
+    "sub": "Cuộc trò chuyện của lớp trở nên hơi thiếu tử tế. Hãy dùng manh mối để giải bốn ổ khóa và biến nơi đó thành một chốn tử tế trở lại.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Làm Đội trưởng Tử tế",
+    "briefP": "Chữ trên màn hình có thể khiến người khác vui hoặc buồn. Một Đội trưởng Tử tế giúp mọi người cảm thấy an toàn và được chào đón trên mạng. Hãy đọc manh mối, rồi mở cả bốn ổ khóa. Mỗi ổ khóa cho thấy một lý do sau khi mở, để bạn hiểu vì sao lựa chọn tử tế là lựa chọn đúng.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã mở cả bốn ổ khóa!",
+    "winP": "Bạn đã biết cách phân biệt tin nhắn tử tế với tin nhắn thiếu tử tế, cách bao gồm mọi người, cách trở thành người đứng lên bảo vệ, và cách suy nghĩ trước khi gửi. Bạn là một Đội trưởng Tử tế thực thụ!",
+    "crumbSuite": "Breakout Công dân số"
+  },
+  "clues": [
+    {
+      "nm": "Lời tử tế",
+      "title": "Lời tử tế giúp ích",
+      "body": "Lời tử tế khiến người khác cảm thấy vui. 'Làm tốt lắm!' và 'Mình thích ý tưởng của bạn!' là những lời tử tế. Lời cay nghiệt khiến người khác buồn. Hãy chọn lời tử tế khi bạn gõ phím."
+    },
+    {
+      "nm": "Bao gồm mọi người",
+      "title": "Hãy để mọi người cùng chơi",
+      "body": "Bị bỏ ra ngoài thì thật buồn. Khi bạn chơi một trò chơi trên mạng, hãy mời người khác cùng tham gia. Một lời khen tử tế như 'Bạn làm giỏi lắm!' giúp một người bạn mới cảm thấy được chào đón."
+    },
+    {
+      "nm": "Người đứng lên",
+      "title": "Hãy là người đứng lên bảo vệ",
+      "body": "Người đứng lên bảo vệ giúp đỡ khi ai đó bị đối xử tệ. Nếu bạn thấy một bài đăng cay nghiệt, đừng cười nhạo nó và đừng chia sẻ nó. Hãy tử tế với người đó và kể cho một người lớn đáng tin cậy."
+    },
+    {
+      "nm": "Nghĩ trước đã",
+      "title": "Nghĩ trước khi gửi",
+      "body": "Một khi bạn đã gửi tin nhắn, bạn không thể lấy lại được. Hãy dừng lại và nghĩ trước. Hãy tự hỏi: Điều này có đúng không? Có tử tế không? Mình có nói thẳng vào mặt họ không? Nếu không, thì đừng gửi."
+    },
+    {
+      "nm": "Đọc cảm xúc",
+      "title": "Lời nói có thể làm tổn thương",
+      "body": "Bạn không thể thấy khuôn mặt trong cuộc trò chuyện. Một câu đùa có thể trông cay nghiệt khi nó chỉ là chữ. Hãy đọc tin nhắn của bạn hai lần và chắc chắn nó nghe tử tế trước khi nhấn gửi."
+    },
+    {
+      "nm": "Cá của lớp",
+      "title": "Chú cá trong lớp học",
+      "body": "Lớp có một chú cá vàng tên Bubbles. Bubbles thổi những bong bóng nhỏ và thích bơi vòng vòng. Đây là một điều thú vị — nhưng nó sẽ không giúp bạn mở ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Tin nhắn tử tế",
+      "q": "Tin nhắn nào là tin nhắn tử tế nên gửi?",
+      "options": [
+        "Bạn chơi trò này dở quá. Ha ha!",
+        "Ý hay đấy! Bạn có muốn chơi cùng bọn mình không?",
+        "Chẳng ai muốn bạn ở trong nhóm chat của bọn mình đâu."
+      ],
+      "reason": "Tin nhắn tử tế giúp người khác cảm thấy vui và được chào đón. 'Ý hay đấy! Bạn có muốn chơi cùng bọn mình không?' bao gồm một người bạn và đưa ra lời khen, nên đó là lựa chọn tử tế."
+    },
+    {
+      "title": "Tử tế hay không tử tế?",
+      "q": "Hãy đánh dấu MỌI điều là lựa chọn tử tế trên mạng.",
+      "items": [
+        "Dành cho một người bạn một lời khen dễ thương trong cuộc trò chuyện",
+        "Mời một bạn cùng lớp mới tham gia trò chơi",
+        "Kể cho người lớn khi bạn thấy một bài đăng cay nghiệt",
+        "Cười nhạo một bài đăng cay nghiệt và chia sẻ nó khắp nơi",
+        "Gõ một cái tên thô lỗ để khiến ai đó cảm thấy nhỏ bé"
+      ],
+      "reason": "Lựa chọn tử tế giúp người khác cảm thấy vui — một lời khen, một lời mời, hoặc kể cho người lớn về một bài đăng cay nghiệt. Cười nhạo hoặc chia sẻ bài đăng cay nghiệt và gọi tên xúc phạm là không tử tế, nên ta không đánh dấu những điều đó."
+    },
+    {
+      "title": "Tên của người giúp đỡ",
+      "q": "Một người giúp đỡ khi ai đó bị đối xử tệ trên mạng được gọi là ______.",
+      "answer": [
+        "người đứng lên bảo vệ",
+        "người đứng lên",
+        "người bảo vệ",
+        "người bênh vực"
+      ],
+      "reason": "Người đứng lên bảo vệ lên tiếng và giúp đỡ thay vì đứng nhìn hay cười nhạo. Là người đứng lên bảo vệ nghĩa là bạn không chia sẻ bài đăng cay nghiệt và bạn kể cho một người lớn đáng tin cậy."
+    },
+    {
+      "title": "Nghĩ trước khi gửi",
+      "q": "Trước khi gửi tin nhắn, hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "📨 Gửi nó đi",
+        "✋ Dừng lại và suy nghĩ",
+        "💛 Nó có tử tế không?"
+      ],
+      "reason": "Đầu tiên DỪNG LẠI và nghĩ về lời của bạn. Rồi KIỂM TRA xem tin nhắn có tử tế và đúng không. Chỉ khi đó bạn mới GỬI nó. Dừng lại, Kiểm tra, Gửi."
+    }
+  ]
+}

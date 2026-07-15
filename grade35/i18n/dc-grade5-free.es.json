@@ -1,0 +1,89 @@
+{
+  "chrome": {
+    "h1": "¿Qué debo compartir?",
+    "sub": "Una nueva publicación está lista para subir a internet, pero espera. Una parte es segura de compartir y otra debe quedar en privado. Lee las pistas, resuelve cuatro candados y protege lo que es tuyo.",
+    "briefLabel": "Tu misión",
+    "briefH": "Piensa antes de publicar",
+    "briefP": "Todo lo que publicas en línea puede ser visto, guardado y compartido por otros. Tu tarea es aprender qué detalles son seguros de compartir y qué datos privados —como tu dirección, tus contraseñas y dónde estás en este momento— deben quedar bien guardados. Abre los cuatro candados, y cada uno te mostrará la razón por la que su respuesta es correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "PRIVACIDAD PROTEGIDA",
+    "winH": "¡Protegiste tu información privada!",
+    "winP": "Ahora sabes qué detalles son seguros de compartir, cómo revisar quién puede ver tus publicaciones, por qué una ubicación puede esperar, y qué datos privados deben quedar en secreto. ¡Publicar con inteligencia y seguridad!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Seguro de compartir",
+      "title": "¿Qué está bien publicar?",
+      "body": "Algunos detalles son seguros de compartir en línea. Tu nombre de pila, un pasatiempo que te encanta o un libro favorito se pueden publicar sin revelar quién eres ni dónde encontrarte. Estos pequeños datos no te ponen en peligro."
+    },
+    {
+      "nm": "Mantenlo en privado",
+      "title": "¿Qué debe quedar en secreto?",
+      "body": "Cierta información es privada y nunca debe publicarse. Tu dirección, el nombre de tu escuela, tu número de teléfono y tus contraseñas pueden dejar que un desconocido te encuentre o tome el control de tus cuentas. Mantén todo esto bien guardado."
+    },
+    {
+      "nm": "Ajustes de privacidad",
+      "title": "¿Quién puede ver esto?",
+      "body": "Toda aplicación tiene ajustes de privacidad que deciden quién puede ver lo que publicas. Antes de compartir, revisa los ajustes para que solo las personas en las que confías —como tu familia y tus amigos cercanos— puedan verlo, en lugar de todo el internet."
+    },
+    {
+      "nm": "Piensa en la ubicación",
+      "title": "¿Deberías publicar dónde estás?",
+      "body": "Publicar tu ubicación exacta le dice a todos dónde encontrarte ahora mismo. Una foto marcada 'en el parque de la calle Principal' la pueden ver desconocidos. Es más seguro compartir a dónde fuiste DESPUÉS de que ya te fuiste."
+    },
+    {
+      "nm": "Tu público",
+      "title": "¿Quién está mirando de verdad?",
+      "body": "Cuando una publicación es pública, tu público no son solo tus amigos: puede ser cualquier persona en el mundo. Siempre pregúntate '¿Quién podría ver esto?' antes de compartir, e imagina al público más grande posible leyéndolo."
+    },
+    {
+      "nm": "Gecko del salón",
+      "title": "La mascota del salón de ciencias",
+      "body": "El salón de ciencias de quinto grado tiene un gecko llamado Cometa que se asolea bajo una lámpara cálida. Cometa solo come grillos los martes. Este es un dato divertido, pero no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "¿Guardar o compartir?",
+      "q": "Marca CADA detalle que debe quedar EN PRIVADO y NO publicarse.",
+      "items": [
+        "La dirección de tu casa",
+        "La contraseña de tu cuenta de juego",
+        "El nombre de la escuela a la que asistes",
+        "Tu tipo de pizza favorito",
+        "Un libro que disfrutaste leer"
+      ],
+      "reason": "Los datos privados como tu dirección, tus contraseñas y tu escuela pueden dejar que un desconocido te encuentre o entre a tus cuentas, así que quedan en secreto. En cambio, una comida o un libro favorito son seguros de compartir."
+    },
+    {
+      "title": "Seguro de publicar",
+      "q": "¿Cuál publicación es SEGURA de compartir en línea?",
+      "options": [
+        "Vivo en Calle Roble 412, ¡ven a visitarme después de clases!",
+        "¡Hola, soy Sam y me encanta dibujar dragones y leer historietas!",
+        "Mi número de teléfono está en mi perfil, escríbeme para vernos en la Primaria Lincoln."
+      ],
+      "reason": "Compartir solo un nombre de pila y un pasatiempo es seguro, pero publicar tu dirección, número de teléfono o escuela les da a los desconocidos los detalles que necesitan para encontrarte."
+    },
+    {
+      "title": "Una pregunta primero",
+      "q": "Antes de publicar, pregúntate '¿Quién puede ____ esto?' ¿Qué palabra llena el espacio? (Pista: significa mirar algo con tus ojos.)",
+      "answer": [
+        "ver",
+        "mirar"
+      ],
+      "reason": "Antes de compartir cualquier cosa, pregúntate '¿Quién puede VER esto?' — pensar en tu público te ayuda a mantener lo privado en privado."
+    },
+    {
+      "title": "La forma segura de publicar",
+      "q": "Quieres publicar una foto del parque. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "🚶 Espera hasta salir del parque",
+        "⚙️ Revisa tus ajustes de privacidad",
+        "📤 Luego publica la foto"
+      ],
+      "reason": "Primero espera hasta SALIR para no compartir tu ubicación en vivo, luego REVISA tus ajustes para controlar quién lo ve, y solo entonces PUBLICA la foto con seguridad."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "chrome": {
+    "h1": "Sé amable en línea",
+    "sub": "El chat de la clase se puso un poco descortés. Usa las pistas para resolver cuatro candados y volverlo un lugar amable otra vez.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un capitán de la amabilidad",
+    "briefP": "Las palabras en una pantalla pueden hacer que alguien se sienta feliz o triste. Un capitán de la amabilidad ayuda a que todos se sientan seguros y bienvenidos en línea. Lee las pistas y luego abre los cuatro candados. Cada candado muestra una razón cuando se abre, para que aprendas por qué la opción amable es la correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Ya sabes distinguir los mensajes amables de los descorteses, cómo incluir a los demás, cómo ser una persona que defiende y cómo pensar antes de enviar. ¡Eres un verdadero capitán de la amabilidad!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Palabras amables",
+      "title": "Las palabras amables ayudan",
+      "body": "Las palabras amables hacen que las personas se sientan bien. '¡Buen trabajo!' y '¡Me gusta tu idea!' son amables. Las palabras malas hacen que las personas se sientan tristes. Elige palabras amables cuando escribes."
+    },
+    {
+      "nm": "Incluye a todos",
+      "title": "Deja jugar a todos",
+      "body": "Se siente mal quedar fuera. Cuando juegas un juego en línea, invita a otros a participar. Un cumplido amable como '¡Lo hiciste muy bien!' ayuda a que un amigo nuevo se sienta bienvenido."
+    },
+    {
+      "nm": "Defensor",
+      "title": "Sé una persona que defiende",
+      "body": "Una persona que defiende ayuda cuando alguien es tratado mal. Si ves una publicación mala, no te rías de ella y no la compartas. Sé amable con la persona y avísale a un adulto de confianza."
+    },
+    {
+      "nm": "Piensa primero",
+      "title": "Piensa antes de enviar",
+      "body": "Una vez que envías un mensaje, no lo puedes recuperar. Detente y piensa primero. Pregúntate: ¿Es verdad? ¿Es amable? ¿Se lo diría en la cara? Si no, no lo envíes."
+    },
+    {
+      "nm": "Lee el sentimiento",
+      "title": "Las palabras pueden herir",
+      "body": "No puedes ver una cara en un chat. Una broma puede parecer mala cuando son solo palabras. Lee tu mensaje dos veces y asegúrate de que suene amable antes de presionar enviar."
+    },
+    {
+      "nm": "Pez de la clase",
+      "title": "El pez del salón",
+      "body": "La clase tiene un pez dorado llamado Burbujas. Burbujas echa burbujitas y le encanta nadar en círculos. Este es un dato divertido, pero no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "El mensaje amable",
+      "q": "¿Cuál mensaje es el amable para enviar?",
+      "options": [
+        "Eres muy malo para este juego. ¡Ja, ja!",
+        "¡Buena idea! ¿Quieres jugar con nosotros?",
+        "Nadie te quiere en nuestro chat de grupo."
+      ],
+      "reason": "Los mensajes amables hacen que las personas se sientan felices y bienvenidas. '¡Buena idea! ¿Quieres jugar con nosotros?' incluye a un amigo y le da un cumplido, así que es la opción amable."
+    },
+    {
+      "title": "¿Amable o descortés?",
+      "q": "Marca CADA cosa que es una elección amable en línea.",
+      "items": [
+        "Darle un lindo cumplido a un amigo en el chat",
+        "Invitar a un compañero nuevo a unirse al juego",
+        "Avisarle a un adulto cuando ves una publicación mala",
+        "Reírte de una publicación mala y compartirla por todos lados",
+        "Escribir un apodo grosero para hacer que alguien se sienta menos"
+      ],
+      "reason": "Las elecciones amables ayudan a que otros se sientan bien: un cumplido, una invitación o avisarle a un adulto sobre una publicación mala. Reírte de una publicación mala o compartirla y poner apodos son cosas descorteses, así que esas las dejamos sin marcar."
+    },
+    {
+      "title": "El nombre del que ayuda",
+      "q": "A la persona que ayuda cuando alguien es tratado mal en línea se le llama una persona que ______.",
+      "answer": [
+        "defiende",
+        "ayuda",
+        "apoya"
+      ],
+      "reason": "Una persona que defiende habla y ayuda en lugar de solo mirar o reírse. Defender significa que no compartes la publicación mala y le avisas a un adulto de confianza."
+    },
+    {
+      "title": "Piensa antes de enviar",
+      "q": "Antes de enviar un mensaje, toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "📨 Envíalo",
+        "✋ Detente y piensa",
+        "💛 ¿Es amable?"
+      ],
+      "reason": "Primero DETENTE y piensa en tus palabras. Luego COMPRUEBA que el mensaje sea amable y verdadero. Solo entonces lo ENVÍAS. Detente, Comprueba, Envía."
+    }
+  ]
+}

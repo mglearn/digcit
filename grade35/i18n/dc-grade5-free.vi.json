@@ -1,0 +1,89 @@
+{
+  "chrome": {
+    "h1": "Mình Nên Chia Sẻ Gì?",
+    "sub": "Một bài đăng mới đã sẵn sàng để lên mạng — nhưng khoan đã. Một phần trong đó thì an toàn để chia sẻ, và một phần thì nên giữ riêng tư. Hãy đọc manh mối, giải bốn ổ khóa, và khóa chặt những gì thuộc về bạn.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Nghĩ Trước Khi Đăng",
+    "briefP": "Mọi thứ bạn đăng lên mạng đều có thể bị người khác nhìn thấy, lưu lại, và chia sẻ. Nhiệm vụ của bạn là học xem chi tiết nào an toàn để chia sẻ và những sự thật riêng tư nào — như địa chỉ nhà, mật khẩu, và nơi bạn đang ở ngay lúc này — nên được khóa kín. Hãy giải cả bốn ổ khóa, và mỗi ổ sẽ cho thấy lý do vì sao câu trả lời đúng.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ BẢO MẬT QUYỀN RIÊNG TƯ",
+    "winH": "Bạn đã khóa chặt thông tin riêng tư của mình!",
+    "winP": "Bây giờ bạn đã biết chi tiết nào an toàn để chia sẻ, cách kiểm tra ai có thể xem bài đăng của bạn, vì sao vị trí có thể đợi, và những sự thật riêng tư nào phải giữ bí mật. Đăng bài thông minh và an toàn!"
+  },
+  "clues": [
+    {
+      "nm": "An toàn để chia sẻ",
+      "title": "Đăng gì thì ổn?",
+      "body": "Một số chi tiết thì an toàn để chia sẻ trên mạng. Tên riêng của bạn, một sở thích bạn yêu thích, hay một cuốn sách yêu thích đều có thể đăng mà không tiết lộ bạn là ai hoặc tìm bạn ở đâu. Những sự thật nhỏ này không đặt bạn vào nguy hiểm."
+    },
+    {
+      "nm": "Giữ riêng tư",
+      "title": "Điều gì nên giữ bí mật?",
+      "body": "Một số thông tin là riêng tư và không bao giờ nên đăng. Địa chỉ nhà, tên trường học, số điện thoại, và mật khẩu của bạn có thể giúp người lạ tìm ra bạn hoặc chiếm tài khoản của bạn. Hãy khóa kín những điều này."
+    },
+    {
+      "nm": "Cài đặt quyền riêng tư",
+      "title": "Ai có thể thấy cái này?",
+      "body": "Mọi ứng dụng đều có cài đặt quyền riêng tư quyết định ai có thể thấy những gì bạn đăng. Trước khi chia sẻ, hãy kiểm tra cài đặt để chỉ những người bạn tin tưởng — như gia đình và bạn thân — mới xem được, thay vì cả internet."
+    },
+    {
+      "nm": "Nghĩ về vị trí",
+      "title": "Có nên đăng nơi bạn đang ở?",
+      "body": "Đăng vị trí chính xác của bạn cho mọi người biết tìm bạn ở đâu ngay lúc này. Một tấm ảnh gắn thẻ 'ở công viên trên đường Main' có thể bị người lạ nhìn thấy. An toàn hơn là chia sẻ nơi bạn đã đến SAU KHI bạn đã rời đi."
+    },
+    {
+      "nm": "Khán giả của bạn",
+      "title": "Ai thực sự đang xem?",
+      "body": "Khi một bài đăng là công khai, khán giả của bạn không chỉ là bạn bè — mà có thể là bất kỳ ai trên thế giới. Hãy luôn tự hỏi 'Ai có thể thấy cái này?' trước khi chia sẻ, và tưởng tượng lượng khán giả lớn nhất có thể đang đọc nó."
+    },
+    {
+      "nm": "Tắc kè của lớp",
+      "title": "Thú cưng của phòng khoa học",
+      "body": "Phòng khoa học lớp năm có một chú tắc kè tên Comet phơi nắng dưới một ngọn đèn ấm. Comet chỉ ăn dế vào thứ Ba. Đây là một điều thú vị, nhưng nó sẽ không giúp bạn mở ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Giữ lại hay Chia sẻ?",
+      "q": "Hãy đánh dấu MỌI chi tiết nên giữ RIÊNG TƯ và KHÔNG đăng lên.",
+      "items": [
+        "Địa chỉ nhà của bạn",
+        "Mật khẩu tài khoản trò chơi của bạn",
+        "Tên trường mà bạn đang học",
+        "Loại pizza yêu thích của bạn",
+        "Một cuốn sách bạn thích đọc"
+      ],
+      "reason": "Những sự thật riêng tư như địa chỉ, mật khẩu, và trường học của bạn có thể giúp người lạ tìm ra bạn hoặc đột nhập vào tài khoản của bạn, nên chúng phải giữ bí mật — nhưng món ăn hay cuốn sách yêu thích thì an toàn để chia sẻ."
+    },
+    {
+      "title": "An toàn để đăng",
+      "q": "Bài đăng nào AN TOÀN để chia sẻ trên mạng?",
+      "options": [
+        "Mình sống ở số 412 đường Oak Lane — ghé chơi bất cứ lúc nào sau giờ học nhé!",
+        "Chào, mình là Sam và mình thích vẽ rồng và đọc truyện tranh!",
+        "Số điện thoại của mình có trên trang cá nhân, nhắn tin cho mình để đi chơi ở Trường Tiểu học Lincoln nhé."
+      ],
+      "reason": "Chia sẻ chỉ tên riêng và một sở thích thì an toàn, nhưng đăng địa chỉ, số điện thoại, hay trường học của bạn cho người lạ những chi tiết họ cần để tìm ra bạn."
+    },
+    {
+      "title": "Một câu hỏi trước đã",
+      "q": "Trước khi đăng, hãy hỏi 'Ai có thể ____ cái này?' Từ nào điền vào chỗ trống? (Gợi ý: nó có nghĩa là nhìn thứ gì đó bằng mắt.)",
+      "answer": [
+        "thấy",
+        "nhìn thấy",
+        "xem"
+      ],
+      "reason": "Trước khi chia sẻ bất cứ điều gì, hãy hỏi 'Ai có thể THẤY cái này?' — nghĩ về khán giả của bạn giúp bạn giữ những điều riêng tư ở mức riêng tư."
+    },
+    {
+      "title": "Cách đăng an toàn",
+      "q": "Bạn muốn đăng một tấm ảnh từ công viên. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "🚶 Đợi đến khi bạn rời công viên",
+        "⚙️ Kiểm tra cài đặt quyền riêng tư của bạn",
+        "📤 Rồi mới đăng tấm ảnh"
+      ],
+      "reason": "Đầu tiên hãy đợi đến khi bạn RỜI ĐI để không chia sẻ vị trí trực tiếp của mình, rồi KIỂM TRA cài đặt để kiểm soát ai xem được, và chỉ khi đó mới ĐĂNG tấm ảnh một cách an toàn."
+    }
+  ]
+}

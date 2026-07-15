@@ -1,0 +1,91 @@
+{
+  "chrome": {
+    "h1": "Ponle candado",
+    "sub": "Tus cuentas guardan toda tu vida digital, y alguien acaba de intentar entrar. Aprende cómo las frases de contraseña fuertes, los segundos candados y un plan tranquilo mantienen fuera a los intrusos. Abre cuatro candados y asegura la cuenta para siempre.",
+    "briefLabel": "Tu misión",
+    "briefH": "Conviértete en un guardián de cuentas",
+    "briefP": "Una sola contraseña débil o repetida puede darle a un ladrón las llaves de todo lo que tienes en línea. Un ciudadano digital inteligente construye candados fuertes antes de que llegue el problema y sabe exactamente qué hacer cuando suena una alarma. Trabaja con los expedientes del caso, evalúa cada opción y abre los cuatro candados. Cada candado lleva una razón que muestra exactamente por qué la respuesta te mantiene a salvo.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "ASEGURADO",
+    "winH": "Todos los candados están cerrados, guardián.",
+    "winP": "Ahora puedes construir una frase de contraseña fácil de recordar y difícil de descifrar, agregar la autenticación de dos factores como segundo candado, mantener cada cuenta con su propia contraseña única, y responder a una filtración en el orden correcto. Ese pensamiento firme y preparado es exactamente lo que protege a un ciudadano digital y a todos con quienes se conecta.",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "La llave larga",
+      "title": "La longitud gana a los trucos",
+      "body": "Una contraseña corta llena de símbolos es más fácil de descifrar que una frase de contraseña larga hecha de varias palabras al azar. Un guardián une cuatro palabras sin relación en algo como una frase corta que es simple de recordar pero demasiado larga para que una máquina la adivine rápido. La longitud es lo que más hace fuerte a una contraseña."
+    },
+    {
+      "nm": "La copia",
+      "title": "Una contraseña, en todas partes",
+      "body": "Reutilizar la misma contraseña en muchas cuentas parece cómodo, pero significa que si filtran un sitio, un ladrón puede entrar directo a todos los demás. Un guardián le da a cada cuenta su propia contraseña única para que una sola filtración quede atrapada en un lugar en vez de propagarse."
+    },
+    {
+      "nm": "El segundo candado",
+      "title": "Dos candados son mejores que uno",
+      "body": "La autenticación de dos factores agrega un segundo candado después de tu contraseña, por lo general un código de un solo uso de una aplicación o mensaje, o un toque en tu teléfono. Aunque alguien robe tu contraseña, todavía no puede entrar sin ese segundo factor, que casi siempre queda en tu bolsillo."
+    },
+    {
+      "nm": "La alarma",
+      "title": "Cuando suena la alarma",
+      "body": "Recibes un aviso de que entraron a tu cuenta desde un dispositivo que no reconoces. La respuesta tranquila tiene un orden: primero cambia a una nueva contraseña fuerte, luego activa la autenticación de dos factores, luego revisa tus otras cuentas por si usaste la misma contraseña. Actuar en ese orden limita el daño rápido."
+    },
+    {
+      "nm": "El anzuelo",
+      "title": "El mensaje que quiere tu código",
+      "body": "Un mensaje advierte que tu cuenta será bloqueada y te pide responder con tu contraseña o tu código de dos factores para arreglarlo. Las empresas reales nunca piden eso. Entregar un código de un solo uso deja que un atacante pase tu segundo candado, así que un guardián va despacio y nunca comparte un código con nadie."
+    },
+    {
+      "nm": "La batería",
+      "title": "Cargar la tableta",
+      "body": "La tableta del salón tarda cerca de dos horas en cargar de vacía a llena, y una lucecita brilla naranja mientras carga y verde cuando termina. Saber el tiempo de carga es un dato real sobre el dispositivo, pero no te ayudará a abrir ninguno de los candados de este caso."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Construye una frase de contraseña fuerte",
+      "q": "Marca CADA señal de una contraseña fuerte y difícil de descifrar.",
+      "items": [
+        "Cuatro palabras al azar sin relación unidas entre sí",
+        "Lo bastante larga para que una máquina no la adivine rápido",
+        "Distinta de las contraseñas de tus otras cuentas",
+        "El nombre de tu mascota y el año en que naciste",
+        "Una palabra corta con unos cuantos símbolos cambiados"
+      ],
+      "reason": "La fuerza viene sobre todo de la longitud y lo aleatorio, así que gana una frase de contraseña larga de palabras sin relación que sea única para una cuenta. Los datos personales y las palabras cortas con símbolos cambiados son fáciles de adivinar o descifrar."
+    },
+    {
+      "title": "Nombra el segundo candado",
+      "q": "El paso extra que pide un código de un solo uso después de tu contraseña se llama autenticación de ______.",
+      "answer": [
+        "dos factores",
+        "de dos factores",
+        "doble factor",
+        "2fa"
+      ],
+      "reason": "Un código de un solo uso o un toque en el teléfono agregado después de tu contraseña es la autenticación de dos factores, un segundo candado que mantiene fuera a un ladrón aunque ya tenga tu contraseña."
+    },
+    {
+      "title": "No reutilices contraseñas",
+      "q": "Usas exactamente la misma contraseña en tu cuenta de juego, tu correo y un sitio de compras. Filtran uno de esos sitios. ¿Cuál es el verdadero peligro?",
+      "options": [
+        "Nada, porque una filtración en un sitio nunca puede afectar a los demás",
+        "Un ladrón ahora puede probar esa contraseña robada para abrir tus otras cuentas",
+        "Tu contraseña se vuelve más fuerte automáticamente después de una filtración"
+      ],
+      "reason": "Cuando reutilizas una contraseña en todas partes, una sola filtración le da a un ladrón una llave que puede probar en todas tus otras cuentas, por eso cada cuenta necesita su propia contraseña única."
+    },
+    {
+      "title": "Responde a la filtración",
+      "q": "Un aviso dice que entraron a tu cuenta desde un dispositivo desconocido. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "🔎 Revisa tus otras cuentas",
+        "🔑 Cambia a una nueva contraseña fuerte",
+        "📱 Activa la autenticación de dos factores"
+      ],
+      "reason": "Primero cambia la contraseña para dejar fuera al intruso, luego activa la autenticación de dos factores para que una contraseña robada sola no baste, luego revisa tus otras cuentas por si usaste esa misma contraseña."
+    }
+  ]
+}

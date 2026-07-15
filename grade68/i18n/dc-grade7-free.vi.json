@@ -1,0 +1,90 @@
+{
+  "chrome": {
+    "h1": "Máy Dò Câu Nhử Nhấp Chuột",
+    "sub": "Một tiêu đề đang gào lên đòi bạn nhấp vào và lao đi khắp mọi bảng tin. Nhiệm vụ của bạn là chậm lại, đọc vượt qua mồi nhử, và mở khóa xem chuyện gì thực sự đang diễn ra.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Chế Tạo Máy Dò Câu Nhử Nhấp Chuột",
+    "briefP": "Câu nhử nhấp chuột (clickbait) được tạo ra để giật lấy sự chú ý của bạn và thúc bạn nhấp và chia sẻ trước khi bạn kịp suy nghĩ. Hãy làm việc với các manh mối để mở cả bốn ổ khóa: mỗi ổ giấu một lý do chứng minh vì sao câu trả lời thông minh là đúng. Hãy đọc vượt qua tiêu đề, kiểm tra nguồn, rồi mới quyết định — như một máy dò, không phải một mục tiêu.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã đánh bại mồi nhử!",
+    "winP": "Bây giờ bạn nhận ra những mánh mà câu nhử nhấp chuột sử dụng — khoảng trống tò mò, cơn hoảng loạn VIẾT HOA TOÀN BỘ, và những tuyên bố phóng đại — bạn biết các trang làm vậy để kiếm lượt nhấp và tiền quảng cáo, và bạn có thói quen đọc-vượt-qua-tiêu-đề, kiểm-tra-nguồn, rồi-quyết-định. Đó chính là hình mẫu của một công dân số sắc bén."
+  },
+  "clues": [
+    {
+      "nm": "Khoảng trống tò mò",
+      "title": "Cái bẫy giấu đi câu trả lời",
+      "body": "Một bài đăng gào lên: 'Bạn sẽ không TIN được điều học sinh này làm tiếp theo đâu...' nhưng chẳng bao giờ cho bạn biết chuyện gì đã xảy ra trừ khi bạn nhấp vào. Khoảng trống rỗng giữa lời hứa và câu trả lời chính là khoảng trống tò mò, và câu nhử nhấp chuột cố tình để nó mở toang. Tiêu đề đung đưa một điều bí ẩn để bạn cảm thấy mình phải nhấp chỉ để làm dịu cơn ngứa ngáy."
+    },
+    {
+      "nm": "Tín hiệu ồn ào",
+      "title": "VIẾT HOA TOÀN BỘ và những cảm xúc khổng lồ",
+      "body": "Câu nhử nhấp chuột la hét. Nó chồng chất những từ VIẾT HOA TOÀN BỘ như GÂY SỐC, ĐIÊN RỒ, và HỦY DIỆT bên cạnh những dấu chấm than để khích động cảm xúc của bạn trước khi bộ não kịp bắt kịp. Một tiêu đề bình tĩnh, trung thực thường cho bạn biết rõ ràng câu chuyện nói về điều gì. Tiêu đề càng ồn ào và hoảng loạn, bạn càng nên chậm lại và kiểm tra nó."
+    },
+    {
+      "nm": "Tuyên bố rỗng tuếch",
+      "title": "Lời hứa lớn, không có sự thật thật sự",
+      "body": "'MỘT mánh này giúp điểm của cô ấy tăng gấp đôi qua một đêm — giáo viên GHÉT nó!' Bài viết bên dưới không có tên, không có con số, và không có nguồn nào bạn có thể kiểm tra. Câu nhử nhấp chuột đưa ra một tuyên bố phóng đại, rồi cung cấp gần như không có gì thật sự. Một câu chuyện đáng tin cậy nêu tên ai đã nói điều đó, đưa ra bằng chứng, và liên kết đến nơi thông tin xuất phát."
+    },
+    {
+      "nm": "Động cơ",
+      "title": "Vì sao các trang nhử bạn",
+      "body": "Mỗi lượt nhấp vào một đường liên kết câu nhử tải một trang đầy quảng cáo, và mỗi lượt xem có thể kiếm tiền cho trang. Đó là động cơ: càng nhiều lượt nhấp thì càng nhiều tiền quảng cáo, dù câu chuyện có thật hay không. Khi bạn hiểu rằng một trang muốn lượt nhấp của bạn để kiếm lời, bạn có thể hỏi, 'Ai tạo ra cái này, và họ được gì nếu mình chia sẻ nó?'"
+    },
+    {
+      "nm": "Thói quen",
+      "title": "Đọc, kiểm tra, rồi quyết định",
+      "body": "Người chia sẻ thông minh dùng một thói quen ba bước trước khi truyền bất cứ điều gì đi. Thứ nhất, đọc vượt qua tiêu đề để xem câu chuyện có thực sự chống lưng cho nó không. Thứ hai, kiểm tra nguồn xem nó có thật và đáng tin cậy không. Thứ ba, quyết định xem có đáng chia sẻ không. Làm việc này theo trình tự ngăn hầu hết câu nhử nhấp chuột lan truyền qua bạn."
+    },
+    {
+      "nm": "Sự thật chậm chạp",
+      "title": "Một ghi chú về con vật buồn ngủ",
+      "body": "Một con lười có thể di chuyển chậm đến mức đôi khi tảo mọc trên bộ lông của nó, tạo cho nó một sắc xanh giúp nó hòa lẫn vào cây cối. Thực sự thú vị — nhưng sự thật này sẽ không giúp bạn mở ổ khóa nào trong breakout này."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Cú nhấp thông minh hơn",
+      "q": "Bạn thấy một tiêu đề: 'Bạn sẽ không TIN được điều gì đã xảy ra ở trường này — GÂY SỐC!' Bước đầu tiên thông minh nhất là gì?",
+      "options": [
+        "Nhấp thật nhanh và chia sẻ ngay để bạn bè thấy nó trước tiên",
+        "Đọc vượt qua tiêu đề và kiểm tra nguồn trước khi quyết định chia sẻ",
+        "Tin ngay lập tức, vì tiêu đề VIẾT HOA TOÀN BỘ luôn đúng"
+      ],
+      "reason": "Câu nhử nhấp chuột hối thúc bạn bằng một khoảng trống tò mò và cơn hoảng loạn VIẾT HOA TOÀN BỘ, nên bước thông minh là đọc vượt qua tiêu đề và kiểm tra nguồn trước khi chia sẻ, như manh mối Thói quen giải thích."
+    },
+    {
+      "title": "Nhận ra mồi nhử",
+      "q": "Hãy đánh dấu MỌI dấu hiệu cho thấy một tiêu đề có lẽ là câu nhử nhấp chuột.",
+      "items": [
+        "Nó dùng một khoảng trống tò mò như 'bạn sẽ không tin được điều gì xảy ra tiếp theo'",
+        "Nó LA HÉT bằng VIẾT HOA TOÀN BỘ với những từ như GÂY SỐC và ĐIÊN RỒ",
+        "Nó đưa ra một tuyên bố phóng đại nhưng không cho sự thật hay nguồn thật sự nào",
+        "Nó nêu rõ ràng chủ đề và nêu tên một nguồn bạn có thể kiểm tra",
+        "Nó liên kết đến bản báo cáo gốc để bạn có thể tự đọc bằng chứng"
+      ],
+      "reason": "Các dấu hiệu câu nhử nhấp chuột là khoảng trống tò mò, cảm xúc VIẾT HOA TOÀN BỘ, và những tuyên bố phóng đại không có sự thật, trong khi một tiêu đề trung thực nêu rõ chủ đề và liên kết đến một nguồn bạn có thể kiểm tra."
+    },
+    {
+      "title": "Gọi tên mánh khóe",
+      "q": "Một tiêu đề dùng khoảng trống tò mò, VIẾT HOA TOÀN BỘ, và một tuyên bố hoang đường chỉ để kiếm lượt nhấp và tiền quảng cáo của bạn. Kiểu truyền thông thao túng này gọi là gì? (một từ)",
+      "answer": [
+        "câu nhử nhấp chuột",
+        "clickbait",
+        "câu view",
+        "mồi nhử nhấp chuột"
+      ],
+      "reason": "Kiểu truyền thông giật sự chú ý, nhử-tôi-đi này gọi là câu nhử nhấp chuột: nó nhử lượt nhấp của bạn để kiếm tiền quảng cáo thay vì kể cho bạn câu chuyện thật, như manh mối Động cơ giải thích."
+    },
+    {
+      "title": "Kiểm tra trước khi chia sẻ",
+      "q": "Một bài đăng gây sốc rơi vào bảng tin của bạn. Hãy chạm vào thói quen kiểm-tra-trước-khi-chia-sẻ theo ĐÚNG thứ tự.",
+      "pads": [
+        "✅ Quyết định xem có đáng chia sẻ không",
+        "📖 Đọc vượt qua tiêu đề",
+        "🔎 Kiểm tra nguồn"
+      ],
+      "reason": "Đầu tiên ĐỌC vượt qua tiêu đề để xem câu chuyện có chống lưng cho nó không, rồi KIỂM TRA nguồn xem có đáng tin cậy không, rồi QUYẾT ĐỊNH xem có đáng chia sẻ không."
+    }
+  ]
+}

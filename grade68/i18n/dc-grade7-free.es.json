@@ -1,0 +1,90 @@
+{
+  "chrome": {
+    "h1": "Detector de clickbait",
+    "sub": "Un titular grita por tu toque y corre por todas las redes. Tu trabajo es ir más despacio, leer más allá del anzuelo y descubrir lo que de verdad está pasando.",
+    "briefLabel": "Tu misión",
+    "briefH": "Construye un detector de clickbait",
+    "briefP": "El clickbait está hecho para arrebatarte la atención y apurarte a tocar y compartir antes de pensar. Trabaja con las pistas para abrir los cuatro candados: cada uno esconde una razón que prueba por qué la respuesta inteligente es la correcta. Lee más allá del titular, revisa la fuente y luego decide, como un detector, no como un blanco.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Venciste al anzuelo!",
+    "winP": "Ahora reconoces los trucos que usa el clickbait —el vacío de curiosidad, el pánico en MAYÚSCULAS y las afirmaciones exageradas—, sabes que los sitios lo hacen para ganar clics y dinero de anuncios, y tienes el hábito de leer más allá del titular, revisar la fuente y luego decidir. Así se ve un ciudadano digital astuto.",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "El vacío de curiosidad",
+      "title": "La trampa que esconde la respuesta",
+      "body": "Una publicación gritaba: 'No vas a CREER lo que este estudiante hizo después...' pero nunca te decía qué pasó a menos que tocaras. Ese espacio vacío entre la promesa y la respuesta es el vacío de curiosidad, y el clickbait lo deja bien abierto a propósito. El titular cuelga un misterio para que sientas que tienes que hacer clic solo para calmar esa comezón."
+    },
+    {
+      "nm": "La señal ruidosa",
+      "title": "MAYÚSCULAS y emociones enormes",
+      "body": "El clickbait grita. Amontona palabras en MAYÚSCULAS como IMPACTANTE, DEMENCIAL y DESTRUIDO junto a signos de exclamación para disparar tus emociones antes de que tu cerebro alcance a reaccionar. Un titular tranquilo y honesto suele decirte claramente de qué trata la historia. Mientras más ruidoso y alarmado suene un titular, más deberías ir despacio y revisarlo."
+    },
+    {
+      "nm": "La afirmación vacía",
+      "title": "Gran promesa, ningún dato real",
+      "body": "'¡Este ÚNICO truco duplicó sus calificaciones de la noche a la mañana, los maestros lo ODIAN!' El artículo debajo no tenía ningún nombre, ningún número ni ninguna fuente que pudieras revisar. El clickbait hace una afirmación exagerada y luego entrega casi nada real. Una historia confiable nombra a quien lo dijo, muestra evidencia y enlaza a de dónde vino la información."
+    },
+    {
+      "nm": "El motivo",
+      "title": "Por qué los sitios te ponen el anzuelo",
+      "body": "Cada toque en un enlace de clickbait carga una página llena de anuncios, y cada vista puede darle dinero al sitio. Ese es el motivo: más clics significan más dinero de anuncios, sea o no verdadera la historia. Cuando entiendes que una página quiere tu clic por ganancia, puedes preguntarte: '¿Quién hizo esto y qué gana si lo comparto?'"
+    },
+    {
+      "nm": "El hábito",
+      "title": "Lee, revisa y luego decide",
+      "body": "Quienes comparten con inteligencia usan un hábito de tres pasos antes de pasar algo. Primero, lee más allá del titular para ver si la historia de verdad lo respalda. Segundo, revisa la fuente para ver si es real y confiable. Tercero, decide si vale la pena compartirlo. Hacer esto en orden detiene a la mayoría del clickbait de propagarse a través de ti."
+    },
+    {
+      "nm": "El dato lento",
+      "title": "Una nota sobre un animal dormilón",
+      "body": "Un perezoso puede moverse tan lento que a veces le crecen algas en el pelaje, dándole un tono verdoso que lo ayuda a mezclarse con los árboles. De verdad interesante, pero este dato no te ayudará a abrir ningún candado en este breakout."
+    }
+  ],
+  "locks": [
+    {
+      "title": "El toque más inteligente",
+      "q": "Ves un titular: '¡No vas a CREER lo que pasó en esta escuela, IMPACTANTE!' ¿Cuál es la primera movida más inteligente?",
+      "options": [
+        "Tocar rápido y compartirlo de inmediato para que tus amigos lo vean primero",
+        "Leer más allá del titular y revisar la fuente antes de decidir compartirlo",
+        "Creerlo al instante, porque los titulares en MAYÚSCULAS siempre son verdad"
+      ],
+      "reason": "El clickbait te apura con un vacío de curiosidad y pánico en MAYÚSCULAS, así que la movida inteligente es leer más allá del titular y revisar la fuente antes de compartir, como explica la pista del Hábito."
+    },
+    {
+      "title": "Detecta el anzuelo",
+      "q": "Marca CADA señal de que un titular probablemente es clickbait.",
+      "items": [
+        "Usa un vacío de curiosidad como 'no vas a creer lo que pasó después'",
+        "GRITA en MAYÚSCULAS con palabras como IMPACTANTE y DEMENCIAL",
+        "Hace una afirmación exagerada pero no da datos reales ni fuente",
+        "Dice claramente el tema y nombra una fuente que puedes revisar",
+        "Enlaza al reporte original para que puedas leer la evidencia tú mismo"
+      ],
+      "reason": "Las señales del clickbait son el vacío de curiosidad, la emoción en MAYÚSCULAS y las afirmaciones exageradas sin datos, mientras que un titular honesto dice su tema claramente y enlaza a una fuente que puedes revisar."
+    },
+    {
+      "title": "Nombra el truco",
+      "q": "Un titular usa un vacío de curiosidad, MAYÚSCULAS y una afirmación descabellada solo para ganar tu toque y dinero de anuncios. ¿Cómo se llama este estilo manipulador de medios? (una palabra)",
+      "answer": [
+        "clickbait",
+        "cebo de clics",
+        "ciberanzuelo"
+      ],
+      "reason": "Este estilo de medios llamativo, del tipo 'tócame', se llama clickbait: pone el anzuelo a tu clic por dinero de anuncios en lugar de contarte la historia real, como explica la pista del Motivo."
+    },
+    {
+      "title": "La revisión antes de compartir",
+      "q": "Una publicación impactante llega a tu red. Toca el hábito de revisar antes de compartir en el orden CORRECTO.",
+      "pads": [
+        "✅ Decide si vale la pena compartir",
+        "📖 Lee más allá del titular",
+        "🔎 Revisa la fuente"
+      ],
+      "reason": "Primero LEE más allá del titular para ver si la historia lo respalda, luego REVISA la fuente para ver si es confiable, luego DECIDE si vale la pena compartirlo."
+    }
+  ]
+}

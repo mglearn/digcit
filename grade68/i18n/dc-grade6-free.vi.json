@@ -1,0 +1,91 @@
+{
+  "chrome": {
+    "h1": "Đội Tuần Tra Lừa Đảo",
+    "sub": "Những tin nhắn lạ đang tràn ngập nhóm lớp sáu. Một tin hứa tặng xu miễn phí, một tin khác cảnh báo tài khoản của bạn sắp bị xóa. Cái nào là thật và cái nào là mồi nhử? Hãy nghiên cứu các tin nhắn và giải bốn ổ khóa để phá xong vụ án.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Mở Nhật Ký Tin Nhắn",
+    "briefP": "Một học sinh tên Dario liên tục nhận được những tin nhắn thúc ép cậu bấm nhanh, giao mật khẩu, hoặc gõ một mã bí mật. Cậu không chắc cái nào an toàn. Hãy đọc manh mối, cân nhắc bằng chứng, và mở cả bốn ổ khóa. Mỗi ổ khóa kết thúc bằng một lý do chứng minh vì sao câu trả lời đúng.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã phá mọi ổ khóa, Sĩ Quan Tuần Tra!",
+    "winP": "Bây giờ bạn có thể nhận ra các dấu hiệu cảnh báo của một trò lừa đảo, kiểm tra ai thực sự gửi tin nhắn, làm theo trình tự an toàn Dừng lại rồi Kiểm tra rồi Báo cáo, và giữ mật khẩu hay mã dùng một lần cho riêng mình. Đó là tư duy phản biện thực sự khi lên mạng."
+  },
+  "clues": [
+    {
+      "nm": "Lừa đảo là gì",
+      "title": "Mồi nhử được ngụy trang thành tin nhắn",
+      "body": "Lừa đảo (phishing) là khi ai đó gửi một tin nhắn giả mạo giả vờ là một người hoặc công ty thật để bạn bấm vào đường liên kết, chia sẻ mật khẩu, hoặc gõ vào một mã. Tin nhắn chính là mồi nhử. Toàn bộ mục tiêu của nó là lừa bạn giao ra thứ mà bạn nên giữ riêng tư."
+    },
+    {
+      "nm": "Các dấu hiệu cảnh báo",
+      "title": "Manh mối cho thấy một tin nhắn là lừa đảo",
+      "body": "Hãy để ý sự hối thúc, như 'hành động ngay nếu không sẽ mất tài khoản.' Hãy để ý lỗi chính tả và ngữ pháp mà một công ty thật sẽ không mắc. Hãy để ý những câu như 'xác minh tài khoản của bạn' hoặc một đường liên kết từ người gửi bạn không quen. Bất kỳ tin nhắn nào hỏi mật khẩu hay mã bí mật của bạn đều là dấu hiệu cảnh báo."
+    },
+    {
+      "nm": "Kiểm tra người gửi",
+      "title": "Xem ai thực sự đã gửi nó",
+      "body": "Trước khi tin một tin nhắn, hãy nhìn kỹ người gửi. Một địa chỉ lừa đảo có thể đổi một chữ cái, thêm những con số thừa, hoặc dùng một cái tên chỉ trông có vẻ quen. Nếu địa chỉ không khớp với công ty thật, hoặc nếu bạn chưa bao giờ đăng ký nhận tin đó, hãy coi nó là mồi nhử và đừng bấm."
+    },
+    {
+      "nm": "Phản ứng an toàn",
+      "title": "Dừng lại, kiểm tra, rồi báo cáo",
+      "body": "Khi một tin nhắn có vẻ sai, hãy Dừng lại trước và đừng bấm gì cả. Tiếp theo, hãy Kiểm tra người gửi và các chi tiết xem có hợp lý không. Nếu đó là lừa đảo, hãy Báo cáo nó và kể cho một người lớn đáng tin cậy. Trình tự an toàn luôn là Dừng lại, rồi Kiểm tra người gửi, rồi Báo cáo — không bao giờ bấm trước."
+    },
+    {
+      "nm": "Mã bí mật",
+      "title": "Mã dùng một lần chỉ dành cho bạn",
+      "body": "Mã dùng một lần là một con số được gửi đến bạn để chứng minh thực sự là bạn đang đăng nhập. Không một công ty, người bạn, hay người trợ giúp thật nào cần bạn đọc to mã đó hoặc gửi nó cho họ. Nếu một tin nhắn yêu cầu bạn chia sẻ mật khẩu hoặc mã của bạn, đó là lừa đảo, chấm hết."
+    },
+    {
+      "nm": "Sự thật thời tiết",
+      "title": "Một ghi chú về bầu trời",
+      "body": "Đây là một sự thật: một tia sét còn nóng hơn bề mặt của Mặt Trời, và sấm là âm thanh mà không khí bị nung nóng tạo ra khi nó bật trở lại. Đó là điều thú vị để biết, nhưng nó không phải là manh mối tin nhắn và sẽ không giúp bạn mở ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Gọi tên mồi nhử",
+      "q": "Một tin nhắn giả mạo giả vờ là thật để có thể đánh cắp mật khẩu hoặc mã của bạn được gọi là ______.",
+      "answer": [
+        "lừa đảo",
+        "phishing",
+        "tin nhắn lừa đảo",
+        "trò lừa đảo",
+        "tấn công lừa đảo"
+      ],
+      "reason": "Các manh mối giải thích rằng lừa đảo là một tin nhắn giả mạo giả vờ là thật để bạn bấm vào đường liên kết hoặc giao ra mật khẩu hay mã mà bạn nên giữ riêng tư."
+    },
+    {
+      "title": "Nhận ra trò lừa đảo",
+      "q": "Tin nhắn nào nhiều khả năng là trò lừa đảo và KHÔNG nên tin tưởng?",
+      "options": [
+        "Một ghi chú từ địa chỉ trường thật của thầy cô về chuyến đi thực tế ngày mai",
+        "KHẨN CẤP! Tài khoản của bạn bị khóa — xác minh mật khẩu trong 5 phút nếu không nó sẽ mất!",
+        "Một lời nhắc bạn tự đặt cho mình để sạc máy tính bảng tối nay"
+      ],
+      "reason": "Các manh mối cảnh báo rằng sự hối thúc, những từ viết sai chính tả, một yêu cầu 'xác minh tài khoản', và một yêu cầu mật khẩu của bạn đều là dấu hiệu của một trò lừa đảo."
+    },
+    {
+      "title": "Đọc tin nhắn",
+      "q": "Hãy đánh dấu MỌI dấu hiệu cho thấy một tin nhắn là lừa đảo và đang cố lừa bạn.",
+      "items": [
+        "Nó hối thúc bạn, như 'hành động ngay nếu không tài khoản của bạn sẽ bị xóa'",
+        "Nó yêu cầu bạn gõ mật khẩu hoặc chia sẻ một mã dùng một lần",
+        "Địa chỉ người gửi bị sai chính tả hoặc là người bạn không quen",
+        "Đó là một bản tin bạn đã đăng ký, từ một địa chỉ khớp với trang thật",
+        "Đó là một lời nhắc trên lịch mà bạn tự đặt cho buổi tập nhạc"
+      ],
+      "reason": "Các manh mối cho thấy sự hối thúc, một yêu cầu mật khẩu hoặc mã của bạn, và một người gửi không quen hay sai chính tả là những dấu hiệu cảnh báo lừa đảo, trong khi một bản tin bạn chọn nhận và lời nhắc của chính bạn thì không phải."
+    },
+    {
+      "title": "Phản ứng theo cách an toàn",
+      "q": "Dario nhận được một tin nhắn đáng ngờ. Hãy chạm vào các bước an toàn theo ĐÚNG thứ tự.",
+      "pads": [
+        "🕵️ Kiểm tra người gửi",
+        "🛑 Dừng lại, đừng bấm",
+        "📣 Báo cáo và kể cho người lớn"
+      ],
+      "reason": "Đầu tiên DỪNG LẠI và đừng bấm, rồi KIỂM TRA người gửi xem có thật không, và cuối cùng BÁO CÁO trò lừa đảo và kể cho một người lớn đáng tin cậy — không bao giờ bấm trước."
+    }
+  ]
+}

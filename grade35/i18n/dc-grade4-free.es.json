@@ -1,0 +1,90 @@
+{
+  "chrome": {
+    "h1": "El chat de grupo",
+    "sub": "Agregaron a un estudiante a un chat de grupo muy activo de la clase. Algunos mensajes eran amables. Otros no. Abre cuatro candados para aprender a ser un buen amigo en un chat de grupo.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un ayudante del chat",
+    "briefP": "Acabas de entrar a un chat de grupo con toda tu clase. La gente manda spam, reenvía mensajes privados y se junta contra un solo amigo. Lee las pistas y luego abre los cuatro candados. Cada candado tiene una razón que muestra por qué la respuesta es correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CHAT CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Aprendiste a saludar cuando entras a un chat, por qué está mal reenviar un mensaje privado, cómo detener un ataque en grupo, cómo estar en desacuerdo de forma amable, y la diferencia entre silenciar y bloquear. ¡Buen trabajo, ayudante del chat!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Te agregaron",
+      "title": "Alguien te agregó",
+      "body": "Cuando te agregan a un chat de grupo, di un saludo corto y amistoso. No necesitas enviar muchos mensajes de una vez. Enviar mensaje tras mensaje se llama spam. Publica una vez, luego espera y lee lo que dicen los demás."
+    },
+    {
+      "nm": "Palabras privadas",
+      "title": "Era solo para ti",
+      "body": "Un amigo te envió un mensaje privado solo para ti. No lo reenvíes al chat de grupo. Ese mensaje no era tuyo para compartir. Compartir palabras privadas rompe la confianza. Mantén los mensajes privados en privado."
+    },
+    {
+      "nm": "El ataque en grupo",
+      "title": "No te unas al ataque",
+      "body": "Una persona cometió un pequeño error. Luego mucha gente empezó a burlarse de ella toda a la vez. Eso se llama un ataque en grupo. No te unas. No ataques en grupo. En vez de eso puedes enviar un mensaje amable o avisarle a un adulto de confianza."
+    },
+    {
+      "nm": "No estés de acuerdo con amabilidad",
+      "title": "Dilo de forma amable",
+      "body": "Puedes estar en desacuerdo en un chat y aun así ser amable. Usa palabras tranquilas, no apodos malos. Prueba con 'Yo lo veo de otra manera' en lugar de 'Estás equivocado'. Puedes hablar de la idea sin herir a la persona."
+    },
+    {
+      "nm": "Silenciar o bloquear",
+      "title": "Dos botones silenciosos",
+      "body": "Cuando un chat se pone demasiado ruidoso, puedes silenciarlo. Silenciar oculta los avisos por un rato, pero sigues en el chat. Bloquear es más fuerte. Bloquear impide por completo que una persona te escriba. Silencia por el ruido, bloquea a alguien que no es seguro."
+    },
+    {
+      "nm": "Dato del espacio",
+      "title": "Un dato de muy lejos",
+      "body": "Dato curioso: un día en el planeta Venus dura más que todo su año. Genial, ¿verdad? Pero esto es solo un dato del espacio, no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Te agregaron",
+      "q": "Acaban de agregarte a un chat de grupo de la clase. ¿Qué es lo amable que puedes hacer?",
+      "options": [
+        "Enviar diez mensajes rápidos seguidos para que la gente te note",
+        "Decir un saludo corto y amistoso, y luego leer lo que publican los demás",
+        "Reenviar un mensaje privado que un amigo te envió solo para ti"
+      ],
+      "reason": "Un saludo corto y amistoso es cortés. Enviar mensaje tras mensaje es spam, y reenviar un mensaje privado rompe la confianza de un amigo."
+    },
+    {
+      "title": "Sé un buen amigo del chat",
+      "q": "Marca CADA opción que muestra buenos modales en un chat de grupo.",
+      "items": [
+        "Estar en desacuerdo con palabras tranquilas y amables",
+        "Enviar un mensaje amable a alguien de quien se están burlando",
+        "Atacar en grupo cuando una persona comete un pequeño error",
+        "Reenviar un mensaje privado a todo el grupo",
+        "Llenar el chat de spam con mensaje tras mensaje"
+      ],
+      "reason": "Los buenos amigos del chat están en desacuerdo con amabilidad y ayudan a quien se están burlando. Atacar en grupo, reenviar palabras privadas y mandar spam dañan al grupo."
+    },
+    {
+      "title": "Demasiado ruido",
+      "q": "El chat está muy ruidoso, pero nadie está en peligro. Para ocultar los avisos y seguir en el chat, puedes ______ lo.",
+      "answer": [
+        "silenciar",
+        "silenciarlo",
+        "silencia"
+      ],
+      "reason": "Silenciar oculta el ruido mientras sigues en el chat. Bloquear es más fuerte y sirve para detener a alguien que no es seguro, no para el ruido."
+    },
+    {
+      "title": "Detén el ataque en grupo",
+      "q": "Un amigo está siendo atacado en grupo en el chat. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "💙 Apoya al amigo",
+        "🚫 Niégate a atacar en grupo",
+        "🧑‍🏫 Avísale a un adulto de confianza"
+      ],
+      "reason": "Primero NIÉGATE a unirte al ataque en grupo, luego APOYA al amigo con un mensaje amable, luego AVÍSALE a un adulto de confianza. Niégate, Apoya, Avisa."
+    }
+  ]
+}

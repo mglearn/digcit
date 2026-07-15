@@ -1,0 +1,91 @@
+{
+  "chrome": {
+    "h1": "Patrulla antiphishing",
+    "sub": "Mensajes extraños están inundando el grupo de sexto grado. Uno promete monedas gratis, otro advierte que tu cuenta está a punto de ser borrada. ¿Cuáles son reales y cuáles son un anzuelo? Estudia los mensajes y abre cuatro candados para cerrar el caso.",
+    "briefLabel": "Tu misión",
+    "briefH": "Abre el registro de mensajes",
+    "briefP": "Un estudiante llamado Darío recibe mensajes que lo presionan para hacer clic rápido, entregar una contraseña o escribir un código secreto. No está seguro de cuáles son seguros. Lee las pistas, evalúa la evidencia y abre los cuatro candados. Cada candado termina con una razón que prueba por qué la respuesta es correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste todos los candados, oficial de patrulla!",
+    "winP": "Ahora puedes reconocer las señales de alerta de una estafa, revisar quién envió de verdad un mensaje, seguir el orden seguro de Detente, luego Revisa, luego Reporta, y guardar para ti una contraseña o un código de un solo uso. Eso es verdadero pensamiento crítico en línea.",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Qué es el phishing",
+      "title": "Un anzuelo disfrazado de mensaje",
+      "body": "El phishing es cuando alguien envía un mensaje falso que finge ser una persona o empresa real para que hagas clic en un enlace, compartas una contraseña o escribas un código. El mensaje es el anzuelo. Su único objetivo es engañarte para que entregues algo que deberías mantener en privado."
+    },
+    {
+      "nm": "Las señales de alerta",
+      "title": "Pistas de que un mensaje es una estafa",
+      "body": "Fíjate en la prisa, como 'actúa ya o pierdes tu cuenta'. Fíjate en errores de ortografía y gramática que una empresa real no cometería. Fíjate en frases como 'verifica tu cuenta' o un enlace de un remitente que no conoces. Cualquier mensaje que pide tu contraseña o un código secreto es una señal de alerta."
+    },
+    {
+      "nm": "Revisa al remitente",
+      "title": "Mira quién lo envió de verdad",
+      "body": "Antes de confiar en un mensaje, mira con atención al remitente. Una dirección de estafa puede cambiar una letra, agregar números extra o usar un nombre que solo parece conocido. Si la dirección no coincide con la empresa real, o si nunca te suscribiste al mensaje, trátalo como un anzuelo y no hagas clic."
+    },
+    {
+      "nm": "La respuesta segura",
+      "title": "Detente, revisa y luego reporta",
+      "body": "Cuando un mensaje se siente extraño, Detente primero y no hagas clic en nada. Luego, Revisa al remitente y los detalles para ver si tienen sentido. Si es una estafa, Repórtala y avísale a un adulto de confianza. El orden seguro siempre es Detente, luego Revisa al remitente, luego Reporta, nunca hagas clic primero."
+    },
+    {
+      "nm": "El código secreto",
+      "title": "Los códigos de un solo uso son solo para ti",
+      "body": "Un código de un solo uso es un número que te envían para probar que de verdad eres tú quien inicia sesión. Ninguna empresa real, amigo o ayudante necesitará que leas ese código en voz alta o se lo envíes. Si un mensaje te pide compartir tu contraseña o tu código, es una estafa, punto."
+    },
+    {
+      "nm": "El dato del clima",
+      "title": "Una nota sobre el cielo",
+      "body": "Aquí va un dato verdadero: un rayo es más caliente que la superficie del sol, y el trueno es el sonido que hace el aire caliente al volver de golpe a su lugar. Es algo genial de saber, pero no es una pista de mensaje y no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Nombra el anzuelo",
+      "q": "Un mensaje falso que finge ser real para robar tu contraseña o código se llama ______.",
+      "answer": [
+        "phishing",
+        "suplantación de identidad",
+        "estafa de phishing",
+        "ataque de phishing"
+      ],
+      "reason": "Las pistas explican que el phishing es un mensaje falso que finge ser real para que hagas clic en un enlace o entregues una contraseña o código que deberías mantener en privado."
+    },
+    {
+      "title": "Detecta la estafa",
+      "q": "¿Cuál mensaje es más probable que sea una estafa de phishing y NO debe confiarse en él?",
+      "options": [
+        "Una nota de la dirección escolar real de tu maestro sobre la excursión de mañana",
+        "¡URGENTE! Tu cunta está bloqueada, verifica tu contraseña en 5 minutos o se pierde!",
+        "Un recordatorio que tú mismo pusiste para cargar tu tableta esta noche"
+      ],
+      "reason": "Las pistas advierten que la prisa, palabras mal escritas como 'cunta', la exigencia de 'verifica tu cuenta' y la petición de tu contraseña son todas señales de una estafa de phishing."
+    },
+    {
+      "title": "Lee el mensaje",
+      "q": "Marca CADA señal de que un mensaje es phishing y está tratando de engañarte.",
+      "items": [
+        "Te mete prisa, como 'actúa ya o tu cuenta será borrada'",
+        "Te pide escribir tu contraseña o compartir un código de un solo uso",
+        "La dirección del remitente está mal escrita o es alguien que no conoces",
+        "Es un boletín al que te suscribiste, de una dirección que coincide con el sitio real",
+        "Es una alerta de calendario que tú mismo pusiste para el ensayo de banda"
+      ],
+      "reason": "Las pistas muestran que la prisa, la petición de tu contraseña o código, y un remitente desconocido o mal escrito son señales de alerta de phishing, mientras que un boletín que elegiste y tu propio recordatorio no lo son."
+    },
+    {
+      "title": "Responde de la forma segura",
+      "q": "Darío recibió un mensaje sospechoso. Toca los pasos seguros en el orden CORRECTO.",
+      "pads": [
+        "🕵️ Revisa al remitente",
+        "🛑 Detente, no hagas clic",
+        "📣 Reporta y avísale a un adulto"
+      ],
+      "reason": "Primero DETENTE y no hagas clic, luego REVISA al remitente para ver si es real, y por último REPORTA la estafa y avísale a un adulto de confianza, nunca hagas clic primero."
+    }
+  ]
+}
