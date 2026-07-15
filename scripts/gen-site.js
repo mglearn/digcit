@@ -112,6 +112,43 @@ const LESSON = {
   8: { big: 'Strong digital citizens evaluate a source’s bias and reliability, create within IP law, and respond to real cybersecurity situations.', eq: 'How do you judge whether a digital source is reliable, and how do you create and stay secure responsibly?', obj: 'Students will evaluate a source’s bias and reliability, apply IP law when creating, and respond to a cybersecurity scenario.', lang: 'Students will use bias, reliable, and source to evaluate a website or article.', vocab: 'bias, reliability, credibility, source, breach / authentication', success: 'I can judge a source’s reliability and name a responsible way to create and stay secure.' },
 };
 
+// ---- site-page i18n (reuses assets/i18n.js, the activity-page engine) -----
+const SITE_I18N = (() => { const raw = JSON.parse(fs.readFileSync(path.join(__dirname, 'site-i18n.json'), 'utf8')); delete raw._note; return raw; })();
+const SITE_LANGS = ['en', 'es', 'vi', 'ar', 'hi', 'ur', 'zh'];
+function si(key) { const e = SITE_I18N[key]; return e ? e.en : ''; }              // English default text
+function siDict() {
+  const d = {};
+  for (const lg of SITE_LANGS) { d[lg] = {}; for (const k of Object.keys(SITE_I18N)) { const v = SITE_I18N[k][lg]; if (v) d[lg][k] = v; } }
+  return d;
+}
+function langbar() { return `<div class="site-langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>`; }
+// i18n runtime + dictionary for a page; `extra` merges page-specific entries
+// (e.g. activity-card text pulled from the already-translated locales).
+function i18nScript(extra) {
+  const dict = siDict();
+  if (extra) for (const lg of SITE_LANGS) dict[lg] = Object.assign({}, dict[lg], extra[lg] || {});
+  return `<script src="assets/i18n.js"></script>
+<script>BreakoutI18n.register('site', ${JSON.stringify(dict)});</script>`;
+}
+const SITE_LANG_CSS = `
+  .site-langbar{position:absolute;top:14px;left:16px;z-index:60;display:flex;align-items:center;gap:6px}
+  .site-langbar .globe{font-size:1.1rem}
+  .site-langbar select{font-family:'Nunito',sans-serif;font-weight:700;font-size:.82rem;color:var(--navy);background:#fff;border:2px solid var(--line);border-radius:100px;padding:6px 12px;cursor:pointer}
+  .site-langbar select:focus{outline:none;border-color:var(--navy)}
+  @media(max-width:680px){.site-langbar{position:static;margin:0 0 10px}}`;
+// CLEAR grid with i18n keys (for pages that carry the language picker)
+function clearBlockI18n() {
+  const rows = CLEAR.map(s => `<div class="clear-row">
+      <div class="clear-badge" style="background:${s.color}">${s.L}</div>
+      <div class="clear-body"><h4><span data-i18n="clear.${s.L}.k">${s.k}</span> <span class="clear-q" data-i18n="clear.${s.L}.q">${esc(s.q)}</span></h4>
+      <ul data-i18n-html="clear.${s.L}.ptsHtml">${s.pts.map(p => `<li>${esc(p)}</li>`).join('')}</ul></div>
+    </div>`).join('\n    ');
+  return `<div class="clear-grid">
+    ${rows}
+  </div>
+  <div class="panel tip" style="margin-top:14px" data-i18n-html="clear.reminderHtml"><strong>Quick reminder:</strong> ${esc(CLEAR_REMINDER)}</div>`;
+}
+
 function loadBreakout(grade) {
   const p = path.join(ROOT, META[grade].band, 'locales', 'dc-grade' + grade + '.js');
   const fn = new Function('window', fs.readFileSync(p, 'utf8') + '\nreturn window.BREAKOUT;');
@@ -154,7 +191,7 @@ ${headMeta(depth, title, OG_DESC)}
 ${FONTS}
 <style>${PALETTE}</style>
 <link rel="stylesheet" href="${assets(depth)}/site.css">
-<style>${TEACHER_CSS}${CLEAR_CSS}</style>${extraHead}
+<style>${TEACHER_CSS}${CLEAR_CSS}${SITE_LANG_CSS}</style>${extraHead}
 </head>
 <body>
 <div class="wrap">
@@ -181,10 +218,10 @@ function card(grade, { depthToBand }) {
   return `<a class="card${locked ? ' locked' : ''}" href="${locked ? teacher : href}">
     <span class="badge">Grade ${grade} · ${a.teks}</span>
     <div class="ico">${a.icon}</div>
-    <div class="ctitle">${esc(U['header.h1'])}</div>
-    <div class="cdesc">${esc(U['header.sub'])}</div>
+    <div class="ctitle" data-i18n="card.g${grade}.title">${esc(U['header.h1'])}</div>
+    <div class="cdesc" data-i18n="card.g${grade}.sub">${esc(U['header.sub'])}</div>
     <span class="tier">${locked ? '🔒' : '<span class="freeflag">FREE</span>'}</span>
-    <span class="cgo">${locked ? 'Licensed districts →' : 'Start the breakout →'}</span>
+    <span class="cgo" data-i18n="${locked ? 'card.startPaid' : 'card.startFree'}">${locked ? 'Licensed districts →' : 'Start the breakout →'}</span>
   </a>`;
 }
 
@@ -192,40 +229,51 @@ function card(grade, { depthToBand }) {
 function suiteLanding() {
   const free = [3, 4, 5].map(g => card(g, { depthToBand: 'grade35/' })).join('\n    ');
   const paid = [6, 7, 8].map(g => card(g, { depthToBand: 'grade68/' })).join('\n    ');
-  const body = `  <div class="hero">
-    <div class="eyebrow">Digital Citizenship · TEKS Technology Applications</div>
-    <h1>Digital Citizenship Breakouts</h1>
-    <p class="lede">A suite of Critical Thinking Online Breakouts for grades 3–8. Students read clues, reason through four locks, and learn to think — not just click — online. Multilingual, and it runs entirely in the browser.</p>
+  const cardsExtra = {};
+  for (const lg of SITE_LANGS) {
+    cardsExtra[lg] = {};
+    for (const g of [3, 4, 5, 6, 7, 8]) {
+      const U = ACT[g].B.UI[lg] || ACT[g].B.UI.en;
+      cardsExtra[lg]['card.g' + g + '.title'] = U['header.h1'];
+      cardsExtra[lg]['card.g' + g + '.sub'] = U['header.sub'];
+    }
+  }
+  const body = `  ${langbar()}
+  <div class="hero">
+    <div class="eyebrow" data-i18n="hero.eyebrow">${esc(si('hero.eyebrow'))}</div>
+    <h1 data-i18n="hero.h1">${esc(si('hero.h1'))}</h1>
+    <p class="lede" data-i18n="hero.lede">${esc(si('hero.lede'))}</p>
     <div class="btnrow">
-      <a class="btn" href="grade35/index.html">Grades 3–5 (free)</a>
-      <a class="btn ghost" href="grade68/index.html">Grades 6–8</a>
-      <a class="btn ghost" href="library.html">🔎 Browse library</a>
-      <a class="btn ghost" href="guide.html">Teacher guide</a>
+      <a class="btn" href="grade35/index.html" data-i18n="btn.free">${esc(si('btn.free'))}</a>
+      <a class="btn ghost" href="grade68/index.html" data-i18n="btn.paid">${esc(si('btn.paid'))}</a>
+      <a class="btn ghost" href="library.html" data-i18n="btn.library">${esc(si('btn.library'))}</a>
+      <a class="btn ghost" href="guide.html" data-i18n="btn.guide">${esc(si('btn.guide'))}</a>
     </div>
   </div>
 
-  <h2>Free tier — Grades 3–5</h2>
-  <p class="section-note">Fully free and open. No login, no account, nothing collected. Share the link and go.</p>
+  <h2 data-i18n="free.h2">${esc(si('free.h2'))}</h2>
+  <p class="section-note" data-i18n="free.note">${esc(si('free.note'))}</p>
   <div class="cards">
     ${free}
   </div>
 
-  <h2>More — Grades 6–8</h2>
-  <p class="section-note">The middle-school band is included with a district license. Preview the premise and standards on each activity's teacher page.</p>
+  <h2 data-i18n="paid.h2">${esc(si('paid.h2'))}</h2>
+  <p class="section-note" data-i18n="paid.note">${esc(si('paid.note'))}</p>
   <div class="cards">
     ${paid}
   </div>
 
-  <h2>Why Critical Thinking Online Breakouts (CTOBs)?</h2>
+  <h2 data-i18n="ctob.h2">${esc(si('ctob.h2'))}</h2>
   <div class="panel gold">
-    <p>A <strong>Critical Thinking Online Breakout (CTOB)</strong> is a browser-based digital escape room built for <em>reasoning, not recall</em>. Students read six short clues — one a deliberate <strong>decoy</strong> — and use them to open four locks. Each lock reveals a one-sentence <em>reason</em> that names <em>why</em> the answer follows from the evidence. There are no logins, nothing is graded, and <strong>Start over</strong> is always one tap away, so the cost of thinking out loud and being wrong is zero.</p>
-    <p>CTOBs run on the <strong>CLEAR thinking process</strong> — a simple critical-thinking checklist students can carry into any claim, message, or source they meet online. Every lock is a small CLEAR rep: the decoy trains students to weigh <em>Evidence</em> and reject a true-but-irrelevant fact; the “strong evidence” lock makes the strong / weak / missing distinction explicit; and the revealed reason models the <em>Response</em>. Digital citizenship is judgment — and CLEAR is how students practice it.</p>
+    <p data-i18n-html="ctob.p1Html">${si('ctob.p1Html')}</p>
+    <p data-i18n-html="ctob.p2Html">${si('ctob.p2Html')}</p>
   </div>
-  <h3>The CLEAR thinking process</h3>
-  <p class="section-note">A simple critical-thinking checklist. Students walk it on every breakout and can carry it into any claim, message, or source they meet online.</p>
-  ${clearBlock()}
-  <p class="section-note">Full teacher materials: <a href="guide.html">curriculum guide</a> · <a href="scope.html">scope &amp; sequence</a> · <a href="lessons.html">lesson-plan guide</a> · <a href="correlation.html">TEKS correlation</a> · <a href="udl.html">UDL</a> &amp; <a href="elps.html">ELPS</a> supports.</p>
-${footer(0)}`;
+  <h3 data-i18n="clear.h3">${esc(si('clear.h3'))}</h3>
+  <p class="section-note" data-i18n="clear.note">${esc(si('clear.note'))}</p>
+  ${clearBlockI18n()}
+  <p class="section-note" data-i18n-html="teacher.noteHtml">${si('teacher.noteHtml')}</p>
+${footer(0)}
+${i18nScript(cardsExtra)}`;
   fs.writeFileSync(path.join(ROOT, 'index.html'), shell({ depth: 0, title: 'Digital Citizenship Breakouts — Grades 3–8', body }));
 }
 
