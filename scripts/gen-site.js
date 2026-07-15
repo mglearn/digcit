@@ -20,11 +20,13 @@ const FONTS = '<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght
 
 const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// grade -> {band, icon, teks, tier}. FOCUS[grade] = [[focus, substrand] x4] aligned to L1..L4 order.
+// grade -> {band, icon, teks, tier}. These are the full per-grade lessons, now
+// the LICENSED tier; the free FEATURED lesson per grade is a separate -free
+// activity scanned from the locales. FOCUS[grade] = [[focus, substrand] x4].
 const META = {
-  3: { band: 'grade35', icon: '👣', teks: '§126.8', tier: 'free' },
-  4: { band: 'grade35', icon: '🗂️', teks: '§126.9', tier: 'free' },
-  5: { band: 'grade35', icon: '🍪', teks: '§126.10', tier: 'free' },
+  3: { band: 'grade35', icon: '👣', teks: '§126.8', tier: 'paid' },
+  4: { band: 'grade35', icon: '🗂️', teks: '§126.9', tier: 'paid' },
+  5: { band: 'grade35', icon: '🍪', teks: '§126.10', tier: 'paid' },
   6: { band: 'grade68', icon: '⚖️', teks: '§126.17', tier: 'paid' },
   7: { band: 'grade68', icon: '🌀', teks: '§126.18', tier: 'paid' },
   8: { band: 'grade68', icon: '🔎', teks: '§126.19', tier: 'paid' },
@@ -183,7 +185,29 @@ function loadBreakout(grade) {
   return fn({});
 }
 const ACT = {};
-for (const g of Object.keys(META)) ACT[g] = { grade: +g, ...META[g], B: loadBreakout(g) };
+for (const g of Object.keys(META)) ACT[g] = { id: 'dc-grade' + g, grade: +g, ...META[g], B: loadBreakout(g) };
+
+// The free FEATURED lessons (one per grade) — scanned from the -free locales.
+const PRIMARY_SUB = {
+  'dc-grade3-free': '(c)(8)', 'dc-grade4-free': '(c)(8)', 'dc-grade5-free': '(c)(10)',
+  'dc-grade6-free': '(c)(10)', 'dc-grade7-free': '(c)(9)', 'dc-grade8-free': '(c)(10)',
+};
+function scanFree() {
+  const out = [];
+  for (const band of ['grade35', 'grade68']) {
+    const dir = path.join(ROOT, band, 'locales');
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir).sort()) {
+      if (!/-free\.js$/.test(f)) continue;
+      const B = new Function('window', fs.readFileSync(path.join(dir, f), 'utf8') + '\nreturn window.BREAKOUT;')({});
+      out.push({ id: B.id, grade: B.grade, band, tier: 'free', icon: B.icon, teks: B.teks, B });
+    }
+  }
+  return out.sort((a, b) => a.grade - b.grade);
+}
+const FREE = scanFree();
+// derive per-lock focus for a free activity from its lock titles + primary substrand
+function freeFocus(a) { return a.B.CONTENT.en.locks.map(l => [l.title, PRIMARY_SUB[a.id] || '(c)(8)']); }
 
 // ---- shared shell --------------------------------------------------------
 // Absolute origin for social/OG image URLs — set via SITE_URL env (see config.js).
@@ -260,32 +284,47 @@ function card(grade, { depthToBand }) {
   </a>`;
 }
 
+// Activity-object card (used on the landing and library). kind: 'free' | 'licensed'.
+function actCard(a, kind, depth) {
+  const locked = kind === 'licensed';
+  const U = a.B.UI.en, p = depth ? '../' : '';
+  const href = locked ? `${p}${a.band}/${a.id}.html` : `${p}${a.band}/${a.id}-student.html`;
+  return `<a class="card${locked ? ' locked' : ''}" href="${href}">
+    <span class="badge">${S('Grade')} ${a.grade} · ${a.teks}</span>
+    <div class="ico">${a.icon}</div>
+    <div class="ctitle">${S(U['header.h1'])}</div>
+    <div class="cdesc">${S(U['header.sub'])}</div>
+    <span class="tier">${locked ? '🔒' : '<span class="freeflag">FREE</span>'}</span>
+    <span class="cgo">${locked ? S('Available only with a paid license') : S('Start the breakout →')}</span>
+  </a>`;
+}
+
 // ---- SUITE LANDING -------------------------------------------------------
 function suiteLanding() {
-  const free = [3, 4, 5].map(g => card(g, { depthToBand: 'grade35/' })).join('\n    ');
-  const paid = [6, 7, 8].map(g => card(g, { depthToBand: 'grade68/' })).join('\n    ');
+  const freeCards = FREE.map(a => actCard(a, 'free', 0)).join('\n    ');
+  const paidCards = [3, 4, 5, 6, 7, 8].map(g => actCard(ACT[g], 'licensed', 0)).join('\n    ');
   const body = `  <div class="hero">
     <div class="eyebrow" data-i18n="hero.eyebrow">${esc(si('hero.eyebrow'))}</div>
     <h1 data-i18n="hero.h1">${esc(si('hero.h1'))}</h1>
     <p class="lede" data-i18n="hero.lede">${esc(si('hero.lede'))}</p>
     <div class="btnrow">
-      <a class="btn" href="grade35/index.html" data-i18n="btn.free">${esc(si('btn.free'))}</a>
-      <a class="btn ghost" href="grade68/index.html" data-i18n="btn.paid">${esc(si('btn.paid'))}</a>
+      ${E('a', 'Grades 3–5', 'class="btn" href="grade35/index.html"')}
+      ${E('a', 'Grades 6–8', 'class="btn ghost" href="grade68/index.html"')}
       <a class="btn ghost" href="library.html" data-i18n="btn.library">${esc(si('btn.library'))}</a>
       <a class="btn ghost" href="guide.html" data-i18n="btn.guide">${esc(si('btn.guide'))}</a>
     </div>
   </div>
 
-  <h2 data-i18n="free.h2">${esc(si('free.h2'))}</h2>
-  <p class="section-note" data-i18n="free.note">${esc(si('free.note'))}</p>
+  ${E('h2', 'Featured lessons — free')}
+  ${E('p', 'One free featured breakout per grade — fully playable, no login, nothing collected. Share the link and go.', 'class="section-note"')}
   <div class="cards">
-    ${free}
+    ${freeCards}
   </div>
 
-  <h2 data-i18n="paid.h2">${esc(si('paid.h2'))}</h2>
-  <p class="section-note" data-i18n="paid.note">${esc(si('paid.note'))}</p>
+  ${E('h2', 'The full curriculum — licensed')}
+  ${E('p', 'The complete per-grade lessons are included with a district license. Each is marked below; preview the premise and standards on its teacher page.', 'class="section-note"')}
   <div class="cards">
-    ${paid}
+    ${paidCards}
   </div>
 
   <h2 data-i18n="ctob.h2">${esc(si('ctob.h2'))}</h2>
@@ -324,8 +363,8 @@ ${footer(1, 'policy.html')}`;
 }
 
 // ---- TEACHER LAUNCH PAGE (no answers) ------------------------------------
-function teacherPage(grade) {
-  const a = ACT[grade], U = a.B.UI.en, locks = a.B.CONTENT.en.locks, focus = FOCUS[grade];
+function teacherPage(a, focus) {
+  const grade = a.grade, U = a.B.UI.en, locks = a.B.CONTENT.en.locks;
   const rows = locks.map((l, i) => `<tr><td><span class="lk">${S('Lock')} ${i + 1}</span><br><span class="small">${S(l.title)}</span></td>
       <td>${S(focus[i][0])}</td>
       <td><span class="pill sub">${focus[i][1]} ${S(SUBSTRANDS[focus[i][1]])}</span></td></tr>`).join('\n    ');
@@ -341,7 +380,7 @@ function teacherPage(grade) {
     ${E('h1', U['header.h1'])}
     ${E('p', U['header.sub'], 'class="lede"')}
     <div class="btnrow">
-      ${E('a', a.tier === 'paid' ? 'Open activity (licensed)' : 'Launch student activity', 'class="btn" href="dc-grade' + grade + '-student.html"')}
+      ${E('a', a.tier === 'paid' ? 'Open activity (licensed)' : 'Launch student activity', 'class="btn" href="' + a.id + '-student.html"')}
       ${E('a', 'Correlation', 'class="btn ghost" href="../correlation.html"')}
     </div>
   </div>
@@ -369,7 +408,7 @@ function teacherPage(grade) {
   <div class="panel">${EH('ul', classroom)}</div>
   ${EH('div', 'Answers are intentionally not shown here. The full answer key (with the reasoning for every lock) is on the password-gated <a href="../answer-key.html">answer-key page</a>. This alignment is a good-faith paraphrase for lesson planning and is not legal advice.', 'class="disclaimer"')}
 ${footer(1, 'policy.html')}`;
-  fs.writeFileSync(path.join(ROOT, a.band, 'dc-grade' + grade + '.html'), shell({ depth: 1, title: U['header.h1'] + ' — Teacher launch (Grade ' + grade + ')', body, i18n: true }));
+  fs.writeFileSync(path.join(ROOT, a.band, a.id + '.html'), shell({ depth: 1, title: U['header.h1'] + ' — Teacher launch (Grade ' + grade + ')', body, i18n: true }));
 }
 
 // ---- CORRELATION GUIDE ---------------------------------------------------
@@ -430,7 +469,7 @@ function guide() {
   <div class="panel">${EH('ul', deploy)}</div>
 
   ${E('h2', 'Free vs. licensed')}
-  <div class="panel gold">${EH('p', '<strong>Free tier — Grades 3–5.</strong> Fully open and static. Use them with anyone, anywhere.')}${EH('p', '<strong>Licensed tier — Grades 6–8</strong> (and future “More” activities). Included with a district license and served through an authenticated session. Teacher pages and this guide remain open so you can evaluate before you buy.')}</div>
+  <div class="panel gold">${EH('p', '<strong>Free featured lessons — one per grade.</strong> Each grade has a free, fully-playable featured breakout on the home page. Use them with anyone, anywhere — no login, nothing collected.')}${EH('p', '<strong>The full curriculum — licensed.</strong> The complete per-grade lessons (Grades 3–8) are included with a district license and served through an authenticated session. Teacher pages and this guide remain open so you can evaluate before you buy.')}</div>
 
   ${E('h2', 'Assessment')}
   ${EH('p', 'These are formative by design. Use the revealed reasons as discussion prompts, ask students to write the reasoning for the lock they found hardest, or have them author a new clue. The gated <a href="answer-key.html">answer key</a> lists every answer with its reasoning for your reference.')}
@@ -510,21 +549,25 @@ const KEYWORDS = {
   7: ['intellectual property', 'copyright', 'media literacy', 'misinformation', 'clickbait', 'bias', 'spin', 'cyberattack', 'security', 'cyberbullying'],
   8: ['source evaluation', 'bias', 'reliability', 'credibility', 'misinformation', 'intellectual property', 'copyright', 'attribution', 'cybersecurity', 'breach', 'authentication', 'cyberbullying'],
 };
+function catEntry(a, focus) {
+  const U = a.B.UI.en;
+  const subs = [...new Set(focus.map(f => f[1]))].sort();
+  const clueNames = a.B.CONTENT.en.clues.map(c => c.nm);
+  const lockTitles = a.B.CONTENT.en.locks.map(l => l.title);
+  const hay = [U['header.h1'], U['header.sub'], a.teks, ...focus.map(f => f[0]), ...lockTitles, ...clueNames,
+    ...(KEYWORDS[a.grade] || []), ...subs.map(s => SUBSTRANDS[s])].join(' ').toLowerCase();
+  return {
+    grade: a.grade, band: a.band === 'grade35' ? '3-5' : '6-8', teks: a.teks, tier: a.tier, icon: a.icon,
+    title: U['header.h1'], sub: U['header.sub'], focus: focus.map(f => f[0]), subs,
+    href: `${a.band}/${a.id}` + (a.tier === 'paid' ? '.html' : '-student.html'),
+    hay,
+  };
+}
 function buildCatalog() {
-  return Object.keys(META).map(g => {
-    const a = ACT[g], U = a.B.UI.en, focus = FOCUS[g];
-    const subs = [...new Set(focus.map(f => f[1]))].sort();
-    const clueNames = a.B.CONTENT.en.clues.map(c => c.nm);
-    const lockTitles = a.B.CONTENT.en.locks.map(l => l.title);
-    const hay = [U['header.h1'], U['header.sub'], a.teks, ...focus.map(f => f[0]), ...lockTitles, ...clueNames,
-      ...(KEYWORDS[g] || []), ...subs.map(s => SUBSTRANDS[s])].join(' ').toLowerCase();
-    return {
-      grade: +g, band: a.band === 'grade35' ? '3-5' : '6-8', teks: a.teks, tier: a.tier, icon: a.icon,
-      title: U['header.h1'], sub: U['header.sub'], focus: focus.map(f => f[0]), subs,
-      href: (a.band === 'grade35' ? 'grade35/' : 'grade68/') + (a.tier === 'paid' ? `dc-grade${g}.html` : `dc-grade${g}-student.html`),
-      hay,
-    };
-  });
+  const out = [];
+  for (const g of Object.keys(META)) out.push(catEntry(ACT[g], FOCUS[g]));
+  for (const a of FREE) out.push(catEntry(a, freeFocus(a)));
+  return out.sort((x, y) => x.grade - y.grade || (x.tier < y.tier ? -1 : 1));
 }
 function library() {
   const catalog = buildCatalog();
@@ -635,7 +678,7 @@ function scope() {
         <td><span class="small">${subs.join(' ')}</span></td>
       </tr>`;
   }).join('\n    ');
-  const pacing = '<li><strong>One breakout ≈ 25–40 minutes</strong> including debrief; it works best as the <em>engage</em> or <em>collaborative-practice</em> phase of a lesson, not the whole lesson.</li><li>Run one per grading period, or cluster a band into a <strong>1–2 week digital-citizenship unit</strong>.</li><li>Grades 3–5 are free and self-contained; Grades 6–8 are the licensed band and assume the earlier vocabulary.</li>';
+  const pacing = '<li><strong>One breakout ≈ 25–40 minutes</strong> including debrief; it works best as the <em>engage</em> or <em>collaborative-practice</em> phase of a lesson, not the whole lesson.</li><li>Run one per grading period, or cluster a band into a <strong>1–2 week digital-citizenship unit</strong>.</li><li>Each grade has a free featured lesson on the home page; the full per-grade lessons are the licensed tier.</li>';
   const body = `  <div class="crumb">${E('a', '‹ Suite home', 'href="index.html"')}</div>
   <div class="hero">
     ${E('div', 'Scope & sequence', 'class="eyebrow"')}
@@ -800,8 +843,8 @@ ${footer(0)}`;
 // ---- run -----------------------------------------------------------------
 suiteLanding();
 library();
-bandHub('grade35', [3, 4, 5], { paid: false, label: 'Grades 3–5 · Free', title: 'Grades 3–5', lede: 'The free tier. Digital footprints, kindness, credit, and staying safe — one breakout per grade, ready to share.' });
-bandHub('grade68', [6, 7, 8], { paid: true, label: 'Grades 6–8 · Licensed', title: 'Grades 6–8', lede: 'The middle-school band: intellectual property, media literacy, cybersecurity, and source evaluation. Included with a district license.' });
+bandHub('grade35', [3, 4, 5], { paid: true, label: 'Grades 3–5 · Licensed', title: 'Grades 3–5', lede: 'The full elementary lessons — digital footprints, kindness, credit, and staying safe. Included with a district license; each grade also has a free featured lesson on the home page.' });
+bandHub('grade68', [6, 7, 8], { paid: true, label: 'Grades 6–8 · Licensed', title: 'Grades 6–8', lede: 'The full middle-school lessons — intellectual property, media literacy, cybersecurity, and source evaluation. Included with a district license; each grade also has a free featured lesson on the home page.' });
 correlation();
 guide();
 scope();
@@ -812,7 +855,8 @@ implementation('grade35', [3, 4, 5], { paid: false, hub: 'Grades 3–5', title: 
 implementation('grade68', [6, 7, 8], { paid: true, hub: 'Grades 6–8', title: 'Grades 6–8 Implementation Plan', lede: 'Pacing, prerequisites, and extensions for the licensed middle-school band.', prereq: 'Students should be able to evaluate short arguments and are ready for real IP, security, and media-literacy vocabulary.', extend: 'Bridge to a media-literacy or intro-to-AI unit; have students audit a real (teacher-vetted) source using the Grade 8 criteria.' });
 policy('grade35', 'Grades 3–5');
 policy('grade68', 'Grades 6–8');
-for (const g of Object.keys(META)) teacherPage(+g);
+for (const g of Object.keys(META)) teacherPage(ACT[g], FOCUS[g]);
+for (const a of FREE) teacherPage(a, freeFocus(a));
 
 persistAuto();          // record any new English strings for the translation pass
 writeSiteI18nData();    // compile the shared dictionary (with translations)

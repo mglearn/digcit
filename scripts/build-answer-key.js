@@ -20,14 +20,18 @@ const ROOT = path.join(__dirname, '..');
 const PASSWORD = process.env.ANSWER_KEY_PASSWORD || 'teksdetective';
 const ITER = 250000;
 
-const META = {
-  3: { band: 'grade35', teks: '§126.8', tier: 'free' }, 4: { band: 'grade35', teks: '§126.9', tier: 'free' },
-  5: { band: 'grade35', teks: '§126.10', tier: 'free' }, 6: { band: 'grade68', teks: '§126.17', tier: 'paid' },
-  7: { band: 'grade68', teks: '§126.18', tier: 'paid' }, 8: { band: 'grade68', teks: '§126.19', tier: 'paid' },
-};
-function loadBreakout(grade) {
-  const p = path.join(ROOT, META[grade].band, 'locales', 'dc-grade' + grade + '.js');
-  return new Function('window', fs.readFileSync(p, 'utf8') + '\nreturn window.BREAKOUT;')({});
+// Scan every baked locale (all activities, both tiers) — self-describing.
+function scanAll() {
+  const out = [];
+  for (const band of ['grade35', 'grade68']) {
+    const dir = path.join(ROOT, band, 'locales');
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir).sort()) {
+      if (!f.endsWith('.js')) continue;
+      out.push(new Function('window', fs.readFileSync(path.join(dir, f), 'utf8') + '\nreturn window.BREAKOUT;')({}));
+    }
+  }
+  return out.sort((a, b) => a.grade - b.grade || (a.tier < b.tier ? -1 : 1));
 }
 // human-readable correct answer for a lock (English)
 function answerText(l) {
@@ -43,10 +47,10 @@ function answerText(l) {
 const TYPE_LABEL = { mc: 'Multiple choice', word: 'Type the word', digit: 'Number code', seq: 'Order the steps', multi: 'Check all that apply' };
 
 // build plaintext payload
-const activities = [3, 4, 5, 6, 7, 8].map(g => {
-  const B = loadBreakout(g), U = B.UI.en;
+const activities = scanAll().map(B => {
+  const U = B.UI.en;
   return {
-    grade: g, teks: META[g].teks, tier: META[g].tier, title: U['header.h1'],
+    grade: B.grade, teks: B.teks, tier: B.tier, title: U['header.h1'],
     locks: B.CONTENT.en.locks.map((l, i) => ({
       n: i + 1, title: l.title, type: TYPE_LABEL[l.type] || l.type,
       q: l.q, answer: answerText(l), reason: l.reason,

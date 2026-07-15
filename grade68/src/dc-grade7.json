@@ -1,7 +1,17 @@
 {
   "id": "dc-grade7",
   "grade": 7,
-  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "tier": "paid",
+  "icon": "🌀",
+  "teks": "§126.18",
+  "confetti": [
+    "#0a2e63",
+    "#f5b800",
+    "#2f6fe0",
+    "#1a7a8c",
+    "#ffffff",
+    "#0d47a1"
+  ],
   "chrome": {
     "eyebrow": {
       "en": "Digital Citizenship Breakout · Grade 7",
@@ -165,7 +175,11 @@
           "c": "#1a7a8c"
         }
       ],
-      "answer": ["stop", "save", "report"],
+      "answer": [
+        "stop",
+        "save",
+        "report"
+      ],
       "reason": "First STOP so you don't spread the harm, then SAVE proof with a screenshot, then REPORT to a trusted adult who can help the target."
     }
   ]

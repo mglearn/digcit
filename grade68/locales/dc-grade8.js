@@ -1,5 +1,9 @@
 window.BREAKOUT = {
  "id": "dc-grade8",
+ "grade": 8,
+ "tier": "paid",
+ "icon": "🔎",
+ "teks": "§126.19",
  "confetti": [
   "#0a2e63",
   "#f5b800",

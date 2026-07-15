@@ -29,7 +29,7 @@ function discover() {
     const dir = path.join(ROOT, band);
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir).sort()) {
-      const m = f.match(/^(dc-grade\d)-student\.html$/);
+      const m = f.match(/^(dc-grade\d[\w-]*)-student\.html$/);
       if (!m) continue;
       const id = m[1];
       acts.push({ id, band, html: path.join(dir, f), locale: path.join(dir, 'locales', id + '.js') });

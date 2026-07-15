@@ -1,7 +1,17 @@
 {
   "id": "dc-grade8",
   "grade": 8,
-  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "tier": "paid",
+  "icon": "🔎",
+  "teks": "§126.19",
+  "confetti": [
+    "#0a2e63",
+    "#f5b800",
+    "#2f6fe0",
+    "#1a7a8c",
+    "#ffffff",
+    "#0d47a1"
+  ],
   "chrome": {
     "eyebrow": {
       "en": "Digital Citizenship Breakout · Grade 8",
@@ -75,11 +85,26 @@
       "title": "Signs of a Reliable Source",
       "q": "Check EVERY sign that a website is a reliable source you can trust.",
       "items": [
-        { "t": "A named author with relevant expertise", "strong": true },
-        { "t": "Evidence you can check, linked to other sources", "strong": true },
-        { "t": "Information that is recent and kept up to date", "strong": true },
-        { "t": "A colorful, professional-looking design", "strong": false },
-        { "t": "A hidden purpose to get you to buy something", "strong": false }
+        {
+          "t": "A named author with relevant expertise",
+          "strong": true
+        },
+        {
+          "t": "Evidence you can check, linked to other sources",
+          "strong": true
+        },
+        {
+          "t": "Information that is recent and kept up to date",
+          "strong": true
+        },
+        {
+          "t": "A colorful, professional-looking design",
+          "strong": false
+        },
+        {
+          "t": "A hidden purpose to get you to buy something",
+          "strong": false
+        }
       ],
       "reason": "Reliability comes from a named expert author, checkable evidence, and current information. A slick design or a hidden sales pitch says nothing about whether the facts are true."
     },
@@ -89,7 +114,11 @@
       "color": "#2f6fe0",
       "title": "Name the Slant",
       "q": "When a source shows only one side and uses loaded language, that slant is called ______.",
-      "answer": ["bias", "biased", "biases"],
+      "answer": [
+        "bias",
+        "biased",
+        "biases"
+      ],
       "reason": "A one-sided slant that leaves out disagreeing facts is bias, which is your signal to cross-check the claim with an independent source."
     },
     {
@@ -113,11 +142,27 @@
       "title": "Respond to the Breach",
       "q": "An alert says your account was accessed from an unknown device. Tap the steps in the RIGHT order.",
       "pads": [
-        { "k": "report", "e": "📣 Report the breach", "c": "#0a2e63" },
-        { "k": "password", "e": "🔑 Set a new strong password", "c": "#2f6fe0" },
-        { "k": "twostep", "e": "📱 Turn on two-step verification", "c": "#1a7a8c" }
+        {
+          "k": "report",
+          "e": "📣 Report the breach",
+          "c": "#0a2e63"
+        },
+        {
+          "k": "password",
+          "e": "🔑 Set a new strong password",
+          "c": "#2f6fe0"
+        },
+        {
+          "k": "twostep",
+          "e": "📱 Turn on two-step verification",
+          "c": "#1a7a8c"
+        }
       ],
-      "answer": ["password", "twostep", "report"],
+      "answer": [
+        "password",
+        "twostep",
+        "report"
+      ],
       "reason": "First lock intruders out with a new strong password, then add two-step verification so a stolen password alone is not enough, then report the breach so it can be tracked and stopped."
     }
   ]

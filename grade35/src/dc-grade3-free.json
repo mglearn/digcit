@@ -1,0 +1,169 @@
+{
+ "id": "dc-grade3-free",
+ "grade": 3,
+ "tier": "free",
+ "icon": "💛",
+ "teks": "§126.8",
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "chrome": {
+  "eyebrow": {
+   "en": "Digital Citizenship Breakout · Grade 3",
+   "es": "Breakout de ciudadanía digital · Grado 3",
+   "vi": "Breakout công dân số · Lớp 3",
+   "ar": "تحدّي المواطنة الرقمية · الصف 3",
+   "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 3",
+   "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 3",
+   "zh": "数字公民破解 · 3 年级"
+  },
+  "h1": "Be Kind Online",
+  "sub": "The class chat got a little unkind. Use the clues to solve four locks and make it a kind place again.",
+  "briefLabel": "Your Mission",
+  "briefH": "Be a Kindness Captain",
+  "briefP": "Words on a screen can make someone feel happy or sad. A Kindness Captain helps everyone feel safe and welcome online. Read the clues, then open all four locks. Each lock shows a reason after it opens, so you learn why the kind choice is the right choice.",
+  "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+  "winStamp": "CASE CLOSED",
+  "winH": "You cracked all four locks!",
+  "winP": "You know how to tell kind messages from unkind ones, how to include others, how to be an upstander, and how to think before you send. You are a true Kindness Captain!"
+ },
+ "clues": [
+  {
+   "id": "c1",
+   "ico": "💛",
+   "nm": "Kind Words",
+   "title": "Kind words help",
+   "body": "Kind words make people feel good. 'Great job!' and 'I like your idea!' are kind. Mean words make people feel sad. Choose kind words when you type."
+  },
+  {
+   "id": "c2",
+   "ico": "🙌",
+   "nm": "Include All",
+   "title": "Let everyone play",
+   "body": "It feels bad to be left out. When you play a game online, invite others to join. A kind compliment like 'You did great!' helps a new friend feel welcome."
+  },
+  {
+   "id": "c3",
+   "ico": "🛡️",
+   "nm": "Upstander",
+   "title": "Be an upstander",
+   "body": "An upstander helps when someone is treated badly. If you see a mean post, do not laugh at it and do not share it. Be kind to the person and tell a trusted adult."
+  },
+  {
+   "id": "c4",
+   "ico": "🤔",
+   "nm": "Think First",
+   "title": "Think before you send",
+   "body": "Once you send a message, you cannot take it back. Stop and think first. Ask yourself: Is it true? Is it kind? Would I say it to their face? If not, do not send it."
+  },
+  {
+   "id": "c5",
+   "ico": "😀",
+   "nm": "Read the Feeling",
+   "title": "Words can hurt",
+   "body": "You cannot see a face in a chat. A joke can look mean when it is only words. Read your message twice and make sure it sounds kind before you press send."
+  },
+  {
+   "id": "c6",
+   "ico": "🐠",
+   "nm": "Class Fish",
+   "title": "The classroom fish",
+   "body": "The class has a goldfish named Bubbles. Bubbles blows tiny bubbles and loves swimming in circles. This is a fun fact — but it will not help you open any lock.",
+   "decoy": true
+  }
+ ],
+ "locks": [
+  {
+   "id": "L1",
+   "type": "mc",
+   "color": "#0a2e63",
+   "title": "The Kind Message",
+   "q": "Which message is the kind one to send?",
+   "options": [
+    "You are so bad at this game. Ha ha!",
+    "Great idea! Do you want to play with us?",
+    "Nobody wants you in our group chat."
+   ],
+   "answerIndex": 1,
+   "reason": "Kind messages help people feel happy and welcome. 'Great idea! Do you want to play with us?' includes a friend and gives a compliment, so it is the kind choice."
+  },
+  {
+   "id": "L2",
+   "type": "multi",
+   "color": "#2f6fe0",
+   "title": "Kind or Unkind?",
+   "q": "Check EVERY thing that is a kind online choice.",
+   "items": [
+    {
+     "t": "Give a friend a nice compliment in the chat",
+     "strong": true
+    },
+    {
+     "t": "Invite a new classmate to join the game",
+     "strong": true
+    },
+    {
+     "t": "Tell an adult when you see a mean post",
+     "strong": true
+    },
+    {
+     "t": "Laugh at a mean post and share it around",
+     "strong": false
+    },
+    {
+     "t": "Type a rude name to make someone feel small",
+     "strong": false
+    }
+   ],
+   "reason": "Kind choices help others feel good — a compliment, an invite, or telling an adult about a mean post. Laughing at or sharing a mean post and calling names are unkind, so we leave those unchecked."
+  },
+  {
+   "id": "L3",
+   "type": "word",
+   "color": "#1a7a8c",
+   "title": "The Helper's Name",
+   "q": "A person who helps when someone is treated badly online is called an ______.",
+   "answer": [
+    "upstander",
+    "up-stander",
+    "up stander"
+   ],
+   "reason": "An upstander speaks up and helps instead of watching or laughing. Being an upstander means you do not share the mean post and you tell a trusted adult."
+  },
+  {
+   "id": "L4",
+   "type": "seq",
+   "color": "#0d47a1",
+   "title": "Think Before You Send",
+   "q": "Before you send a message, tap the steps in the RIGHT order.",
+   "pads": [
+    {
+     "k": "send",
+     "e": "📨 Send it",
+     "c": "#0a2e63"
+    },
+    {
+     "k": "stop",
+     "e": "✋ Stop and think",
+     "c": "#2f6fe0"
+    },
+    {
+     "k": "check",
+     "e": "💛 Is it kind?",
+     "c": "#1a7a8c"
+    }
+   ],
+   "answer": [
+    "stop",
+    "check",
+    "send"
+   ],
+   "reason": "First STOP and think about your words. Then CHECK that the message is kind and true. Only then do you SEND it. Stop, Check, Send."
+  }
+ ]
+}

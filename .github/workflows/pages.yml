@@ -34,6 +34,10 @@ jobs:
           node scripts/gen-html.js
       - name: Assemble free-tier _site (excludes paid content)
         run: node scripts/build-pages.js
+      - name: Assemble password-gated /demo (all lessons playable)
+        env:
+          DEMO_PASSWORD: ${{ vars.DEMO_PASSWORD || 'ShowMe2026!' }}
+        run: node scripts/build-demo.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

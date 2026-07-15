@@ -1,7 +1,17 @@
 {
   "id": "dc-grade5",
   "grade": 5,
-  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "tier": "paid",
+  "icon": "🍪",
+  "teks": "§126.10",
+  "confetti": [
+    "#0a2e63",
+    "#f5b800",
+    "#2f6fe0",
+    "#1a7a8c",
+    "#ffffff",
+    "#0d47a1"
+  ],
   "chrome": {
     "eyebrow": {
       "en": "Digital Citizenship Breakout · Grade 5",
@@ -75,11 +85,26 @@
       "title": "Parts of the Footprint",
       "q": "Check EVERY thing that becomes part of a digital footprint.",
       "items": [
-        { "t": "A video you watched on a streaming app", "strong": true },
-        { "t": "A level you beat on an online game", "strong": true },
-        { "t": "A photo you posted on a social page", "strong": true },
-        { "t": "A paper book you read quietly at home", "strong": false },
-        { "t": "A walk you took outside with no phone", "strong": false }
+        {
+          "t": "A video you watched on a streaming app",
+          "strong": true
+        },
+        {
+          "t": "A level you beat on an online game",
+          "strong": true
+        },
+        {
+          "t": "A photo you posted on a social page",
+          "strong": true
+        },
+        {
+          "t": "A paper book you read quietly at home",
+          "strong": false
+        },
+        {
+          "t": "A walk you took outside with no phone",
+          "strong": false
+        }
       ],
       "reason": "A digital footprint is built from what you do online — watching, playing, and posting all leave a trail, while reading a paper book or walking outside happens offline."
     },
@@ -104,7 +129,9 @@
       "title": "The Secure Code",
       "q": "A safe website's address starts with 'https'. How many letters are in the word 'https'?",
       "len": 1,
-      "answer": ["5"],
+      "answer": [
+        "5"
+      ],
       "reason": "The word 'https' has five letters, and that 's' at the end stands for secure — the sign of a protected connection."
     },
     {
@@ -114,11 +141,27 @@
       "title": "The Fair Way to Borrow",
       "q": "You want to use someone else's photo. Tap the steps in the RIGHT order.",
       "pads": [
-        { "k": "credit", "e": "🏷️ Give them credit", "c": "#0a2e63" },
-        { "k": "ask", "e": "🙋 Ask for permission", "c": "#2f6fe0" },
-        { "k": "use", "e": "✅ Then use it", "c": "#1a7a8c" }
+        {
+          "k": "credit",
+          "e": "🏷️ Give them credit",
+          "c": "#0a2e63"
+        },
+        {
+          "k": "ask",
+          "e": "🙋 Ask for permission",
+          "c": "#2f6fe0"
+        },
+        {
+          "k": "use",
+          "e": "✅ Then use it",
+          "c": "#1a7a8c"
+        }
       ],
-      "answer": ["ask", "credit", "use"],
+      "answer": [
+        "ask",
+        "credit",
+        "use"
+      ],
       "reason": "First ASK the creator for permission, then plan to give them CREDIT, and only then USE the work — that avoids the consequences of copying without permission."
     }
   ]

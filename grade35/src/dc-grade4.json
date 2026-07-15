@@ -1,7 +1,17 @@
 {
   "id": "dc-grade4",
   "grade": 4,
-  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "tier": "paid",
+  "icon": "🗂️",
+  "teks": "§126.9",
+  "confetti": [
+    "#0a2e63",
+    "#f5b800",
+    "#2f6fe0",
+    "#1a7a8c",
+    "#ffffff",
+    "#0d47a1"
+  ],
   "chrome": {
     "eyebrow": {
       "en": "Digital Citizenship Breakout · Grade 4",
@@ -89,11 +99,26 @@
       "title": "Good Online Manners",
       "q": "Check EVERY choice that shows good etiquette in a text, email, or chat.",
       "items": [
-        { "t": "Using kind, polite words", "strong": true },
-        { "t": "Reading the message before you reply", "strong": true },
-        { "t": "Writing in ALL CAPS to sound louder", "strong": false },
-        { "t": "Calling someone a mean name", "strong": false },
-        { "t": "Closing a cookie pop-up so a site cannot track you", "strong": false }
+        {
+          "t": "Using kind, polite words",
+          "strong": true
+        },
+        {
+          "t": "Reading the message before you reply",
+          "strong": true
+        },
+        {
+          "t": "Writing in ALL CAPS to sound louder",
+          "strong": false
+        },
+        {
+          "t": "Calling someone a mean name",
+          "strong": false
+        },
+        {
+          "t": "Closing a cookie pop-up so a site cannot track you",
+          "strong": false
+        }
       ],
       "reason": "Etiquette means kind words and reading before you reply; yelling in caps and mean names are rude, and a cookie pop-up is about data, not manners."
     },
@@ -103,7 +128,11 @@
       "color": "#1a7a8c",
       "title": "Fair to the Creator",
       "q": "When you use a picture an artist made, the rule that protects the creator is called ______.",
-      "answer": ["copyright", "copy right", "copyrights"],
+      "answer": [
+        "copyright",
+        "copy right",
+        "copyrights"
+      ],
       "reason": "Copyright is the rule that says a creator owns what they make, so you must give them credit when you use their work."
     },
     {
@@ -113,11 +142,27 @@
       "title": "Be an Upstander",
       "q": "A classmate is teased online. Tap the steps in the RIGHT order.",
       "pads": [
-        { "k": "support", "e": "💙 Support the person", "c": "#0a2e63" },
-        { "k": "refuse", "e": "🚫 Refuse to share it", "c": "#2f6fe0" },
-        { "k": "report", "e": "🚩 Report the post", "c": "#1a7a8c" }
+        {
+          "k": "support",
+          "e": "💙 Support the person",
+          "c": "#0a2e63"
+        },
+        {
+          "k": "refuse",
+          "e": "🚫 Refuse to share it",
+          "c": "#2f6fe0"
+        },
+        {
+          "k": "report",
+          "e": "🚩 Report the post",
+          "c": "#1a7a8c"
+        }
       ],
-      "answer": ["refuse", "report", "support"],
+      "answer": [
+        "refuse",
+        "report",
+        "support"
+      ],
       "reason": "First REFUSE to spread the mean post, then REPORT it on the app, then SUPPORT the classmate who was hurt. Refuse, Report, Support."
     }
   ]

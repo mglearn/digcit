@@ -128,13 +128,14 @@ function page(id, U) {
 }
 
 const only = process.argv[2];
-for (const [band, grades] of Object.entries(BANDS)) {
-  for (const g of grades) {
-    const id = 'dc-grade' + g;
+for (const band of Object.keys(BANDS)) {
+  const locDir = path.join(ROOT, band, 'locales');
+  if (!fs.existsSync(locDir)) continue;
+  for (const f of fs.readdirSync(locDir).sort()) {
+    if (!f.endsWith('.js')) continue;
+    const id = f.replace(/\.js$/, '');
     if (only && id !== only) continue;
-    const locale = path.join(ROOT, band, 'locales', id + '.js');
-    if (!fs.existsSync(locale)) continue;
-    const B = loadBreakout(locale);
+    const B = loadBreakout(path.join(locDir, f));
     const dest = path.join(ROOT, band, id + '-student.html');
     fs.writeFileSync(dest, page(id, B.UI.en));
     console.log('wrote', path.relative(ROOT, dest));

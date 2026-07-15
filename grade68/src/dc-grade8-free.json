@@ -1,0 +1,127 @@
+{
+  "id": "dc-grade8-free",
+  "grade": 8,
+  "tier": "free",
+  "icon": "🔐",
+  "teks": "§126.19",
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 8",
+      "es": "Breakout de ciudadanía digital · Grado 8",
+      "vi": "Breakout công dân số · Lớp 8",
+      "ar": "تحدّي المواطنة الرقمية · الصف 8",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 8",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 8",
+      "zh": "数字公民破解 · 8 年级"
+    },
+    "h1": "Lock It Down",
+    "sub": "Your accounts hold your whole digital life, and someone just tried to get in. Learn how strong passphrases, second locks, and a calm plan keep intruders out. Crack four locks and secure the account for good.",
+    "briefLabel": "Your Mission",
+    "briefH": "Become an Account Guardian",
+    "briefP": "A single weak or reused password can hand a thief the keys to everything you own online. A smart digital citizen builds strong locks before trouble strikes and knows exactly what to do when an alarm goes off. Work through the case files, weigh each choice, and open all four locks. Every lock carries a reason that shows exactly why the answer keeps you safe.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "SECURED",
+    "winH": "Every lock is down, Guardian.",
+    "winP": "You can now build a passphrase that is easy to remember and hard to crack, add two-factor authentication as a second lock, keep every account on its own unique password, and respond to a breach in the right order. That steady, prepared thinking is exactly what protects a digital citizen and everyone they connect with."
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "🔑",
+      "nm": "The Long Key",
+      "title": "Length beats tricks",
+      "body": "A short password full of symbols is easier to crack than a long passphrase built from several random words. A guardian strings four unrelated words into something like a short phrase that is simple to remember but far too long for a machine to guess quickly. Length is the single biggest thing that makes a password strong."
+    },
+    {
+      "id": "c2",
+      "ico": "🚫",
+      "nm": "The Copy",
+      "title": "One password, everywhere",
+      "body": "Reusing the same password across many accounts feels convenient, but it means that if one site is breached, a thief can walk straight into all the others. A guardian gives every account its own unique password so that a single leak stays trapped in one place instead of spreading."
+    },
+    {
+      "id": "c3",
+      "ico": "📱",
+      "nm": "The Second Lock",
+      "title": "Two locks are better than one",
+      "body": "Two-factor authentication adds a second lock after your password, usually a one-time code from an app or text or a tap on your phone. Even if someone steals your password, they still cannot get in without that second factor, which almost always stays in your pocket."
+    },
+    {
+      "id": "c4",
+      "ico": "🚨",
+      "nm": "The Alarm",
+      "title": "When the alarm sounds",
+      "body": "You get an alert that your account was signed into from a device you do not recognize. The calm response has an order: first change to a new strong password, then turn on two-factor authentication, then check your other accounts in case the same password was reused. Acting in that order limits the damage fast."
+    },
+    {
+      "id": "c5",
+      "ico": "🎣",
+      "nm": "The Bait",
+      "title": "The message that wants your code",
+      "body": "A message warns that your account will be locked and asks you to reply with your password or your two-factor code to fix it. Real companies never ask for that. Handing over a one-time code lets an attacker slip past your second lock, so a guardian slows down and never shares a code with anyone."
+    },
+    {
+      "id": "c6",
+      "ico": "🔋",
+      "nm": "The Battery",
+      "title": "Charging the tablet",
+      "body": "The classroom tablet takes about two hours to charge from empty to full, and a small light glows orange while it charges and green when it is done. Knowing the charging time is a genuine fact about the device, but it will not help you open any of the locks in this case.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "multi",
+      "color": "#0a2e63",
+      "title": "Build a Strong Passphrase",
+      "q": "Check EVERY sign of a strong, hard-to-crack password.",
+      "items": [
+        { "t": "Four random unrelated words strung together", "strong": true },
+        { "t": "Long enough that a machine cannot guess it quickly", "strong": true },
+        { "t": "Different from the passwords on your other accounts", "strong": true },
+        { "t": "Your pet's name and the year you were born", "strong": false },
+        { "t": "A short word with a few symbols swapped in", "strong": false }
+      ],
+      "reason": "Strength comes mostly from length and randomness, so a long passphrase of unrelated words that is unique to one account wins. Personal facts and short swapped-symbol words are easy to guess or crack."
+    },
+    {
+      "id": "L2",
+      "type": "word",
+      "color": "#2f6fe0",
+      "title": "Name the Second Lock",
+      "q": "The extra step that asks for a one-time code after your password is called ______ authentication.",
+      "answer": ["two-factor", "2fa", "two factor authentication", "two factor", "twofactor", "two-factor authentication", "2 factor"],
+      "reason": "A one-time code or phone tap added after your password is two-factor authentication, a second lock that keeps a thief out even when they already have your password."
+    },
+    {
+      "id": "L3",
+      "type": "mc",
+      "color": "#1a7a8c",
+      "title": "Don't Reuse Passwords",
+      "q": "You use the exact same password on your game account, your email, and a shopping site. One of those sites is breached. What is the real danger?",
+      "options": [
+        "Nothing, because a breach on one site can never affect the others",
+        "A thief can now try that stolen password to open your other accounts",
+        "Your password automatically gets stronger after any breach"
+      ],
+      "answerIndex": 1,
+      "reason": "When you reuse one password everywhere, a single breach hands a thief a key they can try on all your other accounts, which is why every account needs its own unique password."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "Respond to the Breach",
+      "q": "An alert says your account was accessed from an unknown device. Tap the steps in the RIGHT order.",
+      "pads": [
+        { "k": "others", "e": "🔎 Check your other accounts", "c": "#0a2e63" },
+        { "k": "password", "e": "🔑 Change to a new strong password", "c": "#2f6fe0" },
+        { "k": "twofactor", "e": "📱 Turn on two-factor authentication", "c": "#1a7a8c" }
+      ],
+      "answer": ["password", "twofactor", "others"],
+      "reason": "First change the password to lock the intruder out, then turn on two-factor authentication so a stolen password alone is not enough, then check your other accounts in case that same password was reused."
+    }
+  ]
+}

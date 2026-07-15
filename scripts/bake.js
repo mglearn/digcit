@@ -91,6 +91,9 @@ function bakeOne(srcPath, template) {
   for (const lg of NONEN) {
     UI[lg] = Object.assign({}, T.UI[lg]);           // 21 COMMON + eyebrow from template
     UI[lg]['header.eyebrow'] = c.eyebrow[lg];        // override eyebrow for this grade
+    // Default this activity's own chrome to ENGLISH (so an untranslated activity
+    // never inherits the template Grade 3's translations); overlay overrides below.
+    for (const k of ['header.h1', 'header.sub', 'brief.h', 'brief.p', 'win.stamp', 'win.h', 'win.p']) UI[lg][k] = UI.en[k];
     // text-only translation overlay, if present — structure always comes from EN
     const ovPath = path.join(i18nDir, S.id + '.' + lg + '.json');
     if (fs.existsSync(ovPath)) {
@@ -102,7 +105,7 @@ function bakeOne(srcPath, template) {
     }
   }
 
-  const B = { id: S.id, confetti: S.confetti, UI, CONTENT };
+  const B = { id: S.id, grade: S.grade, tier: S.tier || 'free', icon: S.icon || '', teks: S.teks || '', confetti: S.confetti, UI, CONTENT };
   const out = 'window.BREAKOUT = ' + JSON.stringify(B, null, 1) + ';\n';
   const band = bandOf(S.grade);
   const dest = path.join(ROOT, band, 'locales', S.id + '.js');

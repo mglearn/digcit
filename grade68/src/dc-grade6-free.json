@@ -1,0 +1,127 @@
+{
+  "id": "dc-grade6-free",
+  "grade": 6,
+  "tier": "free",
+  "icon": "🎣",
+  "teks": "§126.17",
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 6",
+      "es": "Breakout de ciudadanía digital · Grado 6",
+      "vi": "Breakout công dân số · Lớp 6",
+      "ar": "تحدّي المواطنة الرقمية · الصف 6",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 6",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 6",
+      "zh": "数字公民破解 · 6 年级"
+    },
+    "h1": "Phishing Patrol",
+    "sub": "Strange messages are flooding the sixth-grade group. One promises free coins, another warns your account is about to be deleted. Which are real and which are bait? Study the messages and crack four locks to clear the case.",
+    "briefLabel": "Your Mission",
+    "briefH": "Open the Message Log",
+    "briefP": "A student named Dario keeps getting messages that push him to click fast, hand over a password, or type in a secret code. He is not sure which ones are safe. Read the clues, weigh the evidence, and open all four locks. Each lock ends with a reason that proves why the answer is correct.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "CASE CLOSED",
+    "winH": "You cleared every lock, Patrol Officer!",
+    "winP": "You can now spot the warning signs of a scam, check who really sent a message, follow the safe order of Stop then Check then Report, and keep a password or one-time code to yourself. That is real critical thinking online."
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "🎣",
+      "nm": "What Is Phishing",
+      "title": "Bait dressed up as a message",
+      "body": "Phishing is when someone sends a fake message that pretends to be a real person or company so you will click a link, share a password, or type in a code. The message is the bait. Its whole goal is to trick you into handing over something you should keep private."
+    },
+    {
+      "id": "c2",
+      "ico": "🚩",
+      "nm": "The Warning Signs",
+      "title": "Clues that a message is a scam",
+      "body": "Watch for a rush, like 'act now or lose your account.' Watch for spelling and grammar mistakes a real company would not make. Watch for lines like 'verify your account' or a link from a sender you do not know. Any message that asks for your password or a secret code is a red flag."
+    },
+    {
+      "id": "c3",
+      "ico": "🕵️",
+      "nm": "Check The Sender",
+      "title": "Look at who really sent it",
+      "body": "Before you trust a message, look closely at the sender. A scam address may swap a letter, add extra numbers, or use a name that only looks familiar. If the address does not match the real company, or if you never signed up for the message, treat it as bait and do not click."
+    },
+    {
+      "id": "c4",
+      "ico": "🛑",
+      "nm": "The Safe Response",
+      "title": "Stop, check, then report",
+      "body": "When a message feels wrong, Stop first and do not click anything. Next, Check the sender and the details to see if they add up. If it is a scam, Report it and tell a trusted adult. The safe order is always Stop, then Check the sender, then Report — never click first."
+    },
+    {
+      "id": "c5",
+      "ico": "🔑",
+      "nm": "The Secret Code",
+      "title": "One-time codes are for you only",
+      "body": "A one-time code is a number sent to you to prove it is really you signing in. No real company, friend, or helper will ever need you to read that code out loud or send it to them. If a message asks you to share your password or your code, it is a scam, full stop."
+    },
+    {
+      "id": "c6",
+      "ico": "🌦️",
+      "nm": "The Weather Fact",
+      "title": "A note about the sky",
+      "body": "Here is a true fact: a bolt of lightning is hotter than the surface of the sun, and thunder is the sound the heated air makes as it snaps back. It is a cool thing to know, but it is not a message clue and it will not help you open any lock.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "word",
+      "color": "#0a2e63",
+      "title": "Name The Bait",
+      "q": "A fake message that pretends to be real so it can steal your password or code is called ______.",
+      "answer": ["phishing", "fishing", "a phishing message", "phishing scam", "phishing attack"],
+      "reason": "The clues explain that phishing is a fake message pretending to be real so you will click a link or hand over a password or code you should keep private."
+    },
+    {
+      "id": "L2",
+      "type": "mc",
+      "color": "#2f6fe0",
+      "title": "Spot The Scam",
+      "q": "Which message is most likely a phishing scam and should NOT be trusted?",
+      "options": [
+        "A note from your teacher's real school address about tomorrow's field trip",
+        "URGENT! Your acount is locked — verify your password in 5 minutes or its gone!",
+        "A reminder you set for yourself to charge your tablet tonight"
+      ],
+      "answerIndex": 1,
+      "reason": "The clues warn that a rush, misspelled words like 'acount' and 'its', a 'verify your account' demand, and a request for your password are all signs of a phishing scam."
+    },
+    {
+      "id": "L3",
+      "type": "multi",
+      "color": "#1a7a8c",
+      "title": "Read The Message",
+      "q": "Check EVERY sign that a message is phishing and trying to trick you.",
+      "items": [
+        { "t": "It rushes you, like 'act now or your account will be deleted'", "strong": true },
+        { "t": "It asks you to type your password or share a one-time code", "strong": true },
+        { "t": "The sender's address is misspelled or someone you do not know", "strong": true },
+        { "t": "It is a newsletter you signed up for, from an address that matches the real site", "strong": false },
+        { "t": "It is a calendar alert you set yourself for band practice", "strong": false }
+      ],
+      "reason": "The clues show that a rush, a request for your password or code, and an unknown or misspelled sender are phishing red flags, while a newsletter you chose and your own reminder are not."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "Respond The Safe Way",
+      "q": "Dario got a suspicious message. Tap the safe steps in the RIGHT order.",
+      "pads": [
+        { "k": "check", "e": "🕵️ Check the sender", "c": "#2f6fe0" },
+        { "k": "stop", "e": "🛑 Stop, don't click", "c": "#0a2e63" },
+        { "k": "report", "e": "📣 Report and tell an adult", "c": "#1a7a8c" }
+      ],
+      "answer": ["stop", "check", "report"],
+      "reason": "First STOP and do not click, then CHECK the sender to see if it is real, and finally REPORT the scam and tell a trusted adult — never click first."
+    }
+  ]
+}

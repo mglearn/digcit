@@ -1,7 +1,17 @@
 {
   "id": "dc-grade6",
   "grade": 6,
-  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "tier": "paid",
+  "icon": "⚖️",
+  "teks": "§126.17",
+  "confetti": [
+    "#0a2e63",
+    "#f5b800",
+    "#2f6fe0",
+    "#1a7a8c",
+    "#ffffff",
+    "#0d47a1"
+  ],
   "chrome": {
     "eyebrow": {
       "en": "Digital Citizenship Breakout · Grade 6",
@@ -74,7 +84,12 @@
       "color": "#0a2e63",
       "title": "Free For Anyone",
       "q": "Work whose copyright has ended, so anyone may reuse it freely, is in the ______ ______.",
-      "answer": ["public domain", "public-domain", "publicdomain", "the public domain"],
+      "answer": [
+        "public domain",
+        "public-domain",
+        "publicdomain",
+        "the public domain"
+      ],
       "reason": "The clues explain that public domain means the copyright has ended or was given up, so the work belongs to everyone and may be reused freely."
     },
     {
@@ -98,11 +113,26 @@
       "title": "Read The Bait",
       "q": "Check EVERY sign that an email is a phishing message trying to plant malware or steal an identity.",
       "items": [
-        { "t": "It creates panic and a countdown, like 'act in 10 minutes or lose your account'", "strong": true },
-        { "t": "It pushes you to click a link to 'unlock' or 'verify' your account", "strong": true },
-        { "t": "It asks for your password or login on a page you did not go to yourself", "strong": true },
-        { "t": "It is a class newsletter, sent by your teacher, about Friday's tournament", "strong": false },
-        { "t": "It is a calendar reminder you set for your own homework", "strong": false }
+        {
+          "t": "It creates panic and a countdown, like 'act in 10 minutes or lose your account'",
+          "strong": true
+        },
+        {
+          "t": "It pushes you to click a link to 'unlock' or 'verify' your account",
+          "strong": true
+        },
+        {
+          "t": "It asks for your password or login on a page you did not go to yourself",
+          "strong": true
+        },
+        {
+          "t": "It is a class newsletter, sent by your teacher, about Friday's tournament",
+          "strong": false
+        },
+        {
+          "t": "It is a calendar reminder you set for your own homework",
+          "strong": false
+        }
       ],
       "reason": "The clues show that phishing uses fear, urgency, and click-here links to install malware or steal a password for identity theft, while a real newsletter or your own reminder does none of that."
     },
@@ -113,11 +143,27 @@
       "title": "Reuse It Right",
       "q": "Rivka wants to reuse an artist's photo the honest, legal way. Tap the steps in the RIGHT order.",
       "pads": [
-        { "k": "credit", "e": "📝 Cite the creator", "c": "#0a2e63" },
-        { "k": "check", "e": "©️ Check the license", "c": "#2f6fe0" },
-        { "k": "ask", "e": "🙋 Ask permission if unsure", "c": "#1a7a8c" }
+        {
+          "k": "credit",
+          "e": "📝 Cite the creator",
+          "c": "#0a2e63"
+        },
+        {
+          "k": "check",
+          "e": "©️ Check the license",
+          "c": "#2f6fe0"
+        },
+        {
+          "k": "ask",
+          "e": "🙋 Ask permission if unsure",
+          "c": "#1a7a8c"
+        }
       ],
-      "answer": ["check", "ask", "credit"],
+      "answer": [
+        "check",
+        "ask",
+        "credit"
+      ],
       "reason": "First CHECK the license to see if reuse is allowed, then ASK the creator for permission when you are unsure, and always CITE the creator so you give credit and avoid plagiarism."
     }
   ]

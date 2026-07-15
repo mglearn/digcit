@@ -1,0 +1,127 @@
+{
+  "id": "dc-grade4-free",
+  "grade": 4,
+  "tier": "free",
+  "icon": "💬",
+  "teks": "§126.9",
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 4",
+      "es": "Breakout de ciudadanía digital · Grado 4",
+      "vi": "Breakout công dân số · Lớp 4",
+      "ar": "تحدّي المواطنة الرقمية · الصف 4",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 4",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 4",
+      "zh": "数字公民破解 · 4 年级"
+    },
+    "h1": "The Group Chat",
+    "sub": "A student got added to a busy class group chat. Some messages were kind. Some were not. Crack four locks to learn how to be a good friend in a group chat.",
+    "briefLabel": "Your Mission",
+    "briefH": "Be a Chat Helper",
+    "briefP": "You just joined a group chat with your whole class. People are spamming, forwarding private messages, and piling on one friend. Read the clues, then open all four locks. Each lock has a reason that shows why the answer is right.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "CHAT CLOSED",
+    "winH": "You cracked all four locks!",
+    "winP": "You learned how to greet people when you join a chat, why forwarding a private message is wrong, how to stop a pile-on, how to disagree in a kind way, and the difference between muting and blocking. Great work, chat helper!"
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "👋",
+      "nm": "You're Added",
+      "title": "Someone added you",
+      "body": "When you are added to a group chat, say a short, friendly hello. You do not need to send lots of messages at once. Sending message after message is called spam. Post once, then wait and read what others say."
+    },
+    {
+      "id": "c2",
+      "ico": "🔒",
+      "nm": "Private Words",
+      "title": "It was just for you",
+      "body": "A friend sent you a private message just for you. Do not forward it to the group chat. That message was not yours to share. Sharing private words breaks trust. Keep private messages private."
+    },
+    {
+      "id": "c3",
+      "ico": "😟",
+      "nm": "The Pile-On",
+      "title": "Don't join the pile",
+      "body": "One person made a small mistake. Then lots of people started teasing them all at once. That is called a pile-on. Do not join in. Do not pile on. You can send a kind message or tell a trusted adult instead."
+    },
+    {
+      "id": "c4",
+      "ico": "🤝",
+      "nm": "Disagree Kindly",
+      "title": "Say it in a kind way",
+      "body": "You can disagree in a chat and still be kind. Use calm words, not mean names. Try 'I see it a different way' instead of 'You are wrong.' You can talk about the idea without hurting the person."
+    },
+    {
+      "id": "c5",
+      "ico": "🔕",
+      "nm": "Mute or Block",
+      "title": "Two quiet buttons",
+      "body": "When a chat gets too noisy, you can mute it. Mute hides the buzzes for a while, but you stay in the chat. Block is stronger. Block stops one person from messaging you at all. Mute for noise, block for someone unsafe."
+    },
+    {
+      "id": "c6",
+      "ico": "🚀",
+      "nm": "Space Fact",
+      "title": "A fact from far away",
+      "body": "Fun fact: a day on the planet Venus is longer than its whole year. Cool, right? But this is just a space fact — it will not help you open any lock.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "mc",
+      "color": "#0a2e63",
+      "title": "You Got Added",
+      "q": "You were just added to a class group chat. What is the kind thing to do?",
+      "options": [
+        "Send ten quick messages in a row so people notice you",
+        "Say one short, friendly hello, then read what others post",
+        "Forward a private message a friend sent you just for you"
+      ],
+      "answerIndex": 1,
+      "reason": "A short, friendly hello is polite. Sending message after message is spam, and forwarding a private message breaks a friend's trust."
+    },
+    {
+      "id": "L2",
+      "type": "multi",
+      "color": "#2f6fe0",
+      "title": "Be a Good Chat Friend",
+      "q": "Check EVERY choice that shows good manners in a group chat.",
+      "items": [
+        { "t": "Disagreeing with calm, kind words", "strong": true },
+        { "t": "Sending a kind message to someone being teased", "strong": true },
+        { "t": "Piling on when one person makes a small mistake", "strong": false },
+        { "t": "Forwarding a private message to the whole group", "strong": false },
+        { "t": "Spamming the chat with message after message", "strong": false }
+      ],
+      "reason": "Good chat friends disagree kindly and help someone being teased. Piling on, forwarding private words, and spamming all hurt the group."
+    },
+    {
+      "id": "L3",
+      "type": "word",
+      "color": "#1a7a8c",
+      "title": "Too Much Noise",
+      "q": "The chat is too noisy, but no one is unsafe. To hide the buzzes and stay in the chat, you can ______ it.",
+      "answer": ["mute", "muting", "mute it"],
+      "reason": "Mute hides the noise while you stay in the chat. Blocking is stronger and is for stopping someone who is unsafe, not for noise."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "Stop the Pile-On",
+      "q": "One friend is getting piled on in the chat. Tap the steps in the RIGHT order.",
+      "pads": [
+        { "k": "support", "e": "💙 Support the friend", "c": "#0a2e63" },
+        { "k": "refuse", "e": "🚫 Refuse to pile on", "c": "#2f6fe0" },
+        { "k": "tell", "e": "🧑‍🏫 Tell a trusted adult", "c": "#1a7a8c" }
+      ],
+      "answer": ["refuse", "support", "tell"],
+      "reason": "First REFUSE to join the pile-on, then SUPPORT the friend with a kind message, then TELL a trusted adult. Refuse, Support, Tell."
+    }
+  ]
+}

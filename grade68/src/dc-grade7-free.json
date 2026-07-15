@@ -1,0 +1,154 @@
+{
+  "id": "dc-grade7-free",
+  "grade": 7,
+  "tier": "free",
+  "icon": "🪝",
+  "teks": "§126.18",
+  "confetti": ["#0a2e63", "#f5b800", "#2f6fe0", "#1a7a8c", "#ffffff", "#0d47a1"],
+  "chrome": {
+    "eyebrow": {
+      "en": "Digital Citizenship Breakout · Grade 7",
+      "es": "Breakout de ciudadanía digital · Grado 7",
+      "vi": "Breakout công dân số · Lớp 7",
+      "ar": "تحدّي المواطنة الرقمية · الصف 7",
+      "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 7",
+      "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 7",
+      "zh": "数字公民破解 · 7 年级"
+    },
+    "h1": "Clickbait Detector",
+    "sub": "A headline is screaming for your tap and racing across every feed. Your job is to slow down, read past the bait, and unlock what is really going on.",
+    "briefLabel": "Your Mission",
+    "briefH": "Build a Clickbait Detector",
+    "briefP": "Clickbait is built to yank your attention and rush you into tapping and sharing before you think. Work through the clues to open all four locks: each one hides a reason that proves why the smart answer is right. Read past the headline, check the source, then decide — like a detector, not a target.",
+    "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+    "winStamp": "CASE CLOSED",
+    "winH": "You beat the bait!",
+    "winP": "You now spot the tricks clickbait uses — the curiosity gap, ALL-CAPS panic, and exaggerated claims — you know sites do it to earn clicks and ad money, and you have the read-past-the-headline, check-the-source, then-decide habit. That is what a sharp digital citizen looks like."
+  },
+  "clues": [
+    {
+      "id": "c1",
+      "ico": "🪤",
+      "nm": "The Curiosity Gap",
+      "title": "The trap that hides the answer",
+      "body": "A post blared: 'You won't BELIEVE what this student did next...' but never told you what happened unless you tapped. That empty space between the promise and the answer is the curiosity gap, and clickbait leaves it wide open on purpose. The headline dangles a mystery so you feel you must click just to make the itch stop."
+    },
+    {
+      "id": "c2",
+      "ico": "🔊",
+      "nm": "The Loud Signal",
+      "title": "ALL CAPS and giant emotions",
+      "body": "Clickbait shouts. It stacks ALL-CAPS words like SHOCKING, INSANE, and DESTROYED next to exclamation points to spike your emotions before your brain catches up. A calm, honest headline usually tells you plainly what the story is about. The louder and more panicked a headline sounds, the harder you should slow down and check it."
+    },
+    {
+      "id": "c3",
+      "ico": "📢",
+      "nm": "The Empty Claim",
+      "title": "Big promise, no real facts",
+      "body": "'This ONE trick doubled her grades overnight — teachers HATE it!' The article under it had no name, no numbers, and no source you could check. Clickbait makes an exaggerated claim, then delivers almost nothing real. A trustworthy story names who said it, shows evidence, and links to where the information came from."
+    },
+    {
+      "id": "c4",
+      "ico": "💰",
+      "nm": "The Motive",
+      "title": "Why sites bait you",
+      "body": "Every tap on a clickbait link loads a page full of ads, and each view can earn the site money. That is the motive: more clicks mean more ad money, whether or not the story is true. When you understand that a page wants your click for profit, you can ask, 'Who made this, and what do they get if I share it?'"
+    },
+    {
+      "id": "c5",
+      "ico": "🔎",
+      "nm": "The Habit",
+      "title": "Read, check, then decide",
+      "body": "Smart sharers use a three-step habit before they pass anything on. First, read past the headline to see if the story actually backs it up. Second, check the source to see if it is real and trustworthy. Third, decide whether it is worth sharing. Doing this in order stops most clickbait from spreading through you."
+    },
+    {
+      "id": "c6",
+      "ico": "🦥",
+      "nm": "The Slow Fact",
+      "title": "A sleepy animal note",
+      "body": "A sloth can move so slowly that algae sometimes grows on its fur, giving it a greenish tint that helps it blend into the trees. Genuinely interesting — but this fact will not help you open any lock in this breakout.",
+      "decoy": true
+    }
+  ],
+  "locks": [
+    {
+      "id": "L1",
+      "type": "mc",
+      "color": "#0a2e63",
+      "title": "The Smarter Tap",
+      "q": "You see a headline: 'You won't BELIEVE what happened at this school — SHOCKING!' What is the smartest first move?",
+      "options": [
+        "Tap fast and share it right away so your friends see it first",
+        "Read past the headline and check the source before deciding to share",
+        "Believe it instantly, because ALL-CAPS headlines are always true"
+      ],
+      "answerIndex": 1,
+      "reason": "Clickbait rushes you with a curiosity gap and ALL-CAPS panic, so the smart move is to read past the headline and check the source before you share, as the Habit clue explains."
+    },
+    {
+      "id": "L2",
+      "type": "multi",
+      "color": "#2f6fe0",
+      "title": "Spot the Bait",
+      "q": "Check EVERY sign that a headline is probably clickbait.",
+      "items": [
+        {
+          "t": "It uses a curiosity gap like 'you won't believe what happened next'",
+          "strong": true
+        },
+        {
+          "t": "It SHOUTS in ALL CAPS with words like SHOCKING and INSANE",
+          "strong": true
+        },
+        {
+          "t": "It makes an exaggerated claim but gives no real facts or source",
+          "strong": true
+        },
+        {
+          "t": "It plainly states the topic and names a source you can check",
+          "strong": false
+        },
+        {
+          "t": "It links to the original report so you can read the evidence yourself",
+          "strong": false
+        }
+      ],
+      "reason": "Clickbait signals are the curiosity gap, ALL-CAPS emotion, and exaggerated claims with no facts, while an honest headline states its topic plainly and links to a source you can check."
+    },
+    {
+      "id": "L3",
+      "type": "word",
+      "color": "#1a7a8c",
+      "title": "Name the Trick",
+      "q": "A headline uses a curiosity gap, ALL CAPS, and a wild claim just to earn your tap and ad money. What is this manipulative style of media called? (one word)",
+      "answer": ["clickbait", "click bait", "click-bait", "clickbaits"],
+      "reason": "This attention-grabbing, tap-me style of media is called clickbait: it baits your click for ad money instead of telling you the real story, as the Motive clue explains."
+    },
+    {
+      "id": "L4",
+      "type": "seq",
+      "color": "#0d47a1",
+      "title": "The Check Before You Share",
+      "q": "A shocking post lands in your feed. Tap the check-before-you-share habit in the RIGHT order.",
+      "pads": [
+        {
+          "k": "decide",
+          "e": "✅ Decide if it's worth sharing",
+          "c": "#0a2e63"
+        },
+        {
+          "k": "read",
+          "e": "📖 Read past the headline",
+          "c": "#2f6fe0"
+        },
+        {
+          "k": "source",
+          "e": "🔎 Check the source",
+          "c": "#1a7a8c"
+        }
+      ],
+      "answer": ["read", "source", "decide"],
+      "reason": "First READ past the headline to see if the story backs it up, then CHECK the source to see if it is trustworthy, then DECIDE whether it is worth sharing."
+    }
+  ]
+}
