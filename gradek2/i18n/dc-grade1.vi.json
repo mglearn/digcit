@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Lựa Chọn Thông Minh Trên Mạng",
+    "sub": "Hãy đưa ra lựa chọn thông minh khi dùng máy tính bảng. Giải bốn ổ khóa. Dùng các manh mối để giúp bạn quyết định.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Làm Một Người Chọn Thông Minh",
+    "briefP": "Mỗi ngày trên mạng bạn đều đưa ra lựa chọn. Một Người Chọn Thông Minh giữ kín mật khẩu, tử tế và đứng lên bảo vệ người khác, hỏi người lớn trước khi chạm, và chỉ chia sẻ những điều an toàn. Hãy đọc manh mối. Rồi mở cả bốn ổ khóa. Mỗi ổ khóa cho bạn thấy vì sao lựa chọn thông minh là lựa chọn đúng.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã mở được cả bốn ổ khóa!",
+    "winP": "Bạn giữ kín mật khẩu của mình. Bạn tử tế và là người đứng lên bảo vệ. Bạn hỏi người lớn trước khi chạm. Bạn chỉ chia sẻ những điều an toàn. Bạn là một Người Chọn Thông Minh!",
+    "crumbSuite": "Breakout Công dân số"
+  },
+  "clues": [
+    {
+      "nm": "Mật Khẩu Bí Mật",
+      "title": "Mật khẩu luôn được giữ kín",
+      "body": "Mật khẩu là chiếc chìa khóa bí mật của bạn. Hãy giữ kín nó. Đừng nói cho bạn bè. Chỉ bạn và một người lớn giúp đỡ nên biết nó."
+    },
+    {
+      "nm": "Người Đứng Lên",
+      "title": "Hãy tử tế và giúp đỡ",
+      "body": "Người đứng lên bảo vệ giúp đỡ khi ai đó bị đối xử tệ. Đừng cười nhạo một bài đăng cay nghiệt. Hãy tử tế và kể cho người lớn."
+    },
+    {
+      "nm": "Hỏi Trước",
+      "title": "Hỏi trước khi bạn chạm",
+      "body": "Thấy một nút mới hay một mục tải về? Đừng chạm ngay. Hỏi người lớn trước. Họ cho bạn biết nó có an toàn không."
+    },
+    {
+      "nm": "An Toàn Để Chia Sẻ",
+      "title": "Chỉ chia sẻ những điều an toàn",
+      "body": "Có những điều an toàn để chia sẻ, như một bức vẽ. Có những điều thì không, như nhà của bạn. Hãy nghĩ trước khi chia sẻ."
+    },
+    {
+      "nm": "Nghĩ Trước Đã",
+      "title": "Dừng lại và suy nghĩ",
+      "body": "Trước khi bạn chia sẻ hay chạm, hãy dừng lại và suy nghĩ. Hỏi: điều này có an toàn không? có tử tế không? Rồi hãy chọn."
+    },
+    {
+      "nm": "Cây Của Lớp",
+      "title": "Cây của lớp mình",
+      "body": "Lớp mình trồng một cây đậu trên bệ cửa sổ. Nó cao lên mỗi tuần. Điều này vui đấy, nhưng nó sẽ không mở được ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Mật Khẩu Của Bạn",
+      "q": "Một trò chơi bảo bạn gõ mật khẩu để một người bạn có thể thấy. Bạn nên làm gì?",
+      "options": [
+        "Gõ nó ra để bạn của mình cũng chơi được",
+        "Giữ kín và không gõ nó ở đó",
+        "Đổi nó thành '1234' để dễ chia sẻ"
+      ],
+      "reason": "Mật khẩu là một chiếc chìa khóa bí mật giữ cho đồ của bạn an toàn. Chia sẻ nó cho người khác vào được, và '1234' thì quá dễ đoán. Giữ kín nó là lựa chọn thông minh."
+    },
+    {
+      "title": "Hãy Là Người Đứng Lên",
+      "q": "Hãy chọn MỌI lựa chọn tử tế, đứng lên bảo vệ.",
+      "items": [
+        "Tử tế với người đang nhận những bài đăng cay nghiệt",
+        "Kể cho một người lớn đáng tin về một bài đăng cay nghiệt",
+        "Dành cho một người bạn một lời khen dễ thương",
+        "Cười nhạo một bài đăng cay nghiệt và chia sẻ nó",
+        "Tham gia và cũng gõ những lời cay nghiệt"
+      ],
+      "reason": "Người đứng lên bảo vệ thì giúp đỡ — hãy tử tế, kể cho người lớn, dành một lời khen. Cười nhạo, chia sẻ, hay tham gia một bài đăng cay nghiệt làm đau lòng người khác, nên ta không chọn những điều đó."
+    },
+    {
+      "title": "Trước Khi Bạn Chạm",
+      "q": "Trước khi bạn chạm vào một nút mới hay một mục tải về, hãy ______ một người lớn trước.",
+      "reason": "Một người lớn có thể cho bạn biết một nút hay mục tải về có an toàn không. Hỏi trước giúp bạn không chạm vào thứ có thể gây hại."
+    },
+    {
+      "title": "Điều Gì Ổn Để Chia Sẻ?",
+      "q": "Bạn muốn chia sẻ một điều gì đó trên mạng. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "✅ Chỉ chia sẻ những điều an toàn",
+        "🤔 Nghĩ trước đã",
+        "🧑‍🏫 Hỏi người lớn"
+      ],
+      "reason": "Đầu tiên NGHĨ về điều bạn muốn chia sẻ. Rồi HỎI một người lớn xem có ổn không. Chỉ khi đó mới CHIA SẺ, và chỉ chia sẻ những điều an toàn."
+    }
+  ]
+}

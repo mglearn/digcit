@@ -1,0 +1,84 @@
+{
+  "chrome": {
+    "h1": "An Toàn & Tử Tế Trên Mạng",
+    "sub": "Hãy an toàn và tử tế khi dùng máy tính bảng. Giải bốn ổ khóa. Dùng manh mối bằng hình để giúp bạn.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Làm Một Người Giúp An Toàn & Tử Tế",
+    "briefP": "Mạng internet thật vui. Nó an toàn nhất khi bạn hỏi người lớn, giữ kín tên của mình, và dừng lại khi có gì đó khiến bạn thấy không ổn. Hãy xem manh mối. Rồi mở cả bốn ổ khóa. Mỗi ổ khóa cho bạn biết vì sao cách an toàn, tử tế là cách tốt nhất.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã mở cả bốn ổ khóa!",
+    "winP": "Bạn biết hỏi ai để được giúp. Bạn biết phân biệt tử tế với không tử tế. Bạn giữ kín tên của mình. Bạn dừng lại và hỏi khi có gì đó không an toàn. Bạn an toàn và tử tế trên mạng!",
+    "crumbSuite": "Breakout Công dân số"
+  },
+  "clues": [
+    {
+      "nm": "Hỏi Người Lớn",
+      "title": "Người lớn giúp đỡ",
+      "body": "Một người lớn đáng tin giữ bạn an toàn. Đó là bố mẹ, cô thầy, hoặc một người giúp đỡ bạn quen biết. Hãy hỏi họ khi bạn cần giúp."
+    },
+    {
+      "nm": "Tử Tế Hay Không",
+      "title": "Tử tế thì dễ chịu",
+      "body": "Lời tử tế khiến bạn của mình cười. 'Làm tốt lắm!' là tử tế. Lời cay nghiệt làm đau lòng. Hãy chọn cách tử tế."
+    },
+    {
+      "nm": "Giữ Kín",
+      "title": "Có những điều cần giữ kín",
+      "body": "Tên của bạn, nhà của bạn, và ảnh của bạn là riêng tư. Đừng gõ chúng cho người mà bạn không quen. Hãy giữ chúng an toàn."
+    },
+    {
+      "nm": "Dừng Lại Trước",
+      "title": "Dừng lại, rồi mới chạm",
+      "body": "Thấy lạ hay đáng sợ? Đừng chạm. Dừng lại trước. Hỏi người lớn. Rồi mới an toàn để chơi."
+    },
+    {
+      "nm": "Không Chắc?",
+      "title": "Khi bạn không chắc",
+      "body": "Nếu bạn không biết, hãy hỏi. Người lớn có thể cho bạn biết nó có an toàn không. Hỏi luôn là điều thông minh."
+    },
+    {
+      "nm": "Khủng Long Đồ Chơi",
+      "title": "Chú khủng long ở góc đọc sách",
+      "body": "Góc đọc sách của lớp mình có một chú khủng long đồ chơi màu xanh lớn tên Rex. Rex ôm hết sách. Điều này vui đấy, nhưng nó sẽ không mở được ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Bạn Hỏi Ai?",
+      "q": "Có gì đó trên mạng khiến bạn thấy lạ. Ai là người tốt nhất để hỏi giúp?",
+      "options": [
+        "Một người lạ trong cuộc trò chuyện của trò chơi",
+        "Một người lớn đáng tin, như cô thầy của bạn",
+        "Không ai cả — cứ tiếp tục chạm"
+      ],
+      "reason": "Một người lớn đáng tin mà bạn quen biết sẽ giữ bạn an toàn và có thể giúp. Một người lạ có thể không an toàn, và chạm một mình có thể khiến bạn lạc lối, nên hỏi người lớn là tốt nhất."
+    },
+    {
+      "title": "Tử Tế Hay Không Tử Tế?",
+      "q": "Hãy chạm vào MỌI lựa chọn tử tế trên mạng.",
+      "items": [
+        "Gõ 'Làm tốt lắm!' cho một người bạn",
+        "Mời một người bạn cùng chơi với bạn",
+        "Gửi một khuôn mặt cay nghiệt để tỏ ra thô lỗ",
+        "Nói với một bạn rằng bạn ấy không được chào đón"
+      ],
+      "reason": "Lựa chọn tử tế giúp bạn bè cảm thấy vui — một lời dễ thương hoặc một lời mời. Một khuôn mặt cay nghiệt hay nói bạn ấy không được chào đón làm đau lòng, nên ta không chạm vào những điều đó."
+    },
+    {
+      "title": "Giữ An Toàn",
+      "q": "Tên và nhà của bạn là ______. Bạn không chia sẻ chúng với người bạn không quen.",
+      "reason": "Những điều riêng tư chỉ thuộc về bạn và gia đình bạn. Giữ kín tên và nhà của bạn giúp bạn an toàn trên mạng."
+    },
+    {
+      "title": "Có Gì Đó Không An Toàn",
+      "q": "Có gì đó khiến bạn thấy sợ. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "🙂 Rồi mới an toàn để chơi",
+        "✋ Dừng lại",
+        "🧑‍🏫 Hỏi người lớn"
+      ],
+      "reason": "Đầu tiên DỪNG LẠI để không có điều xấu nào xảy ra. Rồi HỎI một người lớn đáng tin xem có ổn không. Chỉ khi đó mới an toàn để CHƠI. Dừng lại, hỏi, chơi."
+    }
+  ]
+}

@@ -49,6 +49,9 @@ for (const f of ['index.html', 'library.html', 'correlation.html', 'guide.html',
 fs.mkdirSync(path.join(OUT, 'assets'));
 copyTree('assets', () => false);
 
+// Arcade (free/public engagement games) — copy the whole dir if present.
+if (fs.existsSync(path.join(ROOT, 'arcade'))) { fs.mkdirSync(path.join(OUT, 'arcade'), { recursive: true }); copyTree('arcade', () => false); }
+
 // Both bands: drop build sources; drop LICENSED locales + student pages (keep the
 // free -free locales/student pages and every teacher page).
 for (const band of ['gradek2', 'grade35', 'grade68']) {

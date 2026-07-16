@@ -1,0 +1,84 @@
+{
+  "chrome": {
+    "h1": "Seguro y amable en línea",
+    "sub": "Mantente seguro y sé amable en la tableta. Abre cuatro candados. Usa las pistas con dibujos para ayudarte.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un ayudante seguro y amable",
+    "briefP": "El internet es divertido. Es más seguro cuando le preguntas a un adulto, mantienes tu nombre en privado y te detienes si algo se siente mal. Mira las pistas. Luego abre los cuatro candados. Cada candado te dice por qué la forma segura y amable es la mejor forma.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Sabes a quién pedirle ayuda. Sabes distinguir lo amable de lo no amable. Mantienes tu nombre en privado. Te detienes y preguntas cuando algo se siente inseguro. ¡Eres seguro y amable en línea!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Pregúntale a un adulto",
+      "title": "Un adulto ayuda",
+      "body": "Un adulto de confianza te mantiene seguro. Puede ser un papá, una maestra o un ayudante que conoces. Pregúntale cuando necesites ayuda."
+    },
+    {
+      "nm": "Amable o no amable",
+      "title": "Lo amable se siente bien",
+      "body": "Las palabras amables hacen sonreír a un amigo. '¡Buen trabajo!' es amable. Las palabras malas hieren. Elige la forma amable."
+    },
+    {
+      "nm": "Mantenlo privado",
+      "title": "Algunas cosas son privadas",
+      "body": "Tu nombre, tu casa y tu foto son privados. No los escribas a personas que no conoces. Mantenlos seguros."
+    },
+    {
+      "nm": "Detente primero",
+      "title": "Detente y luego toca",
+      "body": "¿Se siente raro o da miedo? No toques. Detente primero. Pregúntale a un adulto. Luego es seguro jugar."
+    },
+    {
+      "nm": "¿No estás seguro?",
+      "title": "Cuando no estás seguro",
+      "body": "Si no sabes, pregunta. Un adulto te puede decir si es seguro. Preguntar siempre es inteligente."
+    },
+    {
+      "nm": "Dino de juguete",
+      "title": "El dino del rincón de lectura",
+      "body": "Nuestro rincón de lectura tiene un gran dino de juguete verde que se llama Rex. Rex guarda todos los libros. Esto es divertido, pero no abrirá ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "¿A quién le preguntas?",
+      "q": "Algo en línea se siente raro. ¿Quién es el mejor para pedirle ayuda?",
+      "options": [
+        "Un desconocido en el chat de un juego",
+        "Un adulto de confianza, como tu maestra",
+        "Nadie — solo sigue tocando"
+      ],
+      "reason": "Un adulto de confianza que conoces te mantiene seguro y te puede ayudar. Un desconocido puede no ser seguro, y tocar solo te puede perder, así que preguntarle a un adulto es lo mejor."
+    },
+    {
+      "title": "¿Amable o no amable?",
+      "q": "Toca CADA opción amable en línea.",
+      "items": [
+        "Escribir '¡Buen trabajo!' a un amigo",
+        "Invitar a un amigo a jugar contigo",
+        "Enviar una cara enojada para ser grosero",
+        "Decirle a un amigo que no es bienvenido"
+      ],
+      "reason": "Las opciones amables ayudan a los amigos a sentirse bien: una palabra linda o una invitación. Una cara enojada o decirle a un amigo que no es bienvenido hiere, así que esas las dejamos sin marcar."
+    },
+    {
+      "title": "Mantenlo seguro",
+      "q": "Tu nombre y tu casa son ______. No los compartes con personas que no conoces.",
+      "reason": "Las cosas privadas se quedan contigo y tu familia. Mantener tu nombre y tu casa en privado te ayuda a estar seguro en línea."
+    },
+    {
+      "title": "Algo se siente inseguro",
+      "q": "Algo da miedo. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "🙂 Luego es seguro jugar",
+        "✋ Detente",
+        "🧑‍🏫 Pregúntale a un adulto"
+      ],
+      "reason": "Primero DETENTE para que nada malo pase. Luego PREGÚNTALE a un adulto de confianza si está bien. Solo entonces es seguro JUGAR. Detente, pregunta, juega."
+    }
+  ]
+}

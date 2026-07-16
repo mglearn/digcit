@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Công Bằng, An Toàn & Tử Tế",
+    "sub": "Hãy công bằng, an toàn, và tử tế trên mạng. Giải bốn ổ khóa. Dùng các manh mối để đưa ra lựa chọn tốt.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Làm Một Người Giúp Công Bằng & An Toàn",
+    "briefP": "Một công dân số tốt thì công bằng, an toàn, và tử tế. Điều đó nghĩa là chú ý đến dấu vết bạn để lại, ghi công khi bạn dùng tác phẩm của người khác, tạo một mật khẩu mạnh, và biết phải làm gì với một tin nhắn cay nghiệt. Hãy đọc manh mối, rồi mở cả bốn ổ khóa. Mỗi ổ khóa cho bạn thấy vì sao lựa chọn công bằng, an toàn, và tử tế là lựa chọn đúng.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã mở được cả bốn ổ khóa!",
+    "winP": "Bạn biết rằng hành động của bạn để lại một dấu vết kỹ thuật số. Bạn ghi công cho tác phẩm của người khác. Bạn có thể tạo một mật khẩu mạnh. Bạn biết cách báo cáo một tin nhắn cay nghiệt. Bạn công bằng, an toàn, và tử tế trên mạng!",
+    "crumbSuite": "Breakout Công dân số"
+  },
+  "clues": [
+    {
+      "nm": "Dấu Vết Kỹ Thuật Số",
+      "title": "Bạn để lại một dấu vết",
+      "body": "Mọi điều bạn làm trên mạng đều để lại một dấu vết gọi là dấu vết kỹ thuật số, giống như dấu chân trên cát. Bài đăng và tin nhắn của bạn có thể ở lại rất lâu, nên hãy để lại một dấu vết tốt."
+    },
+    {
+      "nm": "Ghi Công",
+      "title": "Nói ai đã làm ra nó",
+      "body": "Khi bạn dùng một bức ảnh, bức vẽ, hay lời văn do người khác làm ra, hãy nói tên họ. Ghi công là công bằng. Nó cho mọi người biết ai đã làm việc đó. Lấy nó mà không ghi công là không công bằng."
+    },
+    {
+      "nm": "Mật Khẩu Mạnh",
+      "title": "Làm cho nó mạnh",
+      "body": "Một mật khẩu mạnh thì dài và khó đoán. '1234' hay 'meo' là yếu. Một mật khẩu mạnh trộn chữ và số, như 'CaXanh7'. Một mật khẩu mạnh giữ tài khoản của bạn an toàn."
+    },
+    {
+      "nm": "Báo Cáo Nó",
+      "title": "Báo cáo một tin nhắn cay nghiệt",
+      "body": "Nếu bạn nhận một tin nhắn cay nghiệt, đừng chia sẻ nó khắp nơi. Hãy kể cho một người lớn đáng tin ngay. Rồi hãy tử tế với người bị tổn thương. Đó là cách báo cáo đúng đắn."
+    },
+    {
+      "nm": "Nghĩ Trước Đã",
+      "title": "Dừng lại và suy nghĩ",
+      "body": "Trước khi bạn đăng, chia sẻ, hay trả lời một tin nhắn cay nghiệt, hãy dừng lại và suy nghĩ. Hỏi: điều này có công bằng không? có an toàn không? có tử tế không? Rồi hãy đưa ra lựa chọn của bạn."
+    },
+    {
+      "nm": "Thằn Lằn Của Lớp",
+      "title": "Chú thằn lằn của lớp mình",
+      "body": "Lớp mình có một chú thằn lằn tên Pickle. Pickle có thể bám vào kính và ăn dế. Đây là một điều thú vị, nhưng nó sẽ không giúp bạn mở được ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Dấu Vết Kỹ Thuật Số Của Bạn",
+      "q": "Bạn gửi một tin nhắn và đăng một bức ảnh. Những điều này để lại gì phía sau?",
+      "options": [
+        "Không gì cả — chúng biến mất ngay khi bạn gửi",
+        "Một dấu vết kỹ thuật số có thể ở lại rất lâu",
+        "Một dấu vết chỉ bạn thân nhất của bạn thấy được"
+      ],
+      "reason": "Mọi điều bạn làm trên mạng đều để lại một dấu vết kỹ thuật số có thể ở lại rất lâu, và người khác có thể lưu nó lại. Nó không biến mất, và không chỉ một người bạn thấy được, nên biết dấu vết của bạn ở lại giúp bạn đăng bài một cách khôn ngoan."
+    },
+    {
+      "title": "Công Bằng Với Tác Phẩm",
+      "q": "Hãy chọn MỌI cách công bằng để dùng tác phẩm do người khác làm ra.",
+      "items": [
+        "Viết tên của người đã làm ra nó",
+        "Nói 'Tranh của Maria' khi bạn chia sẻ bức vẽ của bạn ấy",
+        "Hỏi trước khi bạn dùng ảnh của ai đó",
+        "Đề tên của bạn lên bức vẽ của người khác",
+        "Chép lời của họ và nói bạn đã viết chúng"
+      ],
+      "reason": "Ghi công là công bằng — nêu tên người làm, nói ai đã làm ra nó, và hỏi trước. Đề tên của bạn lên tác phẩm của họ hay nhận là lời của mình là lấy công mà bạn không xứng đáng, nên ta không chọn những điều đó."
+    },
+    {
+      "title": "Một Mật Khẩu Tốt",
+      "q": "Một mật khẩu dài và khó đoán, như 'CaXanh7', là một mật khẩu ______.",
+      "reason": "Một mật khẩu mạnh thì dài và khó đoán, nên người khác không vào được. Một mật khẩu yếu như '1234' thì dễ đoán, đó là lý do vì sao mạnh thì an toàn hơn."
+    },
+    {
+      "title": "Báo Cáo Một Tin Nhắn Cay Nghiệt",
+      "q": "Bạn nhận một tin nhắn cay nghiệt. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "💛 Tử tế với người đó",
+        "✋ Đừng chia sẻ nó",
+        "🚩 Kể cho một người lớn đáng tin"
+      ],
+      "reason": "Đầu tiên ĐỪNG CHIA SẺ tin nhắn cay nghiệt để nó không lan ra. Rồi KỂ cho một người lớn đáng tin có thể giúp. Rồi TỬ TẾ với người bị tổn thương. Đừng chia sẻ, kể, tử tế."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Safe or Sketchy — Critical Thinking Arcade</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../assets/favicon.ico" sizes="16x16 32x32 48x48">
+<meta name="theme-color" content="#0a2e63">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--c1:#0a2e63;--c2:#2f6fe0;--c3:#1a7a8c;--c4:#f5b800;--c5:#0d47a1;--bg-a:rgba(245,184,0,.12);--bg-b:rgba(10,46,99,.10)}</style>
+<link rel="stylesheet" href="../assets/arcade.css">
+</head>
+<body>
+<div class="awrap"><div id="game"></div></div>
+<script>
+window.ARCADE_DATA = {
+  id: 'dc-safe-or-sketchy',
+  icon: '🛡️',
+  seconds: 45,
+  ctaHref: '../index.html',
+  i18n: {
+    en: {
+      title: 'Safe or Sketchy',
+      sub: 'Sort each online choice fast: SAFE or SKETCHY?',
+      prompt: 'This online choice is…',
+      left: 'Safe ✅',
+      right: 'Sketchy ⚠️',
+      clear: 'Ask what the evidence really shows before you click — that is CLEAR thinking.',
+      startP: 'Read the choice, then tap Safe or Sketchy (or press ◀ ▶). 3 lives, 45 seconds. Go!'
+    },
+    es: {
+      title: 'Seguro o Sospechoso',
+      sub: 'Clasifica cada decisión en línea rápido: ¿SEGURA o SOSPECHOSA?',
+      prompt: 'Esta decisión en línea es…',
+      left: 'Seguro ✅',
+      right: 'Sospechoso ⚠️',
+      clear: 'Pregúntate qué muestra en verdad la evidencia antes de hacer clic — eso es pensar con CLEAR.',
+      startP: 'Lee la decisión y toca Seguro o Sospechoso (o pulsa ◀ ▶). 3 vidas, 45 segundos. ¡Vamos!'
+    },
+    vi: {
+      title: 'An Toàn hay Đáng Ngờ',
+      sub: 'Phân loại nhanh mỗi lựa chọn trên mạng: AN TOÀN hay ĐÁNG NGỜ?',
+      prompt: 'Lựa chọn trên mạng này là…',
+      left: 'An toàn ✅',
+      right: 'Đáng ngờ ⚠️',
+      clear: 'Hãy hỏi bằng chứng thật sự cho thấy điều gì trước khi bấm — đó là tư duy CLEAR.',
+      startP: 'Đọc lựa chọn, rồi nhấn An toàn hoặc Đáng ngờ (hoặc bấm ◀ ▶). 3 mạng, 45 giây. Bắt đầu nào!'
+    },
+    ar: {
+      title: 'آمن أم مريب',
+      sub: 'صنّف كل خيار على الإنترنت بسرعة: آمن أم مريب؟',
+      prompt: 'هذا الخيار على الإنترنت…',
+      left: 'آمن ✅',
+      right: 'مريب ⚠️',
+      clear: 'اسأل عمّا تُظهره الأدلة حقًّا قبل أن تنقر — هذا هو التفكير بطريقة CLEAR.',
+      startP: 'اقرأ الخيار، ثم انقر آمن أو مريب (أو اضغط ◀ ▶). 3 أرواح و45 ثانية. هيا!'
+    },
+    hi: {
+      title: 'सुरक्षित या संदिग्ध',
+      sub: 'ऑनलाइन हर विकल्प को तेज़ी से छाँटो: सुरक्षित या संदिग्ध?',
+      prompt: 'यह ऑनलाइन विकल्प है…',
+      left: 'सुरक्षित ✅',
+      right: 'संदिग्ध ⚠️',
+      clear: 'क्लिक करने से पहले पूछो कि सबूत असल में क्या दिखाता है — यही CLEAR सोच है।',
+      startP: 'विकल्प पढ़ो, फिर सुरक्षित या संदिग्ध पर टैप करो (या ◀ ▶ दबाओ)। 3 जान, 45 सेकंड। चलो!'
+    },
+    ur: {
+      title: 'محفوظ یا مشکوک',
+      sub: 'آن لائن ہر انتخاب کو تیزی سے چھانٹو: محفوظ یا مشکوک؟',
+      prompt: 'یہ آن لائن انتخاب ہے…',
+      left: 'محفوظ ✅',
+      right: 'مشکوک ⚠️',
+      clear: 'کلک کرنے سے پہلے پوچھو کہ ثبوت اصل میں کیا دکھاتا ہے — یہی CLEAR سوچ ہے۔',
+      startP: 'انتخاب پڑھو، پھر محفوظ یا مشکوک پر ٹیپ کرو (یا ◀ ▶ دبائو)۔ 3 جانیں، 45 سیکنڈ۔ چلو!'
+    },
+    zh: {
+      title: '安全还是可疑',
+      sub: '快速分类每个上网选择：安全还是可疑？',
+      prompt: '这个上网选择是…',
+      left: '安全 ✅',
+      right: '可疑 ⚠️',
+      clear: '点击前先问问证据到底说明了什么——这就是 CLEAR 式思考。',
+      startP: '读完选择，然后点击安全或可疑（或按 ◀ ▶）。3 条命，45 秒。开始吧！'
+    }
+  },
+  items: [
+    { emoji: '🔑', side: 'left',  i18n: { en: 'A strong password like 7$kR-tiG9!', es: 'Una contraseña fuerte como 7$kR-tiG9!', vi: 'Một mật khẩu mạnh như 7$kR-tiG9!', ar: 'كلمة مرور قوية مثل 7$kR-tiG9!', hi: '7$kR-tiG9! जैसा मज़बूत पासवर्ड', ur: '7$kR-tiG9! جیسا مضبوط پاسورڈ', zh: '像 7$kR-tiG9! 这样的强密码' } },
+    { emoji: '🔢', side: 'right', i18n: { en: 'Using the password 123456', es: 'Usar la contraseña 123456', vi: 'Dùng mật khẩu 123456', ar: 'استخدام كلمة المرور 123456', hi: '123456 पासवर्ड इस्तेमाल करना', ur: '123456 پاسورڈ استعمال کرنا', zh: '使用密码 123456' } },
+    { emoji: '🏫', side: 'left',  i18n: { en: 'A link from your teacher’s class page', es: 'Un enlace de la página de clase de tu maestro', vi: 'Một liên kết từ trang lớp học của thầy cô bạn', ar: 'رابط من صفحة صف معلّمك', hi: 'तुम्हारे शिक्षक के कक्षा पेज से एक लिंक', ur: 'تمہارے استاد کے کلاس صفحے سے ایک لنک', zh: '来自你老师班级页面的链接' } },
+    { emoji: '🎁', side: 'right', i18n: { en: '“You won a free phone! Click now!!”', es: '“¡Ganaste un teléfono gratis! ¡Haz clic ahora!!”', vi: '“Bạn đã trúng một chiếc điện thoại miễn phí! Bấm ngay!!”', ar: '«لقد ربحت هاتفًا مجانيًّا! انقر الآن!!»', hi: '“तुमने मुफ्त फोन जीता! अभी क्लिक करो!!”', ur: '”تم نے مفت فون جیتا! ابھی کلک کرو!!“', zh: '“你赢得了一部免费手机！立即点击！！”' } },
+    { emoji: '🚪', side: 'left',  i18n: { en: 'Logging out on a shared computer', es: 'Cerrar sesión en una computadora compartida', vi: 'Đăng xuất trên một máy tính dùng chung', ar: 'تسجيل الخروج من حاسوب مشترك', hi: 'साझा कंप्यूटर पर लॉग आउट करना', ur: 'مشترکہ کمپیوٹر پر لاگ آئوٹ کرنا', zh: '在共用电脑上退出登录' } },
+    { emoji: '🙊', side: 'right', i18n: { en: 'Sharing your password with a friend', es: 'Compartir tu contraseña con un amigo', vi: 'Chia sẻ mật khẩu của bạn với một người bạn', ar: 'مشاركة كلمة مرورك مع صديق', hi: 'दोस्त के साथ अपना पासवर्ड साझा करना', ur: 'دوست کے ساتھ اپنا پاسورڈ شیئر کرنا', zh: '把你的密码告诉朋友' } },
+    { emoji: '🔒', side: 'left',  i18n: { en: 'A site whose address starts with https://', es: 'Un sitio cuya dirección empieza con https://', vi: 'Một trang có địa chỉ bắt đầu bằng https://', ar: 'موقع يبدأ عنوانه بـ https://', hi: 'एक साइट जिसका पता https:// से शुरू होता है', ur: 'ایک سائٹ جس کا پتہ https:// سے شروع ہوتا ہے', zh: '网址以 https:// 开头的网站' } },
+    { emoji: '🏠', side: 'right', i18n: { en: 'A stranger asking for your home address', es: 'Un desconocido pidiendo tu dirección de casa', vi: 'Một người lạ hỏi địa chỉ nhà bạn', ar: 'شخص غريب يطلب عنوان منزلك', hi: 'एक अजनबी तुम्हारा घर का पता माँग रहा है', ur: 'ایک اجنبی تمہارے گھر کا پتہ مانگ رہا ہے', zh: '陌生人索要你的家庭住址' } },
+    { emoji: '🧑‍🦰', side: 'left', i18n: { en: 'Asking an adult before you download an app', es: 'Preguntar a un adulto antes de descargar una app', vi: 'Hỏi người lớn trước khi tải một ứng dụng', ar: 'سؤال شخص بالغ قبل تنزيل تطبيق', hi: 'ऐप डाउनलोड करने से पहले किसी बड़े से पूछना', ur: 'ایپ ڈاؤن لوڈ کرنے سے پہلے کسی بڑے سے پوچھنا', zh: '下载应用前先问问大人' } },
+    { emoji: '🏆', side: 'right', i18n: { en: '“Enter your password to claim your prize”', es: '“Escribe tu contraseña para reclamar tu premio”', vi: '“Nhập mật khẩu của bạn để nhận giải thưởng”', ar: '«أدخل كلمة مرورك للحصول على جائزتك»', hi: '“अपना इनाम पाने के लिए अपना पासवर्ड डालो”', ur: '”اپنا انعام پانے کے لیے اپنا پاسورڈ ڈالو“', zh: '“输入你的密码来领取奖品”' } },
+    { emoji: '🔐', side: 'left',  i18n: { en: 'A different password for each account', es: 'Una contraseña distinta para cada cuenta', vi: 'Một mật khẩu khác nhau cho mỗi tài khoản', ar: 'كلمة مرور مختلفة لكل حساب', hi: 'हर खाते के लिए अलग पासवर्ड', ur: 'ہر اکائونٹ کے لیے الگ پاسورڈ', zh: '每个账户用不同的密码' } },
+    { emoji: '🦠', side: 'right', i18n: { en: 'A pop-up shouting “Virus! Scan now!”', es: 'Una ventana emergente gritando “¡Virus! ¡Escanea ahora!”', vi: 'Một cửa sổ bật lên hét lên “Virus! Quét ngay!”', ar: 'نافذة منبثقة تصرخ «فيروس! افحص الآن!»', hi: 'एक पॉप-अप चिल्ला रहा है “वायरस! अभी स्कैन करो!”', ur: 'ایک پاپ اپ چیخ رہا ہے ”وائرس! ابھی اسکین کرو!“', zh: '一个弹窗大喊“病毒！立即扫描！”' } }
+  ]
+};
+</script>
+<script src="../assets/arcade.js"></script>
+</body>
+</html>

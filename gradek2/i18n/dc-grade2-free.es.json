@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Mi rastro en línea",
+    "sub": "Todo lo que haces en línea deja un rastro. Sigue las pistas y abre cuatro candados para aprender sobre el tuyo.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un rastreador de huellas",
+    "briefP": "Cuando caminas en la arena, dejas huellas atrás. El internet funciona igual. Cada mensaje que envías, cada foto que publicas y cada juego que juegas deja un rastro que puede quedarse por mucho tiempo. Un rastreador de huellas piensa en las marcas que deja. Lee las pistas, luego abre los cuatro candados. Cada candado te muestra por qué tu rastro en línea importa.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Sabes que todo lo que haces en línea deja un rastro. Sabes que un rastro puede durar mucho tiempo. Sabes dejar un rastro amable y seguro detrás de ti. ¡Eres un verdadero rastreador de huellas!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Huellas",
+      "title": "Dejas huellas",
+      "body": "Camina en la arena y dejas huellas. En línea es igual. Todo lo que haces deja una marca llamada rastro. Muestra dónde has estado."
+    },
+    {
+      "nm": "Las publicaciones se quedan",
+      "title": "Tu rastro puede durar",
+      "body": "Una foto o un mensaje que publicas puede quedarse en línea por mucho tiempo. Aunque lo borres, alguien pudo haberlo guardado. Tu rastro puede durar."
+    },
+    {
+      "nm": "Un rastro amable",
+      "title": "Deja un rastro amable",
+      "body": "Como tu rastro puede durar, deja uno bueno. Publica palabras amables. Comparte cosas lindas. Un rastro amable muestra al verdadero tú, el amistoso."
+    },
+    {
+      "nm": "Piensa primero",
+      "title": "Piensa antes de publicar",
+      "body": "Antes de publicar, detente y piensa. Pregúntate: ¿estaría feliz si una maestra o un abuelo lo viera después? Si sí, es algo bueno para agregar a tu rastro."
+    },
+    {
+      "nm": "Rastro seguro",
+      "title": "Mantén tu rastro seguro",
+      "body": "No dejes cosas privadas en tu rastro, como tu casa o tu número de teléfono. Mantén eso afuera. Un rastro seguro te mantiene seguro."
+    },
+    {
+      "nm": "Pájaro de la clase",
+      "title": "Nuestro comedero de pájaros",
+      "body": "Nuestra clase tiene un comedero de pájaros afuera de la ventana. Un arrendajo azul lo visita cada mañana. Este es un dato divertido, pero no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "¿Qué es un rastro?",
+      "q": "¿Qué es tu 'rastro en línea'?",
+      "options": [
+        "Las marcas que dejas por las cosas que haces en línea",
+        "Un sendero en el bosque cerca de tu escuela",
+        "Una mezcla de frutos secos que comes en el almuerzo"
+      ],
+      "reason": "Tu rastro en línea es la marca que deja todo lo que haces en línea: tus publicaciones, mensajes y juegos. Es como huellas en la arena, no una merienda ni un sendero en el bosque."
+    },
+    {
+      "title": "Verdadero sobre tu rastro",
+      "q": "Marca CADA cosa verdadera sobre tu rastro en línea.",
+      "items": [
+        "Una publicación puede quedarse en línea mucho tiempo",
+        "Las publicaciones amables hacen un buen rastro",
+        "Debes pensar antes de publicar",
+        "Todo lo que publicas desaparece de inmediato",
+        "Tu rastro no importa para nada"
+      ],
+      "reason": "Tu rastro puede durar, las publicaciones amables lo hacen bueno y pensar primero lo mantiene seguro. Las publicaciones no desaparecen sin más, y tu rastro sí importa, así que esas las dejamos sin marcar."
+    },
+    {
+      "title": "Otro nombre para eso",
+      "q": "El rastro que dejas en línea también se llama huella ______, como las huellas que dejas en la arena.",
+      "reason": "Una huella digital es otro nombre para tu rastro en línea. Como las huellas en la arena, muestra dónde has estado y puede durar mucho tiempo."
+    },
+    {
+      "title": "Antes de publicar",
+      "q": "Antes de agregar algo a tu rastro, toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "📮 Publícalo",
+        "🤔 Piensa primero",
+        "💛 ¿Es amable y seguro?"
+      ],
+      "reason": "Primero PIENSA en la marca que vas a dejar. Luego COMPRUEBA que sea amable y segura. Solo entonces PUBLÍCALO en tu rastro. Piensa, comprueba, publica."
+    }
+  ]
+}

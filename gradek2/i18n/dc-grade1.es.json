@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Elecciones inteligentes en línea",
+    "sub": "Toma elecciones inteligentes en la tableta. Abre cuatro candados. Usa las pistas para ayudarte a decidir.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé alguien que elige con inteligencia",
+    "briefP": "Todos los días en línea tomas decisiones. Alguien que elige con inteligencia mantiene su contraseña en privado, es amable y defiende a los demás, le pregunta a un adulto antes de tocar, y solo comparte cosas seguras. Lee las pistas. Luego abre los cuatro candados. Cada candado te muestra por qué la elección inteligente es la correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Mantienes tu contraseña en privado. Eres amable y defiendes a los demás. Le preguntas a un adulto antes de tocar. Solo compartes cosas seguras. ¡Eres alguien que elige con inteligencia!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Contraseña secreta",
+      "title": "Las contraseñas son privadas",
+      "body": "Una contraseña es tu llave secreta. Mantenla en privado. No se la digas a tus amigos. Solo tú y un adulto que te ayuda deben saberla."
+    },
+    {
+      "nm": "Defensor",
+      "title": "Sé amable y ayuda",
+      "body": "Un defensor ayuda cuando alguien es tratado mal. No te rías de una publicación mala. Sé amable y dile a un adulto."
+    },
+    {
+      "nm": "Pregunta primero",
+      "title": "Pregunta antes de tocar",
+      "body": "¿Ves un botón nuevo o una descarga? No toques todavía. Pregúntale primero a un adulto. Él te dice si es seguro."
+    },
+    {
+      "nm": "Seguro para compartir",
+      "title": "Solo comparte cosas seguras",
+      "body": "Algunas cosas son seguras para compartir, como un dibujo. Otras no, como tu casa. Piensa antes de compartir."
+    },
+    {
+      "nm": "Piensa primero",
+      "title": "Detente y piensa",
+      "body": "Antes de compartir o tocar, detente y piensa. Pregúntate: ¿esto es seguro? ¿esto es amable? Luego elige."
+    },
+    {
+      "nm": "Planta de la clase",
+      "title": "Nuestra planta de la clase",
+      "body": "Nuestra clase cultiva una planta de frijol en la ventana. Crece más alta cada semana. Esto es divertido, pero no abrirá ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Tu contraseña",
+      "q": "Un juego te pide escribir tu contraseña para que un amigo la vea. ¿Qué debes hacer?",
+      "options": [
+        "Escribirla para que tu amigo también pueda jugar",
+        "Mantenerla en privado y no escribirla ahí",
+        "Cambiarla a '1234' para que sea fácil de compartir"
+      ],
+      "reason": "Una contraseña es una llave secreta que mantiene tus cosas seguras. Compartirla deja entrar a otros, y '1234' es muy fácil de adivinar. Mantenerla en privado es la elección inteligente."
+    },
+    {
+      "title": "Sé un defensor",
+      "q": "Marca CADA elección amable de un defensor.",
+      "items": [
+        "Ser amable con alguien que recibe publicaciones malas",
+        "Decirle a un adulto de confianza sobre una publicación mala",
+        "Darle un lindo cumplido a un amigo",
+        "Reírte de una publicación mala y compartirla",
+        "Unirte y escribir palabras malas también"
+      ],
+      "reason": "Un defensor ayuda: sé amable, dile a un adulto, da un cumplido. Reírte de una publicación mala, compartirla o unirte hiere a alguien, así que esas las dejamos sin marcar."
+    },
+    {
+      "title": "Antes de tocar",
+      "q": "Antes de tocar un botón nuevo o una descarga, primero ______ a un adulto.",
+      "reason": "Un adulto te puede decir si un botón o una descarga es seguro. Preguntar primero evita que toques algo que podría ser dañino."
+    },
+    {
+      "title": "¿Qué está bien compartir?",
+      "q": "Quieres compartir algo en línea. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "✅ Comparte solo cosas seguras",
+        "🤔 Piensa primero",
+        "🧑‍🏫 Pregúntale a un adulto"
+      ],
+      "reason": "Primero PIENSA en lo que quieres compartir. Luego PREGÚNTALE a un adulto si está bien. Solo entonces COMPARTE, y comparte solo cosas seguras."
+    }
+  ]
+}

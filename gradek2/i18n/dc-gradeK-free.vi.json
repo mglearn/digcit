@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Những Người Bạn Tử Tế",
+    "sub": "Hãy giúp các bạn trên mạng biết tử tế. Giải bốn ổ khóa. Dùng manh mối bằng hình để giúp bạn.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Làm Một Người Bạn Tử Tế",
+    "briefP": "Chữ trên màn hình có thể khiến bạn của mình cười hoặc buồn. Một Người Bạn Tử Tế dùng lời tử tế, cho mọi người cùng chơi, và nghĩ trước đã. Hãy xem manh mối. Rồi mở cả bốn ổ khóa. Mỗi ổ khóa cho bạn biết vì sao cách tử tế là cách tốt nhất.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã mở cả bốn ổ khóa!",
+    "winP": "Bạn biết dùng lời tử tế. Bạn cho bạn bè cùng chơi. Bạn nghĩ trước khi gửi. Bạn là một Người Bạn Tử Tế thật sự!",
+    "crumbSuite": "Breakout Công dân số"
+  },
+  "clues": [
+    {
+      "nm": "Lời Tử Tế",
+      "title": "Dùng lời tử tế",
+      "body": "Lời tử tế nghe thật ấm áp. 'Giỏi lắm!' là tử tế. 'Cố gắng tốt lắm!' là tử tế. Lời cay nghiệt làm đau lòng. Hãy chọn lời tử tế."
+    },
+    {
+      "nm": "Cho Cùng Chơi",
+      "title": "Ai cũng được chơi",
+      "body": "Bị bỏ ra ngoài thì buồn lắm. Hãy mời một bạn mới cùng chơi. Nói 'Chơi với mình nhé!' Đó là tử tế."
+    },
+    {
+      "nm": "Nghĩ Trước Đã",
+      "title": "Nghĩ, rồi gửi",
+      "body": "Dừng lại. Xem lời của bạn. Có tử tế không? Nếu có, bạn có thể gửi. Nếu không, đừng gửi."
+    },
+    {
+      "nm": "Vui Hay Buồn",
+      "title": "Lời nói có thể làm đau",
+      "body": "Bạn không thấy khuôn mặt trong cuộc trò chuyện. Một câu chữ có thể nghe cay nghiệt. Hãy kiểm tra xem nó nghe tử tế trước đã."
+    },
+    {
+      "nm": "Làm Vui Lên",
+      "title": "Giúp một bạn đang buồn",
+      "body": "Thấy một bạn đang buồn? Hãy nói một câu dễ thương. 'Bạn là bạn của mình.' Điều đó giúp bạn ấy vui hơn."
+    },
+    {
+      "nm": "Thú Cưng Của Lớp",
+      "title": "Chú chuột hamster của lớp",
+      "body": "Lớp mình có một chú chuột hamster tên Nibbles. Nibbles chạy trên bánh xe cả ngày. Điều này vui đấy, nhưng nó sẽ không mở được ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Tin Nhắn Tử Tế",
+      "q": "Câu nào là câu nói tử tế?",
+      "options": [
+        "Bạn dở tệ ở trò này. Ha ha!",
+        "Giỏi lắm! Bạn có muốn chơi với mình không?",
+        "Đi chỗ khác đi. Chẳng ai thích bạn đâu."
+      ],
+      "reason": "Lời tử tế khiến bạn của mình cười và cảm thấy an toàn. 'Giỏi lắm! Bạn có muốn chơi với mình không?' làm vui lòng một người bạn và mời bạn ấy cùng chơi, nên đó là lựa chọn tử tế."
+    },
+    {
+      "title": "Tử Tế Hay Không Tử Tế?",
+      "q": "Hãy chạm vào MỌI điều tử tế nên làm trên mạng.",
+      "items": [
+        "Nói 'Giỏi lắm!' với một người bạn",
+        "Mời một bạn mới cùng chơi",
+        "Làm vui lên một bạn đang buồn",
+        "Cười nhạo một bạn để trêu chọc",
+        "Gọi một bạn bằng cái tên cay nghiệt"
+      ],
+      "reason": "Điều tử tế giúp bạn bè cảm thấy vui — một lời khen, một lời mời, một câu nói dễ thương. Cười nhạo để trêu chọc hay gọi tên xúc phạm làm đau lòng, nên ta không chạm vào những điều đó."
+    },
+    {
+      "title": "Từ Tử Tế",
+      "q": "Một lời ấm áp giúp bạn của mình vui là một lời ______.",
+      "reason": "Một lời tử tế khiến bạn của mình cười và cảm thấy được chào đón. Dùng lời tử tế là cách tốt nhất để làm một người bạn tốt trên mạng."
+    },
+    {
+      "title": "Nghĩ Trước Khi Gửi",
+      "q": "Hãy chạm vào các bước theo ĐÚNG thứ tự trước khi bạn gửi.",
+      "pads": [
+        "📨 Gửi nó đi",
+        "✋ Dừng lại",
+        "💛 Nó có tử tế không?"
+      ],
+      "reason": "Đầu tiên DỪNG LẠI. Rồi hỏi xem nó có TỬ TẾ không. Chỉ khi đó mới GỬI. Dừng lại, tử tế, gửi giúp bạn bè luôn vui."
+    }
+  ]
+}

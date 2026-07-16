@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Phish Tank — Critical Thinking Arcade</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../assets/favicon.ico" sizes="16x16 32x32 48x48">
+<meta name="theme-color" content="#0a2e63">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--c1:#0a2e63;--c2:#2f6fe0;--c3:#1a7a8c;--c4:#f5b800;--c5:#0d47a1;--bg-a:rgba(245,184,0,.12);--bg-b:rgba(10,46,99,.10)}</style>
+<link rel="stylesheet" href="../assets/arcade.css">
+</head>
+<body>
+<div class="awrap"><div id="game"></div></div>
+<script>
+window.ARCADE_DATA = {
+  id: 'dc-phish-tank',
+  icon: '🎣',
+  seconds: 45,
+  ctaHref: '../index.html',
+  i18n: {
+    en: {
+      title: 'Phish Tank',
+      sub: 'Reel in the LEGIT messages. Throw back the PHISH.',
+      prompt: 'This message is…',
+      left: 'Legit 🐟',
+      right: 'Phish 🎣',
+      clear: 'Name the claim, weigh the evidence, and check for the trick — CLEAR before you click.',
+      startP: 'Read each message, then tap Legit or Phish (or press ◀ ▶). 3 lives, 45 seconds.'
+    },
+    es: {
+      title: 'Tanque de Phishing',
+      sub: 'Atrapa los mensajes LEGÍTIMOS. Devuelve al agua el PHISHING.',
+      prompt: 'Este mensaje es…',
+      left: 'Legítimo 🐟',
+      right: 'Phishing 🎣',
+      clear: 'Nombra la afirmación, sopesa la evidencia y busca el truco — usa CLEAR antes de hacer clic.',
+      startP: 'Lee cada mensaje y toca Legítimo o Phishing (o pulsa ◀ ▶). 3 vidas, 45 segundos.'
+    },
+    vi: {
+      title: 'Bể Câu Lừa Đảo',
+      sub: 'Câu về những tin nhắn THẬT. Thả lại những tin LỪA ĐẢO.',
+      prompt: 'Tin nhắn này là…',
+      left: 'Thật 🐟',
+      right: 'Lừa đảo 🎣',
+      clear: 'Gọi tên lời tuyên bố, cân nhắc bằng chứng, và tìm cái bẫy — hãy CLEAR trước khi bấm.',
+      startP: 'Đọc mỗi tin nhắn, rồi nhấn Thật hoặc Lừa đảo (hoặc bấm ◀ ▶). 3 mạng, 45 giây.'
+    },
+    ar: {
+      title: 'حوض التصيّد',
+      sub: 'اصطد الرسائل الحقيقية. وأعد رسائل التصيّد إلى الماء.',
+      prompt: 'هذه الرسالة…',
+      left: 'حقيقية 🐟',
+      right: 'تصيّد 🎣',
+      clear: 'سمِّ الادّعاء، ووازن الأدلة، وابحث عن الخدعة — فكّر بطريقة CLEAR قبل أن تنقر.',
+      startP: 'اقرأ كل رسالة، ثم انقر حقيقية أو تصيّد (أو اضغط ◀ ▶). 3 أرواح و45 ثانية.'
+    },
+    hi: {
+      title: 'फ़िशिंग टैंक',
+      sub: 'असली संदेशों को पकड़ो। फ़िशिंग को वापस पानी में डालो।',
+      prompt: 'यह संदेश है…',
+      left: 'असली 🐟',
+      right: 'फ़िशिंग 🎣',
+      clear: 'दावे को नाम दो, सबूत को तौलो, और चाल को पहचानो — क्लिक करने से पहले CLEAR सोचो।',
+      startP: 'हर संदेश पढ़ो, फिर असली या फ़िशिंग पर टैप करो (या ◀ ▶ दबाओ)। 3 जान, 45 सेकंड।'
+    },
+    ur: {
+      title: 'فشنگ ٹینک',
+      sub: 'اصلی پیغاموں کو پکڑو۔ فشنگ کو واپس پانی میں پھینکو۔',
+      prompt: 'یہ پیغام ہے…',
+      left: 'اصلی 🐟',
+      right: 'فشنگ 🎣',
+      clear: 'دعوے کو نام دو، ثبوت کو تولو، اور چال کو پہچانو — کلک کرنے سے پہلے CLEAR سوچو۔',
+      startP: 'ہر پیغام پڑھو، پھر اصلی یا فشنگ پر ٹیپ کرو (یا ◀ ▶ دبائو)۔ 3 جانیں، 45 سیکنڈ۔'
+    },
+    zh: {
+      title: '钓鱼水槽',
+      sub: '钓起真实的消息。把钓鱼诈骗放回水里。',
+      prompt: '这条消息是…',
+      left: '真实 🐟',
+      right: '钓鱼 🎣',
+      clear: '说出这个说法，权衡证据，找出圈套——点击前先用 CLEAR 思考。',
+      startP: '读每条消息，然后点击真实或钓鱼（或按 ◀ ▶）。3 条命，45 秒。'
+    }
+  },
+  items: [
+    { emoji: '🏦', side: 'left',  i18n: { en: 'Your bank: “We never ask for your password by email.”', es: 'Tu banco: “Nunca te pedimos tu contraseña por correo.”', vi: 'Ngân hàng của bạn: “Chúng tôi không bao giờ hỏi mật khẩu qua email.”', ar: 'مصرفك: «نحن لا نطلب كلمة مرورك عبر البريد الإلكتروني أبدًا.»', hi: 'तुम्हारा बैंक: “हम कभी ईमेल से तुम्हारा पासवर्ड नहीं माँगते।”', ur: 'تمہارا بینک: ”ہم کبھی ای میل سے تمہارا پاسورڈ نہیں مانگتے۔“', zh: '你的银行：“我们从不通过电子邮件索要你的密码。”' } },
+    { emoji: '⏰', side: 'right', i18n: { en: '“Urgent! Your account is locked — verify your password here.”', es: '“¡Urgente! Tu cuenta está bloqueada — verifica tu contraseña aquí.”', vi: '“Khẩn cấp! Tài khoản của bạn bị khóa — xác minh mật khẩu tại đây.”', ar: '«عاجل! حسابك مقفل — تحقّق من كلمة مرورك هنا.»', hi: '“ज़रूरी! तुम्हारा खाता बंद है — यहाँ अपना पासवर्ड सत्यापित करो।”', ur: '”فوری! تمہارا اکائونٹ بند ہے — یہاں اپنا پاسورڈ تصدیق کرو۔“', zh: '“紧急！你的账户已被锁定——在此验证你的密码。”' } },
+    { emoji: '🧾', side: 'left',  i18n: { en: 'A receipt for a purchase you actually made', es: 'Un recibo de una compra que de verdad hiciste', vi: 'Một biên lai cho một lần mua bạn thật sự đã thực hiện', ar: 'إيصال لعملية شراء قمت بها فعلًا', hi: 'एक ऐसी खरीद की रसीद जो तुमने सच में की थी', ur: 'ایک ایسی خریداری کی رسید جو تم نے واقعی کی تھی', zh: '你确实购买过的东西的收据' } },
+    { emoji: '⌛', side: 'right', i18n: { en: '“Click within 24 hours or lose your account forever.”', es: '“Haz clic en 24 horas o pierde tu cuenta para siempre.”', vi: '“Bấm trong vòng 24 giờ nếu không mất tài khoản mãi mãi.”', ar: '«انقر خلال 24 ساعة وإلّا ستفقد حسابك للأبد.»', hi: '“24 घंटे में क्लिक करो वरना अपना खाता हमेशा के लिए खो दोगे।”', ur: '”24 گھنٹے میں کلک کرو ورنہ اپنا اکائونٹ ہمیشہ کے لیے کھو دو گے۔“', zh: '“24 小时内点击，否则永远失去你的账户。”' } },
+    { emoji: '💬', side: 'left',  i18n: { en: '“1 new message” from a friend you know', es: '“1 mensaje nuevo” de un amigo que conoces', vi: '“1 tin nhắn mới” từ một người bạn mà bạn quen', ar: '«رسالة جديدة واحدة» من صديق تعرفه', hi: 'तुम्हारे किसी जान-पहचान वाले दोस्त से “1 नया संदेश”', ur: 'تمہارے کسی جان پہچان والے دوست سے ”1 نیا پیغام“', zh: '来自你认识的朋友的“1 条新消息”' } },
+    { emoji: '🎉', side: 'right', i18n: { en: '“Congratulations! You are our 1,000,000th visitor!”', es: '“¡Felicidades! ¡Eres nuestro visitante número 1,000,000!”', vi: '“Chúc mừng! Bạn là khách thứ 1,000,000 của chúng tôi!”', ar: '«تهانينا! أنت زائرنا رقم 1,000,000!»', hi: '“बधाई हो! तुम हमारे 1,000,000वें आगंतुक हो!”', ur: '”مبارک ہو! تم ہمارے 1,000,000ویں مہمان ہو!“', zh: '“恭喜！你是我们的第 1,000,000 位访客！”' } },
+    { emoji: '📧', side: 'left',  i18n: { en: 'A sender address that matches the real company', es: 'Una dirección de remitente que coincide con la empresa real', vi: 'Một địa chỉ người gửi khớp với công ty thật', ar: 'عنوان مرسِل يطابق الشركة الحقيقية', hi: 'एक भेजने वाले का पता जो असली कंपनी से मेल खाता है', ur: 'ایک بھیجنے والے کا پتہ جو اصلی کمپنی سے میل کھاتا ہے', zh: '与真实公司相符的发件人地址' } },
+    { emoji: '🪤', side: 'right', i18n: { en: '“Re: Invoice” from paypa1-support@mail.ru', es: '“Re: Factura” de paypa1-support@mail.ru', vi: '“Re: Hóa đơn” từ paypa1-support@mail.ru', ar: '«Re: Invoice» من paypa1-support@mail.ru', hi: 'paypa1-support@mail.ru से “Re: Invoice”', ur: 'paypa1-support@mail.ru سے ”Re: Invoice“', zh: '来自 paypa1-support@mail.ru 的“Re: Invoice”' } },
+    { emoji: '📦', side: 'left',  i18n: { en: 'A shipping update with an order number you recognize', es: 'Una actualización de envío con un número de pedido que reconoces', vi: 'Một cập nhật giao hàng với mã đơn hàng bạn nhận ra', ar: 'تحديث شحن يحمل رقم طلب تتعرّف عليه', hi: 'एक शिपिंग अपडेट जिसमें तुम्हारा पहचाना हुआ ऑर्डर नंबर है', ur: 'ایک شپنگ اپڈیٹ جس میں تمہارا پہچانا ہوا آرڈر نمبر ہے', zh: '带有你认得的订单号的物流更新' } },
+    { emoji: '🆔', side: 'right', i18n: { en: '“Confirm your Social Security number to keep your scholarship.”', es: '“Confirma tu número de Seguro Social para conservar tu beca.”', vi: '“Xác nhận số An Sinh Xã Hội của bạn để giữ học bổng.”', ar: '«أكّد رقم الضمان الاجتماعي للحفاظ على منحتك الدراسية.»', hi: '“अपनी छात्रवृत्ति बनाए रखने के लिए अपना सोशल सिक्योरिटी नंबर पुष्टि करो।”', ur: '”اپنی وظیفہ برقرار رکھنے کے لیے اپنا سوشل سیکیورٹی نمبر تصدیق کرو۔“', zh: '“确认你的社会保险号以保住你的奖学金。”' } },
+    { emoji: '🏫', side: 'left',  i18n: { en: 'An email from your teacher on the school’s domain', es: 'Un correo de tu maestro en el dominio de la escuela', vi: 'Một email từ thầy cô bạn trên tên miền của trường', ar: 'بريد إلكتروني من معلّمك على نطاق المدرسة', hi: 'तुम्हारे शिक्षक से स्कूल के डोमेन पर एक ईमेल', ur: 'تمہارے استاد سے اسکول کے ڈومین پر ایک ای میل', zh: '来自你老师、使用学校域名的电子邮件' } },
+    { emoji: '💳', side: 'right', i18n: { en: '“Free gift card — just enter your login to claim.”', es: '“Tarjeta de regalo gratis — solo escribe tu inicio de sesión para reclamarla.”', vi: '“Thẻ quà tặng miễn phí — chỉ cần nhập thông tin đăng nhập để nhận.”', ar: '«بطاقة هدايا مجانية — فقط أدخل بيانات دخولك للحصول عليها.»', hi: '“मुफ्त गिफ्ट कार्ड — बस पाने के लिए अपना लॉगिन डालो।”', ur: '”مفت گفٹ کارڈ — بس حاصل کرنے کے لیے اپنا لاگ ان ڈالو۔“', zh: '“免费礼品卡——只需输入你的登录信息即可领取。”' } }
+  ]
+};
+</script>
+<script src="../assets/arcade.js"></script>
+</body>
+</html>

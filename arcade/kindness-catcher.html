@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Kindness Catcher — Critical Thinking Arcade</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../assets/favicon.ico" sizes="16x16 32x32 48x48">
+<meta name="theme-color" content="#0a2e63">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--c1:#0a2e63;--c2:#2f6fe0;--c3:#1a7a8c;--c4:#f5b800;--c5:#0d47a1;--bg-a:rgba(245,184,0,.12);--bg-b:rgba(10,46,99,.10)}</style>
+<link rel="stylesheet" href="../assets/arcade.css">
+</head>
+<body>
+<div class="awrap"><div id="game"></div></div>
+<script>
+window.ARCADE_DATA = {
+  id: 'dc-kindness-catcher',
+  icon: '💛',
+  seconds: 45,
+  ctaHref: '../index.html',
+  i18n: {
+    en: {
+      title: 'Kindness Catcher',
+      sub: 'Sort each message fast: is it KIND or UNKIND?',
+      prompt: 'Is this message…',
+      left: 'Kind 💚',
+      right: 'Unkind 💥',
+      clear: 'Read each message before you choose — weighing the evidence is the E in CLEAR.',
+      startP: 'Read the message, then tap Kind or Unkind (or press the ◀ ▶ arrow keys). You have 3 hearts and 45 seconds!'
+    },
+    es: {
+      title: 'Cazador de Amabilidad',
+      sub: 'Clasifica cada mensaje rápido: ¿es AMABLE o CRUEL?',
+      prompt: 'Este mensaje es…',
+      left: 'Amable 💚',
+      right: 'Cruel 💥',
+      clear: 'Lee cada mensaje antes de elegir — sopesar la evidencia es la E de CLEAR.',
+      startP: 'Lee el mensaje y toca Amable o Cruel (o pulsa las teclas ◀ ▶). ¡Tienes 3 corazones y 45 segundos!'
+    },
+    vi: {
+      title: 'Người Bắt Lòng Tốt',
+      sub: 'Phân loại nhanh mỗi tin nhắn: nó TỬ TẾ hay KHÔNG TỬ TẾ?',
+      prompt: 'Tin nhắn này là…',
+      left: 'Tử tế 💚',
+      right: 'Không tử tế 💥',
+      clear: 'Hãy đọc mỗi tin nhắn trước khi chọn — cân nhắc bằng chứng chính là chữ E trong CLEAR.',
+      startP: 'Đọc tin nhắn, rồi nhấn Tử tế hoặc Không tử tế (hoặc bấm phím mũi tên ◀ ▶). Bạn có 3 trái tim và 45 giây!'
+    },
+    ar: {
+      title: 'صائد اللطف',
+      sub: 'صنّف كل رسالة بسرعة: هل هي لطيفة أم غير لطيفة؟',
+      prompt: 'هذه الرسالة…',
+      left: 'لطيفة 💚',
+      right: 'غير لطيفة 💥',
+      clear: 'اقرأ كل رسالة قبل أن تختار — وزن الأدلة هو حرف E في CLEAR.',
+      startP: 'اقرأ الرسالة، ثم انقر لطيفة أو غير لطيفة (أو اضغط مفتاحي السهمين ◀ ▶). لديك 3 قلوب و45 ثانية!'
+    },
+    hi: {
+      title: 'दयालुता पकड़ने वाला',
+      sub: 'हर संदेश को तेज़ी से छाँटो: क्या यह दयालु है या निर्दयी?',
+      prompt: 'यह संदेश है…',
+      left: 'दयालु 💚',
+      right: 'निर्दयी 💥',
+      clear: 'चुनने से पहले हर संदेश को पढ़ो — सबूत को तौलना ही CLEAR का E है।',
+      startP: 'संदेश पढ़ो, फिर दयालु या निर्दयी पर टैप करो (या ◀ ▶ तीर कुंजियाँ दबाओ)। तुम्हारे पास 3 दिल और 45 सेकंड हैं!'
+    },
+    ur: {
+      title: 'مہربانی پکڑنے والا',
+      sub: 'ہر پیغام کو تیزی سے چھانٹو: کیا یہ مہربان ہے یا سنگدل؟',
+      prompt: 'یہ پیغام ہے…',
+      left: 'مہربان 💚',
+      right: 'سنگدل 💥',
+      clear: 'چننے سے پہلے ہر پیغام پڑھو — ثبوت کو تولنا ہی CLEAR کا E ہے۔',
+      startP: 'پیغام پڑھو، پھر مہربان یا سنگدل پر ٹیپ کرو (یا ◀ ▶ تیر کی کلیدیں دبائو)۔ تمہارے پاس 3 دل اور 45 سیکنڈ ہیں!'
+    },
+    zh: {
+      title: '善意接接乐',
+      sub: '快速分类每条消息：它是善意还是不善意？',
+      prompt: '这条消息是…',
+      left: '善意 💚',
+      right: '不善意 💥',
+      clear: '选择前先读每条消息——权衡证据就是 CLEAR 里的 E。',
+      startP: '读完消息，然后点击善意或不善意（或按 ◀ ▶ 方向键）。你有 3 颗心和 45 秒！'
+    }
+  },
+  items: [
+    { emoji: '🌟', side: 'left',  i18n: { en: 'Great job on your drawing!', es: '¡Buen trabajo en tu dibujo!', vi: 'Bức vẽ của bạn tuyệt lắm!', ar: 'عمل رائع في رسمتك!', hi: 'तुम्हारी ड्रॉइंग बहुत अच्छी है!', ur: 'تمہاری ڈرائنگ بہت اچھی ہے!', zh: '你的画画得真棒！' } },
+    { emoji: '🎮', side: 'left',  i18n: { en: 'You can play with us!', es: '¡Puedes jugar con nosotros!', vi: 'Bạn có thể chơi với chúng mình!', ar: 'يمكنك اللعب معنا!', hi: 'तुम हमारे साथ खेल सकते हो!', ur: 'تم ہمارے ساتھ کھیل سکتے ہو!', zh: '你可以和我们一起玩！' } },
+    { emoji: '💡', side: 'left',  i18n: { en: 'I really like your idea.', es: 'Me gusta mucho tu idea.', vi: 'Mình rất thích ý tưởng của bạn.', ar: 'تعجبني فكرتك حقًّا.', hi: 'मुझे तुम्हारा विचार सच में पसंद है।', ur: 'مجھے تمہارا خیال واقعی پسند ہے۔', zh: '我很喜欢你的主意。' } },
+    { emoji: '🚫', side: 'right', i18n: { en: 'Nobody likes you.', es: 'Nadie te quiere.', vi: 'Chẳng ai thích bạn cả.', ar: 'لا أحد يحبك.', hi: 'तुम्हें कोई पसंद नहीं करता।', ur: 'تمہیں کوئی پسند نہیں کرتا۔', zh: '没有人喜欢你。' } },
+    { emoji: '👎', side: 'right', i18n: { en: 'You are so bad at this.', es: 'Eres muy malo en esto.', vi: 'Bạn dở tệ ở việc này.', ar: 'أنت سيّئ جدًّا في هذا.', hi: 'तुम इसमें बहुत खराब हो।', ur: 'تم اس میں بہت خراب ہو۔', zh: '你在这方面太差了。' } },
+    { emoji: '🤝', side: 'left',  i18n: { en: 'Do you want to be my partner?', es: '¿Quieres ser mi compañero?', vi: 'Bạn có muốn làm bạn cùng nhóm với mình không?', ar: 'هل تريد أن تكون شريكي؟', hi: 'क्या तुम मेरे साथी बनोगे?', ur: 'کیا تم میرے ساتھی بنو گے؟', zh: '你想当我的搭档吗？' } },
+    { emoji: '😠', side: 'right', i18n: { en: 'Go away, we don’t want you.', es: 'Vete, no te queremos aquí.', vi: 'Đi đi, tụi mình không cần bạn.', ar: 'اذهب بعيدًا، نحن لا نريدك.', hi: 'चले जाओ, हमें तुम नहीं चाहिए।', ur: 'چلے جائو، ہمیں تم نہیں چاہیے۔', zh: '走开，我们不要你。' } },
+    { emoji: '💛', side: 'left',  i18n: { en: 'That was really kind of you.', es: 'Fue muy amable de tu parte.', vi: 'Bạn thật là tử tế.', ar: 'كان ذلك لطيفًا جدًّا منك.', hi: 'यह तुम्हारा बहुत दयालु काम था।', ur: 'یہ تمہاری بہت مہربانی تھی۔', zh: '你真是太善良了。' } },
+    { emoji: '😝', side: 'right', i18n: { en: 'Ha ha, you messed up again!', es: '¡Ja ja, te equivocaste otra vez!', vi: 'Ha ha, bạn lại làm hỏng rồi!', ar: 'ها ها، أخطأت مرة أخرى!', hi: 'हा हा, तुमने फिर गड़बड़ कर दी!', ur: 'ہا ہا، تم نے پھر گڑبڑ کر دی!', zh: '哈哈，你又搞砸了！' } },
+    { emoji: '🙋', side: 'left',  i18n: { en: 'Are you okay? Do you need help?', es: '¿Estás bien? ¿Necesitas ayuda?', vi: 'Bạn ổn không? Bạn cần giúp đỡ không?', ar: 'هل أنت بخير؟ هل تحتاج مساعدة؟', hi: 'क्या तुम ठीक हो? क्या तुम्हें मदद चाहिए?', ur: 'کیا تم ٹھیک ہو؟ کیا تمہیں مدد چاہیے؟', zh: '你还好吗？需要帮忙吗？' } },
+    { emoji: '😢', side: 'right', i18n: { en: 'Everyone will laugh at you.', es: 'Todos se van a reír de ti.', vi: 'Mọi người sẽ cười nhạo bạn.', ar: 'سيضحك عليك الجميع.', hi: 'सब तुम पर हँसेंगे।', ur: 'سب تم پر ہنسیں گے۔', zh: '大家都会嘲笑你。' } },
+    { emoji: '🎉', side: 'left',  i18n: { en: 'Welcome to our game!', es: '¡Bienvenido a nuestro juego!', vi: 'Chào mừng bạn đến với trò chơi của chúng mình!', ar: 'مرحبًا بك في لعبتنا!', hi: 'हमारे खेल में स्वागत है!', ur: 'ہمارے کھیل میں خوش آمدید!', zh: '欢迎来到我们的游戏！' } }
+  ]
+};
+</script>
+<script src="../assets/arcade.js"></script>
+</body>
+</html>

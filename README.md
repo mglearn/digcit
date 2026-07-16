@@ -2,28 +2,38 @@
 
 A suite of **Critical Thinking Online Breakouts (CTOBs)** for Digital Citizenship,
 aligned to the **Texas TEKS Technology Applications** standard (adopted 2022,
-required K–8), grades **3–8**, in **7 languages**. Each activity is a self-contained
+required K–8), grades **K–8**, in **7 languages**. Each activity is a self-contained
 escape-room: six clues (one a decoy), four locks, and a revealed *reason* after
 every lock — the reasoning is the point. Runs entirely in the browser; no logins,
 no data collected.
 
-**Live (free tier):** https://mglearn.github.io/digcit/ — Grades 3–5 are fully
-playable; Grades 6–8 show a licensed placeholder on the public site and are
-served to licensed districts through the auth gateway.
+**18 activities:** every grade K–8 has one **free featured** lesson (fully playable
+on the public site) plus one **licensed** lesson (the full per-grade breakout, shown
+as a placeholder publicly and served to licensed districts through the auth gateway).
+
+**Live:** https://mglearn.github.io/digcit/ — free featured lessons + the
+[🕹️ Critical Thinking Arcade](https://mglearn.github.io/digcit/arcade/) (three free,
+no-login sorting games, one per grade band, in 7 languages).
 
 Sibling suite: [Gen AI Literacy Breakouts](https://mglearn.github.io/genailit/)
 (same engine, AI-adjacent TEKS strands).
 
 ## The activities
 
-| Grade | Title | TEKS | Tier |
-|-------|-------|------|------|
-| 3 | Your First Digital Footprint | §126.8 | free |
-| 4 | The Permanent Record | §126.9 | free |
-| 5 | Track the Trackers | §126.10 | free |
-| 6 | Fair Use Detective | §126.17 | licensed |
-| 7 | Spot the Spin | §126.18 | licensed |
-| 8 | Evaluate the Source | §126.19 | licensed |
+Each grade has a free featured lesson and a licensed lesson (TEKS Digital
+Citizenship strand):
+
+| Band | Grades | TEKS | Example themes |
+|------|--------|------|----------------|
+| K–2 | K, 1, 2 | §126.5–.7 | trusted grown-ups, kind words, private info, passwords, first digital trail |
+| 3–5 | 3, 4, 5 | §126.8–.10 | digital footprint, etiquette & credit, trackers & secure connections |
+| 6–8 | 6, 7, 8 | §126.17–.19 | intellectual property, media spin, source bias & reliability |
+
+## The arcade
+
+Three free, no-login **sorting games** (one per grade band), fully translated into
+all 7 languages, sharing one engine (`assets/arcade.js`):
+**Kindness Catcher** (K–2), **Safe or Sketchy** (3–5), and **Phish Tank** (6–8).
 
 Languages: English, Spanish, Vietnamese, Arabic (RTL), Hindi, Urdu, Chinese.
 Non-English text is AI-seeded and pending native-speaker review.

@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Amigos de las contraseñas",
+    "sub": "Una contraseña es como una llave secreta. ¡Cuida la tuya! Abre cuatro candados con las pistas.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un amigo de las contraseñas",
+    "briefP": "Una contraseña es una palabra secreta que mantiene tus cosas seguras, como una llave de tu casa. Un amigo de las contraseñas mantiene su contraseña en privado y no la comparte. Lee las pistas. Luego abre los cuatro candados. Cada candado te muestra por qué cuidar tu contraseña es inteligente.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Sabes que una contraseña es una llave secreta. Mantienes la tuya en privado. No la compartes. Le pides ayuda a un adulto. ¡Eres un verdadero amigo de las contraseñas!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Llave secreta",
+      "title": "Una contraseña es una llave",
+      "body": "Una contraseña es como una llave. Mantiene tus cosas seguras. Solo tú debes saberla. Guárdala como un secreto."
+    },
+    {
+      "nm": "Mantenla privada",
+      "title": "No se la digas a nadie",
+      "body": "No les digas tu contraseña a tus amigos. No la escribas en un chat. Una contraseña privada se mantiene segura."
+    },
+    {
+      "nm": "Pregúntale a un adulto",
+      "title": "Un adulto puede ayudar",
+      "body": "Le puedes decir una contraseña a un papá o una maestra que te ayuda. Ellos la mantienen segura. Los demás no deben saberla."
+    },
+    {
+      "nm": "No fácil",
+      "title": "Hazla difícil",
+      "body": "Una buena contraseña es difícil de adivinar. '1234' es muy fácil. Una difícil mantiene tus cosas más seguras."
+    },
+    {
+      "nm": "Puerta cerrada",
+      "title": "Como una puerta cerrada",
+      "body": "Una contraseña cierra tu cuenta como una llave cierra una puerta. Si regalas la llave, otros pueden entrar."
+    },
+    {
+      "nm": "Tortuga de la clase",
+      "title": "Nuestra tortuga de la clase",
+      "body": "Nuestra clase tiene una tortuga que se llama Veloz. Veloz camina muy, muy despacio. Este es un dato divertido, pero no abrirá ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Compartir una contraseña",
+      "q": "Un amigo te pide tu contraseña. ¿Qué debes hacer?",
+      "options": [
+        "Escribirla en el chat para que todos la vean",
+        "Mantenerla en privado y no compartirla",
+        "Decírsela a tu amigo, pero solo en voz baja"
+      ],
+      "reason": "Una contraseña es una llave secreta. Si la compartes, otros pueden entrar a tus cosas. Mantenerla en privado, incluso de tus amigos, es la opción segura."
+    },
+    {
+      "title": "Hábitos seguros con la contraseña",
+      "q": "Marca CADA cosa segura para hacer con una contraseña.",
+      "items": [
+        "Guardar tu contraseña como un secreto",
+        "Dejar que un papá te ayude a recordarla",
+        "Hacerla difícil, no '1234'",
+        "Escribirla en el pizarrón para que todos la vean",
+        "Decírsela a un amigo en el chat"
+      ],
+      "reason": "Los hábitos seguros mantienen tu llave en secreto: escóndela, deja que un adulto de confianza te ayude y hazla difícil. Escribirla para todos o decírsela a un amigo regala tu llave, así que esas las dejamos sin marcar."
+    },
+    {
+      "title": "La llave secreta",
+      "q": "La palabra secreta que cierra tu cuenta, como una llave cierra una puerta, es una ______.",
+      "reason": "Una contraseña es tu llave secreta. Mantenerla en privado es como cuidas tu cuenta y tus cosas."
+    },
+    {
+      "title": "Alguien quiere tu contraseña",
+      "q": "Alguien pide tu contraseña. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "🧑‍🏫 Dile a un adulto",
+        "✋ No la compartas",
+        "🔑 Mantenla en privado"
+      ],
+      "reason": "Primero NO la compartas. Luego DILE a un adulto de confianza quién te la pidió. Luego mantenla PRIVADA y segura. Así tu llave sigue siendo tuya."
+    }
+  ]
+}

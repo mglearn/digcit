@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Dấu Vết Trên Mạng Của Tôi",
+    "sub": "Mọi điều bạn làm trên mạng đều để lại một dấu vết. Hãy đi theo các manh mối và mở bốn ổ khóa để tìm hiểu về dấu vết của bạn.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Làm Một Người Theo Dấu Vết",
+    "briefP": "Khi bạn đi trên cát, bạn để lại những dấu chân phía sau. Mạng internet cũng hoạt động như vậy. Mỗi tin nhắn bạn gửi, mỗi bức ảnh bạn đăng, và mỗi trò chơi bạn chơi đều để lại một dấu vết có thể ở lại rất lâu. Một Người Theo Dấu Vết nghĩ về những dấu vết mình để lại. Hãy đọc manh mối, rồi mở cả bốn ổ khóa. Mỗi ổ khóa cho bạn thấy vì sao dấu vết trên mạng của bạn quan trọng.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã mở được cả bốn ổ khóa!",
+    "winP": "Bạn biết rằng mọi điều bạn làm trên mạng đều để lại một dấu vết. Bạn biết một dấu vết có thể ở lại rất lâu. Bạn biết để lại một dấu vết tử tế và an toàn phía sau. Bạn là một Người Theo Dấu Vết thật sự!",
+    "crumbSuite": "Breakout Công dân số"
+  },
+  "clues": [
+    {
+      "nm": "Dấu Chân",
+      "title": "Bạn để lại dấu chân",
+      "body": "Đi trên cát và bạn để lại dấu chân. Trên mạng cũng vậy. Mọi điều bạn làm đều để lại một dấu vết gọi là dấu vết. Nó cho thấy nơi bạn đã đến."
+    },
+    {
+      "nm": "Bài Đăng Ở Lại",
+      "title": "Dấu vết của bạn có thể ở lại",
+      "body": "Một bức ảnh hay tin nhắn bạn đăng có thể ở lại trên mạng rất lâu. Dù bạn có xóa nó, ai đó có thể đã lưu nó lại. Dấu vết của bạn có thể ở lại."
+    },
+    {
+      "nm": "Một Dấu Vết Tử Tế",
+      "title": "Để lại một dấu vết tử tế",
+      "body": "Vì dấu vết của bạn có thể ở lại, hãy để lại một dấu vết tốt. Đăng lời tử tế. Chia sẻ những điều dễ thương. Một dấu vết tử tế cho thấy con người thật, thân thiện của bạn."
+    },
+    {
+      "nm": "Nghĩ Trước Đã",
+      "title": "Nghĩ trước khi bạn đăng",
+      "body": "Trước khi bạn đăng, hãy dừng lại và suy nghĩ. Hỏi: mình có vui không nếu sau này cô thầy hay ông bà thấy điều này? Nếu có, thì đó là một điều tốt để thêm vào dấu vết của bạn."
+    },
+    {
+      "nm": "Dấu Vết An Toàn",
+      "title": "Giữ dấu vết của bạn an toàn",
+      "body": "Đừng để những điều riêng tư trên dấu vết của bạn, như nhà của bạn hay số điện thoại của bạn. Hãy giữ chúng ở ngoài. Một dấu vết an toàn giữ bạn an toàn."
+    },
+    {
+      "nm": "Chim Của Lớp",
+      "title": "Máng ăn cho chim của lớp mình",
+      "body": "Lớp mình có một máng ăn cho chim ngoài cửa sổ. Một chú chim giẻ cùi xanh ghé thăm mỗi buổi sáng. Đây là một điều thú vị, nhưng nó sẽ không giúp bạn mở được ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Dấu Vết Là Gì?",
+      "q": "'Dấu vết trên mạng' của bạn là gì?",
+      "options": [
+        "Những dấu vết bạn để lại từ những điều bạn làm trên mạng",
+        "Một con đường mòn trong rừng gần trường bạn",
+        "Một món ăn vặt trail mix bạn ăn vào bữa trưa"
+      ],
+      "reason": "Dấu vết trên mạng của bạn là dấu để lại bởi mọi điều bạn làm trên mạng — bài đăng, tin nhắn, và trò chơi của bạn. Nó giống như dấu chân trên cát, không phải một món ăn vặt hay một con đường mòn trong rừng."
+    },
+    {
+      "title": "Điều Đúng Về Dấu Vết Của Bạn",
+      "q": "Hãy chọn MỌI điều đúng về dấu vết trên mạng của bạn.",
+      "items": [
+        "Một bài đăng có thể ở lại trên mạng rất lâu",
+        "Bài đăng tử tế tạo nên một dấu vết tốt",
+        "Bạn nên nghĩ trước khi bạn đăng",
+        "Mọi thứ bạn đăng biến mất ngay lập tức",
+        "Dấu vết của bạn chẳng quan trọng gì cả"
+      ],
+      "reason": "Dấu vết của bạn có thể ở lại, bài đăng tử tế làm nó tốt, và nghĩ trước giúp nó an toàn. Bài đăng không biến mất ngay, và dấu vết của bạn thật sự quan trọng, nên ta không chọn những điều đó."
+    },
+    {
+      "title": "Một Tên Gọi Khác Cho Nó",
+      "q": "Dấu vết bạn để lại trên mạng còn được gọi là ______ kỹ thuật số, giống như những dấu chân bạn để lại trên cát.",
+      "reason": "Dấu chân kỹ thuật số là một tên gọi khác cho dấu vết trên mạng của bạn. Giống như dấu chân trên cát, nó cho thấy nơi bạn đã đến và có thể ở lại rất lâu."
+    },
+    {
+      "title": "Trước Khi Bạn Đăng",
+      "q": "Trước khi bạn thêm điều gì đó vào dấu vết của mình, hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "📮 Đăng nó",
+        "🤔 Nghĩ trước đã",
+        "💛 Nó có tử tế và an toàn không?"
+      ],
+      "reason": "Đầu tiên NGHĨ về dấu vết bạn sẽ để lại. Rồi KIỂM TRA xem nó có tử tế và an toàn không. Chỉ khi đó mới ĐĂNG nó vào dấu vết của bạn. Nghĩ, kiểm tra, đăng."
+    }
+  ]
+}

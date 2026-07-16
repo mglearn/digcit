@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Amigos de la amabilidad",
+    "sub": "Ayuda a nuestros amigos en línea a ser amables. Abre cuatro candados. Usa las pistas con dibujos para ayudarte.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un amigo de la amabilidad",
+    "briefP": "Las palabras en una pantalla pueden hacer sonreír a un amigo o ponerlo triste. Un amigo de la amabilidad usa palabras amables, deja jugar a todos y piensa primero. Mira las pistas. Luego abre los cuatro candados. Cada candado te dice por qué la forma amable es la mejor forma.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Sabes usar palabras amables. Dejas jugar a tus amigos. Piensas antes de enviar. ¡Eres un verdadero amigo de la amabilidad!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Palabras amables",
+      "title": "Usa palabras amables",
+      "body": "Las palabras amables se sienten cálidas. '¡Buen trabajo!' es amable. '¡Buen intento!' es amable. Las palabras malas hieren. Elige palabras amables."
+    },
+    {
+      "nm": "Déjalos jugar",
+      "title": "Todos pueden jugar",
+      "body": "Es triste quedar fuera. Invita a un amigo nuevo a jugar. Di '¡Ven a jugar conmigo!' Eso es amable."
+    },
+    {
+      "nm": "Piensa primero",
+      "title": "Piensa y luego envía",
+      "body": "Detente. Mira tus palabras. ¿Son amables? Si sí, puedes enviar. Si no, no lo envíes."
+    },
+    {
+      "nm": "Feliz o triste",
+      "title": "Las palabras pueden herir",
+      "body": "No puedes ver una cara en un chat. Una palabra puede sentirse mala. Revisa primero que suene amable."
+    },
+    {
+      "nm": "Anima",
+      "title": "Ayuda a un amigo triste",
+      "body": "¿Ves a un amigo triste? Dile algo lindo. 'Eres mi amigo.' Eso lo ayuda a sentirse mejor."
+    },
+    {
+      "nm": "Mascota de la clase",
+      "title": "Nuestro hámster de la clase",
+      "body": "Nuestra clase tiene un hámster que se llama Mordisquitos. Mordisquitos corre en su rueda todo el día. Esto es divertido, pero no abrirá ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "El mensaje amable",
+      "q": "¿Cuál es la cosa amable para decir?",
+      "options": [
+        "Eres malo para esto. ¡Ja, ja!",
+        "¡Buen trabajo! ¿Quieres jugar conmigo?",
+        "Vete. Nadie te quiere."
+      ],
+      "reason": "Las palabras amables hacen sonreír a un amigo y lo hacen sentir seguro. '¡Buen trabajo! ¿Quieres jugar conmigo?' anima a un amigo y lo invita a jugar, así que es la opción amable."
+    },
+    {
+      "title": "¿Amable o no amable?",
+      "q": "Toca CADA cosa amable para hacer en línea.",
+      "items": [
+        "Decir '¡Buen trabajo!' a un amigo",
+        "Invitar a un amigo nuevo a jugar",
+        "Animar a un amigo triste",
+        "Reírte de un amigo para ser malo",
+        "Decirle a un amigo un apodo malo"
+      ],
+      "reason": "Las cosas amables ayudan a los amigos a sentirse bien: un ánimo, una invitación, una palabra linda. Reírte para ser malo o poner apodos hiere, así que esas no las tocamos."
+    },
+    {
+      "title": "La palabra amable",
+      "q": "Una palabra cálida que ayuda a un amigo a sentirse feliz es una palabra ______.",
+      "reason": "Una palabra amable hace sonreír a un amigo y lo hace sentir bienvenido. Usar palabras amables es la mejor forma de ser un buen amigo en línea."
+    },
+    {
+      "title": "Piensa antes de enviar",
+      "q": "Toca los pasos en el orden CORRECTO antes de enviar.",
+      "pads": [
+        "📨 Envíalo",
+        "✋ Detente",
+        "💛 ¿Es amable?"
+      ],
+      "reason": "Primero DETENTE. Luego pregúntate si es AMABLE. Solo entonces ENVÍA. Detente, amable, envía mantiene felices a los amigos."
+    }
+  ]
+}

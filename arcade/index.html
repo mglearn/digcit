@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Critical Thinking Arcade — Digital Citizenship Breakouts</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../assets/site.webmanifest">
+<meta name="theme-color" content="#0a2e63">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Critical Thinking Arcade — Digital Citizenship">
+<meta property="og:description" content="Fast, free, no-login arcade games that build digital-citizenship judgment. One game per grade band, in 7 languages.">
+<meta property="og:image" content="https://mglearn.github.io/digcit/assets/og.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--bg-b:rgba(10,46,99,.10)}</style>
+<link rel="stylesheet" href="../assets/arcade.css">
+<style>
+  .hubcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:18px 0}
+  .hubcard{display:flex;flex-direction:column;background:#fff;border:3px solid var(--line);border-radius:18px;
+    padding:20px 18px;text-decoration:none;color:var(--ink);transition:transform .1s,border-color .1s}
+  .hubcard:hover{transform:translateY(-3px);border-color:var(--navy)}
+  .hubcard .hi{font-size:2.6rem;line-height:1}
+  .hubcard .hband{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+  .hubcard h2{font-family:'Fredoka',sans-serif;color:var(--navy);margin:.25rem 0;font-size:1.3rem}
+  .hubcard p{color:var(--ink-soft);font-weight:600;font-size:.9rem;margin:.1rem 0 .7rem;flex:1}
+  .hubcard .hplay{font-weight:800;color:var(--navy)}
+</style>
+</head>
+<body>
+<div class="awrap">
+  <div class="atop"><div class="alang"><span class="globe" aria-hidden="true">🌐</span><select id="hubLang" aria-label="Language"></select></div></div>
+  <div class="acrumb"><a id="hHome" href="../index.html">‹ Suite home</a></div>
+  <div class="ahero"><div class="aico">🕹️</div><h1 id="hTitle">Critical Thinking Arcade</h1><p id="hSub"></p></div>
+  <div class="hubcards" id="hCards"></div>
+  <div class="afoot" id="hFoot"></div>
+</div>
+<script>
+(function(){
+  'use strict';
+  var LNAME={en:'English',es:'Español',vi:'Tiếng Việt',ar:'العربية',hi:'हिन्दी',ur:'اردو',zh:'中文'};
+  var RTL={ar:1,ur:1};
+  var GAMES=[
+    {href:'kindness-catcher.html',icon:'💛',band:'K–2',key:'g1'},
+    {href:'safe-or-sketchy.html',icon:'🛡️',band:'3–5',key:'g2'},
+    {href:'phish-tank.html',icon:'🎣',band:'6–8',key:'g3'}
+  ];
+  var I18N={
+    en:{title:'Critical Thinking Arcade',sub:'Fast, free games that build digital-citizenship judgment — one per grade band. No login, nothing collected.',home:'Suite home',play:'Play →',foot:'Runs entirely in your browser — no logins, nothing collected.',
+      g1t:'Kindness Catcher',g1d:'Sort kind messages from unkind ones before the clock runs out.',
+      g2t:'Safe or Sketchy',g2d:'Spot the safe choices and dodge the sketchy ones.',
+      g3t:'Phish Tank',g3d:'Reel in the legit messages; throw back the phish.'},
+    es:{title:'Arcade de Pensamiento Crítico',sub:'Juegos rápidos y gratis que desarrollan el criterio de ciudadanía digital — uno por nivel de grado. Sin inicio de sesión, no se recopila nada.',home:'Inicio del conjunto',play:'Jugar →',foot:'Funciona por completo en tu navegador — sin inicios de sesión, no se recopila nada.',
+      g1t:'Cazador de Amabilidad',g1d:'Separa los mensajes amables de los crueles antes de que se acabe el tiempo.',
+      g2t:'Seguro o Sospechoso',g2d:'Detecta las decisiones seguras y esquiva las sospechosas.',
+      g3t:'Tanque de Phishing',g3d:'Atrapa los mensajes legítimos; devuelve al agua el phishing.'},
+    vi:{title:'Sảnh Tư Duy Phản Biện',sub:'Những trò chơi nhanh, miễn phí giúp xây dựng khả năng phán đoán công dân số — mỗi cấp lớp một trò. Không cần đăng nhập, không thu thập gì.',home:'Trang chủ bộ trò chơi',play:'Chơi →',foot:'Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập gì.',
+      g1t:'Người Bắt Lòng Tốt',g1d:'Phân loại tin nhắn tử tế khỏi tin không tử tế trước khi hết giờ.',
+      g2t:'An Toàn hay Đáng Ngờ',g2d:'Nhận ra những lựa chọn an toàn và tránh những lựa chọn đáng ngờ.',
+      g3t:'Bể Câu Lừa Đảo',g3d:'Câu về những tin nhắn thật; thả lại những tin lừa đảo.'},
+    ar:{title:'صالة التفكير النقدي',sub:'ألعاب سريعة ومجانية تبني حسّ المواطنة الرقمية — لعبة لكل مرحلة دراسية. بلا تسجيل دخول، ولا يُجمع أي شيء.',home:'الصفحة الرئيسية للمجموعة',play:'العب →',foot:'يعمل بالكامل في متصفحك — بلا تسجيل دخول، ولا يُجمع أي شيء.',
+      g1t:'صائد اللطف',g1d:'افصل الرسائل اللطيفة عن غير اللطيفة قبل أن ينفد الوقت.',
+      g2t:'آمن أم مريب',g2d:'اكتشف الخيارات الآمنة وتجنّب المريبة.',
+      g3t:'حوض التصيّد',g3d:'اصطد الرسائل الحقيقية؛ وأعد رسائل التصيّد إلى الماء.'},
+    hi:{title:'आलोचनात्मक सोच आर्केड',sub:'तेज़, मुफ्त खेल जो डिजिटल नागरिकता का निर्णय बनाते हैं — हर ग्रेड बैंड के लिए एक। कोई लॉगिन नहीं, कुछ भी एकत्र नहीं।',home:'सूट होम',play:'खेलो →',foot:'पूरी तरह तुम्हारे ब्राउज़र में चलता है — कोई लॉगिन नहीं, कुछ भी एकत्र नहीं।',
+      g1t:'दयालुता पकड़ने वाला',g1d:'समय खत्म होने से पहले दयालु संदेशों को निर्दयी संदेशों से अलग करो।',
+      g2t:'सुरक्षित या संदिग्ध',g2d:'सुरक्षित विकल्पों को पहचानो और संदिग्ध विकल्पों से बचो।',
+      g3t:'फ़िशिंग टैंक',g3d:'असली संदेशों को पकड़ो; फ़िशिंग को वापस पानी में डालो।'},
+    ur:{title:'تنقیدی سوچ آرکیڈ',sub:'تیز، مفت کھیل جو ڈیجیٹل شہریت کا فیصلہ بناتے ہیں — ہر گریڈ بینڈ کے لیے ایک۔ کوئی لاگ ان نہیں، کچھ جمع نہیں ہوتا۔',home:'سویٹ ہوم',play:'کھیلو →',foot:'مکمل طور پر تمہارے براؤزر میں چلتا ہے — کوئی لاگ ان نہیں، کچھ جمع نہیں ہوتا۔',
+      g1t:'مہربانی پکڑنے والا',g1d:'وقت ختم ہونے سے پہلے مہربان پیغاموں کو سنگدل پیغاموں سے الگ کرو۔',
+      g2t:'محفوظ یا مشکوک',g2d:'محفوظ انتخاب پہچانو اور مشکوک انتخاب سے بچو۔',
+      g3t:'فشنگ ٹینک',g3d:'اصلی پیغاموں کو پکڑو؛ فشنگ کو واپس پانی میں پھینکو۔'},
+    zh:{title:'批判性思维游乐场',sub:'快速、免费的游戏，培养数字公民判断力——每个年级段一款。无需登录，不收集任何信息。',home:'套件主页',play:'开玩 →',foot:'完全在你的浏览器中运行——无需登录，不收集任何信息。',
+      g1t:'善意接接乐',g1d:'在时间用完之前把善意的消息和不善意的分开。',
+      g2t:'安全还是可疑',g2d:'找出安全的选择，避开可疑的选择。',
+      g3t:'钓鱼水槽',g3d:'钓起真实的消息；把钓鱼诈骗放回水里。'}
+  };
+  function getLang(){try{var l=localStorage.getItem('lang');if(l&&I18N[l])return l;}catch(e){}return 'en';}
+  var lang=getLang();
+  function t(k){var d=I18N[lang]||I18N.en;return d[k]!=null?d[k]:I18N.en[k];}
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  var sel=document.getElementById('hubLang');
+  Object.keys(LNAME).forEach(function(l){if(I18N[l]){var o=document.createElement('option');o.value=l;o.textContent=LNAME[l];sel.appendChild(o);}});
+  sel.value=lang;
+  sel.addEventListener('change',function(){lang=sel.value;try{localStorage.setItem('lang',lang);}catch(e){}render();});
+  function render(){
+    document.documentElement.setAttribute('lang',lang);
+    document.documentElement.setAttribute('dir',RTL[lang]?'rtl':'ltr');
+    document.getElementById('hTitle').textContent=t('title');
+    document.getElementById('hSub').textContent=t('sub');
+    document.getElementById('hHome').textContent='‹ '+t('home');
+    document.getElementById('hFoot').textContent=t('foot');
+    document.title=t('title')+' — Digital Citizenship Breakouts';
+    document.getElementById('hCards').innerHTML=GAMES.map(function(g){
+      return '<a class="hubcard" href="'+g.href+'"><div class="hi">'+g.icon+'</div>'
+        +'<div class="hband">'+g.band+'</div>'
+        +'<h2>'+esc(t(g.key+'t'))+'</h2><p>'+esc(t(g.key+'d'))+'</p>'
+        +'<span class="hplay">'+esc(t('play'))+'</span></a>';
+    }).join('');
+  }
+  render();
+})();
+</script>
+</body>
+</html>

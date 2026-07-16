@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Những Người Bạn Mật Khẩu",
+    "sub": "Mật khẩu giống như một chiếc chìa khóa bí mật. Hãy giữ chìa khóa của bạn an toàn! Giải bốn ổ khóa bằng các manh mối.",
+    "briefLabel": "Nhiệm vụ của bạn",
+    "briefH": "Làm Một Người Bạn Mật Khẩu",
+    "briefP": "Mật khẩu là một từ bí mật giữ cho đồ của bạn an toàn, giống như chìa khóa nhà bạn. Một Người Bạn Mật Khẩu giữ kín mật khẩu và không chia sẻ nó. Hãy đọc manh mối. Rồi mở cả bốn ổ khóa. Mỗi ổ khóa cho bạn thấy vì sao giữ mật khẩu an toàn là thông minh.",
+    "footerText": "Breakout Công dân số · Chạy hoàn toàn trong trình duyệt của bạn — không đăng nhập, không thu thập dữ liệu.",
+    "winStamp": "ĐÃ GIẢI XONG VỤ ÁN",
+    "winH": "Bạn đã mở được cả bốn ổ khóa!",
+    "winP": "Bạn biết mật khẩu là một chiếc chìa khóa bí mật. Bạn giữ kín chìa khóa của mình. Bạn không chia sẻ nó. Bạn hỏi người lớn để được giúp. Bạn là một Người Bạn Mật Khẩu thật sự!",
+    "crumbSuite": "Breakout Công dân số"
+  },
+  "clues": [
+    {
+      "nm": "Chìa Khóa Bí Mật",
+      "title": "Mật khẩu là một chiếc chìa khóa",
+      "body": "Mật khẩu giống như một chiếc chìa khóa. Nó giữ cho đồ của bạn an toàn. Chỉ mình bạn nên biết nó. Hãy giữ nó bí mật."
+    },
+    {
+      "nm": "Giữ Kín",
+      "title": "Đừng nói cho ai",
+      "body": "Đừng nói mật khẩu của bạn cho bạn bè. Đừng gõ nó trong cuộc trò chuyện. Một mật khẩu được giữ kín thì luôn an toàn."
+    },
+    {
+      "nm": "Hỏi Người Lớn",
+      "title": "Người lớn có thể giúp",
+      "body": "Bạn có thể nói mật khẩu cho bố mẹ hoặc cô thầy đang giúp bạn. Họ giữ nó an toàn. Người khác thì không nên biết."
+    },
+    {
+      "nm": "Không Dễ",
+      "title": "Làm cho khó đoán",
+      "body": "Một mật khẩu tốt thì khó đoán. '1234' quá dễ. Một mật khẩu khó đoán giữ đồ của bạn an toàn hơn."
+    },
+    {
+      "nm": "Cánh Cửa Khóa",
+      "title": "Giống một cánh cửa khóa",
+      "body": "Mật khẩu khóa tài khoản của bạn như chìa khóa khóa một cánh cửa. Nếu bạn đưa chìa khóa đi, người khác có thể vào được."
+    },
+    {
+      "nm": "Rùa Của Lớp",
+      "title": "Chú rùa của lớp",
+      "body": "Lớp mình có một chú rùa tên Speedy. Speedy đi rất, rất chậm. Đây là một điều thú vị, nhưng nó sẽ không mở được ổ khóa nào."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Chia Sẻ Mật Khẩu",
+      "q": "Một người bạn hỏi mật khẩu của bạn. Bạn nên làm gì?",
+      "options": [
+        "Gõ nó trong cuộc trò chuyện để ai cũng thấy",
+        "Giữ kín và không chia sẻ nó",
+        "Nói cho bạn ấy, nhưng chỉ nói nhỏ thôi"
+      ],
+      "reason": "Mật khẩu là một chiếc chìa khóa bí mật. Nếu bạn chia sẻ nó, người khác có thể vào được đồ của bạn. Giữ kín nó, kể cả với bạn bè, là lựa chọn an toàn."
+    },
+    {
+      "title": "Thói Quen Mật Khẩu An Toàn",
+      "q": "Hãy chọn MỌI điều an toàn nên làm với mật khẩu.",
+      "items": [
+        "Giữ bí mật mật khẩu của bạn",
+        "Để bố mẹ giúp bạn nhớ nó",
+        "Làm cho nó khó đoán, không phải '1234'",
+        "Viết nó lên bảng cho ai cũng thấy",
+        "Nói nó cho một người bạn trong cuộc trò chuyện"
+      ],
+      "reason": "Thói quen an toàn giữ bí mật chìa khóa của bạn — giấu nó, để người lớn đáng tin giúp, và làm cho nó khó đoán. Viết nó cho ai cũng thấy hay nói cho một người bạn là đưa chìa khóa của bạn đi, nên ta không chọn những điều đó."
+    },
+    {
+      "title": "Chìa Khóa Bí Mật",
+      "q": "Từ bí mật khóa tài khoản của bạn, như chìa khóa khóa một cánh cửa, là một ______.",
+      "reason": "Mật khẩu là chiếc chìa khóa bí mật của bạn. Giữ kín nó là cách bạn giữ tài khoản và đồ của bạn an toàn."
+    },
+    {
+      "title": "Có Ai Đó Muốn Mật Khẩu Của Bạn",
+      "q": "Có ai đó hỏi mật khẩu của bạn. Hãy chạm vào các bước theo ĐÚNG thứ tự.",
+      "pads": [
+        "🧑‍🏫 Nói cho người lớn",
+        "✋ Đừng chia sẻ nó",
+        "🔑 Giữ kín nó"
+      ],
+      "reason": "Đầu tiên ĐỪNG chia sẻ nó. Rồi NÓI cho một người lớn đáng tin về người đã hỏi. Rồi GIỮ KÍN và an toàn. Như vậy chìa khóa vẫn là của bạn."
+    }
+  ]
+}

@@ -15,7 +15,7 @@ can appear here and may be intentional. Structure is verified separately by
 | hi | 0 |
 | ur | 0 |
 | zh | 0 |
-| **total** | **0** of 1722 checked |
+| **total** | **0** of 2562 checked |
 
 `solve-test.js`; this file is only about wording.
 

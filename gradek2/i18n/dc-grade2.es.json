@@ -1,0 +1,85 @@
+{
+  "chrome": {
+    "h1": "Justo, seguro y amable",
+    "sub": "Sé justo, seguro y amable en línea. Abre cuatro candados. Usa las pistas para tomar buenas decisiones.",
+    "briefLabel": "Tu misión",
+    "briefH": "Sé un ayudante justo y seguro",
+    "briefP": "Un buen ciudadano digital es justo, seguro y amable. Eso significa notar el rastro que dejas, dar crédito cuando usas el trabajo de alguien, hacer una contraseña fuerte, y saber qué hacer con un mensaje malo. Lee las pistas, luego abre los cuatro candados. Cada candado te muestra por qué la elección justa, segura y amable es la correcta.",
+    "footerText": "Breakouts de ciudadanía digital · Funciona todo en tu navegador — sin cuentas, sin datos guardados.",
+    "winStamp": "CASO CERRADO",
+    "winH": "¡Abriste los cuatro candados!",
+    "winP": "Sabes que tus acciones dejan un rastro digital. Das crédito por el trabajo de otras personas. Puedes crear una contraseña fuerte. Sabes cómo reportar un mensaje malo. ¡Eres justo, seguro y amable en línea!",
+    "crumbSuite": "Breakouts de ciudadanía digital"
+  },
+  "clues": [
+    {
+      "nm": "Rastro digital",
+      "title": "Dejas un rastro",
+      "body": "Todo lo que haces en línea deja una marca llamada rastro digital, como huellas en la arena. Tus publicaciones y mensajes pueden quedarse por mucho tiempo, así que deja un buen rastro."
+    },
+    {
+      "nm": "Da crédito",
+      "title": "Di quién lo hizo",
+      "body": "Cuando usas una foto, un dibujo o palabras que hizo otra persona, di su nombre. Dar crédito es justo. Le dice a todos quién hizo el trabajo. Tomarlo sin dar crédito no es justo."
+    },
+    {
+      "nm": "Contraseña fuerte",
+      "title": "Hazla fuerte",
+      "body": "Una contraseña fuerte es larga y difícil de adivinar. '1234' o 'gato' es débil. Una fuerte mezcla letras y números, como 'Azul7Pez'. Una contraseña fuerte mantiene tu cuenta segura."
+    },
+    {
+      "nm": "Repórtalo",
+      "title": "Reporta un mensaje malo",
+      "body": "Si recibes un mensaje malo, no lo compartas por todos lados. Dile a un adulto de confianza de inmediato. Luego sé amable con la persona que fue herida. Así se reporta de la forma correcta."
+    },
+    {
+      "nm": "Piensa primero",
+      "title": "Detente y piensa",
+      "body": "Antes de publicar, compartir o responder un mensaje malo, detente y piensa. Pregúntate: ¿esto es justo? ¿esto es seguro? ¿esto es amable? Luego toma tu decisión."
+    },
+    {
+      "nm": "Gecko de la clase",
+      "title": "Nuestro gecko de la clase",
+      "body": "Nuestra clase tiene un gecko que se llama Pepinillo. Pepinillo se pega al vidrio y come grillos. Este es un dato divertido, pero no te ayudará a abrir ningún candado."
+    }
+  ],
+  "locks": [
+    {
+      "title": "Tu rastro digital",
+      "q": "Envías un mensaje y publicas una foto. ¿Qué dejan atrás?",
+      "options": [
+        "Nada — desaparecen en el segundo que las envías",
+        "Un rastro digital que puede quedarse mucho tiempo",
+        "Un rastro que solo tu mejor amigo puede ver"
+      ],
+      "reason": "Todo lo que haces en línea deja un rastro digital que puede quedarse mucho tiempo, y otros pueden guardarlo. No desaparece, y no lo ve solo un amigo, así que saber que tu rastro dura te ayuda a publicar con cuidado."
+    },
+    {
+      "title": "Ser justo con el trabajo",
+      "q": "Marca CADA forma justa de usar el trabajo que hizo otra persona.",
+      "items": [
+        "Escribir el nombre de la persona que lo hizo",
+        "Decir 'Arte de María' cuando compartes su dibujo",
+        "Preguntar antes de usar la foto de alguien",
+        "Poner tu propio nombre en el dibujo de otra persona",
+        "Copiar sus palabras y decir que tú las escribiste"
+      ],
+      "reason": "Dar crédito es justo: nombra a quien lo hizo, di quién lo hizo y pregunta primero. Poner tu nombre en su trabajo o adueñarte de sus palabras es tomar un crédito que no ganaste, así que esas las dejamos sin marcar."
+    },
+    {
+      "title": "Una buena contraseña",
+      "q": "Una contraseña que es larga y difícil de adivinar, como 'Azul7Pez', es una contraseña ______.",
+      "reason": "Una contraseña fuerte es larga y difícil de adivinar, así que otros no pueden entrar. Una débil como '1234' es fácil de adivinar, por eso una fuerte es más segura."
+    },
+    {
+      "title": "Reportar un mensaje malo",
+      "q": "Recibes un mensaje malo. Toca los pasos en el orden CORRECTO.",
+      "pads": [
+        "💛 Sé amable con la persona",
+        "✋ No lo compartas",
+        "🚩 Dile a un adulto de confianza"
+      ],
+      "reason": "Primero NO COMPARTAS el mensaje malo para que no se riegue. Luego DILE a un adulto de confianza que pueda ayudar. Luego sé AMABLE con la persona que fue herida. No lo compartas, di, sé amable."
+    }
+  ]
+}
