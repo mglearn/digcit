@@ -19,7 +19,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const NONEN = ['es', 'vi', 'ar', 'hi', 'ur', 'zh'];
-const BANDS = { grade35: [3, 4, 5], grade68: [6, 7, 8] };
+const BANDS = { gradek2: [0, 1, 2], grade35: [3, 4, 5], grade68: [6, 7, 8] };  // K == grade 0
 
 // grade -> band
 function bandOf(grade) {

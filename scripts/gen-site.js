@@ -23,15 +23,30 @@ const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g,
 // grade -> {band, icon, teks, tier}. These are the full per-grade lessons, now
 // the LICENSED tier; the free FEATURED lesson per grade is a separate -free
 // activity scanned from the locales. FOCUS[grade] = [[focus, substrand] x4].
+// Grades are keyed by SLUG ('K','1'..'8'); `num` is the numeric value used only
+// for sorting (K == 0). Slugs double as the id suffix (dc-grade{slug}) and the
+// on-screen grade label ("Grade K"), so display and file names stay correct.
 const META = {
-  3: { band: 'grade35', icon: '👣', teks: '§126.8', tier: 'paid' },
-  4: { band: 'grade35', icon: '🗂️', teks: '§126.9', tier: 'paid' },
-  5: { band: 'grade35', icon: '🍪', teks: '§126.10', tier: 'paid' },
-  6: { band: 'grade68', icon: '⚖️', teks: '§126.17', tier: 'paid' },
-  7: { band: 'grade68', icon: '🌀', teks: '§126.18', tier: 'paid' },
-  8: { band: 'grade68', icon: '🔎', teks: '§126.19', tier: 'paid' },
+  K: { band: 'gradek2', num: 0, icon: '🧸', teks: '§126.5', tier: 'paid' },
+  1: { band: 'gradek2', num: 1, icon: '🧭', teks: '§126.6', tier: 'paid' },
+  2: { band: 'gradek2', num: 2, icon: '🚦', teks: '§126.7', tier: 'paid' },
+  3: { band: 'grade35', num: 3, icon: '👣', teks: '§126.8', tier: 'paid' },
+  4: { band: 'grade35', num: 4, icon: '🗂️', teks: '§126.9', tier: 'paid' },
+  5: { band: 'grade35', num: 5, icon: '🍪', teks: '§126.10', tier: 'paid' },
+  6: { band: 'grade68', num: 6, icon: '⚖️', teks: '§126.17', tier: 'paid' },
+  7: { band: 'grade68', num: 7, icon: '🌀', teks: '§126.18', tier: 'paid' },
+  8: { band: 'grade68', num: 8, icon: '🔎', teks: '§126.19', tier: 'paid' },
 };
+// Ordered grade slugs and band presentation labels (single source of truth).
+const GRADES = ['K', '1', '2', '3', '4', '5', '6', '7', '8'];
+const BANDS = ['gradek2', 'grade35', 'grade68'];
+const BAND_NAME = { gradek2: 'Grades K–2', grade35: 'Grades 3–5', grade68: 'Grades 6–8' };
+const BAND_SHORT = { gradek2: 'K-2', grade35: '3-5', grade68: '6-8' };
+const gradeSlug = num => (num === 0 ? 'K' : String(num));
 const FOCUS = {
+  K: [['Choosing a trusted grown-up to ask', '(c)(8)'], ['Telling kind from unkind messages', '(c)(8)'], ['Keeping personal information private', '(c)(10)'], ['Safe vs. unsafe things to tap', '(c)(10)']],
+  1: [['Keeping a password private', '(c)(10)'], ['Being kind and an upstander', '(c)(8)'], ['Asking a grown-up before you tap', '(c)(10)'], ['Deciding what is okay to share', '(c)(10)']],
+  2: [['Recognizing your digital trail', '(c)(10)'], ['Giving credit for someone’s work', '(c)(9)'], ['Telling a strong password from a weak one', '(c)(10)'], ['Reporting an unkind message', '(c)(8)']],
   3: [['Choosing safe links', '(c)(10)'], ['Recognizing a digital footprint', '(c)(10)'], ['Giving credit for creative work', '(c)(9)'], ['Responding to an unkind message', '(c)(8)']],
   4: [['Digital footprint permanence', '(c)(10)'], ['Etiquette across text, email & chat', '(c)(8)'], ['Creator rights & giving credit', '(c)(9)'], ['Being an upstander to cyberbullying', '(c)(8)']],
   5: [['Components of a digital footprint', '(c)(10)'], ['Audience-appropriate etiquette', '(c)(8)'], ['Secured connections (HTTPS)', '(c)(10)'], ['Copyright consequences & permission', '(c)(9)']],
@@ -108,6 +123,9 @@ function teacherNav(depth) {
 
 // ---- per-activity lesson data (big idea, EQ, objectives, vocab) -----------
 const LESSON = {
+  K: { big: 'Being safe and kind online starts with a few simple habits: ask a trusted grown-up, use kind words, and keep private things private.', eq: 'Who can help you online, and how do you keep yourself safe and kind?', obj: 'Students will name a trusted adult to ask for help and identify kind choices and private information online.', lang: 'Students will use trusted adult, kind, and private to tell how to stay safe online, using a sentence stem and pictures.', vocab: 'trusted adult, kind, private, safe, ask', success: 'I can name a grown-up who helps me and show one kind choice and one private thing to keep safe.' },
+  1: { big: 'Online, you make choices: keep passwords private, treat people kindly, and ask a grown-up before you tap something new.', eq: 'What choices keep you safe and kind when you use a device?', obj: 'Students will explain why passwords stay private, identify kind and upstander choices, and know to ask before tapping.', lang: 'Students will use password, private, and ask to explain a safe online choice, using a sentence stem.', vocab: 'password, private, kind, upstander, ask first', success: 'I can tell why a password is private and name one kind choice and one time to ask a grown-up.' },
+  2: { big: 'What you do online leaves a trail; giving credit, using strong passwords, and speaking up about mean messages keep that trail positive.', eq: 'What trail do you leave online, and how do you keep it safe, fair, and kind?', obj: 'Students will describe a digital trail, give credit for others’ work, tell strong from weak passwords, and report unkind messages.', lang: 'Students will use trail, credit, and strong password to explain a responsible online choice.', vocab: 'digital trail, credit, strong password, private, report', success: 'I can explain what a digital trail is and name a fair, safe, and kind online choice.' },
   3: { big: 'Everything you do online leaves a digital footprint; choosing safe links, giving credit, and being kind keep that footprint positive.', eq: 'What marks do you leave online, and how do you keep your footprint safe and kind?', obj: 'Students will describe what a digital footprint is and identify safe choices for links, credit, and kindness online.', lang: 'Students will use footprint, safe, and credit to explain how to stay safe and kind online, using a sentence stem.', vocab: 'digital footprint, safe link, password, credit, kindness', success: 'I can explain what a digital footprint is and name one way to stay safe and one way to be kind online.' },
   4: { big: 'Your online record can last a long time; good etiquette, giving creators credit, and being an upstander keep it positive.', eq: 'Why does the internet remember, and how should you act because it does?', obj: 'Students will explain why online posts persist and identify etiquette, copyright, and upstander actions.', lang: 'Students will use permanent, etiquette, and copyright to explain responsible online behavior.', vocab: 'permanent record, etiquette, copyright, credit, upstander', success: 'I can explain why posts last and name a kind, respectful, and creator-fair choice.' },
   5: { big: 'A digital footprint has parts (activity, games, social); secure connections and etiquette protect it, and copyright has consequences.', eq: 'What makes up your footprint, and how do trackers and secure sites affect it?', obj: 'Students will identify components of a digital footprint, recognize a secure (HTTPS) connection, and explain copyright consequences.', lang: 'Students will use tracker, secure connection (HTTPS), and permission to explain how data follows them online.', vocab: 'tracker, cookies, HTTPS / secure connection, audience, permission', success: 'I can name parts of my footprint and explain how a secure connection and permission protect me.' },
@@ -128,7 +146,7 @@ function siDict() {
 // Activity-card titles/descriptions pulled from the already-translated locales.
 function cardDict() {
   const d = {};
-  for (const lg of SITE_LANGS) { d[lg] = {}; for (const g of [3, 4, 5, 6, 7, 8]) { const U = ACT[g].B.UI[lg] || ACT[g].B.UI.en; d[lg]['card.g' + g + '.title'] = U['header.h1']; d[lg]['card.g' + g + '.sub'] = U['header.sub']; } }
+  for (const lg of SITE_LANGS) { d[lg] = {}; for (const g of GRADES) { const U = ACT[g].B.UI[lg] || ACT[g].B.UI.en; d[lg]['card.g' + g + '.title'] = U['header.h1']; d[lg]['card.g' + g + '.sub'] = U['header.sub']; } }
   return d;
 }
 // ---- auto-keyed strings (content-hash keys; no hand-naming) ---------------
@@ -182,7 +200,7 @@ function dashboard() {
     ${stat(total, 'Activities')}
     ${stat(free, 'Free featured', true)}
     ${stat(licensed, 'Licensed')}
-    ${stat('3–8', 'Grades')}
+    ${stat('K–8', 'Grades')}
     ${stat(7, 'Languages')}
   </div>`;
 }
@@ -205,22 +223,23 @@ function loadBreakout(grade) {
   return fn({});
 }
 const ACT = {};
-for (const g of Object.keys(META)) ACT[g] = { id: 'dc-grade' + g, grade: +g, ...META[g], B: loadBreakout(g) };
+for (const g of GRADES) ACT[g] = { id: 'dc-grade' + g, slug: g, ...META[g], grade: META[g].num, B: loadBreakout(g) };
 
 // The free FEATURED lessons (one per grade) — scanned from the -free locales.
 const PRIMARY_SUB = {
+  'dc-gradeK-free': '(c)(8)', 'dc-grade1-free': '(c)(10)', 'dc-grade2-free': '(c)(10)',
   'dc-grade3-free': '(c)(8)', 'dc-grade4-free': '(c)(8)', 'dc-grade5-free': '(c)(10)',
   'dc-grade6-free': '(c)(10)', 'dc-grade7-free': '(c)(9)', 'dc-grade8-free': '(c)(10)',
 };
 function scanFree() {
   const out = [];
-  for (const band of ['grade35', 'grade68']) {
+  for (const band of BANDS) {
     const dir = path.join(ROOT, band, 'locales');
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir).sort()) {
       if (!/-free\.js$/.test(f)) continue;
       const B = new Function('window', fs.readFileSync(path.join(dir, f), 'utf8') + '\nreturn window.BREAKOUT;')({});
-      out.push({ id: B.id, grade: B.grade, band, tier: 'free', icon: B.icon, teks: B.teks, B });
+      out.push({ id: B.id, grade: B.grade, slug: gradeSlug(B.grade), band, tier: 'free', icon: B.icon, teks: B.teks, B });
     }
   }
   return out.sort((a, b) => a.grade - b.grade);
@@ -232,7 +251,7 @@ function freeFocus(a) { return a.B.CONTENT.en.locks.map(l => [l.title, PRIMARY_S
 // ---- shared shell --------------------------------------------------------
 // Absolute origin for social/OG image URLs — set via SITE_URL env (see config.js).
 const { SITE_URL } = require('./config');
-const OG_DESC = 'Critical Thinking Online Breakouts for Digital Citizenship — grades 3–8, TEKS-aligned, in 7 languages. Runs in the browser; no logins, no data collected.';
+const OG_DESC = 'Critical Thinking Online Breakouts for Digital Citizenship — grades K–8, TEKS-aligned, in 7 languages. Runs in the browser; no logins, no data collected.';
 function assets(depth) { return depth ? '../assets' : 'assets'; }
 function headMeta(depth, title, desc) {
   const a = assets(depth);
@@ -310,7 +329,7 @@ function actCard(a, kind, depth) {
   const U = a.B.UI.en, p = depth ? '../' : '';
   const href = locked ? `${p}${a.band}/${a.id}.html` : `${p}${a.band}/${a.id}-student.html`;
   return `<a class="card${locked ? ' locked' : ''}" href="${href}">
-    <span class="badge">${S('Grade')} ${a.grade} · ${a.teks}</span>
+    <span class="badge">${S('Grade')} ${a.slug} · ${a.teks}</span>
     <div class="ico">${a.icon}</div>
     <div class="ctitle">${S(U['header.h1'])}</div>
     <div class="cdesc">${S(U['header.sub'])}</div>
@@ -322,14 +341,16 @@ function actCard(a, kind, depth) {
 // ---- SUITE LANDING -------------------------------------------------------
 function suiteLanding() {
   const freeCards = FREE.map(a => actCard(a, 'free', 0)).join('\n    ');
-  const paidCards = [3, 4, 5, 6, 7, 8].map(g => actCard(ACT[g], 'licensed', 0)).join('\n    ');
+  const paidCards = GRADES.map(g => actCard(ACT[g], 'licensed', 0)).join('\n    ');
   const body = `  <div class="hero">
     <div class="eyebrow" data-i18n="hero.eyebrow">${esc(si('hero.eyebrow'))}</div>
     <h1 data-i18n="hero.h1">${esc(si('hero.h1'))}</h1>
     <p class="lede" data-i18n="hero.lede">${esc(si('hero.lede'))}</p>
     <div class="btnrow">
-      ${E('a', 'Grades 3–5', 'class="btn" href="grade35/index.html"')}
+      ${E('a', 'Grades K–2', 'class="btn" href="gradek2/index.html"')}
+      ${E('a', 'Grades 3–5', 'class="btn ghost" href="grade35/index.html"')}
       ${E('a', 'Grades 6–8', 'class="btn ghost" href="grade68/index.html"')}
+      <a class="btn ghost" href="arcade/index.html" data-i18n="btn.arcade">${esc(si('btn.arcade') || 'Arcade')}</a>
       <a class="btn ghost" href="library.html" data-i18n="btn.library">${esc(si('btn.library'))}</a>
       <a class="btn ghost" href="guide.html" data-i18n="btn.guide">${esc(si('btn.guide'))}</a>
     </div>
@@ -359,7 +380,7 @@ function suiteLanding() {
   ${clearBlockI18n()}
   <p class="section-note" data-i18n-html="teacher.noteHtml">${si('teacher.noteHtml')}</p>
 ${footer(0)}`;
-  fs.writeFileSync(path.join(ROOT, 'index.html'), shell({ depth: 0, title: 'Digital Citizenship Breakouts — Grades 3–8', body, i18n: true }));
+  fs.writeFileSync(path.join(ROOT, 'index.html'), shell({ depth: 0, title: 'Digital Citizenship Breakouts — Grades K–8', body, i18n: true }));
 }
 
 // ---- BAND HUB ------------------------------------------------------------
@@ -386,7 +407,7 @@ ${footer(1, 'policy.html')}`;
 
 // ---- TEACHER LAUNCH PAGE (no answers) ------------------------------------
 function teacherPage(a, focus) {
-  const grade = a.grade, U = a.B.UI.en, locks = a.B.CONTENT.en.locks;
+  const grade = a.slug, U = a.B.UI.en, locks = a.B.CONTENT.en.locks;
   const rows = locks.map((l, i) => `<tr><td><span class="lk">${S('Lock')} ${i + 1}</span><br><span class="small">${S(l.title)}</span></td>
       <td>${S(focus[i][0])}</td>
       <td><span class="pill sub">${focus[i][1]} ${S(SUBSTRANDS[focus[i][1]])}</span></td></tr>`).join('\n    ');
@@ -396,7 +417,7 @@ function teacherPage(a, focus) {
   const clearUl = '<li><strong>Claim</strong> — for each lock, decide what answer it is really asking for, and make it specific.</li><li><strong>Lens</strong> — notice what you already assume before you choose.</li><li><strong>Evidence</strong> — weigh the six clues; “' + esc(decoy) + '” is true but off-topic, so it is not evidence for any lock.</li><li><strong>Alternatives</strong> — the multiple-choice and multi-select locks force a comparison of competing options.</li><li><strong>Response</strong> — the reason revealed after each lock models the justified answer to act on.</li>';
   const stdNote = 'Aligned to Texas TEKS Technology Applications, Grade ' + grade + ', <strong>' + a.teks + '</strong>, Digital Citizenship strand — subsections ' + substrandsUsed.join(', ') + '. Skills are paraphrased; read the official standard at <a href="https://tea.texas.gov" target="_blank" rel="noopener">tea.texas.gov</a>. This page shows the reasoning focus of each lock — <strong>not the answers.</strong>';
   const classroom = '<li><strong>Warm up (5 min).</strong> Ask: “' + esc(U['brief.h']) + '” — what does this mean online? Surface prior experience before the activity.</li><li><strong>Model one clue.</strong> Open a single clue together and think aloud: what does this tell us, and which lock might it help?</li><li><strong>Reason, don’t guess.</strong> Require students to say <em>why</em> before checking a lock. After each solve, read the revealed <em>reason</em> and compare it to their thinking.</li><li><strong>Spot the decoy.</strong> One clue is true but useless. Debrief which one and how they knew — a core evaluation skill.</li><li><strong>Language support.</strong> The 🌐 picker offers 7 languages; pair newcomers to discuss clues in their home language, then answer.</li><li><strong>Extend.</strong> Have students write a new clue, or a real-life example, for the focus skill they found hardest.</li>';
-  const body = `  <div class="crumb">${E('a', '‹ ' + (a.band === 'grade35' ? 'Grades 3–5' : 'Grades 6–8') + ' hub', 'href="index.html"')} · ${E('a', 'Suite home', 'href="../index.html"')}</div>
+  const body = `  <div class="crumb">${E('a', '‹ ' + BAND_NAME[a.band] + ' hub', 'href="index.html"')} · ${E('a', 'Suite home', 'href="../index.html"')}</div>
   <div class="hero">
     <div class="eyebrow${a.tier === 'paid' ? ' gold' : ''}">${S('Teacher launch')} · ${S('Grade')} ${grade} · TEKS ${a.teks}</div>
     ${E('h1', U['header.h1'])}
@@ -462,8 +483,9 @@ function correlation() {
     ${E('p', 'How each breakout aligns to the Texas TEKS Technology Applications Digital Citizenship strand (adopted 2022, implemented 2024–25, required K–8).', 'class="lede"')}
   </div>
   <div class="panel tip"><strong>${S('Substrands:')}</strong> ${legend}</div>
-  ${bandTable('Grades 3–5 (free tier)', [3, 4, 5])}
-  ${bandTable('Grades 6–8 (licensed tier)', [6, 7, 8])}
+  ${bandTable('Grades K–2', ['K', '1', '2'])}
+  ${bandTable('Grades 3–5', ['3', '4', '5'])}
+  ${bandTable('Grades 6–8', ['6', '7', '8'])}
   ${EH('div', 'Skills are <strong>paraphrased</strong> to respect TEA’s copyright — no official standard text is reproduced. Cite the § number and read the source at <a href="https://tea.texas.gov" target="_blank" rel="noopener">tea.texas.gov</a>. Alignment is a good-faith mapping for planning and is not legal advice.', 'class="disclaimer"')}
 ${footer(0)}`;
   fs.writeFileSync(path.join(ROOT, 'correlation.html'), shell({ depth: 0, title: 'TEKS Correlation Guide — Digital Citizenship Breakouts', body, i18n: true }));
@@ -476,7 +498,7 @@ function guide() {
   <div class="hero">
     ${E('div', 'Teacher guide', 'class="eyebrow"')}
     ${E('h1', 'Curriculum Guide')}
-    ${E('p', 'Purpose, design, and how to run the Digital Citizenship Breakouts across grades 3–8.', 'class="lede"')}
+    ${E('p', 'Purpose, design, and how to run the Digital Citizenship Breakouts across grades K–8.', 'class="lede"')}
   </div>
 
   ${E('h2', 'Purpose')}
@@ -491,7 +513,7 @@ function guide() {
   <div class="panel">${EH('ul', deploy)}</div>
 
   ${E('h2', 'Free vs. licensed')}
-  <div class="panel gold">${EH('p', '<strong>Free featured lessons — one per grade.</strong> Each grade has a free, fully-playable featured breakout on the home page. Use them with anyone, anywhere — no login, nothing collected.')}${EH('p', '<strong>The full curriculum — licensed.</strong> The complete per-grade lessons (Grades 3–8) are included with a paid license and served through an authenticated session. Teacher pages and this guide remain open so you can evaluate before you buy.')}</div>
+  <div class="panel gold">${EH('p', '<strong>Free featured lessons — one per grade.</strong> Each grade has a free, fully-playable featured breakout on the home page. Use them with anyone, anywhere — no login, nothing collected.')}${EH('p', '<strong>The full curriculum — licensed.</strong> The complete per-grade lessons (Grades K–8) are included with a paid license and served through an authenticated session. Teacher pages and this guide remain open so you can evaluate before you buy.')}</div>
 
   ${E('h2', 'Assessment')}
   ${EH('p', 'These are formative by design. Use the revealed reasons as discussion prompts, ask students to write the reasoning for the lock they found hardest, or have them author a new clue. The gated <a href="answer-key.html">answer key</a> lists every answer with its reasoning for your reference.')}
@@ -564,6 +586,9 @@ ${footer(1, null)}`;
 // ---- SEARCHABLE LIBRARY --------------------------------------------------
 // Curated, leak-safe search keywords per grade (no answers / no paid content).
 const KEYWORDS = {
+  K: ['trusted adult', 'ask for help', 'kind', 'kindness', 'private', 'personal information', 'safe', 'online safety'],
+  1: ['password', 'private', 'kindness', 'upstander', 'ask first', 'sharing', 'online safety', 'be kind'],
+  2: ['digital trail', 'footprint', 'giving credit', 'copyright', 'strong password', 'private', 'reporting', 'kindness'],
   3: ['footprint', 'online safety', 'safe links', 'passwords', 'kindness', 'giving credit', 'copyright', 'cyberbullying'],
   4: ['footprint', 'permanence', 'etiquette', 'email', 'chat', 'texting', 'copyright', 'creator credit', 'cookies', 'cyberbullying', 'upstander'],
   5: ['footprint', 'tracking', 'cookies', 'trackers', 'etiquette', 'audience', 'https', 'secure connection', 'copyright', 'permission', 'privacy'],
@@ -577,9 +602,9 @@ function catEntry(a, focus) {
   const clueNames = a.B.CONTENT.en.clues.map(c => c.nm);
   const lockTitles = a.B.CONTENT.en.locks.map(l => l.title);
   const hay = [U['header.h1'], U['header.sub'], a.teks, ...focus.map(f => f[0]), ...lockTitles, ...clueNames,
-    ...(KEYWORDS[a.grade] || []), ...subs.map(s => SUBSTRANDS[s])].join(' ').toLowerCase();
+    ...(KEYWORDS[a.slug] || []), ...subs.map(s => SUBSTRANDS[s])].join(' ').toLowerCase();
   return {
-    grade: a.grade, band: a.band === 'grade35' ? '3-5' : '6-8', teks: a.teks, tier: a.tier, icon: a.icon,
+    grade: a.grade, slug: a.slug, band: BAND_SHORT[a.band], teks: a.teks, tier: a.tier, icon: a.icon,
     title: U['header.h1'], sub: U['header.sub'], focus: focus.map(f => f[0]), subs,
     href: `${a.band}/${a.id}` + (a.tier === 'paid' ? '.html' : '-student.html'),
     hay,
@@ -587,7 +612,7 @@ function catEntry(a, focus) {
 }
 function buildCatalog() {
   const out = [];
-  for (const g of Object.keys(META)) out.push(catEntry(ACT[g], FOCUS[g]));
+  for (const g of GRADES) out.push(catEntry(ACT[g], FOCUS[g]));
   for (const a of FREE) out.push(catEntry(a, freeFocus(a)));
   return out.sort((x, y) => x.grade - y.grade || (x.tier < y.tier ? -1 : 1));
 }
@@ -605,6 +630,7 @@ function library() {
     <input id="q" class="search" type="search" placeholder="Search: footprint, copyright, phishing, bias, §126.17 …" aria-label="Search activities" autocomplete="off">
     <div class="filters">
       <span class="fgroup"><span class="flabel">Band</span>
+        <button class="chip" data-band="K-2">Grades K–2</button>
         <button class="chip" data-band="3-5">Grades 3–5</button>
         <button class="chip" data-band="6-8">Grades 6–8</button></span>
       <span class="fgroup"><span class="flabel">Tier</span>
@@ -657,7 +683,7 @@ ${footer(0)}`;
     grid.innerHTML = list.map(function(a){
       var locked = a.tier==='paid';
       return '<a class="card'+(locked?' locked':'')+'" href="'+a.href+'">'
-        + '<span class="badge">Grade '+a.grade+' · '+esc(a.teks)+'</span>'
+        + '<span class="badge">Grade '+a.slug+' · '+esc(a.teks)+'</span>'
         + '<div class="ico">'+a.icon+'</div>'
         + '<div class="ctitle">'+hi(a.title,state.q)+'</div>'
         + '<div class="cdesc">'+hi(a.sub,state.q)+'</div>'
@@ -690,7 +716,7 @@ ${footer(0)}`;
 
 // ---- SCOPE & SEQUENCE ----------------------------------------------------
 function scope() {
-  const rows = [3, 4, 5, 6, 7, 8].map(g => {
+  const rows = GRADES.map(g => {
     const a = ACT[g], U = a.B.UI.en, L = LESSON[g], subs = [...new Set(FOCUS[g].map(f => f[1]))].sort();
     return `<tr>
         <td><span class="lk">${S('Grade')} ${g}</span><br><span class="small">${S(a.tier === 'paid' ? 'licensed' : 'free')} · ${a.teks}</span></td>
@@ -705,10 +731,10 @@ function scope() {
   <div class="hero">
     ${E('div', 'Scope & sequence', 'class="eyebrow"')}
     ${E('h1', 'Scope & Sequence')}
-    ${E('p', 'The six breakouts build digital-citizenship judgment across grades 3–8 — from a student’s first footprint to evaluating the bias and reliability of a source. Each grade adds the next layer.', 'class="lede"')}
+    ${E('p', 'The breakouts build digital-citizenship judgment across grades K–8 — from a student’s first trusted-adult and kindness habits to evaluating the bias and reliability of a source. Each grade adds the next layer.', 'class="lede"')}
   </div>
 
-  ${EH('div', '<strong>The learning arc:</strong> your digital footprint (Gr 3) → why the internet remembers, etiquette &amp; credit (Gr 4) → footprint components, tracking &amp; secure connections (Gr 5) → intellectual property &amp; fair use (Gr 6) → evaluating media spin (Gr 7) → judging a source’s bias &amp; reliability (Gr 8). Themes of footprint, etiquette, IP, and safety deepen every year.', 'class="panel gold"')}
+  ${EH('div', '<strong>The learning arc:</strong> trusted grown-ups, kind words &amp; keeping private things private (Gr K) → passwords, kindness &amp; asking first (Gr 1) → your digital trail, credit &amp; strong passwords (Gr 2) → your digital footprint (Gr 3) → why the internet remembers, etiquette &amp; credit (Gr 4) → footprint components, tracking &amp; secure connections (Gr 5) → intellectual property &amp; fair use (Gr 6) → evaluating media spin (Gr 7) → judging a source’s bias &amp; reliability (Gr 8). Themes of footprint, etiquette, IP, and safety deepen every year.', 'class="panel gold"')}
 
   <div class="tbl-wrap"><table>
     ${E('caption', 'Grade · activity & big idea · essential question · key vocabulary · TEKS substrands')}
@@ -742,7 +768,7 @@ function lessons() {
     ['11 · Teacher reflection', '<ul><li>What worked, and what evidence showed students learned?</li><li>Who needs reteaching, and who is ready for extension?</li><li>Which clue or lock caused the most productive struggle?</li><li>What will you change next time?</li></ul>'],
   ];
   const secHtml = sections.map(([h, p]) => `<div class="panel">${EH('h3', h, 'style="margin-top:0"')}${EH('div', p)}</div>`).join('\n  ');
-  const examples = [3, 4, 5, 6, 7, 8].map(g => {
+  const examples = GRADES.map(g => {
     const a = ACT[g], U = a.B.UI.en, L = LESSON[g];
     return `<div class="akact">
     ${EH('h3', 'Grade ' + g + ' — ' + esc(U['header.h1']) + ' <span class="small">(' + a.teks + ' · ' + (a.tier === 'paid' ? 'licensed' : 'free') + ')</span>')}
@@ -865,6 +891,7 @@ ${footer(0)}`;
 // ---- run -----------------------------------------------------------------
 suiteLanding();
 library();
+bandHub('gradek2', ['K', '1', '2'], { paid: true, label: 'Grades K–2 · Licensed', title: 'Grades K–2', lede: 'The full early-elementary lessons — trusted grown-ups, kind words, private information, passwords, and your first digital trail. Included with a paid license; each grade also has a free featured lesson on the home page.' });
 bandHub('grade35', [3, 4, 5], { paid: true, label: 'Grades 3–5 · Licensed', title: 'Grades 3–5', lede: 'The full elementary lessons — digital footprints, kindness, credit, and staying safe. Included with a paid license; each grade also has a free featured lesson on the home page.' });
 bandHub('grade68', [6, 7, 8], { paid: true, label: 'Grades 6–8 · Licensed', title: 'Grades 6–8', lede: 'The full middle-school lessons — intellectual property, media literacy, cybersecurity, and source evaluation. Included with a paid license; each grade also has a free featured lesson on the home page.' });
 correlation();
@@ -873,13 +900,15 @@ scope();
 lessons();
 udl();
 elps();
+implementation('gradek2', ['K', '1', '2'], { paid: true, hub: 'Grades K–2', title: 'Grades K–2 Implementation Plan', lede: 'Pacing, prerequisites, and extensions for the early-elementary band.', prereq: 'Students should be able to listen to a short read-aloud and tap or click large tiles; reading is emerging, so plan to read clues aloud and model the first lock.', extend: 'Connect to class routines: name the trusted grown-ups in your building, make a kindness chart, and practice keeping a “secret” password with a classroom example.' });
 implementation('grade35', [3, 4, 5], { paid: false, hub: 'Grades 3–5', title: 'Grades 3–5 Implementation Plan', lede: 'Pacing, prerequisites, and extensions for the free elementary band.', prereq: 'Students should be comfortable reading short paragraphs and clicking/tapping tiles.', extend: 'Connect to a class agreement on kindness and credit; revisit the footprint idea across the year.' });
 implementation('grade68', [6, 7, 8], { paid: true, hub: 'Grades 6–8', title: 'Grades 6–8 Implementation Plan', lede: 'Pacing, prerequisites, and extensions for the licensed middle-school band.', prereq: 'Students should be able to evaluate short arguments and are ready for real IP, security, and media-literacy vocabulary.', extend: 'Bridge to a media-literacy or intro-to-AI unit; have students audit a real (teacher-vetted) source using the Grade 8 criteria.' });
+policy('gradek2', 'Grades K–2');
 policy('grade35', 'Grades 3–5');
 policy('grade68', 'Grades 6–8');
-for (const g of Object.keys(META)) teacherPage(ACT[g], FOCUS[g]);
+for (const g of GRADES) teacherPage(ACT[g], FOCUS[g]);
 for (const a of FREE) teacherPage(a, freeFocus(a));
 
 persistAuto();          // record any new English strings for the translation pass
 writeSiteI18nData();    // compile the shared dictionary (with translations)
-console.log('Generated: index.html, correlation.html, guide.html, scope.html, lessons.html, udl.html, elps.html, band hubs, implementation plans, policy pages, and 6 teacher launch pages. Auto-i18n keys: ' + Object.keys(AUTO_EN).length);
+console.log('Generated: index.html, correlation.html, guide.html, scope.html, lessons.html, udl.html, elps.html, 3 band hubs, implementation plans, policy pages, and ' + (GRADES.length + FREE.length) + ' teacher launch pages. Auto-i18n keys: ' + Object.keys(AUTO_EN).length);

@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 const { SITE_URL } = require('./config');
 const ROOT = path.join(__dirname, '..');
-const BANDS = { grade35: [3, 4, 5], grade68: [6, 7, 8] };
+const BANDS = { gradek2: [0, 1, 2], grade35: [3, 4, 5], grade68: [6, 7, 8] };  // K == grade 0
 
 // Teacher dropdown, mirrored from the site pages so it sits by the 🌐 switcher.
 // Student pages live one level down, so all links are prefixed with ../.

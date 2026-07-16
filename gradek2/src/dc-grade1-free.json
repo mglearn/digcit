@@ -1,0 +1,169 @@
+{
+ "id": "dc-grade1-free",
+ "grade": 1,
+ "tier": "free",
+ "icon": "🔑",
+ "teks": "§126.6",
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "chrome": {
+  "eyebrow": {
+   "en": "Digital Citizenship Breakout · Grade 1",
+   "es": "Breakout de ciudadanía digital · Grado 1",
+   "vi": "Breakout công dân số · Lớp 1",
+   "ar": "تحدّي المواطنة الرقمية · الصف 1",
+   "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 1",
+   "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 1",
+   "zh": "数字公民破解 · 一年级"
+  },
+  "h1": "Password Pals",
+  "sub": "A password is like a secret key. Keep yours safe! Solve four locks with the clues.",
+  "briefLabel": "Your Mission",
+  "briefH": "Be a Password Pal",
+  "briefP": "A password is a secret word that keeps your things safe, like a key to your house. A Password Pal keeps their password private and does not share it. Read the clues. Then open all four locks. Each lock shows you why keeping your password safe is smart.",
+  "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+  "winStamp": "CASE CLOSED",
+  "winH": "You cracked all four locks!",
+  "winP": "You know a password is a secret key. You keep yours private. You do not share it. You ask a grown-up for help. You are a true Password Pal!"
+ },
+ "clues": [
+  {
+   "id": "c1",
+   "ico": "🔑",
+   "nm": "Secret Key",
+   "title": "A password is a key",
+   "body": "A password is like a key. It keeps your things safe. Only you should know it. Keep it a secret."
+  },
+  {
+   "id": "c2",
+   "ico": "🤫",
+   "nm": "Keep It Private",
+   "title": "Do not tell anyone",
+   "body": "Do not tell your password to friends. Do not type it in a chat. A private password stays safe."
+  },
+  {
+   "id": "c3",
+   "ico": "🧑‍🏫",
+   "nm": "Ask a Grown-Up",
+   "title": "A grown-up can help",
+   "body": "You can tell a password to a parent or teacher who helps you. They keep it safe. Others should not know it."
+  },
+  {
+   "id": "c4",
+   "ico": "🔀",
+   "nm": "Not Easy",
+   "title": "Make it tricky",
+   "body": "A good password is hard to guess. '1234' is too easy. A tricky one keeps your things safer."
+  },
+  {
+   "id": "c5",
+   "ico": "🚪",
+   "nm": "Locked Door",
+   "title": "Like a locked door",
+   "body": "A password locks your account like a key locks a door. If you give the key away, others can get in."
+  },
+  {
+   "id": "c6",
+   "ico": "🐢",
+   "nm": "Class Turtle",
+   "title": "Our class turtle",
+   "body": "Our class has a turtle named Speedy. Speedy walks very, very slowly. This is a fun fact, but it will not open a lock.",
+   "decoy": true
+  }
+ ],
+ "locks": [
+  {
+   "id": "L1",
+   "type": "mc",
+   "color": "#0a2e63",
+   "title": "Sharing a Password",
+   "q": "A friend asks for your password. What should you do?",
+   "options": [
+    "Type it in the chat so everyone sees",
+    "Keep it private and do not share it",
+    "Tell it to your friend, but only quietly"
+   ],
+   "answerIndex": 1,
+   "reason": "A password is a secret key. If you share it, others can get into your things. Keeping it private, even from friends, is the safe choice."
+  },
+  {
+   "id": "L2",
+   "type": "multi",
+   "color": "#2f6fe0",
+   "title": "Safe Password Habits",
+   "q": "Check EVERY safe thing to do with a password.",
+   "items": [
+    {
+     "t": "Keep your password a secret",
+     "strong": true
+    },
+    {
+     "t": "Let a parent help you remember it",
+     "strong": true
+    },
+    {
+     "t": "Make it tricky, not '1234'",
+     "strong": true
+    },
+    {
+     "t": "Write it on the board for all to see",
+     "strong": false
+    },
+    {
+     "t": "Tell it to a friend in the chat",
+     "strong": false
+    }
+   ],
+   "reason": "Safe habits keep your key secret — hide it, let a trusted grown-up help, and make it tricky. Writing it for everyone or telling a friend gives your key away, so we leave those unchecked."
+  },
+  {
+   "id": "L3",
+   "type": "word",
+   "color": "#1a7a8c",
+   "title": "The Secret Key",
+   "q": "The secret word that locks your account, like a key locks a door, is a ______.",
+   "answer": [
+    "password",
+    "pass word",
+    "pass-word"
+   ],
+   "reason": "A password is your secret key. Keeping it private is how you keep your account and your things safe."
+  },
+  {
+   "id": "L4",
+   "type": "seq",
+   "color": "#0d47a1",
+   "title": "Someone Wants Your Password",
+   "q": "Someone asks for your password. Tap the steps in the RIGHT order.",
+   "pads": [
+    {
+     "k": "grownup",
+     "e": "🧑‍🏫 Tell a grown-up",
+     "c": "#0a2e63"
+    },
+    {
+     "k": "stop",
+     "e": "✋ Do not share it",
+     "c": "#2f6fe0"
+    },
+    {
+     "k": "safe",
+     "e": "🔑 Keep it private",
+     "c": "#1a7a8c"
+    }
+   ],
+   "answer": [
+    "stop",
+    "grownup",
+    "safe"
+   ],
+   "reason": "First do NOT share it. Then TELL a trusted grown-up who asked. Then keep it PRIVATE and safe. That keeps your key yours."
+  }
+ ]
+}

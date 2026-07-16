@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Grades K–2 Implementation Plan — Digital Citizenship Breakouts</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../assets/site.webmanifest">
+<meta name="theme-color" content="#0a2e63">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Digital Citizenship Breakouts">
+<meta property="og:title" content="Grades K–2 Implementation Plan — Digital Citizenship Breakouts">
+<meta property="og:description" content="Critical Thinking Online Breakouts for Digital Citizenship — grades K–8, TEKS-aligned, in 7 languages. Runs in the browser; no logins, no data collected.">
+<meta property="og:image" content="https://breakouts.example.org/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grades K–2 Implementation Plan — Digital Citizenship Breakouts">
+<meta name="twitter:description" content="Critical Thinking Online Breakouts for Digital Citizenship — grades K–8, TEKS-aligned, in 7 languages. Runs in the browser; no logins, no data collected.">
+<meta name="twitter:image" content="https://breakouts.example.org/assets/og.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--navy:#0a2e63;--navy-d:#061f45;--red:#c1121f;--red-d:#8b0d16;--gold:#f5b800;--gold-d:#c08e00;--paper:#f4f8fd;--ink:#14203a;--ink-soft:#4b5a78;--card:#fff;--line:#dbe6f5;--good:#2f9e44;--bad:#e03131;--c1:#0a2e63;--c2:#2f6fe0;--c3:#1a7a8c;--c4:#f5b800;--c5:#0d47a1;--bg-a:rgba(245,184,0,.12);--bg-b:rgba(10,46,99,.10)}</style>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  .wrap{position:relative}
+  .topnav{position:absolute;top:14px;right:16px;z-index:60;display:flex;gap:10px;align-items:center}
+  @media(max-width:680px){.topnav{position:static;justify-content:flex-end;flex-wrap:wrap;margin:0 0 10px}}
+  .teacher-menu{position:relative;font-family:'Nunito',sans-serif}
+  .teacher-menu>summary{list-style:none;cursor:pointer;background:var(--navy);color:#fff;font-weight:800;font-size:.85rem;padding:8px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(10,46,99,.28)}
+  .teacher-menu>summary::-webkit-details-marker{display:none}
+  .teacher-menu[open]>summary{background:var(--navy-d)}
+  .teacher-menu .tm-panel{position:absolute;right:0;margin-top:8px;background:#fff;border:2px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(10,20,60,.18);padding:8px;min-width:236px;display:flex;flex-direction:column;gap:2px}
+  .teacher-menu .tm-h{font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;padding:6px 12px 3px}
+  .teacher-menu .tm-panel a{display:flex;justify-content:space-between;gap:12px;padding:9px 12px;border-radius:9px;color:var(--ink);font-weight:700;font-size:.9rem;text-decoration:none}
+  .teacher-menu .tm-panel a:hover{background:var(--bg-b);color:var(--navy)}
+  @media(max-width:680px){.teacher-menu{position:static;margin:0 0 12px;text-align:right}.teacher-menu .tm-panel{left:auto}}
+  .clear-grid{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+  .clear-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px}
+  .clear-badge{flex:0 0 auto;width:46px;height:46px;border-radius:12px;color:#fff;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.6rem;display:flex;align-items:center;justify-content:center}
+  .clear-body h4{margin:.1rem 0 .3rem;font-size:1.05rem;color:var(--navy)}
+  .clear-body .clear-q{font-weight:600;color:var(--ink-soft);font-size:.9rem}
+  .clear-body ul{margin:.2rem 0 0;padding-left:1.1rem}
+  .clear-body li{font-size:.9rem;color:var(--ink);margin:.1rem 0}
+  .site-langbar{position:static;display:flex;align-items:center;gap:6px}
+  .site-langbar .globe{font-size:1.1rem}
+  .site-langbar select{font-family:'Nunito',sans-serif;font-weight:700;font-size:.82rem;color:var(--navy);background:#fff;border:2px solid var(--line);border-radius:100px;padding:6px 12px;cursor:pointer}
+  .site-langbar select:focus{outline:none;border-color:var(--navy)}
+  @media(max-width:680px){.site-langbar{position:static;margin:0 0 10px}}
+  .statstrip{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 6px}
+  .stat{flex:1 1 110px;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center}
+  .stat.hl{background:var(--bg-b);border-color:var(--navy)}
+  .statn{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.9rem;color:var(--navy);line-height:1}
+  .statl{font-size:.74rem;font-weight:800;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin-top:6px}</style>
+</head>
+<body>
+<div class="wrap">
+<div class="topnav"><div class="site-langbar"><span class="globe" aria-hidden="true">🌐</span><div data-i18n-picker></div></div>
+<details class="teacher-menu">
+  <summary>👩‍🏫 Teachers ▾</summary>
+  <div class="tm-panel">
+    <div class="tm-h">Teacher resources</div>
+    <a href="../guide.html">Curriculum Guide<span aria-hidden="true">📘</span></a>
+    <a href="../scope.html">Scope &amp; Sequence<span aria-hidden="true">🗺️</span></a>
+    <a href="../lessons.html">Lesson-Plan Guide<span aria-hidden="true">📝</span></a>
+    <a href="../correlation.html">TEKS Correlation<span aria-hidden="true">📊</span></a>
+    <a href="../udl.html">UDL Supports<span aria-hidden="true">♿</span></a>
+    <a href="../elps.html">ELPS Supports<span aria-hidden="true">🌎</span></a>
+    <a href="../answer-key.html">Answer Key<span aria-hidden="true">🔐</span></a>
+  </div>
+</details></div>
+  <div class="crumb"><a href="index.html" data-i18n="tbpmt1s">‹ Grades K–2</a> · <a href="../index.html" data-i18n="t11pmpv8">Suite home</a></div>
+  <div class="hero">
+    <div class="eyebrow gold" data-i18n="toic8as">Implementation plan</div>
+    <h1 data-i18n="t58kcp4">Grades K–2 Implementation Plan</h1>
+    <p class="lede" data-i18n="tn2m0ss">Pacing, prerequisites, and extensions for the early-elementary band.</p>
+  </div>
+
+  <h2 data-i18n="t1n66mxj">The activities</h2>
+  <div class="panel"><ul data-i18n-html="tjn9y"><li><strong>Grade K — Safe &amp; Kind Online.</strong> Stay safe and be kind on the tablet. Solve four locks. Use the picture clues to help you. <span class="small">(TEKS §126.5)</span></li>
+      <li><strong>Grade 1 — Smart Choices Online.</strong> Make smart choices on the tablet. Solve four locks. Use the clues to help you decide. <span class="small">(TEKS §126.6)</span></li>
+      <li><strong>Grade 2 — Fair, Safe &amp; Kind.</strong> Be fair, safe, and kind online. Solve four locks. Use the clues to make good choices. <span class="small">(TEKS §126.7)</span></li></ul></div>
+
+  <h2 data-i18n="t1jro0gn">Pacing</h2>
+  <div class="panel"><ul data-i18n-html="tl4lf6f"><li><strong>One activity ≈ 25–40 minutes</strong>, including debrief. Younger classes may need two sittings.</li><li>Run one per grading period, or cluster them into a two-week digital-citizenship unit.</li><li>Order matches the grade sequence; each grade deepens footprint, etiquette, IP, and safety themes.</li></ul></div>
+
+  <h2 data-i18n="t15xevfk">Prerequisites</h2>
+  <div class="panel"><ul data-i18n-html="t1ey2vmx"><li>A browser and the activity link. No accounts, installs, or logins.</li><li>Students should be able to listen to a short read-aloud and tap or click large tiles; reading is emerging, so plan to read clues aloud and model the first lock.</li><li>Teachers: skim the activity’s teacher launch page and the <a href="../correlation.html">correlation guide</a> first.</li></ul></div>
+
+  <h2 data-i18n="t5ry46j">Extension &amp; differentiation</h2>
+  <div class="panel"><ul data-i18n-html="tdvrsyx"><li><strong>Home-language pairs.</strong> Use the 🌐 picker so newcomers reason in their strongest language, then answer.</li><li><strong>Author-a-clue.</strong> Students write a new clue (or a real-world example) for the skill they found hardest.</li><li><strong>Reason aloud.</strong> Require a spoken/written justification before each lock check; grade the reasoning, not the click.</li><li>Connect to class routines: name the trusted grown-ups in your building, make a kindness chart, and practice keeping a “secret” password with a classroom example.</li></ul></div>
+<footer>
+  <span data-i18n="t192od3r">Digital Citizenship Breakouts · Aligned to Texas TEKS Technology Applications (adopted 2022, required K–8). Paraphrased alignment — not legal advice.</span><br>
+  <a href="../index.html" data-i18n="t11pmpv8">Suite home</a> · <a href="../library.html" data-i18n="tg842sa">Library</a> · <a href="../guide.html" data-i18n="t1tzufeb">Teacher guide</a> · <a href="../scope.html" data-i18n="tmuk1xy">Scope &amp; sequence</a> · <a href="../lessons.html" data-i18n="tqtkwbx">Lesson plans</a> · <a href="../correlation.html" data-i18n="tyit8fo">TEKS correlation</a> · <a href="../udl.html" data-i18n="t376g6w">UDL</a> · <a href="../elps.html" data-i18n="tyjgnn3">ELPS</a> · <a href="policy.html" data-i18n="t75anbs">Privacy &amp; compliance</a>
+</footer>
+<script src="../assets/site-i18n-data.js"></script>
+<script src="../assets/i18n.js"></script>
+<script>BreakoutI18n.register('site', window.SITE_I18N_DATA);</script>
+</div>
+</body>
+</html>

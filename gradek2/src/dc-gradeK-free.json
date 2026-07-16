@@ -1,0 +1,168 @@
+{
+ "id": "dc-gradeK-free",
+ "grade": 0,
+ "tier": "free",
+ "icon": "💛",
+ "teks": "§126.5",
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "chrome": {
+  "eyebrow": {
+   "en": "Digital Citizenship Breakout · Grade K",
+   "es": "Breakout de ciudadanía digital · Grado K",
+   "vi": "Breakout công dân số · Lớp K",
+   "ar": "تحدّي المواطنة الرقمية · الصف K",
+   "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा K",
+   "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت K",
+   "zh": "数字公民破解 · 幼儿园"
+  },
+  "h1": "Kindness Buddies",
+  "sub": "Help our online buddies be kind. Solve four locks. Use the picture clues to help you.",
+  "briefLabel": "Your Mission",
+  "briefH": "Be a Kindness Buddy",
+  "briefP": "Words on a screen can make a friend smile or feel sad. A Kindness Buddy uses kind words, lets everyone play, and thinks first. Look at the clues. Then open all four locks. Each lock tells you why the kind way is the best way.",
+  "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+  "winStamp": "CASE CLOSED",
+  "winH": "You opened all four locks!",
+  "winP": "You know kind words. You let friends play. You think before you send. You are a real Kindness Buddy!"
+ },
+ "clues": [
+  {
+   "id": "c1",
+   "ico": "💛",
+   "nm": "Kind Words",
+   "title": "Use kind words",
+   "body": "Kind words feel warm. 'Good job!' is kind. 'Nice try!' is kind. Mean words hurt. Pick kind words."
+  },
+  {
+   "id": "c2",
+   "ico": "🙌",
+   "nm": "Let Them Play",
+   "title": "Everyone can play",
+   "body": "It is sad to be left out. Ask a new friend to play. Say 'Come play with me!' That is kind."
+  },
+  {
+   "id": "c3",
+   "ico": "🤔",
+   "nm": "Think First",
+   "title": "Think, then send",
+   "body": "Stop. Look at your words. Are they kind? If yes, you can send. If not, do not send."
+  },
+  {
+   "id": "c4",
+   "ico": "🙂",
+   "nm": "Happy or Sad",
+   "title": "Words can hurt",
+   "body": "You cannot see a face in a chat. A word can feel mean. Check that it sounds kind first."
+  },
+  {
+   "id": "c5",
+   "ico": "🫂",
+   "nm": "Cheer Up",
+   "title": "Help a sad friend",
+   "body": "See a sad friend? Say something nice. 'You are my friend.' That helps them feel better."
+  },
+  {
+   "id": "c6",
+   "ico": "🐹",
+   "nm": "Class Pet",
+   "title": "Our class hamster",
+   "body": "Our class has a hamster named Nibbles. Nibbles runs on a wheel all day. This is fun, but it will not open a lock.",
+   "decoy": true
+  }
+ ],
+ "locks": [
+  {
+   "id": "L1",
+   "type": "mc",
+   "color": "#0a2e63",
+   "title": "The Kind Message",
+   "q": "Which one is the kind thing to say?",
+   "options": [
+    "You are bad at this. Ha ha!",
+    "Good job! Want to play with me?",
+    "Go away. Nobody likes you."
+   ],
+   "answerIndex": 1,
+   "reason": "Kind words make a friend smile and feel safe. 'Good job! Want to play with me?' cheers a friend and asks them to play, so it is the kind pick."
+  },
+  {
+   "id": "L2",
+   "type": "multi",
+   "color": "#2f6fe0",
+   "title": "Kind or Not Kind?",
+   "q": "Tap EVERY kind thing to do online.",
+   "items": [
+    {
+     "t": "Say 'Good job!' to a friend",
+     "strong": true
+    },
+    {
+     "t": "Ask a new friend to play",
+     "strong": true
+    },
+    {
+     "t": "Cheer up a sad friend",
+     "strong": true
+    },
+    {
+     "t": "Laugh at a friend to be mean",
+     "strong": false
+    },
+    {
+     "t": "Call a friend a mean name",
+     "strong": false
+    }
+   ],
+   "reason": "Kind things help friends feel good — a cheer, an invite, a nice word. Laughing to be mean or calling names hurts, so we do not tap those."
+  },
+  {
+   "id": "L3",
+   "type": "word",
+   "color": "#1a7a8c",
+   "title": "The Kind Word",
+   "q": "A warm word that helps a friend feel happy is a ______ word.",
+   "answer": [
+    "kind",
+    "nice"
+   ],
+   "reason": "A kind word makes a friend smile and feel welcome. Using kind words is the best way to be a good buddy online."
+  },
+  {
+   "id": "L4",
+   "type": "seq",
+   "color": "#0d47a1",
+   "title": "Think Before You Send",
+   "q": "Tap the steps in the RIGHT order before you send.",
+   "pads": [
+    {
+     "k": "send",
+     "e": "📨 Send it",
+     "c": "#0a2e63"
+    },
+    {
+     "k": "stop",
+     "e": "✋ Stop",
+     "c": "#2f6fe0"
+    },
+    {
+     "k": "kind",
+     "e": "💛 Is it kind?",
+     "c": "#1a7a8c"
+    }
+   ],
+   "answer": [
+    "stop",
+    "kind",
+    "send"
+   ],
+   "reason": "First STOP. Then ask if it is KIND. Only then SEND. Stop, kind, send keeps friends happy."
+  }
+ ]
+}

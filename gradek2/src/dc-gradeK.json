@@ -1,0 +1,164 @@
+{
+ "id": "dc-gradeK",
+ "grade": 0,
+ "tier": "paid",
+ "icon": "🧸",
+ "teks": "§126.5",
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "chrome": {
+  "eyebrow": {
+   "en": "Digital Citizenship Breakout · Grade K",
+   "es": "Breakout de ciudadanía digital · Grado K",
+   "vi": "Breakout công dân số · Lớp K",
+   "ar": "تحدّي المواطنة الرقمية · الصف K",
+   "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा K",
+   "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت K",
+   "zh": "数字公民破解 · 幼儿园"
+  },
+  "h1": "Safe & Kind Online",
+  "sub": "Stay safe and be kind on the tablet. Solve four locks. Use the picture clues to help you.",
+  "briefLabel": "Your Mission",
+  "briefH": "Be a Safe & Kind Helper",
+  "briefP": "The internet is fun. It is safest when you ask a grown-up, keep your name private, and stop when something feels bad. Look at the clues. Then open all four locks. Each lock tells you why the safe, kind way is the best way.",
+  "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+  "winStamp": "CASE CLOSED",
+  "winH": "You opened all four locks!",
+  "winP": "You know who to ask for help. You know kind from unkind. You keep your name private. You stop and ask when something feels unsafe. You are safe and kind online!"
+ },
+ "clues": [
+  {
+   "id": "c1",
+   "ico": "🧑‍🏫",
+   "nm": "Ask a Grown-Up",
+   "title": "A grown-up helps",
+   "body": "A trusted grown-up keeps you safe. That is a parent, a teacher, or a helper you know. Ask them when you need help."
+  },
+  {
+   "id": "c2",
+   "ico": "💛",
+   "nm": "Kind or Unkind",
+   "title": "Kind feels good",
+   "body": "Kind words make a friend smile. 'Nice job!' is kind. Mean words hurt. Pick the kind way."
+  },
+  {
+   "id": "c3",
+   "ico": "🔒",
+   "nm": "Keep It Private",
+   "title": "Some things stay private",
+   "body": "Your name, your home, and your photo are private. Do not type them to people you do not know. Keep them safe."
+  },
+  {
+   "id": "c4",
+   "ico": "✋",
+   "nm": "Stop First",
+   "title": "Stop, then tap",
+   "body": "Feels weird or scary? Do not tap. Stop first. Ask a grown-up. Then it is safe to play."
+  },
+  {
+   "id": "c5",
+   "ico": "❓",
+   "nm": "Not Sure?",
+   "title": "When you are not sure",
+   "body": "If you do not know, ask. A grown-up can tell you if it is safe. Asking is always smart."
+  },
+  {
+   "id": "c6",
+   "ico": "🦖",
+   "nm": "Toy Dino",
+   "title": "The reading corner dino",
+   "body": "Our reading corner has a big green toy dino named Rex. Rex holds all the books. This is fun, but it will not open a lock.",
+   "decoy": true
+  }
+ ],
+ "locks": [
+  {
+   "id": "L1",
+   "type": "mc",
+   "color": "#0a2e63",
+   "title": "Who Do You Ask?",
+   "q": "Something online feels weird. Who is the best one to ask for help?",
+   "options": [
+    "A stranger in a game chat",
+    "A trusted grown-up, like your teacher",
+    "Nobody — just keep tapping"
+   ],
+   "answerIndex": 1,
+   "reason": "A trusted grown-up you know keeps you safe and can help. A stranger might not be safe, and tapping alone can get you lost, so asking a grown-up is best."
+  },
+  {
+   "id": "L2",
+   "type": "multi",
+   "color": "#2f6fe0",
+   "title": "Kind or Unkind?",
+   "q": "Tap EVERY kind choice online.",
+   "items": [
+    {
+     "t": "Type 'Nice job!' to a friend",
+     "strong": true
+    },
+    {
+     "t": "Ask a friend to play with you",
+     "strong": true
+    },
+    {
+     "t": "Send a mean face to be rude",
+     "strong": false
+    },
+    {
+     "t": "Tell a friend they are not welcome",
+     "strong": false
+    }
+   ],
+   "reason": "Kind choices help friends feel good — a nice word or an invite. A mean face or telling a friend they are not welcome hurts, so we leave those unchecked."
+  },
+  {
+   "id": "L3",
+   "type": "word",
+   "color": "#1a7a8c",
+   "title": "Keep It Safe",
+   "q": "Your name and your home are ______. You do not share them with people you do not know.",
+   "answer": [
+    "private",
+    "secret"
+   ],
+   "reason": "Private things stay with you and your family. Keeping your name and home private helps you stay safe online."
+  },
+  {
+   "id": "L4",
+   "type": "seq",
+   "color": "#0d47a1",
+   "title": "Something Feels Unsafe",
+   "q": "Something feels scary. Tap the steps in the RIGHT order.",
+   "pads": [
+    {
+     "k": "play",
+     "e": "🙂 Then it's safe to play",
+     "c": "#0a2e63"
+    },
+    {
+     "k": "stop",
+     "e": "✋ Stop",
+     "c": "#2f6fe0"
+    },
+    {
+     "k": "ask",
+     "e": "🧑‍🏫 Ask a grown-up",
+     "c": "#1a7a8c"
+    }
+   ],
+   "answer": [
+    "stop",
+    "ask",
+    "play"
+   ],
+   "reason": "First STOP so nothing bad happens. Then ASK a trusted grown-up if it is okay. Only then is it safe to PLAY. Stop, ask, play."
+  }
+ ]
+}

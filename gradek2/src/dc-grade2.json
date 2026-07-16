@@ -1,0 +1,168 @@
+{
+ "id": "dc-grade2",
+ "grade": 2,
+ "tier": "paid",
+ "icon": "🚦",
+ "teks": "§126.7",
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "chrome": {
+  "eyebrow": {
+   "en": "Digital Citizenship Breakout · Grade 2",
+   "es": "Breakout de ciudadanía digital · Grado 2",
+   "vi": "Breakout công dân số · Lớp 2",
+   "ar": "تحدّي المواطنة الرقمية · الصف 2",
+   "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 2",
+   "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 2",
+   "zh": "数字公民破解 · 二年级"
+  },
+  "h1": "Fair, Safe & Kind",
+  "sub": "Be fair, safe, and kind online. Solve four locks. Use the clues to make good choices.",
+  "briefLabel": "Your Mission",
+  "briefH": "Be a Fair & Safe Helper",
+  "briefP": "A good digital citizen is fair, safe, and kind. That means noticing the trail you leave, giving credit when you use someone's work, making a strong password, and knowing what to do about a mean message. Read the clues, then open all four locks. Each lock shows you why the fair, safe, and kind choice is the right one.",
+  "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+  "winStamp": "CASE CLOSED",
+  "winH": "You cracked all four locks!",
+  "winP": "You know that your actions leave a digital trail. You give credit for other people's work. You can build a strong password. You know how to report a mean message. You are fair, safe, and kind online!"
+ },
+ "clues": [
+  {
+   "id": "c1",
+   "ico": "👣",
+   "nm": "Digital Trail",
+   "title": "You leave a trail",
+   "body": "Everything you do online leaves a mark called a digital trail, like footprints in sand. Your posts and messages can stay for a long time, so leave a good trail."
+  },
+  {
+   "id": "c2",
+   "ico": "🎨",
+   "nm": "Give Credit",
+   "title": "Say who made it",
+   "body": "When you use a photo, drawing, or words someone else made, say their name. Giving credit is fair. It tells everyone who did the work. Taking it without credit is not fair."
+  },
+  {
+   "id": "c3",
+   "ico": "💪",
+   "nm": "Strong Password",
+   "title": "Make it strong",
+   "body": "A strong password is long and hard to guess. '1234' or 'cat' is weak. A strong one mixes letters and numbers, like 'Blue7Fish'. A strong password keeps your account safe."
+  },
+  {
+   "id": "c4",
+   "ico": "🚩",
+   "nm": "Report It",
+   "title": "Report a mean message",
+   "body": "If you get a mean message, do not share it around. Tell a trusted adult right away. Then be kind to the person who was hurt. That is how you report the right way."
+  },
+  {
+   "id": "c5",
+   "ico": "🤔",
+   "nm": "Think First",
+   "title": "Stop and think",
+   "body": "Before you post, share, or answer a mean message, stop and think. Ask: is this fair? is this safe? is this kind? Then make your choice."
+  },
+  {
+   "id": "c6",
+   "ico": "🦎",
+   "nm": "Class Gecko",
+   "title": "Our class gecko",
+   "body": "Our class has a gecko named Pickle. Pickle can stick to the glass and eats crickets. This is a fun fact, but it will not help you open a lock.",
+   "decoy": true
+  }
+ ],
+ "locks": [
+  {
+   "id": "L1",
+   "type": "mc",
+   "color": "#0a2e63",
+   "title": "Your Digital Trail",
+   "q": "You send a message and post a photo. What do these leave behind?",
+   "options": [
+    "Nothing — they vanish the second you send them",
+    "A digital trail that can stay for a long time",
+    "A trail only your best friend can ever see"
+   ],
+   "answerIndex": 1,
+   "reason": "Everything you do online leaves a digital trail that can stay a long time, and others may save it. It does not vanish, and it is not only seen by one friend, so knowing your trail lasts helps you post wisely."
+  },
+  {
+   "id": "L2",
+   "type": "multi",
+   "color": "#2f6fe0",
+   "title": "Being Fair With Work",
+   "q": "Check EVERY fair way to use work that someone else made.",
+   "items": [
+    {
+     "t": "Write the name of the person who made it",
+     "strong": true
+    },
+    {
+     "t": "Say 'Art by Maria' when you share her drawing",
+     "strong": true
+    },
+    {
+     "t": "Ask before you use someone's photo",
+     "strong": true
+    },
+    {
+     "t": "Put your own name on someone else's drawing",
+     "strong": false
+    },
+    {
+     "t": "Copy their words and say you wrote them",
+     "strong": false
+    }
+   ],
+   "reason": "Giving credit is fair — name the maker, say who made it, and ask first. Putting your name on their work or claiming their words is taking credit you did not earn, so we leave those unchecked."
+  },
+  {
+   "id": "L3",
+   "type": "word",
+   "color": "#1a7a8c",
+   "title": "A Good Password",
+   "q": "A password that is long and hard to guess, like 'Blue7Fish', is a ______ password.",
+   "answer": [
+    "strong",
+    "tough"
+   ],
+   "reason": "A strong password is long and hard to guess, so others cannot get in. A weak one like '1234' is easy to guess, which is why strong is safer."
+  },
+  {
+   "id": "L4",
+   "type": "seq",
+   "color": "#0d47a1",
+   "title": "Reporting a Mean Message",
+   "q": "You get a mean message. Tap the steps in the RIGHT order.",
+   "pads": [
+    {
+     "k": "kind",
+     "e": "💛 Be kind to the person",
+     "c": "#0a2e63"
+    },
+    {
+     "k": "dontshare",
+     "e": "✋ Don't share it",
+     "c": "#2f6fe0"
+    },
+    {
+     "k": "tell",
+     "e": "🚩 Tell a trusted adult",
+     "c": "#1a7a8c"
+    }
+   ],
+   "answer": [
+    "dontshare",
+    "tell",
+    "kind"
+   ],
+   "reason": "First DON'T SHARE the mean message so it does not spread. Then TELL a trusted adult who can help. Then be KIND to the person who was hurt. Don't share, tell, be kind."
+  }
+ ]
+}

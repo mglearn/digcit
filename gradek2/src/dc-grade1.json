@@ -1,0 +1,169 @@
+{
+ "id": "dc-grade1",
+ "grade": 1,
+ "tier": "paid",
+ "icon": "🧭",
+ "teks": "§126.6",
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "chrome": {
+  "eyebrow": {
+   "en": "Digital Citizenship Breakout · Grade 1",
+   "es": "Breakout de ciudadanía digital · Grado 1",
+   "vi": "Breakout công dân số · Lớp 1",
+   "ar": "تحدّي المواطنة الرقمية · الصف 1",
+   "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 1",
+   "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 1",
+   "zh": "数字公民破解 · 一年级"
+  },
+  "h1": "Smart Choices Online",
+  "sub": "Make smart choices on the tablet. Solve four locks. Use the clues to help you decide.",
+  "briefLabel": "Your Mission",
+  "briefH": "Be a Smart Chooser",
+  "briefP": "Every day online you make choices. A Smart Chooser keeps a password private, is kind and stands up for others, asks a grown-up before tapping, and shares only safe things. Read the clues. Then open all four locks. Each lock shows you why the smart choice is the right choice.",
+  "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+  "winStamp": "CASE CLOSED",
+  "winH": "You cracked all four locks!",
+  "winP": "You keep your password private. You are kind and an upstander. You ask a grown-up before you tap. You share only safe things. You are a Smart Chooser!"
+ },
+ "clues": [
+  {
+   "id": "c1",
+   "ico": "🔑",
+   "nm": "Secret Password",
+   "title": "Passwords stay private",
+   "body": "A password is your secret key. Keep it private. Do not tell friends. Only you and a helper grown-up should know it."
+  },
+  {
+   "id": "c2",
+   "ico": "🛡️",
+   "nm": "Upstander",
+   "title": "Be kind and help",
+   "body": "An upstander helps when someone is treated badly. Do not laugh at a mean post. Be kind and tell a grown-up."
+  },
+  {
+   "id": "c3",
+   "ico": "🧑‍🏫",
+   "nm": "Ask First",
+   "title": "Ask before you tap",
+   "body": "See a new button or a download? Do not tap yet. Ask a grown-up first. They tell you if it is safe."
+  },
+  {
+   "id": "c4",
+   "ico": "✅",
+   "nm": "Safe to Share",
+   "title": "Share only safe things",
+   "body": "Some things are safe to share, like a drawing. Some are not, like your home. Think before you share."
+  },
+  {
+   "id": "c5",
+   "ico": "🤔",
+   "nm": "Think First",
+   "title": "Stop and think",
+   "body": "Before you share or tap, stop and think. Ask: is this safe? is this kind? Then choose."
+  },
+  {
+   "id": "c6",
+   "ico": "🌱",
+   "nm": "Class Plant",
+   "title": "Our class plant",
+   "body": "Our class grows a bean plant on the windowsill. It gets taller every week. This is fun, but it will not open a lock.",
+   "decoy": true
+  }
+ ],
+ "locks": [
+  {
+   "id": "L1",
+   "type": "mc",
+   "color": "#0a2e63",
+   "title": "Your Password",
+   "q": "A game asks you to type your password so a friend can see. What should you do?",
+   "options": [
+    "Type it so your friend can play too",
+    "Keep it private and do not type it there",
+    "Change it to '1234' so it is easy to share"
+   ],
+   "answerIndex": 1,
+   "reason": "A password is a secret key that keeps your things safe. Sharing it lets others in, and '1234' is too easy to guess. Keeping it private is the smart choice."
+  },
+  {
+   "id": "L2",
+   "type": "multi",
+   "color": "#2f6fe0",
+   "title": "Be an Upstander",
+   "q": "Check EVERY kind, upstander choice.",
+   "items": [
+    {
+     "t": "Be kind to someone getting mean posts",
+     "strong": true
+    },
+    {
+     "t": "Tell a trusted grown-up about a mean post",
+     "strong": true
+    },
+    {
+     "t": "Give a friend a nice compliment",
+     "strong": true
+    },
+    {
+     "t": "Laugh at a mean post and share it",
+     "strong": false
+    },
+    {
+     "t": "Join in and type mean words too",
+     "strong": false
+    }
+   ],
+   "reason": "An upstander helps — be kind, tell a grown-up, give a compliment. Laughing at, sharing, or joining a mean post hurts someone, so we leave those unchecked."
+  },
+  {
+   "id": "L3",
+   "type": "word",
+   "color": "#1a7a8c",
+   "title": "Before You Tap",
+   "q": "Before you tap a new button or a download, first ______ a grown-up.",
+   "answer": [
+    "ask",
+    "ask a grown-up",
+    "ask a grownup"
+   ],
+   "reason": "A grown-up can tell you if a button or download is safe. Asking first stops you from tapping something that could be harmful."
+  },
+  {
+   "id": "L4",
+   "type": "seq",
+   "color": "#0d47a1",
+   "title": "What Is OK to Share?",
+   "q": "You want to share something online. Tap the steps in the RIGHT order.",
+   "pads": [
+    {
+     "k": "share",
+     "e": "✅ Share only safe things",
+     "c": "#0a2e63"
+    },
+    {
+     "k": "think",
+     "e": "🤔 Think first",
+     "c": "#2f6fe0"
+    },
+    {
+     "k": "ask",
+     "e": "🧑‍🏫 Ask a grown-up",
+     "c": "#1a7a8c"
+    }
+   ],
+   "answer": [
+    "think",
+    "ask",
+    "share"
+   ],
+   "reason": "First THINK about what you want to share. Then ASK a grown-up if it is okay. Only then SHARE, and share only safe things."
+  }
+ ]
+}

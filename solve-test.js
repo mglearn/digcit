@@ -25,11 +25,11 @@ const NONEN = LANGS.filter(l => l !== 'en');
 // ---- discover activities -------------------------------------------------
 function discover() {
   const acts = [];
-  for (const band of ['grade35', 'grade68']) {
+  for (const band of ['gradek2', 'grade35', 'grade68']) {
     const dir = path.join(ROOT, band);
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir).sort()) {
-      const m = f.match(/^(dc-grade\d[\w-]*)-student\.html$/);
+      const m = f.match(/^(dc-grade(?:K|\d)[\w-]*)-student\.html$/);
       if (!m) continue;
       const id = m[1];
       acts.push({ id, band, html: path.join(dir, f), locale: path.join(dir, 'locales', id + '.js') });

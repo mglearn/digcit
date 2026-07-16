@@ -67,7 +67,7 @@ fs.mkdirSync(OUT, { recursive: true });
 for (const f of fs.readdirSync(ROOT)) {
   if (/\.(html)$/.test(f)) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
 }
-for (const d of ['assets', 'grade35', 'grade68']) if (fs.existsSync(path.join(ROOT, d))) { fs.mkdirSync(path.join(OUT, d), { recursive: true }); copyTree(d); }
+for (const d of ['assets', 'gradek2', 'grade35', 'grade68', 'arcade']) if (fs.existsSync(path.join(ROOT, d))) { fs.mkdirSync(path.join(OUT, d), { recursive: true }); copyTree(d); }
 injectGates(OUT);
 
 const count = (d) => fs.readdirSync(d, { recursive: true }).filter(f => fs.statSync(path.join(d, f)).isFile()).length;

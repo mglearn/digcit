@@ -23,7 +23,7 @@ const ITER = 250000;
 // Scan every baked locale (all activities, both tiers) — self-describing.
 function scanAll() {
   const out = [];
-  for (const band of ['grade35', 'grade68']) {
+  for (const band of ['gradek2', 'grade35', 'grade68']) {
     const dir = path.join(ROOT, band, 'locales');
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir).sort()) {
@@ -50,7 +50,7 @@ const TYPE_LABEL = { mc: 'Multiple choice', word: 'Type the word', digit: 'Numbe
 const activities = scanAll().map(B => {
   const U = B.UI.en;
   return {
-    grade: B.grade, teks: B.teks, tier: B.tier, title: U['header.h1'],
+    grade: B.grade, gradeLabel: B.grade === 0 ? 'K' : String(B.grade), teks: B.teks, tier: B.tier, title: U['header.h1'],
     locks: B.CONTENT.en.locks.map((l, i) => ({
       n: i + 1, title: l.title, type: TYPE_LABEL[l.type] || l.type,
       q: l.q, answer: answerText(l), reason: l.reason,
@@ -162,9 +162,9 @@ const html = `<!DOCTYPE html>
   function render(d){
     const out = document.getElementById('out');
     out.innerHTML = '<div class="hero"><div class="eyebrow gold">🔓 Answer key</div><h1>Answers &amp; reasoning</h1>'
-      + '<p class="lede">All six activities. Keep this private. Use <button class="btn ghost" onclick="window.print()" style="margin-left:6px">Print</button></p></div>'
+      + '<p class="lede">All '+d.activities.length+' activities. Keep this private. Use <button class="btn ghost" onclick="window.print()" style="margin-left:6px">Print</button></p></div>'
       + d.activities.map(a =>
-        '<div class="akact"><h2>Grade '+a.grade+' — '+esc(a.title)+' <span class="small">('+esc(a.teks)+(a.tier==='paid'?' · licensed':' · free')+')</span></h2>'
+        '<div class="akact"><h2>Grade '+a.gradeLabel+' — '+esc(a.title)+' <span class="small">('+esc(a.teks)+(a.tier==='paid'?' · licensed':' · free')+')</span></h2>'
         + '<p class="small">Decoy clue (unused on purpose): <strong>'+esc(a.decoy)+'</strong></p>'
         + a.locks.map(l =>
             '<div class="aklock"><span class="aktype">Lock '+l.n+' · '+esc(l.type)+'</span>'

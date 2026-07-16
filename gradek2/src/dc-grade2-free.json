@@ -1,0 +1,170 @@
+{
+ "id": "dc-grade2-free",
+ "grade": 2,
+ "tier": "free",
+ "icon": "👣",
+ "teks": "§126.7",
+ "confetti": [
+  "#0a2e63",
+  "#f5b800",
+  "#2f6fe0",
+  "#1a7a8c",
+  "#ffffff",
+  "#0d47a1"
+ ],
+ "chrome": {
+  "eyebrow": {
+   "en": "Digital Citizenship Breakout · Grade 2",
+   "es": "Breakout de ciudadanía digital · Grado 2",
+   "vi": "Breakout công dân số · Lớp 2",
+   "ar": "تحدّي المواطنة الرقمية · الصف 2",
+   "hi": "डिजिटल नागरिकता ब्रेकआउट · कक्षा 2",
+   "ur": "ڈیجیٹل شہریت بریک آؤٹ · جماعت 2",
+   "zh": "数字公民破解 · 二年级"
+  },
+  "h1": "My Online Trail",
+  "sub": "Everything you do online leaves a trail. Follow the clues and open four locks to learn about yours.",
+  "briefLabel": "Your Mission",
+  "briefH": "Be a Trail Tracker",
+  "briefP": "When you walk in the sand, you leave footprints behind. The internet works the same way. Every message you send, photo you post, and game you play leaves a trail that can stay for a long time. A Trail Tracker thinks about the marks they leave. Read the clues, then open all four locks. Each lock shows you why your online trail matters.",
+  "footerText": "Digital Citizenship Breakouts · Runs entirely in your browser — no logins, no data collected.",
+  "winStamp": "CASE CLOSED",
+  "winH": "You cracked all four locks!",
+  "winP": "You know that everything you do online leaves a trail. You know a trail can last a long time. You know to leave a kind, safe trail behind you. You are a true Trail Tracker!"
+ },
+ "clues": [
+  {
+   "id": "c1",
+   "ico": "👣",
+   "nm": "Footprints",
+   "title": "You leave footprints",
+   "body": "Walk in the sand and you leave footprints. Online is the same. Everything you do leaves a mark called a trail. It shows where you have been."
+  },
+  {
+   "id": "c2",
+   "ico": "📸",
+   "nm": "Posts Stay",
+   "title": "Your trail can last",
+   "body": "A photo or message you post can stay online for a long time. Even if you erase it, someone may have saved it. Your trail can last."
+  },
+  {
+   "id": "c3",
+   "ico": "💛",
+   "nm": "A Kind Trail",
+   "title": "Leave a kind trail",
+   "body": "Because your trail can last, leave a good one. Post kind words. Share nice things. A kind trail shows the real, friendly you."
+  },
+  {
+   "id": "c4",
+   "ico": "🤔",
+   "nm": "Think First",
+   "title": "Think before you post",
+   "body": "Before you post, stop and think. Ask: would I be happy if a teacher or a grandparent saw this later? If yes, it is a good thing to add to your trail."
+  },
+  {
+   "id": "c5",
+   "ico": "🔒",
+   "nm": "Safe Trail",
+   "title": "Keep your trail safe",
+   "body": "Do not leave private things on your trail, like your home or your phone number. Keep those off. A safe trail keeps you safe."
+  },
+  {
+   "id": "c6",
+   "ico": "🐦",
+   "nm": "Class Bird",
+   "title": "Our class bird feeder",
+   "body": "Our class has a bird feeder outside the window. A blue jay visits every morning. This is a fun fact, but it will not help you open a lock.",
+   "decoy": true
+  }
+ ],
+ "locks": [
+  {
+   "id": "L1",
+   "type": "mc",
+   "color": "#0a2e63",
+   "title": "What Is a Trail?",
+   "q": "What is your 'online trail'?",
+   "options": [
+    "The marks you leave from things you do online",
+    "A path in the woods near your school",
+    "A trail mix snack you eat at lunch"
+   ],
+   "answerIndex": 0,
+   "reason": "Your online trail is the mark left by everything you do online — your posts, messages, and games. It is like footprints in the sand, not a snack or a path in the woods."
+  },
+  {
+   "id": "L2",
+   "type": "multi",
+   "color": "#2f6fe0",
+   "title": "True About Your Trail",
+   "q": "Check EVERY true thing about your online trail.",
+   "items": [
+    {
+     "t": "A post can stay online a long time",
+     "strong": true
+    },
+    {
+     "t": "Kind posts make a good trail",
+     "strong": true
+    },
+    {
+     "t": "You should think before you post",
+     "strong": true
+    },
+    {
+     "t": "Everything you post disappears right away",
+     "strong": false
+    },
+    {
+     "t": "Your trail does not matter at all",
+     "strong": false
+    }
+   ],
+   "reason": "Your trail can last, kind posts make it good, and thinking first keeps it safe. Posts do not just disappear, and your trail does matter, so we leave those unchecked."
+  },
+  {
+   "id": "L3",
+   "type": "word",
+   "color": "#1a7a8c",
+   "title": "Another Name for It",
+   "q": "The trail you leave online is also called a digital ______, like the footprints you leave in sand.",
+   "answer": [
+    "footprint",
+    "footprints",
+    "foot print",
+    "trail"
+   ],
+   "reason": "A digital footprint is another name for your online trail. Like footprints in sand, it shows where you have been and can last a long time."
+  },
+  {
+   "id": "L4",
+   "type": "seq",
+   "color": "#0d47a1",
+   "title": "Before You Post",
+   "q": "Before you add something to your trail, tap the steps in the RIGHT order.",
+   "pads": [
+    {
+     "k": "post",
+     "e": "📮 Post it",
+     "c": "#0a2e63"
+    },
+    {
+     "k": "think",
+     "e": "🤔 Think first",
+     "c": "#2f6fe0"
+    },
+    {
+     "k": "check",
+     "e": "💛 Is it kind and safe?",
+     "c": "#1a7a8c"
+    }
+   ],
+   "answer": [
+    "think",
+    "check",
+    "post"
+   ],
+   "reason": "First THINK about the mark you will leave. Then CHECK that it is kind and safe. Only then POST it to your trail. Think, check, post."
+  }
+ ]
+}
